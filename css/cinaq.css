@@ -1,0 +1,25 @@
+.dark {
+    color: #222;
+}
+
+div {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.projects {
+    list-style: none;
+
+}
+
+.projects > li {
+    width: 10em;
+    height: 10em;
+    float: left;
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+footer {
+    margin-top: 5em;
+}
