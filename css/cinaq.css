@@ -1,25 +1,40 @@
 .dark {
     color: #222;
 }
+.intro {
+    padding: 10em 0 10em 0;
+}
+.big {
+    font-size: 2em;
+    font-weight: bold;
+}
+.strike {
+    text-decoration: line-through;
+}
 
 div {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.projects {
+ul {
     list-style: none;
-
+    padding: 0;
+    margin: 0;
 }
 
-.projects > li {
-    width: 10em;
-    height: 10em;
-    float: left;
-    padding: 1em;
-    font-size: 1.5em;
-    text-align: left;
+ul.square {
+    list-style: square;
 }
 
 footer {
     margin-top: 5em;
+}
+
+a {
+    color: #00b4ff;
+}
+
+img {
+    float: left;
+    margin: 0 1em 1em 0;
 }
