@@ -1,0 +1,33 @@
+baseurl = "https://cinaq.com"
+languageCode = "en-us"
+title = "CINAQ - Xiwen Cheng"
+theme = "hugo-lithium-theme"
+googleAnalytics = "UA-74177616-1"
+disqusShortname = "cinaq"
+
+[permalinks]
+    post = "/:year/:month/:day/:title/"
+    page = "/:title/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/xiwenc"
+[[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/xiwenc"
+
+[params]
+    description = ""
+
+    [params.logo]
+    url = "xiwen.png"
+    width = 50
+    height = 50
+    alt = "Xiwen Cheng"
+
+    [params.icon]
+    url = "favicon.ico"
+
