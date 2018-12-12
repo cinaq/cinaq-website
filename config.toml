@@ -1,4 +1,4 @@
-baseurl = "https://cinaq.com"
+baseurl = "https://cinaq.com/"
 languageCode = "en-us"
 title = "CINAQ - Xiwen Cheng"
 theme = "hugo-lithium-theme"
@@ -18,6 +18,9 @@ disqusShortname = "cinaq"
 [[menu.main]]
     name = "Twitter"
     url = "https://twitter.com/xiwenc"
+[[menu.main]]
+    name = "Linkedin"
+    url = "http://nl.linkedin.com/in/xiwen"
 
 [params]
     description = ""
