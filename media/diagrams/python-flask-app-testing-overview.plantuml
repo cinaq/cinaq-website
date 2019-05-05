@@ -1,0 +1,21 @@
+@startuml
+abstract class AAAMixin {
+    {abstract} app ARRANGE()
+    {abstract} void ACT()
+    {abstract} void ASSERT()
+    void test_case()
+    - app create_app()
+}
+class LiveServerTestCase {
+    {abstract} app create_app()
+    ...
+}
+class TestCase {
+    ARRANGE()
+    ACT()
+    ASSERT()
+}
+
+AAAMixin <|-- TestCase
+LiveServerTestCase <|-- TestCase
+@enduml

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cinaq.com/2019/05/05/simple-high-value-tests-with-python-flask/</loc>
+    <lastmod>2019-05-05T01:11:03+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cinaq.com/2018/12/12/hello/</loc>
     <lastmod>2018-12-12T01:11:03+01:00</lastmod>
   </url>
@@ -14,7 +19,7 @@
   
   <url>
     <loc>https://cinaq.com/</loc>
-    <lastmod>2018-12-12T01:11:03+01:00</lastmod>
+    <lastmod>2019-05-05T01:11:03+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -31,7 +36,7 @@
   
   <url>
     <loc>https://cinaq.com/post/</loc>
-    <lastmod>2018-12-12T01:11:03+01:00</lastmod>
+    <lastmod>2019-05-05T01:11:03+01:00</lastmod>
     <priority>0</priority>
   </url>
   
