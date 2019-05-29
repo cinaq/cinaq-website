@@ -66,6 +66,21 @@
     <div class="article-content">
       
 
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ./main.sh
+./main.sh: <span style="color:#ae81ff">3</span>: exec: ./external.sh: not found
+$ ls -l
+-rwxr-xr-x <span style="color:#ae81ff">1</span> xiwen xiwen <span style="color:#ae81ff">33</span> May <span style="color:#ae81ff">29</span> <span style="color:#ae81ff">01</span>:25 external.sh
+-rwxr-xr-x <span style="color:#ae81ff">1</span> xiwen xiwen <span style="color:#ae81ff">38</span> May <span style="color:#ae81ff">29</span> <span style="color:#ae81ff">02</span>:01 main.sh</code></pre></div>
+<center>
+<figure>
+    <img src="https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif"
+         alt="What is this?"/> <figcaption>
+            <p>What is this?</p>
+        </figcaption>
+</figure>
+
+</center></p>
+
 <h1 id="introduction">Introduction</h1>
 
 <p>Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like <a href="https://www.ansible.com/">Ansible</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.saltstack.com/">Salt</a>, etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.</p>
