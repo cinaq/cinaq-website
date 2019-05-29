@@ -4,6 +4,17 @@ date: 2019-05-29T00:13:37+01:00
 draft: false
 ---
 
+{{< highlight shell >}}
+$ ./main.sh
+./main.sh: 3: exec: ./external.sh: not found
+$ ls -l
+-rwxr-xr-x 1 xiwen xiwen 33 May 29 01:25 external.sh
+-rwxr-xr-x 1 xiwen xiwen 38 May 29 02:01 main.sh
+{{< /highlight >}}
+<center>
+{{< figure src="https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif" caption="What is this?" >}}
+</center>
+
 # Introduction
 
 Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like [Ansible](https://www.ansible.com/), [Puppet](https://puppet.com/), [Salt](https://www.saltstack.com/), etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.
