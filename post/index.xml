@@ -40,14 +40,5 @@ First I will give my opinion on testing and methodology, followed by a demo case
       <description>Hello world!</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://cinaq.com/1/01/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cinaq.com/1/01/01/</guid>
-      <description>Introduction We as human beings This article is based on my own personal experiences I would give to myself during my last years of university, around 23 years old. As of this writing time travel is not possible or known to the human race. There are theories on alternative timelines in the universe. For the sake of our sanity we will not address these hypothesis. But nonetheless my story could be the tips here could be useful to others.</description>
-    </item>
-    
   </channel>
 </rss>
