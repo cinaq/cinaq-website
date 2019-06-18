@@ -6,10 +6,21 @@
     <description>Recent content in Posts on CINAQ - Xiwen Cheng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 00:13:37 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 13:37:00 +0100</lastBuildDate>
     
 	<atom:link href="https://cinaq.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unlock Mac with Apple Watch stopped working</title>
+      <link>https://cinaq.com/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</guid>
+      <description>Occasionally my auto unlock Mac with Apple watch stops working. There are workaround instructions to &amp;ldquo;repair&amp;rdquo; this issue. One of them involves rebooting both Mac and Apple Watch. Just like you I&amp;rsquo;m not very keen on rebooting my workstation. Deeper into researching I found the unlock feature relies on Bluetooth and Wifi.
+So the following steps are needed to reset the auto unlock:
+ Open System Preferences Go to Security &amp;amp; Privacy Go to General Uncheck Allow your Apple Watch to unlock your Mac (Step 1) Turn off Bluetooth and then turn it on again (Step 2) Turn off WiFi and then turn it on again (Step 3)     System Preferences</description>
+    </item>
     
     <item>
       <title>Debug shell script error: not found</title>
@@ -30,6 +41,15 @@ Introduction Automation engineers often have boring tasks. Their job is to autom
       <guid>https://cinaq.com/2019/05/05/simple-high-value-tests-with-python-flask/</guid>
       <description>Introduction After 6 years developing Python Flask applications, mainly REST API&amp;rsquo;s, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!
 First I will give my opinion on testing and methodology, followed by a demo case to illustrate high value testing with actual code. Feel free to skip all the boring reading and head directly over to the code on Github.</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://cinaq.com/2018/12/12/hello/</link>
+      <pubDate>Wed, 12 Dec 2018 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/2018/12/12/hello/</guid>
+      <description>Hello world!</description>
     </item>
     
     <item>
