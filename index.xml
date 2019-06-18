@@ -53,15 +53,6 @@ First I will give my opinion on testing and methodology, followed by a demo case
     </item>
     
     <item>
-      <title>Hello</title>
-      <link>https://cinaq.com/2018/12/12/hello/</link>
-      <pubDate>Wed, 12 Dec 2018 01:11:03 +0100</pubDate>
-      
-      <guid>https://cinaq.com/2018/12/12/hello/</guid>
-      <description>Hello world!</description>
-    </item>
-    
-    <item>
       <title>About</title>
       <link>https://cinaq.com/about/</link>
       <pubDate>Wed, 12 Dec 2018 00:52:09 +0100</pubDate>
