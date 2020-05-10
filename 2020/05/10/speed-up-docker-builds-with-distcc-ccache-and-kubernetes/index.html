@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.52" />
+
+
+<title>Speed up docker builds with distcc, ccache and kubernetes - CINAQ - Xiwen Cheng</title>
+<meta property="og:title" content="Speed up docker builds with distcc, ccache and kubernetes - CINAQ - Xiwen Cheng">
+
+
+
+  
+
+
+
+
+
+
+<link rel="icon" href="https://cinaq.com/images/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="https://cinaq.com/css/main.css" media="all">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400|Lato:400,400italic,700">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://cinaq.com/" class="nav-logo">
+    <img src="https://cinaq.com/images/xiwen.png" 
+         width="50" 
+         height="50" 
+         alt="Xiwen Cheng">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/xiwenc">GitHub</a></li>
+    
+    <li><a href="http://nl.linkedin.com/in/xiwen">Linkedin</a></li>
+    
+    <li><a href="https://twitter.com/xiwenc">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Speed up docker builds with distcc, ccache and kubernetes</h1>
+
+    
+    <span class="article-date">May 10, 2020</span>
+    
+
+    <div class="article-content">
+      
+
+<p>For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build <a href="https://wwww.orthanc-server.com">Orthanc</a> from source. The <a href="https://github.com/jodogne/OrthancDocker">official docker-images</a> are assembled based on pre-built binaries. So I could not use them.</p>
+
+<h1 id="orthanc-dockerfile">Orthanc Dockerfile</h1>
+
+<p>The first step is create a Dockerfile that compiles Orthanc from source. Looking through the <a href="https://bitbucket.org/sjodogne/orthanc/src/Orthanc-1.6.0/LinuxCompilation.txt">compilation instructions</a> and inspired by the official docker images I have assembled the following Dockerfile:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM debian:stable AS builder
+
+WORKDIR /root
+ENV ORTHANC_VERSION <span style="color:#ae81ff">1</span>.6.0
+
+RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y build-essential unzip cmake mercurial <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    libgtest-dev libpng-dev libjpeg-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc
+
+<span style="color:#75715e"># pull source from upstream</span>
+RUN hg clone -b Orthanc-<span style="color:#e6db74">${</span>ORTHANC_VERSION<span style="color:#e6db74">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc
+
+<span style="color:#75715e"># distcc</span>
+ARG JOBS<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+ARG DISTCC_HOSTS<span style="color:#f92672">=</span>localhost/4
+RUN echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DISTCC_HOSTS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; /etc/distcc/hosts
+ARG XXX<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+
+RUN mkdir OrthancBuild
+RUN cd OrthancBuild <span style="color:#f92672">&amp;&amp;</span> cmake -DALLOW_DOWNLOADS<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#75715e">#    -DSTATIC_BUILD=ON \</span>
+    -DCMAKE_CXX_COMPILER_LAUNCHER<span style="color:#f92672">=</span>distcc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DUSE_SYSTEM_CIVETWEB<span style="color:#f92672">=</span>OFF <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE<span style="color:#f92672">=</span>OFF <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DDCMTK_LIBRARIES<span style="color:#f92672">=</span>dcmjpls <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    ~/Orthanc
+
+RUN cd OrthancBuild <span style="color:#f92672">&amp;&amp;</span> make -j <span style="color:#e6db74">${</span>JOBS<span style="color:#e6db74">}</span>
+
+FROM debian:stable-slim
+
+<span style="color:#75715e"># locales</span>
+RUN apt-get update <span style="color:#f92672">&amp;&amp;</span> apt install -y locales wget
+RUN echo <span style="color:#e6db74">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen
+RUN locale-gen
+
+RUN mkdir -p <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    /etc/orthanc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    /var/lib/orthanc/db <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    /usr/local/sbin/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    /usr/local/bin/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    /usr/local/share/orthanc/plugins/
+
+COPY --from<span style="color:#f92672">=</span>builder /root/OrthancBuild/Orthanc /usr/local/sbin/
+COPY --from<span style="color:#f92672">=</span>builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/
+COPY --from<span style="color:#f92672">=</span>builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/
+
+VOLUME <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;/var/lib/orthanc/db&#34;</span> <span style="color:#f92672">]</span>
+EXPOSE <span style="color:#ae81ff">4242</span>
+EXPOSE <span style="color:#ae81ff">8042</span>
+
+ENTRYPOINT <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;Orthanc&#34;</span> <span style="color:#f92672">]</span>
+CMD <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;/etc/orthanc/&#34;</span> <span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span>
+ENV MALLOC_ARENA_MAX <span style="color:#ae81ff">5</span></code></pre></div>
+
+<h1 id="docker-build">Docker build</h1>
+
+<p>Build the image with</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . -t orthanc:latest</code></pre></div>
+
+<p>Above command takes around 6min (excluding the remote dependencies) to complete on my Macbook pro. Since I&rsquo;m expecting to build more regularly, I started to look around to speed up the process. I found the following options:</p>
+
+<ul>
+<li>Use a <a href="https://vsupalov.com/cache-docker-build-dependencies-without-volume-mounting/">different docker image as cache</a></li>
+<li>Use experimental <a href="https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md">RUN &ndash;mount</a></li>
+<li>Use <a href="https://ccache.dev/">ccache</a>, alone this has no advantage for docker builds because the cache directory is flushed for every build.</li>
+<li>Use <a href="https://distcc.github.io/">distcc</a> to offload some compilation operations to external host</li>
+<li>Finally I decided to combine <code>distcc</code> with local caching of <code>ccache</code>.</li>
+</ul>
+
+<p>The idea is not new. <a href="https://lastviking.eu/distcc_with_k8.html">First resource</a> I found was very useful to show distcc usage in kubernetes. However it wasn&rsquo;t enough as I didn&rsquo;t think the solution is very elegant. So then I found a <a href="https://wilsonhongblog.wordpress.com/2016/05/24/using-ccache-on-distcc-server/">second article</a> with cleaner solution on combining <code>distcc</code> with <code>ccache</code>.</p>
+
+<h1 id="cinaq-distcc">cinaq/distcc</h1>
+
+<p>As a result I have combined both articles into a simple to use distcc-ccache-kubernetes setup. It&rsquo;s documented at <a href="https://github.com/cinaq/distcc-docker">cinaq/distcc-docker</a>.</p>
+
+<p>With <a href="https://hub.docker.com/r/cinaq/distcc">cinaq/distcc</a> running in Kubernetes, we can now compile Orthanc 2 times as fast with:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . --build-arg DISTCC_HOSTS<span style="color:#f92672">=</span>distcc.dev/4 --build-arg JOBS<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> -t orthanc:latest</code></pre></div>
+
+<p>Here we pass 2 build arguments:</p>
+
+<ul>
+<li>DISTCC_HOSTS: distcc.dev/4 where <code>distcc.dev</code> is the hostname of our distcc (cluster)  and 4 is number of jobs to send</li>
+<li>JOBS: 4, denotes the total number of jobs <code>make</code> will run in parallel. We should be able to increase this more. We left this value the same for both test cases to confirm distcc and ccache do speed up the overal build process.</li>
+</ul>
+
+<p>We can observe the logs of <code>distcc</code> service:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl logs distcc-deployment-5d6fb547d7-z2rlv
+distccd<span style="color:#f92672">[</span><span style="color:#ae81ff">11</span><span style="color:#f92672">]</span> <span style="color:#f92672">(</span>dcc_job_summary<span style="color:#f92672">)</span> client: <span style="color:#ae81ff">10</span>.1.28.1:59075 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4342ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryCache.cpp
+distccd<span style="color:#f92672">[</span><span style="color:#ae81ff">10</span><span style="color:#f92672">]</span> <span style="color:#f92672">(</span>dcc_job_summary<span style="color:#f92672">)</span> client: <span style="color:#ae81ff">10</span>.1.28.1:59074 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:7109ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryObjectCache.cpp
+distccd<span style="color:#f92672">[</span><span style="color:#ae81ff">12</span><span style="color:#f92672">]</span> <span style="color:#f92672">(</span>dcc_job_summary<span style="color:#f92672">)</span> client: <span style="color:#ae81ff">10</span>.1.28.1:59090 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4178ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryStringCache.cpp
+...</code></pre></div>
+
+<p>And the cache being populated:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> kubectl exec -it distcc-deployment-5d6fb547d7-z2rlv sys -- /bin/ls -l /cache
+total <span style="color:#ae81ff">68</span>
+drwxr-xr-x <span style="color:#ae81ff">13</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">0</span>
+drwxr-xr-x <span style="color:#ae81ff">10</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:36 <span style="color:#ae81ff">1</span>
+drwxr-xr-x  <span style="color:#ae81ff">6</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:36 <span style="color:#ae81ff">2</span>
+drwxr-xr-x <span style="color:#ae81ff">10</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">3</span>
+drwxr-xr-x <span style="color:#ae81ff">11</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">4</span>
+drwxr-xr-x  <span style="color:#ae81ff">9</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:35 <span style="color:#ae81ff">5</span>
+drwxr-xr-x  <span style="color:#ae81ff">9</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:35 <span style="color:#ae81ff">6</span>
+drwxr-xr-x  <span style="color:#ae81ff">6</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">7</span>
+drwxr-xr-x <span style="color:#ae81ff">11</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">8</span>
+drwxr-xr-x <span style="color:#ae81ff">14</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 <span style="color:#ae81ff">9</span>
+drwxr-xr-x <span style="color:#ae81ff">13</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 a
+drwxr-xr-x <span style="color:#ae81ff">11</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 b
+drwxr-xr-x <span style="color:#ae81ff">13</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 c
+-rw-r--r--  <span style="color:#ae81ff">1</span> distcc distcc   <span style="color:#ae81ff">16</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:32 ccache.conf
+drwxr-xr-x <span style="color:#ae81ff">10</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 d
+drwxr-xr-x  <span style="color:#ae81ff">9</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:36 e
+drwxr-xr-x <span style="color:#ae81ff">11</span> distcc distcc <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">19</span>:37 f</code></pre></div></p>
+
+<p>The new build takes 3min to complete to build Orthanc from source.</p>
+
+<h1 id="conclusions">Conclusions</h1>
+
+<p>Honestly I was expecting much higher speed up. But 50% time reduction is very nice nonetheless. I really liked breathing new fresh life into mature tools like <code>distcc</code> and <code>ccache</code> in a modern stack.</p>
+
+<h1 id="future-work">Future work</h1>
+
+<ul>
+<li>Scale up number of pods running <code>distcc</code> could speed up the process further. Not sure how distcc will react because there would be multiple distcc instances behind a single LoadBalancer host.</li>
+<li>dive deeper into <code>distcc</code> for optimal parameters could also result in speed up.</li>
+<li>allow usage of <code>Persistent Volume</code> instead of <code>EmptyDir</code> so that caches are persisted longer than the pod lifetime.</li>
+<li>package this up into a <a href="https://helm.sh/docs/topics/charts/">helm chart</a>.</li>
+</ul>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cinaq" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://cinaq.com/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://cinaq.com/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-74177616-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
