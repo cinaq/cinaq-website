@@ -119,7 +119,7 @@ distccd[12] (dcc_job_summary) client: 10.1.28.1:59090 COMPILE_OK exit:0 sig:0 co
 
  And the cache being populated:
 {{< highlight bash >}}
- kubectl exec -it distcc-deployment-5d6fb547d7-z2rlv sys -- /bin/ls -l /cache
+ kubectl exec -it distcc-deployment-5d6fb547d7-z2rlv -- /bin/ls -l /cache
 total 68
 drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 0
 drwxr-xr-x 10 distcc distcc 4096 May 10 19:36 1
