@@ -65,17 +65,6 @@ First I will give my opinion on testing and methodology, followed by a demo case
     <item>
       <title>About</title>
       <link>https://cinaq.com/about/</link>
-      <pubDate>Wed, 12 Dec 2018 00:52:09 +0100</pubDate>
-      
-      <guid>https://cinaq.com/about/</guid>
-      <description>CINAQ is the brand name of Xiwen Cheng, a computer science graduate from Leiden University in the Netherlands. He is best described as a full-stack technical entrepreneur set out to change the world.
-He is available for the following services:
- Python/Java Development CI/CD pipeline plumbing  </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://cinaq.com/about/</link>
       <pubDate>Wed, 12 Dec 0001 00:52:09 +0100</pubDate>
       
       <guid>https://cinaq.com/about/</guid>
