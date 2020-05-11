@@ -198,13 +198,13 @@
   </url>
   
   <url>
-    <loc>https://cinaq.com/about/</loc>
+    <loc>https://cinaq.com/page/</loc>
     <lastmod>2018-12-12T00:52:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cinaq.com/page/</loc>
-    <lastmod>2018-12-12T00:52:09+01:00</lastmod>
+    <loc>https://cinaq.com/about/</loc>
+    <lastmod>0001-12-12T00:52:09+01:00</lastmod>
   </url>
   
 </urlset>
