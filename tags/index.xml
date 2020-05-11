@@ -1,14 +1,286 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on CINAQ - Xiwen Cheng</title>
+    <title>Tags on CINAQ</title>
     <link>https://cinaq.com/tags/</link>
-    <description>Recent content in Tags on CINAQ - Xiwen Cheng</description>
+    <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 10 May 2020 13:37:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cinaq.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ccache</title>
+      <link>https://cinaq.com/tags/ccache/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/ccache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cluster</title>
+      <link>https://cinaq.com/tags/cluster/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmake</title>
+      <link>https://cinaq.com/tags/cmake/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/cmake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link>https://cinaq.com/tags/debian/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distcc</title>
+      <link>https://cinaq.com/tags/distcc/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/distcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://cinaq.com/tags/docker/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://cinaq.com/tags/kubernetes/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://cinaq.com/tags/linux/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>make</title>
+      <link>https://cinaq.com/tags/make/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/make/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>orthanc</title>
+      <link>https://cinaq.com/tags/orthanc/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/orthanc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>speed</title>
+      <link>https://cinaq.com/tags/speed/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/speed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apple</title>
+      <link>https://cinaq.com/tags/apple/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apple watch</title>
+      <link>https://cinaq.com/tags/apple-watch/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/apple-watch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>https://cinaq.com/tags/mac/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>osx</title>
+      <link>https://cinaq.com/tags/osx/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://cinaq.com/tags/bash/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exec</title>
+      <link>https://cinaq.com/tags/exec/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/exec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>script</title>
+      <link>https://cinaq.com/tags/script/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://cinaq.com/tags/shell/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shellscript</title>
+      <link>https://cinaq.com/tags/shellscript/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/shellscript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>strace</title>
+      <link>https://cinaq.com/tags/strace/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/strace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AAA</title>
+      <link>https://cinaq.com/tags/aaa/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/aaa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flask</title>
+      <link>https://cinaq.com/tags/flask/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://cinaq.com/tags/python/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python-flask</title>
+      <link>https://cinaq.com/tags/python-flask/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/python-flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quality</title>
+      <link>https://cinaq.com/tags/quality/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/quality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rest</title>
+      <link>https://cinaq.com/tags/rest/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>https://cinaq.com/tags/tdd/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://cinaq.com/tags/testing/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tests</title>
+      <link>https://cinaq.com/tags/tests/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/tests/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

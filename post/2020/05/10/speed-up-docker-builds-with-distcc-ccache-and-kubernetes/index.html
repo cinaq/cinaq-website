@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Speed up docker builds with distcc, ccache and kubernetes - CINAQ</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Speed up docker builds with distcc, ccache and kubernetes">
+<meta itemprop="description" content="For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build Orthanc from source. The official docker-images are assembled based on pre-built binaries. So I could not use them.
+Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc from source. Looking through the compilation instructions and inspired by the official docker images I have assembled the following Dockerfile:">
+<meta itemprop="datePublished" content="2020-05-10T13:37:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-10T13:37:00&#43;00:00" />
+<meta itemprop="wordCount" content="824">
+
+
+
+<meta itemprop="keywords" content="docker,kubernetes,distcc,ccache,orthanc,speed,cmake,make,cluster,linux,debian," /><meta property="og:title" content="Speed up docker builds with distcc, ccache and kubernetes" />
+<meta property="og:description" content="For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build Orthanc from source. The official docker-images are assembled based on pre-built binaries. So I could not use them.
+Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc from source. Looking through the compilation instructions and inspired by the official docker images I have assembled the following Dockerfile:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cinaq.com/post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/" />
+<meta property="article:published_time" content="2020-05-10T13:37:00+00:00" />
+<meta property="article:modified_time" content="2020-05-10T13:37:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Speed up docker builds with distcc, ccache and kubernetes"/>
+<meta name="twitter:description" content="For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build Orthanc from source. The official docker-images are assembled based on pre-built binaries. So I could not use them.
+Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc from source. Looking through the compilation instructions and inspired by the official docker images I have assembled the following Dockerfile:"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cinaq.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cinaq.com/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://cinaq.com/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://cinaq.com/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://cinaq.com/">
+				<img src="/images/xiwen.png" alt="CINAQ" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://cinaq.com/">CINAQ</a></h1>
+	<div class="site-description"><p>Food for thought</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/xiwenc" title="Github"><i data-feather="github"></i></a></li><li><a href="http://nl.linkedin.com/in/xiwen" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://www.twitter.com/xiwenc" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">10</span>
+							<span class="rest">May 2020</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Speed up docker builds with distcc, ccache and kubernetes</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build <a href="https://wwww.orthanc-server.com">Orthanc</a> from source. The <a href="https://github.com/jodogne/OrthancDocker">official docker-images</a> are assembled based on pre-built binaries. So I could not use them.</p>
+<h1 id="orthanc-dockerfile">Orthanc Dockerfile</h1>
+<p>The first step is create a Dockerfile that compiles Orthanc from source. Looking through the <a href="https://bitbucket.org/sjodogne/orthanc/src/Orthanc-1.6.0/LinuxCompilation.txt">compilation instructions</a> and inspired by the official docker images I have assembled the following Dockerfile:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM debian:stable AS builder
+
+WORKDIR /root
+ENV ORTHANC_VERSION 1.6.0
+
+RUN apt update &amp;&amp; apt install -y build-essential unzip cmake mercurial <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    libgtest-dev libpng-dev libjpeg-dev <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc
+
+<span style="color:#008000"># pull source from upstream</span>
+RUN hg clone -b Orthanc-<span style="color:#a31515">${</span>ORTHANC_VERSION<span style="color:#a31515">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc
+
+<span style="color:#008000"># distcc</span>
+ARG JOBS=4
+ARG DISTCC_HOSTS=localhost/4
+RUN echo <span style="color:#a31515">&#34;</span><span style="color:#a31515">${</span>DISTCC_HOSTS<span style="color:#a31515">}</span><span style="color:#a31515">&#34;</span> &gt; /etc/distcc/hosts
+ARG XXX=1
+
+
+RUN mkdir OrthancBuild
+RUN cd OrthancBuild &amp;&amp; cmake -DALLOW_DOWNLOADS=ON <span style="color:#a31515">\
+</span><span style="color:#a31515"></span><span style="color:#008000">#    -DSTATIC_BUILD=ON \</span>
+    -DCMAKE_CXX_COMPILER_LAUNCHER=distcc <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    -DUSE_SYSTEM_CIVETWEB=OFF <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE=OFF <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    -DDCMTK_LIBRARIES=dcmjpls <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    -DCMAKE_BUILD_TYPE=Release <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    ~/Orthanc
+
+RUN cd OrthancBuild &amp;&amp; make -j <span style="color:#a31515">${</span>JOBS<span style="color:#a31515">}</span>
+
+FROM debian:stable-slim
+
+<span style="color:#008000"># locales</span>
+RUN apt-get update &amp;&amp; apt install -y locales wget
+RUN echo <span style="color:#a31515">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen
+RUN locale-gen
+
+RUN mkdir -p <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    /etc/orthanc <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    /var/lib/orthanc/db <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    /usr/local/sbin/ <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    /usr/local/bin/ <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    /usr/local/share/orthanc/plugins/
+
+COPY --from=builder /root/OrthancBuild/Orthanc /usr/local/sbin/
+COPY --from=builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/
+COPY --from=builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/
+
+VOLUME [ <span style="color:#a31515">&#34;/var/lib/orthanc/db&#34;</span> ]
+EXPOSE 4242
+EXPOSE 8042
+
+ENTRYPOINT [ <span style="color:#a31515">&#34;Orthanc&#34;</span> ]
+CMD [ <span style="color:#a31515">&#34;/etc/orthanc/&#34;</span> ]
+
+<span style="color:#008000"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span>
+ENV MALLOC_ARENA_MAX 5</code></pre></div>
+<h1 id="docker-build">Docker build</h1>
+<p>Build the image with</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . -t orthanc:latest</code></pre></div>
+<p>Above command takes around 6min (excluding the remote dependencies) to complete on my Macbook pro. Since I&rsquo;m expecting to build more regularly, I started to look around to speed up the process. I found the following options:</p>
+<ul>
+<li>Use a <a href="https://vsupalov.com/cache-docker-build-dependencies-without-volume-mounting/">different docker image as cache</a></li>
+<li>Use experimental <a href="https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md">RUN &ndash;mount</a></li>
+<li>Use <a href="https://ccache.dev/">ccache</a>, alone this has no advantage for docker builds because the cache directory is flushed for every build.</li>
+<li>Use <a href="https://distcc.github.io/">distcc</a> to offload some compilation operations to external host</li>
+<li>Finally I decided to combine <code>distcc</code> with local caching of <code>ccache</code>.</li>
+</ul>
+<p>The idea is not new. <a href="https://lastviking.eu/distcc_with_k8.html">First resource</a> I found was very useful to show distcc usage in kubernetes. However it wasn&rsquo;t enough as I didn&rsquo;t think the solution is very elegant. So then I found a <a href="https://wilsonhongblog.wordpress.com/2016/05/24/using-ccache-on-distcc-server/">second article</a> with cleaner solution on combining <code>distcc</code> with <code>ccache</code>.</p>
+<h1 id="cinaqdistcc">cinaq/distcc</h1>
+<p>As a result I have combined both articles into a simple to use distcc-ccache-kubernetes setup. It&rsquo;s documented at <a href="https://github.com/cinaq/distcc-docker">cinaq/distcc-docker</a>.</p>
+<p>With <a href="https://hub.docker.com/r/cinaq/distcc">cinaq/distcc</a> running in Kubernetes, we can now compile Orthanc 2 times as fast with:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . --build-arg DISTCC_HOSTS=distcc.dev/4 --build-arg JOBS=4 -t orthanc:latest</code></pre></div>
+<p>Here we pass 2 build arguments:</p>
+<ul>
+<li>DISTCC_HOSTS: distcc.dev/4 where <code>distcc.dev</code> is the hostname of our distcc (cluster)  and 4 is number of jobs to send</li>
+<li>JOBS: 4, denotes the total number of jobs <code>make</code> will run in parallel. We should be able to increase this more. We left this value the same for both test cases to confirm distcc and ccache do speed up the overal build process.</li>
+</ul>
+<p>We can observe the logs of <code>distcc</code> service:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl logs distcc-deployment-5d6fb547d7-z2rlv
+distccd[11] (dcc_job_summary) client: 10.1.28.1:59075 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4342ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryCache.cpp
+distccd[10] (dcc_job_summary) client: 10.1.28.1:59074 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:7109ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryObjectCache.cpp
+distccd[12] (dcc_job_summary) client: 10.1.28.1:59090 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4178ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryStringCache.cpp
+...</code></pre></div>
+<p>And the cache being populated:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> kubectl exec -it distcc-deployment-5d6fb547d7-z2rlv -- /bin/ls -l /cache
+total 68
+drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 0
+drwxr-xr-x 10 distcc distcc 4096 May 10 19:36 1
+drwxr-xr-x  6 distcc distcc 4096 May 10 19:36 2
+drwxr-xr-x 10 distcc distcc 4096 May 10 19:37 3
+drwxr-xr-x 11 distcc distcc 4096 May 10 19:37 4
+drwxr-xr-x  9 distcc distcc 4096 May 10 19:35 5
+drwxr-xr-x  9 distcc distcc 4096 May 10 19:35 6
+drwxr-xr-x  6 distcc distcc 4096 May 10 19:37 7
+drwxr-xr-x 11 distcc distcc 4096 May 10 19:37 8
+drwxr-xr-x 14 distcc distcc 4096 May 10 19:37 9
+drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 a
+drwxr-xr-x 11 distcc distcc 4096 May 10 19:37 b
+drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 c
+-rw-r--r--  1 distcc distcc   16 May 10 19:32 ccache.conf
+drwxr-xr-x 10 distcc distcc 4096 May 10 19:37 d
+drwxr-xr-x  9 distcc distcc 4096 May 10 19:36 e
+drwxr-xr-x 11 distcc distcc 4096 May 10 19:37 f</code></pre></div></p>
+<p>The new build takes 3min to complete to build Orthanc from source.</p>
+<h1 id="conclusions">Conclusions</h1>
+<p>Honestly I was expecting much higher speed up. But 50% time reduction is very nice nonetheless. I really liked breathing new fresh life into mature tools like <code>distcc</code> and <code>ccache</code> in a modern stack.</p>
+<h1 id="future-work">Future work</h1>
+<ul>
+<li>Scale up number of pods running <code>distcc</code> could speed up the process further. Not sure how distcc will react because there would be multiple distcc instances behind a single LoadBalancer host.</li>
+<li>dive deeper into <code>distcc</code> for optimal parameters could also result in speed up.</li>
+<li>allow usage of <code>Persistent Volume</code> instead of <code>EmptyDir</code> so that caches are persisted longer than the pod lifetime.</li>
+<li>package this up into a <a href="https://helm.sh/docs/topics/charts/">helm chart</a>.</li>
+</ul>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/docker">docker</a></li>
+							
+							<li><a href="/tags/kubernetes">kubernetes</a></li>
+							
+							<li><a href="/tags/distcc">distcc</a></li>
+							
+							<li><a href="/tags/ccache">ccache</a></li>
+							
+							<li><a href="/tags/orthanc">orthanc</a></li>
+							
+							<li><a href="/tags/speed">speed</a></li>
+							
+							<li><a href="/tags/cmake">cmake</a></li>
+							
+							<li><a href="/tags/make">make</a></li>
+							
+							<li><a href="/tags/cluster">cluster</a></li>
+							
+							<li><a href="/tags/linux">linux</a></li>
+							
+							<li><a href="/tags/debian">debian</a></li>
+							
+						</ul>
+					
+				
+			</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'cinaq';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the </a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2020  © Copyright notice |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-74177616-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

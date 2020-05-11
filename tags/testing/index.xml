@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing on CINAQ</title>
+    <link>https://cinaq.com/tags/testing/</link>
+    <description>Recent content in testing on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Sun, 05 May 2019 01:11:03 +0100</lastBuildDate>
+    
+	<atom:link href="https://cinaq.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simple high value tests with Python Flask</title>
+      <link>https://cinaq.com/post/2019/05/05/simple-high-value-tests-with-python-flask/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>https://cinaq.com/post/2019/05/05/simple-high-value-tests-with-python-flask/</guid>
+      <description>After 6 years developing Python Flask applications, mainly REST API&amp;rsquo;s, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!
+First I will give my opinion on testing and methodology, followed by a demo case to illustrate high value testing with actual code. Feel free to skip all the boring reading and head directly over to the code on Github.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shellscript on CINAQ</title>
+    <link>https://cinaq.com/tags/shellscript/</link>
+    <description>Recent content in shellscript on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Wed, 29 May 2019 00:13:37 +0100</lastBuildDate>
+    
+	<atom:link href="https://cinaq.com/tags/shellscript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debug shell script error: not found</title>
+      <link>https://cinaq.com/post/2019/05/29/debug-shell-script-error-not-found/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>https://cinaq.com/post/2019/05/29/debug-shell-script-error-not-found/</guid>
+      <description>Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like Ansible, Puppet, Salt, etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.
+$ ./main.sh ./main.sh: 3: exec: ./external.sh: not found $ ls -l -rwxr-xr-x 1 xiwen xiwen 33 May 29 01:25 external.</description>
+    </item>
+    
+  </channel>
+</rss>
