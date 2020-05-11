@@ -1,36 +1,79 @@
 baseurl = "https://cinaq.com/"
 languageCode = "en-us"
-title = "CINAQ - Xiwen Cheng"
-theme = "hugo-lithium-theme"
+title = "CINAQ"
 googleAnalytics = "UA-74177616-1"
 disqusShortname = "cinaq"
+theme = "hugo-ink"
+paginate = 5
 
-[permalinks]
-    post = "/:year/:month/:day/:title/"
-    page = "/:title/"
+copyright = "© Copyright notice"
 
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/xiwenc"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/xiwenc"
-[[menu.main]]
-    name = "Linkedin"
-    url = "http://nl.linkedin.com/in/xiwen"
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
 
 [params]
-    description = ""
+	author = "Xiwen Cheng"
+	subtitle = "Food for thought"
 
-    [params.logo]
-    url = "xiwen.png"
-    width = 50
-    height = 50
-    alt = "Xiwen Cheng"
+	# Optional 64x64 avatar image.
+	avatar = "/images/xiwen.png"
 
-    [params.icon]
-    url = "favicon.ico"
+	# Content types to disable Disqus on.
+	disableDisqusTypes = ["page"]
+	
+	featherIconsCDN = true
 
+	mode = "auto" # "dark" or "auto"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/post"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/xiwenc"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "http://nl.linkedin.com/in/xiwen"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://www.twitter.com/xiwenc"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:title/"
+    page = "/:title/"

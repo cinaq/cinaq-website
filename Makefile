@@ -7,7 +7,9 @@ ifeq ($(OS),Linux)
 	OS_NAME := Linux
 endif
 
-HUGO_URL := https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_0.52_$(OS_NAME)-64bit.tar.gz
+HUGO_VERSION := 0.70.0
+
+HUGO_URL := https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hugo_$(HUGO_VERSION)_$(OS_NAME)-64bit.tar.gz
 PLANTUML_URL := https://kent.dl.sourceforge.net/project/plantuml/1.2019.5/plantuml.1.2019.5.jar
 PLANTUML := java -jar tools/plantuml.jar
 

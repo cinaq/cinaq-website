@@ -4,10 +4,12 @@ date: 2018-12-12T00:52:09+01:00
 draft: false
 ---
 
-CINAQ is the brand name of Xiwen Cheng, a computer science graduate from Leiden University in the Netherlands. He is best described as a full-stack technical entrepreneur set out to change the world.
+CINAQ is registered in the [Dutch Chamber of Commerce](https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=668736060000). We specialize in Internet Technologies. In particular the following fields of interest:
 
-He is available for the following services:
+* Software development with Python, Java, Javascript and more
+* DevOps and SRE culture
+* Security, Micro-services and Cloud Native engineering practices
+* Agile Product development
 
-- Python/Java Development
-- CI/CD pipeline plumbing
+Our core believe is "A product is never done". We strive to make a difference today while looking forward to the future.
 

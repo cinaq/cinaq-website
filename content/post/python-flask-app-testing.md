@@ -2,9 +2,8 @@
 title: "Simple high value tests with Python Flask"
 date: 2019-05-05T01:11:03+01:00
 draft: false
+tags: ["python", "flask", "python-flask", "testing", "tests", "rest", "AAA", "quality", "TDD"]
 ---
-
-# Introduction
 
 After 6 years developing [Python Flask](http://flask.pocoo.org) applications, mainly REST API's, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!
 
@@ -105,7 +104,7 @@ if __name__ == "__main__":
 
 Test cases are often located in the `tests` directory. Each test case is implemented as a TestCase class. The below class diagram depicts the high level composition of such a TestCase. 
 
-{{< figure src="/media/diagrams/python-flask-app-testing-overview.png" title="TestCase class diagram" >}}
+![TestCase class diagram](/media/diagrams/python-flask-app-testing-overview.png)
 
 Our test suite contains 4 test cases grouped in 2 files. The test cases are all implemented according to the AAA principle.
 

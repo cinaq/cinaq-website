@@ -2,6 +2,8 @@
 title: "Speed up docker builds with distcc, ccache and kubernetes"
 date: 2020-05-10T13:37:00+00:00
 draft: false
+tags: ["docker", "kubernetes", "distcc", "ccache", "orthanc", "speed", "cmake", "make", "cluster", "linux", "debian"]
+
 ---
 
 For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build [Orthanc](https://wwww.orthanc-server.com) from source. The [official docker-images](https://github.com/jodogne/OrthancDocker) are assembled based on pre-built binaries. So I could not use them.
