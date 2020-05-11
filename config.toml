@@ -6,7 +6,7 @@ disqusShortname = "cinaq"
 theme = "hugo-ink"
 paginate = 5
 
-copyright = "© Copyright notice"
+copyright = "Copy responsibly; give credit"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
@@ -42,14 +42,19 @@ url = "/post"
 weight = 2
 
 [[menu.main]]
+name = "Photography"
+url = "/photography"
+weight = 3
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 3
+weight = 4
 
 [[menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 4
+weight = 5
 
 [[params.social]]
 name = "Github"
