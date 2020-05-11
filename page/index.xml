@@ -6,7 +6,7 @@
     <description>Recent content in Pages on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Copyright notice</copyright>
+    <copyright>Copy responsibly; give credit</copyright>
     <lastBuildDate>Wed, 12 Dec 0001 00:52:09 +0100</lastBuildDate>
     
 	<atom:link href="https://cinaq.com/page/index.xml" rel="self" type="application/rss+xml" />
@@ -20,6 +20,21 @@
       <guid>https://cinaq.com/about/</guid>
       <description>CINAQ is registered in the Dutch Chamber of Commerce. We specialize in Internet Technologies. In particular the following fields of interest:
  Software development with Python, Java, Javascript and more DevOps and SRE culture Security, Micro-services and Cloud Native engineering practices Agile Product development  Our core believe is &amp;ldquo;A product is never done&amp;rdquo;. We strive to make a difference today while looking forward to the future.</description>
+    </item>
+    
+    <item>
+      <title>Photography</title>
+      <link>https://cinaq.com/photography/</link>
+      <pubDate>Wed, 12 Dec 0001 00:52:09 +0100</pubDate>
+      
+      <guid>https://cinaq.com/photography/</guid>
+      <description>A picture is worth a thousand words.
+   2017 italy ravenna beach
+      2018 spain madrid royal palace
+      2018 usa new york world trade center
+      2019 england london hyde park
+      2019 france provence flower
+      2019 france provence lavender fields</description>
     </item>
     
   </channel>
