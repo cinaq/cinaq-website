@@ -12,5 +12,5 @@ CINAQ is registered in the [Dutch Chamber of Commerce](https://www.kvk.nl/orders
 * Security, Micro-services and Cloud Native engineering practices
 * Agile Product development
 
-Our core believe is "A product is never done". We strive to make a difference today while looking forward to the future.
+Our core belief is "A product is never done". We strive to make a difference today while looking forward to the future.
 
