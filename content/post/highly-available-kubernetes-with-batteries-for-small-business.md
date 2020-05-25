@@ -8,13 +8,11 @@ tags: ["k8s", "kubernetes", "ha", "highly-available", "prometheus", "grafana", "
 
 Kindie (**K**ubernetes **Indi**vidual) is an opinionated Kubernetes cluster setup for individuals or small business. Batteries included so that you can hit the ground running and add production workload in no time.
 
-Target audience
-==
+# Target audience
 
 Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes experience looking to build a [Kubernetes](https://kubernetes.io/) cluster for production usage with bells and whistles focussed on web workloads. You should be able to have the cluster ready in a few hours. If you don't understand some of the information here, please comment below or research it on the internet. This guide is not meant for complete beginners but we try to keep it as accessible as possible without going into too much details.
 
-Features
-==
+# Features
 
 * Highly available (where possible)
 * Ingress with [LetsEncrypt](https://letsencrypt.org/)
@@ -22,13 +20,12 @@ Features
 * Cluster that scales
 * Monitoring with [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/) and [Loki](https://grafana.com/oss/loki/)
 
-Disclaimer
-==
+# Disclaimer
+
 
 Feel free to change the setup as you wish but you're on your own. Eventhough we claim this is production ready for ourselves, it might not be for you. So adjust and test this setup further until you are satisfied. We deliberately use `root` user instead of `sudo` to save time. And because we know what we are doing (most of the time).
 
-Hardware specifications
-==
+# Hardware specifications
 
 ![Small business Kubernetes cluster](/media/wooden-rack.png)
 
@@ -39,13 +36,11 @@ Hardware specifications
 * access to manage a domain (example.dev)
 * [Ubuntu server 20.04 ISO](https://releases.ubuntu.com/20.04/ubuntu-20.04-live-server-amd64.iso) downloaded and on USB stick to install the NUC's
 
-Architecture
-==
+# Architecture
 
 To give you a birds-eye view of what you're about to build.
 
-Network
-===
+## Network
 
 ![Network](/media/architecture-Network.png)
 
@@ -60,15 +55,13 @@ The core router serves the internal network `10.0.0.0/16`. This is inline with d
 
 There's also an optional UPS supporting the core of the system: router + synology. Synology also exposes the NFS so that nodes can use it as central storage.
 
-Kubernetes
-===
+## Kubernetes
 
 ![Kubernetes](/media/architecture-Kubernetes.png)
 
 Above merely shows that there are 3 master nodes and N worker nodes where N is larger or equal to zero. Each node will run an ingress controller for HA. In this setup we untaint the master nodes so that regular workloads can be scheduled on them; therefore treat them like worker nodes.
 
-Namespaces
-===
+## Namespaces
 
 ![Namespaces](/media/architecture-Namespaces.png)
 
@@ -77,8 +70,7 @@ The batteries included are split up in 2 namespaces:
 * monitoring: everything related to monitoring
 
 
-Preparations
-==
+# Preparations
 
 * Configure router to have as internal network: `10.0.0.0/16` and create the port forward rules as described in the Network Architecture diagram.
 * Create a DNS record of type A: `cluster-endpoint.sys.example.dev` => `10.0.1.0`
@@ -97,13 +89,12 @@ Preparations
 * install all your other physical/dedicated nodes as above (obviously use 10.0.1.2/16 for node2, 10.0.1.3/16 for node3, etc...)
 
 
-Kubernetes Cluster
-==
+# Kubernetes Cluster
+
 
 At this point you have 3 nodes running: node1, node2 and node3. Because the first 3 nodes are master nodes, we will prepare them all with `keepalived` and `kubeadm`. For each node login over SSH to it using the `ops` username and password you used during installation. After you login switch to `root` user with `sudo su` and enter your password again.
 
-Keepalived
-===
+## Keepalived
 ```
 apt install -y keepalived
 ```
@@ -137,13 +128,12 @@ systemctl start keepalived
 
 We use the same `keepalived.conf` for all master nodes so that the active master is randomly selected. Feel free to adjust the priority if desired to influence the preference.
 
-Kubernetes
-===
+## Kubernetes
 
 We will use the [official installation guide](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) to install Kubernetes:
 
-Runtime
-====
+### Runtime
+
 ```bash
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
@@ -173,8 +163,7 @@ containerd config default > /etc/containerd/config.toml
 systemctl restart containerd
 ```
 
-Kubeadm, kubelet, kubectl
-====
+### Kubeadm, kubelet, kubectl
 
 ```bash
 apt-get update && apt-get install -y apt-transport-https curl
@@ -187,8 +176,7 @@ apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 ```
 
-nfs utils
-====
+### nfs utils
 
 Because we want to be able to mount NFS shares as PVC.
 
@@ -196,8 +184,8 @@ Because we want to be able to mount NFS shares as PVC.
 apt install -y nfs-common
 ```
 
-node1
-===
+## node1
+
 
 To install our first master node on `node1`, we first turn off keepalived on `node2` and `node3`:
 
@@ -255,8 +243,7 @@ kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX \
     --discovery-token-ca-cert-hash sha256:XXXX
 ```
 
-node2 and node3
-===
+## node2 and node3
 
 To install node2 and node3, login to the node as `ops` and switch to `root` then execute:
 
@@ -267,8 +254,7 @@ To install node2 and node3, login to the node as `ops` and switch to `root` then
 ```
 (Obviously, replace the values)
 
-Confirm nodes
-===
+## Confirm nodes
 
 On `node1` as `root` execute:
 
@@ -291,8 +277,7 @@ Let's untaint the master nodes:
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
 
-CNI (network)
-===
+## CNI (network)
 
 If you do `kubectl get pods -A` you will see `coredns` is not starting up correctly:
 
@@ -318,8 +303,7 @@ kube-system   coredns-66bff467f8-2bqht                   1/1     Running   0    
 kube-system   coredns-66bff467f8-l7pbt                   1/1     Running   0          13m
  ```
 
- Smoke test
- ===
+## Smoke test
 
  To smoke test we can run a job:
 
@@ -334,8 +318,7 @@ pod "busybox" deleted
 
  If you do not get output of `ps` something is broken.
 
-Highly available test
-===
+## Highly available test
 
 So now we have 3 master nodes running in our cluster. We can test the high availability of the API server. To do that first we need to bring up `keepalived` on `node2` and `node3`:
 
@@ -360,20 +343,18 @@ node3   Ready    master   5h46m   v1.18.3
 Now if you reboot `node1`, the master IP is automatically taken over by another node. Therefore `kubectl` commands still work while `node1` is being rebooted. As an excercise, find which failover node has the master IP.
 
 
-Batteries
-==
+# Batteries
 
 Now that we have a kubernetes cluster running with 3 masters and a Highly available endpoint for the API server we can continue to setup the services. From now on you can interact with the Kubernetes cluster from your local machine.
 
-Namespace: sys
-===
+## Namespace: sys
 
 ```bash
 kubectl create namespace sys
 ```
 
-Metal LB
-====
+### Metal LB
+
 ```bash
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 helm repo update
@@ -398,8 +379,7 @@ helm install metallb stable/metallb --namespace sys
 
 See the [metallb helm chart](https://github.com/helm/charts/tree/master/stable/metallb) for full configuration options.
 
-Nginx-ingress
-====
+### Nginx-ingress
 ```bash
 
 cat > nginx-ingress-values.yaml <<EOF
@@ -430,7 +410,8 @@ helm install nginx-ingress stable/nginx-ingress --namespace sys -f nginx-ingress
 See the [nginx-ingress helm chart](https://github.com/helm/charts/tree/master/stable/nginx-ingress) for full configuration options.
 
 
-Cert-manager (Letsencrypt)
+### Cert-manager (Letsencrypt)
+
 ```bash
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
@@ -462,23 +443,22 @@ kubectl create -f issuer_letsencrypt.yaml
 ```
 See the [cert-manager helm chart](charts.jetstack.io) for full configuration options.
 
-NFS client provisioner
-====
+### NFS client provisioner
+
 ```bash
 helm install nfs-storage stable/nfs-client-provisioner --namespace sys --set nfs.server=10.0.0.2 --set nfs.path=/volume1/kubernetes
 kubectl patch storageclass nfs-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}
 ```
 See the [nfs-server-provisioner helm chart](https://github.com/helm/charts/tree/master/stable/nfs-server-provisioner) for full configuration options.
 
-Namespace: monitoring
-===
+## Namespace: monitoring
 
 ```bash
 kubectl create namespace monitoring
 ```
 
-Prometheus
-====
+### Prometheus
+
 ```bash
 cat > prometheus-values.yaml <<EOF
 alertmanager:
@@ -494,8 +474,8 @@ helm install prometheus stable/prometheus -n monitoring -f prometheus-values.yam
 ```
 See the [prometheus helm chart](https://github.com/helm/charts/tree/master/stable/prometheus) for full configuration options.
 
-Loki
-====
+### Loki
+
 ```bash
 helm repo add loki https://grafana.github.io/loki/charts
 helm repo update
@@ -505,8 +485,8 @@ helm install loki loki/loki-stack -n monitoring
 See the [loki-stack helm chart](https://grafana.github.io/loki/charts) for full configuration options.
 
 
-Grafana
-====
+### Grafana
+
 ```bash
 cat > grafana-values.yaml <<EOF
 persistence:
@@ -564,8 +544,7 @@ Then import the dashboards:
 * https://grafana.com/grafana/dashboards/8685
 * https://grafana.com/grafana/dashboards/9614
 
-Results
-==
+# Results
 
 Your deployment is now complete. It should look like:
 
@@ -633,7 +612,6 @@ sys           nginx-ingress-default-backend-5c667c8479-zhnl8       1/1     Runni
 
 [![Grafana Nginx-Ingress Controller](/media/grafana-nginx-ingress.png)](/media/grafana-nginx-ingress.png)
 
-Conclusions
-==
+# Conclusions
 
 This setup is not truly highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC's, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.
