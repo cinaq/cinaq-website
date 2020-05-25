@@ -117,7 +117,7 @@ Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes exper
 </ul>
 <h1 id="architecture">Architecture</h1>
 <p>To give you a birds-eye view of what you&rsquo;re about to build.</p>
-<h1 id="network">Network</h1>
+<h2 id="network">Network</h2>
 <p><img src="/media/architecture-Network.png" alt="Network"></p>
 <p>The core router serves the internal network <code>10.0.0.0/16</code>. This is inline with default networks in public cloud services like <a href="https://aws.amazon.com/vpc/">AWS VPC&rsquo;s</a>. There&rsquo;s plenty of room to expand your cluster and you will probably never use all the allocatable addresses here anyway. Of this range we have the following static addresses:</p>
 <ul>
@@ -130,10 +130,10 @@ Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes exper
 <li>10.0.200.0-10.0.200.255 =&gt; range reserved for internal loadbalancers (Metal LB)</li>
 </ul>
 <p>There&rsquo;s also an optional UPS supporting the core of the system: router + synology. Synology also exposes the NFS so that nodes can use it as central storage.</p>
-<h1 id="kubernetes">Kubernetes</h1>
+<h2 id="kubernetes">Kubernetes</h2>
 <p><img src="/media/architecture-Kubernetes.png" alt="Kubernetes"></p>
 <p>Above merely shows that there are 3 master nodes and N worker nodes where N is larger or equal to zero. Each node will run an ingress controller for HA. In this setup we untaint the master nodes so that regular workloads can be scheduled on them; therefore treat them like worker nodes.</p>
-<h1 id="namespaces">Namespaces</h1>
+<h2 id="namespaces">Namespaces</h2>
 <p><img src="/media/architecture-Namespaces.png" alt="Namespaces"></p>
 <p>The batteries included are split up in 2 namespaces:</p>
 <ul>
@@ -163,7 +163,7 @@ Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes exper
 </ul>
 <h1 id="kubernetes-cluster">Kubernetes Cluster</h1>
 <p>At this point you have 3 nodes running: node1, node2 and node3. Because the first 3 nodes are master nodes, we will prepare them all with <code>keepalived</code> and <code>kubeadm</code>. For each node login over SSH to it using the <code>ops</code> username and password you used during installation. After you login switch to <code>root</code> user with <code>sudo su</code> and enter your password again.</p>
-<h1 id="keepalived">Keepalived</h1>
+<h2 id="keepalived">Keepalived</h2>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">apt install -y keepalived
 </code></pre></div><p>Create a file <code>/etc/keepalived/keepalived.conf</code> with the content:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">vrrp_instance VI_1 {
@@ -186,9 +186,9 @@ Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes exper
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">systemctl enable keepalived
 systemctl start keepalived
 </code></pre></div><p>We use the same <code>keepalived.conf</code> for all master nodes so that the active master is randomly selected. Feel free to adjust the priority if desired to influence the preference.</p>
-<h1 id="kubernetes-1">Kubernetes</h1>
+<h2 id="kubernetes-1">Kubernetes</h2>
 <p>We will use the <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">official installation guide</a> to install Kubernetes:</p>
-<h1 id="runtime">Runtime</h1>
+<h3 id="runtime">Runtime</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; /etc/modules-load.d/containerd.conf <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">overlay
 </span><span style="color:#a31515">br_netfilter
@@ -215,7 +215,7 @@ apt-get update &amp;&amp; apt-get install -y containerd.io
 mkdir -p /etc/containerd
 containerd config default &gt; /etc/containerd/config.toml
 systemctl restart containerd
-</code></pre></div><h1 id="kubeadm-kubelet-kubectl">Kubeadm, kubelet, kubectl</h1>
+</code></pre></div><h3 id="kubeadm-kubelet-kubectl">Kubeadm, kubelet, kubectl</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update &amp;&amp; apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg |  apt-key add -
 cat <span style="color:#a31515">&lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -224,10 +224,10 @@ cat <span style="color:#a31515">&lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/k
 apt-get update
 apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
-</code></pre></div><h1 id="nfs-utils">nfs utils</h1>
+</code></pre></div><h3 id="nfs-utils">nfs utils</h3>
 <p>Because we want to be able to mount NFS shares as PVC.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -y nfs-common
-</code></pre></div><h1 id="node1">node1</h1>
+</code></pre></div><h2 id="node1">node1</h2>
 <p>To install our first master node on <code>node1</code>, we first turn off keepalived on <code>node2</code> and <code>node3</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ops@10.0.1.2 <span style="color:#a31515">&#39;systemctl stop keepalived&#39;</span>
 ssh ops@10.0.1.3 <span style="color:#a31515">&#39;systemctl stop keepalived&#39;</span>
@@ -266,13 +266,13 @@ Then you can join any number of worker nodes by running the following on each as
 
 kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span style="color:#a31515">\
 </span><span style="color:#a31515"></span>    --discovery-token-ca-cert-hash sha256:XXXX
-</code></pre></div><h1 id="node2-and-node3">node2 and node3</h1>
+</code></pre></div><h2 id="node2-and-node3">node2 and node3</h2>
 <p>To install node2 and node3, login to the node as <code>ops</code> and switch to <code>root</code> then execute:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">  kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX \
     --discovery-token-ca-cert-hash sha256:XXXX \
     --control-plane --certificate-key XXXX
 </code></pre></div><p>(Obviously, replace the values)</p>
-<h1 id="confirm-nodes">Confirm nodes</h1>
+<h2 id="confirm-nodes">Confirm nodes</h2>
 <p>On <code>node1</code> as <code>root</code> execute:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export KUBECONFIG=/etc/kubernetes/admin.conf
 kubectl get nodes
@@ -283,7 +283,7 @@ node2   Ready    master   3d2h    v1.18.3
 node3   Ready    master   5h46m   v1.18.3
 </code></pre></div><p>Let&rsquo;s untaint the master nodes:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl taint nodes --all node-role.kubernetes.io/master-
-</code></pre></div><h1 id="cni-network">CNI (network)</h1>
+</code></pre></div><h2 id="cni-network">CNI (network)</h2>
 <p>If you do <code>kubectl get pods -A</code> you will see <code>coredns</code> is not starting up correctly:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@node1:/home/ops# kubectl get pods -A
 NAMESPACE     NAME                            READY   STATUS    RESTARTS   AGE
@@ -299,7 +299,7 @@ kube-system   calico-kube-controllers-789f6df884-b8tsg   1/1     Running   0    
 kube-system   calico-node-9fgqj                          1/1     Running   0          4m59s
 kube-system   coredns-66bff467f8-2bqht                   1/1     Running   0          13m
 kube-system   coredns-66bff467f8-l7pbt                   1/1     Running   0          13m
-</code></pre></div><h1 id="smoke-test">Smoke test</h1>
+</code></pre></div><h2 id="smoke-test">Smoke test</h2>
 <p>To smoke test we can run a job:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">root@node1:/home/ops# kubectl run --rm=true -i --tty busybox --image=busybox --restart=Never -- ps
 If you don&#39;t see a command prompt, try pressing enter.
@@ -308,7 +308,7 @@ PID   USER     TIME  COMMAND
    1 root      0:00 ps
 pod &#34;busybox&#34; deleted
 </code></pre></div><p>If you do not get output of <code>ps</code> something is broken.</p>
-<h1 id="highly-available-test">Highly available test</h1>
+<h2 id="highly-available-test">Highly available test</h2>
 <p>So now we have 3 master nodes running in our cluster. We can test the high availability of the API server. To do that first we need to bring up <code>keepalived</code> on <code>node2</code> and <code>node3</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ops@10.0.1.2 <span style="color:#a31515">&#39;systemctl start keepalived&#39;</span>
 ssh ops@10.0.1.3 <span style="color:#a31515">&#39;systemctl start keepalived&#39;</span>
@@ -323,9 +323,9 @@ node3   Ready    master   5h46m   v1.18.3
 </code></pre></div><p>Now if you reboot <code>node1</code>, the master IP is automatically taken over by another node. Therefore <code>kubectl</code> commands still work while <code>node1</code> is being rebooted. As an excercise, find which failover node has the master IP.</p>
 <h1 id="batteries">Batteries</h1>
 <p>Now that we have a kubernetes cluster running with 3 masters and a Highly available endpoint for the API server we can continue to setup the services. From now on you can interact with the Kubernetes cluster from your local machine.</p>
-<h1 id="namespace-sys">Namespace: sys</h1>
+<h2 id="namespace-sys">Namespace: sys</h2>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace sys
-</code></pre></div><h1 id="metal-lb">Metal LB</h1>
+</code></pre></div><h3 id="metal-lb">Metal LB</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 helm repo update
 
@@ -346,7 +346,7 @@ cat &gt; metallb-config.yaml <span style="color:#a31515">&lt;&lt;EOF
 kubectl apply -f metallb-config.yaml
 helm install metallb stable/metallb --namespace sys
 </code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/metallb">metallb helm chart</a> for full configuration options.</p>
-<h1 id="nginx-ingress">Nginx-ingress</h1>
+<h3 id="nginx-ingress">Nginx-ingress</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 cat &gt; nginx-ingress-values.yaml <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">controller:
@@ -373,7 +373,7 @@ cat &gt; nginx-ingress-values.yaml <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">EOF</span>
 helm install nginx-ingress stable/nginx-ingress --namespace sys -f nginx-ingress-values.yaml
 </code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/nginx-ingress">nginx-ingress helm chart</a> for full configuration options.</p>
-<p>Cert-manager (Letsencrypt)</p>
+<h3 id="cert-manager-letsencrypt">Cert-manager (Letsencrypt)</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add jetstack https://charts.jetstack.io
 helm repo update
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.crds.yaml
@@ -402,13 +402,13 @@ cat &gt; issuer_letsencrypt.yaml <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">EOF</span>
 kubectl create -f issuer_letsencrypt.yaml
 </code></pre></div><p>See the <a href="charts.jetstack.io">cert-manager helm chart</a> for full configuration options.</p>
-<h1 id="nfs-client-provisioner">NFS client provisioner</h1>
+<h3 id="nfs-client-provisioner">NFS client provisioner</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm install nfs-storage stable/nfs-client-provisioner --namespace sys --set nfs.server=10.0.0.2 --set nfs.path=/volume1/kubernetes
 kubectl patch storageclass nfs-client -p <span style="">&#39;</span>{<span style="color:#a31515">&#34;metadata&#34;</span>: {<span style="color:#a31515">&#34;annotations&#34;</span>:{<span style="color:#a31515">&#34;storageclass.kubernetes.io/is-default-class&#34;</span>:<span style="color:#a31515">&#34;true&#34;</span>}}
 </code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/nfs-server-provisioner">nfs-server-provisioner helm chart</a> for full configuration options.</p>
-<h1 id="namespace-monitoring">Namespace: monitoring</h1>
+<h2 id="namespace-monitoring">Namespace: monitoring</h2>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create namespace monitoring
-</code></pre></div><h1 id="prometheus">Prometheus</h1>
+</code></pre></div><h3 id="prometheus">Prometheus</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; prometheus-values.yaml <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">alertmanager:
 </span><span style="color:#a31515">  replicaCount: 2
@@ -421,13 +421,13 @@ kubectl patch storageclass nfs-client -p <span style="">&#39;</span>{<span style
 </span><span style="color:#a31515">EOF</span>
 helm install prometheus stable/prometheus -n monitoring -f prometheus-values.yaml
 </code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/prometheus">prometheus helm chart</a> for full configuration options.</p>
-<h1 id="loki">Loki</h1>
+<h3 id="loki">Loki</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add loki https://grafana.github.io/loki/charts
 helm repo update
 
 helm install loki loki/loki-stack -n monitoring
 </code></pre></div><p>See the <a href="https://grafana.github.io/loki/charts">loki-stack helm chart</a> for full configuration options.</p>
-<h1 id="grafana">Grafana</h1>
+<h3 id="grafana">Grafana</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat &gt; grafana-values.yaml <span style="color:#a31515">&lt;&lt;EOF
 </span><span style="color:#a31515">persistence:
 </span><span style="color:#a31515">  enabled: true
