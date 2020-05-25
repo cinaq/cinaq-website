@@ -7,10 +7,109 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copy responsibly; give credit</copyright>
-    <lastBuildDate>Sun, 10 May 2020 13:37:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 13:37:00 +0100</lastBuildDate>
     
 	<atom:link href="https://cinaq.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>grafana</title>
+      <link>https://cinaq.com/tags/grafana/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ha</title>
+      <link>https://cinaq.com/tags/ha/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/ha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>highly-available</title>
+      <link>https://cinaq.com/tags/highly-available/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/highly-available/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://cinaq.com/tags/k8s/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kindie</title>
+      <link>https://cinaq.com/tags/kindie/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/kindie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://cinaq.com/tags/kubernetes/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>letsencrypt</title>
+      <link>https://cinaq.com/tags/letsencrypt/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/letsencrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>loki</title>
+      <link>https://cinaq.com/tags/loki/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/loki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metal-lb</title>
+      <link>https://cinaq.com/tags/metal-lb/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/metal-lb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx-ingress</title>
+      <link>https://cinaq.com/tags/nginx-ingress/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/nginx-ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prometheus</title>
+      <link>https://cinaq.com/tags/prometheus/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>https://cinaq.com/tags/prometheus/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ccache</title>
@@ -63,15 +162,6 @@
       <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
       
       <guid>https://cinaq.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://cinaq.com/tags/kubernetes/</link>
-      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
-      
-      <guid>https://cinaq.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
