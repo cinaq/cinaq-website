@@ -636,4 +636,4 @@ sys           nginx-ingress-default-backend-5c667c8479-zhnl8       1/1     Runni
 Conclusions
 ==
 
-This setup is not trully highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC's, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.
+This setup is not truly highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC's, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.
