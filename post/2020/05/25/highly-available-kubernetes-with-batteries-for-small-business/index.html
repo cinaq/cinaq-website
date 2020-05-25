@@ -536,10 +536,10 @@ sys           nginx-ingress-controller-kk6sn                       1/1     Runni
 sys           nginx-ingress-controller-s4ndr                       1/1     Running   1          3h57m   192.168.135.32    node3   &lt;none&gt;           &lt;none&gt;
 sys           nginx-ingress-default-backend-5c667c8479-hn769       1/1     Running   1          5h24m   192.168.135.29    node3   &lt;none&gt;           &lt;none&gt;
 sys           nginx-ingress-default-backend-5c667c8479-zhnl8       1/1     Running   0          4h53m   192.168.166.154   node1   &lt;none&gt;           &lt;none&gt;
-</code></pre></div><p><img src="/media/grafana-k8s-summary.png" alt="Grafana K8s Cluster summary"></p>
-<p><img src="/media/grafana-nginx-ingress.png" alt="Grafana Nginx-Ingress Controller"></p>
+</code></pre></div><p><a href="/media/grafana-k8s-summary.png"><img src="/media/grafana-k8s-summary.png" alt="Grafana K8s Cluster summary"></a></p>
+<p><a href="/media/grafana-nginx-ingress.png"><img src="/media/grafana-nginx-ingress.png" alt="Grafana Nginx-Ingress Controller"></a></p>
 <h1 id="conclusions">Conclusions</h1>
-<p>This setup is not trully highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC&rsquo;s, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.</p>
+<p>This setup is not truly highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC&rsquo;s, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.</p>
 
 			</div>
 
