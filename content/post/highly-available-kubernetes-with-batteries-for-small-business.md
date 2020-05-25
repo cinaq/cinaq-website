@@ -629,9 +629,9 @@ sys           nginx-ingress-default-backend-5c667c8479-hn769       1/1     Runni
 sys           nginx-ingress-default-backend-5c667c8479-zhnl8       1/1     Running   0          4h53m   192.168.166.154   node1   <none>           <none>
 ```
 
-![Grafana K8s Cluster summary](/media/grafana-k8s-summary.png)
+[![Grafana K8s Cluster summary](/media/grafana-k8s-summary.png)](/media/grafana-k8s-summary.png)
 
-![Grafana Nginx-Ingress Controller](/media/grafana-nginx-ingress.png)
+[![Grafana Nginx-Ingress Controller](/media/grafana-nginx-ingress.png)](/media/grafana-nginx-ingress.png)
 
 Conclusions
 ==
