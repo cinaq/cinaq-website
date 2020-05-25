@@ -20,7 +20,7 @@ Features
 * Ingress with [LetsEncrypt](https://letsencrypt.org/)
 * NFS central storage
 * Cluster that scales
-* Monitoring with [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/) and [Loki](https://grafana.com/oss/loki/
+* Monitoring with [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/) and [Loki](https://grafana.com/oss/loki/)
 
 Disclaimer
 ==
