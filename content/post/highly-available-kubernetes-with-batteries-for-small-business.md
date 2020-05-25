@@ -2,7 +2,7 @@
 title: "Highly available Kubernetes with batteries for small business"
 date: 2020-05-25T13:37:00+01:00
 draft: false
-tags: ["k8s", "kubernetes", "ha", "highly-available", "prometheus", "grafana", "loki", "nginx-ingress", "metal-lb", "kindie", "letsencrypt"]
+tags: ["k8s", "kubernetes", "ha", "highly-available", "prometheus", "grafana", "loki", "nginx-ingress", "metal-lb", "kindie", "letsencrypt", "keepalived"]
 ---
 
 
