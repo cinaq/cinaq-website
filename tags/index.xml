@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copy responsibly; give credit</copyright>
-    <lastBuildDate>Mon, 25 May 2020 13:37:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 13:37:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cinaq.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>low-code</title>
+      <link>https://cinaq.com/tags/low-code/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/low-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mendix</title>
+      <link>https://cinaq.com/tags/mendix/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/mendix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>productivity</title>
+      <link>https://cinaq.com/tags/productivity/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://cinaq.com/tags/security/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>https://cinaq.com/tags/security/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>grafana</title>
