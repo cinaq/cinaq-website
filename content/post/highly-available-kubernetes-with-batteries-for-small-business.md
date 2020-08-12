@@ -415,8 +415,9 @@ See the [nginx-ingress helm chart](https://github.com/helm/charts/tree/master/st
 ```bash
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
-kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.crds.yaml
-helm install cert-manager jetstack/cert-manager --namespace sys --version v0.14.2
+
+# updated on 2020-08-12 ref: https://github.com/jetstack/cert-manager/issues/2752
+helm install cert-manager jetstack/cert-manager --namespace sys --version v0.16.1 --set installCRDs=true
 
 cat > issuer_letsencrypt.yaml <<EOF
 apiVersion: cert-manager.io/v1alpha2
