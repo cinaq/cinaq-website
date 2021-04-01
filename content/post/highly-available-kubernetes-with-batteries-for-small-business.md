@@ -254,6 +254,24 @@ To install node2 and node3, login to the node as `ops` and switch to `root` then
 ```
 (Obviously, replace the values)
 
+## Join workers later
+
+On a master node:
+```
+kubeadm token create --print-join-command
+```
+Then copy the join command and execute on new worker node
+
+## Join masters later
+
+On a master node:
+```
+kubeadm init phase upload-certs --upload-certs
+# copy certificate key
+kubeadm token create --print-join-command --certificate-key $certificate_key
+```
+Then copy the join command and execute on new master node
+
 ## Confirm nodes
 
 On `node1` as `root` execute:
