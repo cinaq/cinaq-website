@@ -1,0 +1,55 @@
+{
+    "themeId": "zero",
+    "themes": [
+        {
+            "id": "zero",
+            "name": "Zero",
+            "colors": {
+                "base": "#ffffff",
+                "base_offset": "#f2f2f2",
+                "base_text": "#202020",
+                "base_text_offset": "#413f3f",
+                "primary": "#4990e2",
+                "primary_offset": "#236dc2",
+                "primary_text": "#ffffff",
+                "primary_text_offset": "#e8ffff"
+            },
+            "google_fonts": "https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;700&display=swap",
+            "fonts": {
+                "base": "Lato",
+                "heading": "Source Sans Pro"
+            }
+        },
+        {
+            "id": "steelyard",
+            "name": "Steelyard",
+            "colors": {
+                "base": "#edf2f4",
+                "base_offset": "#ced8e8",
+                "base_text": "#1b3037",
+                "base_text_offset": "#1b3037",
+                "primary": "#ef233c",
+                "primary_offset": "#d90429",
+                "primary_text": "#ffffff",
+                "primary_text_offset": "#e8ffff"
+            },
+            "google_fonts": "https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap",
+            "fonts": {
+                "base": "Roboto",
+                "heading": "Raleway"
+            }
+        }
+    ],
+    "darkMode": {
+        "colors": {
+            "base": "#121212",
+            "base_offset": "#1e1e1e",
+            "base_text": "#ffffff",
+            "base_text_offset": "#bfbfbf",
+            "primary": "#4990e2",
+            "primary_offset": "#236dc2",
+            "primary_text": "#ffffff",
+            "primary_text_offset": "#e8ffff"
+        }
+    }
+}

@@ -2,7 +2,14 @@
 title: "Simple high value tests with Python Flask"
 date: 2019-05-05T01:11:03+01:00
 draft: false
+categories: ['Development', 'Python', 'Testing']
 tags: ["python", "flask", "python-flask", "testing", "tests", "rest", "AAA", "quality", "TDD"]
+authors: ['Xiwen Cheng']
+description: It's rarely wise to reach 100% code coverage. How do you decide where to spend your limited testing capacities? What are high value tests that you should focus on early in your projects?
+thumbnail: '/media/chris-ried-ieic5Tq8YMk-unsplash.jpg'
+image: '/media/chris-ried-ieic5Tq8YMk-unsplash.jpg'
+aliases:
+  - /post/2019/05/05/simple-high-value-tests-with-python-flask/
 ---
 
 After 6 years developing [Python Flask](http://flask.pocoo.org) applications, mainly REST API's, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!
@@ -11,7 +18,8 @@ First I will give my opinion on testing and methodology, followed by a demo case
 
 The foundation described in this article is mainly focussed on early projects with limited resources like time and people effort. In these cases you want the lowest possible investment that will generate a high return in value. Note, however, that this is not a silver bullet.
 
-# High value tests
+## High value tests
+
 As a software engineer that has built many microservices in the past, I have always believed that having integration tests in the early stages of a product is of utmost importance to detect issues and confirm assumptions. Nowadays it is rare to build fully self contained systems that do not interact with other external systems. This external system could be a webservice or perhaps a complicated library that renders PDF files.
 
 My definition for "High value tests" is inspired by [High Cost Tests and High Value Tests](https://medium.com/table-xi/high-cost-tests-and-high-value-tests-a86e27a54df):
@@ -21,7 +29,7 @@ Let's dissect this statement. We want our tests to be *efficient*, because it is
 
 In practice good test cases are a balance between depth (when do we include external dependencies), simplicity and flexibility.
 
-# Anatomy
+## Anatomy
 
 Following the [AAA (Arrange, Act and Assert) pattern](http://wiki.c2.com/?ArrangeActAssert) we define the anatomy of a good high value test case to have the follow components:
 
@@ -36,11 +44,11 @@ Other non-functional requirements are:
 * Fast: ideally the test case completes in milliseconds
 * Readability: conventional programming best practices should be applied to tests also, like short but descriptive variable names
 
-# Example: Simple REST API with Flask
+## Example: Simple REST API with Flask
 
 Let's consider a simple Flask app that uses a hypothetical mail service implemented as `MailService`. Below is the file and directory structure of our application with 4 test cases implemented in 2 files (`test_errors.py` and `test_health.py`). We will dive deeper into the code in the rest of this section.
 
-```
+```bash
 ├── README.md
 ├── app
 │   ├── __init__.py
@@ -63,10 +71,9 @@ In the app we have defined two REST endpoints:
 
 Here's actual source code `main.py`:
 
-{{< highlight python >}}
+```python
 from flask import request, jsonify
 from flask import Flask
-
 
 class App(object):
 
@@ -98,9 +105,9 @@ class App(object):
 
 if __name__ == "__main__":
     App().create_app().run()
-{{< / highlight >}}
+```
 
-# Test suite
+## Test suite
 
 Test cases are often located in the `tests` directory. Each test case is implemented as a TestCase class. The below class diagram depicts the high level composition of such a TestCase. 
 
@@ -108,11 +115,11 @@ Test cases are often located in the `tests` directory. Each test case is impleme
 
 Our test suite contains 4 test cases grouped in 2 files. The test cases are all implemented according to the AAA principle.
 
-## AAAMixin
+### AAAMixin
 
 Before we start writing our test cases we first define our `AAAMixin` class which implements a basic structure according to the AAA methodology discussed earlier. We will use this mixin class later in our test cases. To void the `assert` keyword we write the main AAA methods which must be implemented by all test cases: `ARRANGE()`, `ACT()` and `ASSERT()`.
 
-{{< highlight python >}}
+```python
 class AAAMixin(object):
     """ Arrange, Act and Assert pattern """
 
@@ -148,7 +155,7 @@ class AAAMixin(object):
         #self._arrange()
         self.response = self.ACT()
         self.ASSERT()
-{{< / highlight >}}
+```
 
 The `AAAMixin` class is tightly coupled with the `LiveServerTestCase` class. Therefore the flow of execution differs a bit than conventional test cases. The following methods are executed in this order:
 
@@ -161,11 +168,11 @@ The `AAAMixin` class is tightly coupled with the `LiveServerTestCase` class. The
 
 If we disregard non AAA related methods we will see that the AAAMixin forces us to stick to the AAA pattern. It is therefore sufficient for us to implement just these 3 methods to compose our test case.
 
-## Integration test: /health
+### Integration test: /health
 
 With the `AAAMixin` defined we can combine it with `LiveServerTestCase` from `flask_testing` package to write our first test case for `GET /health`. This test shows how we can use the AAA approach with a live server instance of our app to test against a real `MailService` instance.
 
-{{< highlight python >}}
+```python
 class TestHealth_integration(AAAMixin, LiveServerTestCase):
     """ Test against real mail service integration """
 
@@ -179,13 +186,13 @@ class TestHealth_integration(AAAMixin, LiveServerTestCase):
     def ASSERT(self):
         assert self.response.status_code == HTTPStatus.OK
         assert self.response.get_json() == self.expected_health
-{{< / highlight >}}
+```
 
-## Unit test: /health
+### Unit test: /health
 
 In a real world scenario the MailService could slow down our test. We could have a very limited set of integration tests of this service and mock it most of the time. Mocking is very useful because it's fast and that's were we set our boundaries of where we stop testing logic that was not implemented by us (with the assumption the third party library is well tested on its own).
 
-{{< highlight python >}}
+```python
 class TestHealth_sick(AAAMixin, LiveServerTestCase):
     """ Detect when mail service is in sick state """
 
@@ -205,13 +212,13 @@ class TestHealth_sick(AAAMixin, LiveServerTestCase):
     def ASSERT(self):
         assert self.response.status_code == HTTPStatus.OK
         assert self.response.get_json() == self.expected_health
-{{< / highlight >}}
+```
 
-## More test cases
+### More test cases
 
 To illustrate how easy and obvious it is to create more test cases we have implemented 2 more test cases to test for errors.
 
-{{< highlight python >}}
+```python
 from unittest import mock
 from flask_testing import LiveServerTestCase
 from http import HTTPStatus
@@ -244,22 +251,22 @@ class TestErrors_throw_exception(AAAMixin, LiveServerTestCase):
 
     def ASSERT(self):
         assert self.response.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
-{{< / highlight >}}
+```
 
-# Demo
+## Demo
 
 Enough text, let's see how all of this works:
 
-{{< highlight bash >}}
+```bash
 python3 -m venv venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
 pip3 install -r test-requirements.txt
 python -m pytest ./tests -v
-{{< / highlight >}}
+```
 
 Example output:
-{{< highlight bash >}}
+```bash
 =========================== test session starts ===========================
 ...
 cachedir: .pytest_cache
@@ -274,11 +281,11 @@ tests/test_health.py::TestHealth_integration::test_case PASSED      [100%]
 ============================ warnings summary =============================
 ...
 ================== 4 passed, 2 warnings in 0.68 seconds ===================
-{{< / highlight >}}
+```
 
 The two warnings are from the `jinja2` library version we are using.
 
-# Evaluation
+## Evaluation
 
 Our final test cases adhere to:
 
@@ -289,19 +296,18 @@ Our final test cases adhere to:
 
 With the ability to running our tests againt a live server over HTTP, this allows us to test our APIs in more depth. We also have the choice to decide how deep we wish to test, because of the ease of mocking individual pieces of our application. For this to work, our `App.create_app()` must be able to accept instances to be mocked. Alternatively, one could explore the possibility of monkey patching.
 
-# Conclusions
+## Conclusions
 
 This test suite is currently being used by a medium sized Python REST API service. It has sped up our development significantly, and onboarding new developers was a breeze.
 
 Check out the code on [Github](https://github.com/xiwenc/python-flask-app-testing)
 
-
-# Future
+## Future
 
 In the future we will extend this simple REST API with MySQL database support. In the light of high value tests we will also extend the test suite with support for launching MySQL service to support our tests.
 As our test suite grows, there will be demand for parallelization.
 
-# References
+## References
 
 - https://medium.com/@hakibenita/keeping-tests-dry-with-class-based-tests-in-python-e3f2d815124
 - https://medium.com/table-xi/high-cost-tests-and-high-value-tests-a86e27a54df

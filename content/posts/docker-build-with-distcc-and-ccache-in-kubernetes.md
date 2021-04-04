@@ -2,17 +2,24 @@
 title: "Speed up docker builds with distcc, ccache and kubernetes"
 date: 2020-05-10T13:37:00+00:00
 draft: false
+categories: ['Kubernetes', 'Development']
 tags: ["docker", "kubernetes", "distcc", "ccache", "orthanc", "speed", "cmake", "make", "cluster", "linux", "debian"]
+authors: ['Xiwen Cheng']
+description: What if your local development machine is not very powerful to compile a large program? You borrow the power of Kubernetes.
+thumbnail: '/media/paolo-candelo-53B17GiIhTA-unsplash.jpg'
+image: '/media/paolo-candelo-53B17GiIhTA-unsplash.jpg'
+aliases:
+  - /post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/
 
 ---
 
 For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build [Orthanc](https://wwww.orthanc-server.com) from source. The [official docker-images](https://github.com/jodogne/OrthancDocker) are assembled based on pre-built binaries. So I could not use them.
 
-# Orthanc Dockerfile
+## Orthanc Dockerfile
 
 The first step is create a Dockerfile that compiles Orthanc from source. Looking through the [compilation instructions](https://bitbucket.org/sjodogne/orthanc/src/Orthanc-1.6.0/LinuxCompilation.txt) and inspired by the official docker images I have assembled the following Dockerfile:
 
-{{< highlight bash >}}
+```docker
 FROM debian:stable AS builder
 
 WORKDIR /root
@@ -73,15 +80,15 @@ CMD [ "/etc/orthanc/" ]
 
 # https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ
 ENV MALLOC_ARENA_MAX 5
-{{< / highlight >}}
+```
 
-# Docker build
+## Docker build
 
 Build the image with
 
-{{< highlight bash >}}
+```bash
 docker build . -t orthanc:latest
-{{< / highlight >}}
+```
 
 Above command takes around 6min (excluding the remote dependencies) to complete on my Macbook pro. Since I'm expecting to build more regularly, I started to look around to speed up the process. I found the following options:
 
@@ -93,16 +100,15 @@ Above command takes around 6min (excluding the remote dependencies) to complete 
 
 The idea is not new. [First resource](https://lastviking.eu/distcc_with_k8.html) I found was very useful to show distcc usage in kubernetes. However it wasn't enough as I didn't think the solution is very elegant. So then I found a [second article](https://wilsonhongblog.wordpress.com/2016/05/24/using-ccache-on-distcc-server/) with cleaner solution on combining `distcc` with `ccache`.
 
-
-# cinaq/distcc
+## cinaq/distcc
 
 As a result I have combined both articles into a simple to use distcc-ccache-kubernetes setup. It's documented at [cinaq/distcc-docker](https://github.com/cinaq/distcc-docker).
 
 With [cinaq/distcc](https://hub.docker.com/r/cinaq/distcc) running in Kubernetes, we can now compile Orthanc 2 times as fast with:
 
-{{< highlight bash >}}
+```bash
 docker build . --build-arg DISTCC_HOSTS=distcc.dev/4 --build-arg JOBS=4 -t orthanc:latest
-{{< / highlight >}}
+```
 
 Here we pass 2 build arguments:
 
@@ -111,16 +117,17 @@ Here we pass 2 build arguments:
 
 We can observe the logs of `distcc` service:
 
-{{< highlight bash >}}
+```bash
 kubectl logs distcc-deployment-5d6fb547d7-z2rlv
 distccd[11] (dcc_job_summary) client: 10.1.28.1:59075 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4342ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryCache.cpp
 distccd[10] (dcc_job_summary) client: 10.1.28.1:59074 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:7109ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryObjectCache.cpp
 distccd[12] (dcc_job_summary) client: 10.1.28.1:59090 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4178ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryStringCache.cpp
 ...
-{{< / highlight >}}
+```
 
  And the cache being populated:
-{{< highlight bash >}}
+
+```bash
  kubectl exec -it distcc-deployment-5d6fb547d7-z2rlv -- /bin/ls -l /cache
 total 68
 drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 0
@@ -140,18 +147,17 @@ drwxr-xr-x 13 distcc distcc 4096 May 10 19:37 c
 drwxr-xr-x 10 distcc distcc 4096 May 10 19:37 d
 drwxr-xr-x  9 distcc distcc 4096 May 10 19:36 e
 drwxr-xr-x 11 distcc distcc 4096 May 10 19:37 f
-{{< / highlight >}}
+```
 
-The new build takes 3min to complete to build Orthanc from source. 
+The new build takes 3min to complete to build Orthanc from source.
 
-# Conclusions
+## Conclusions
 
 Honestly I was expecting much higher speed up. But 50% time reduction is very nice nonetheless. I really liked breathing new fresh life into mature tools like `distcc` and `ccache` in a modern stack.
 
-# Future work
+## Future work
 
 * Scale up number of pods running `distcc` could speed up the process further. Not sure how distcc will react because there would be multiple distcc instances behind a single LoadBalancer host.
 * dive deeper into `distcc` for optimal parameters could also result in speed up.
 * allow usage of `Persistent Volume` instead of `EmptyDir` so that caches are persisted longer than the pod lifetime.
 * package this up into a [helm chart](https://helm.sh/docs/topics/charts/).
-
