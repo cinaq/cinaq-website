@@ -31,7 +31,7 @@ sections:
   buttons:
     - button: 
       url: "/contact-us"
-      text: Buy now
+      text: Request a demo
     - button: 
       url: "/appsec"
       text: Learn more
