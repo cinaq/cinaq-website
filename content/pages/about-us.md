@@ -1,9 +1,9 @@
 ---
-title: Custom Page Example 1
+title: About Us
 url: "/about-us"
-date: 2020-03-22
-description: Design Websites In Minutes. Fast, secure and easy to maintain
-headerTransparent: true
+date: 2021-04-05
+description: CINAQ is an IT company specializing in Cloud technologies
+headerTransparent: false
 sections:
 - template: hero
   options:
@@ -15,37 +15,18 @@ sections:
     classes: "my-custom-class another-custom-class"
   alignHorizontal: left
   alignVertical: middle
-  height: 700px
+  height: 400px
   headings:
-    heading: Design Websites In Minutes
-    subHeading: Fast, secure and easy to maintain.
-    text: ''
+    subHeading: '"Strive for continuous improvement, instead of perfection"'
+    text: "- Kim Collins"
   background:
-    backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
+    backgroundImage: "/media/daniel-oberg-sEApBUS4fIk-unsplash.jpg"
     opacity: 1
     monotone: false
   image:
     image: ''
     shadow: false
     border: false
-- template: info
-  options:
-    paddingTop: true
-    paddingBottom: false
-    borderTop: false
-    borderBottom: false
-    theme: base
-    classes: ""
-  align: left
-  heading: Company
-  description: "CINAQ is a registered software consultant company in the Netherlands. We specialize in Internet Technologies."
-  image: https://source.unsplash.com/qtYhAQnIwSE/800x600y
-  buttons:
-  - button: 
-    url: https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=668736060000
-    text: Dutch Chamber of Commerce
-    external: true
-    theme: primary
 - template: content
   options:
     paddingTop: true
@@ -53,12 +34,20 @@ sections:
   columns: 9
 ---
 
+## Company
 
-In particular the following fields of interest:
+CINAQ is a [registered software consultant company in the Netherlands](https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=668736060000). We specialize in Internet Technologies.
+
+In particular the following fields:
 
 * Software development with Python, Java, Javascript and more
 * DevOps and SRE culture
+* Kubernetes
+* Azure and AWS clouds
 * Security, Micro-services and Cloud Native engineering practices
 * Agile Product development
+* Mendix security and deployments
 
-Our core belief is "A product is never done". We strive to make a difference today while looking forward to the future.
+Our core belief is:
+
+> A product is never done. We strive to make a difference today while looking forward to the future.

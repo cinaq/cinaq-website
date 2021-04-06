@@ -1,8 +1,8 @@
 ---
-title: Custom Page Example 1
+title: Cloud Consultancy
 url: "/services/cloud-consultancy"
-date: 2020-03-22
-description: Design Websites In Minutes. Fast, secure and easy to maintain
+date: 2021-04-05
+description: Cloud consultancy services with focus on migrations, design and DevOps.
 headerTransparent: true
 sections:
 - template: hero
@@ -15,13 +15,13 @@ sections:
     classes: "my-custom-class another-custom-class"
   alignHorizontal: left
   alignVertical: middle
-  height: 700px
+  height: 600px
   headings:
-    heading: Cloud consultancy
-    subHeading: Fast, secure and easy to maintain.
+    heading: Cloud Consultancy
+    subHeading: "Reaping the benefits of the cloud doesn't have to be hard."
     text: ''
   background:
-    backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
+    backgroundImage: "/media/charles-forerunner-3fPXt37X6UQ-unsplash.jpg"
     opacity: 1
     monotone: false
   image:
@@ -30,14 +30,9 @@ sections:
     border: false
   buttons:
   - button: 
-    url: /custom-page-2
-    text: Learn More
+    url: /contact-us
+    text: Reach out
     external: false
-  - button: 
-    url: "https://www.zerostatic.io/theme/hugo-paradigm/"
-    text: External Link
-    external: true
-    theme: primary-text
 - template: info
   options:
     paddingTop: true
@@ -47,7 +42,7 @@ sections:
     theme: base
     classes: ""
   align: left
-  heading: Better Performance
+  heading: 
   description: Why wait for pages to build on the fly when you can generate them at
     deploy time? When it comes to minimizing the time to first byte, nothing beats
     pre-built files served over a CDN.

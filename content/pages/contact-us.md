@@ -1,9 +1,9 @@
 ---
-title: Custom Page Example 1
+title: Contact Us
 url: "/contact-us"
-date: 2020-03-22
+date: 2021-04-05
 description: Design Websites In Minutes. Fast, secure and easy to maintain
-headerTransparent: true
+headerTransparent: false
 sections:
 - template: hero
   options:
@@ -15,50 +15,21 @@ sections:
     classes: "my-custom-class another-custom-class"
   alignHorizontal: left
   alignVertical: middle
-  height: 700px
+  height: 400px
   headings:
-    heading: Design Websites In Minutes
-    subHeading: Fast, secure and easy to maintain.
+    heading: Hi, how can we help?
+    subHeading: Have questions or need to report an issue with our products or services?
     text: ''
   background:
-    backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
+    backgroundImage: "/media/dylan-gillis-KdeqA3aTnBY-unsplash.jpg"
     opacity: 1
     monotone: false
   image:
     image: ''
     shadow: false
     border: false
-- template: info
-  options:
-    paddingTop: true
-    paddingBottom: false
-    borderTop: false
-    borderBottom: false
-    theme: base
-    classes: ""
-  align: left
-  heading: Company
-  description: "CINAQ is a registered software consultant company in the Netherlands. We specialize in Internet Technologies."
-  image: https://source.unsplash.com/qtYhAQnIwSE/800x600y
-  buttons:
-  - button: 
-    url: https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=668736060000
-    text: Dutch Chamber of Commerce
-    external: true
-    theme: primary
-- template: content
-  options:
-    paddingTop: true
-    paddingBottom: true
-  columns: 9
+- template: contact
+  heading: Contact us
+  description: Please fill in the form below to reach out to us. You can also get in touch via our social media channels if you prefer so. These can be found at the bottom of this page. You can expect a reply from us within 24 hours. Thanks!
+  image: /media/aaron-burden-y02jEX_B0O0-unsplash.jpg
 ---
-
-
-In particular the following fields of interest:
-
-* Software development with Python, Java, Javascript and more
-* DevOps and SRE culture
-* Security, Micro-services and Cloud Native engineering practices
-* Agile Product development
-
-Our core belief is "A product is never done". We strive to make a difference today while looking forward to the future.

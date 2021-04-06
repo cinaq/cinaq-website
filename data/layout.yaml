@@ -17,9 +17,9 @@ header:
   headerHeight: '60px' # recommended "60px" - updates a SCSS variable so requires restarting hugo server
   disableHamburgerMenu: false
 footer:
-  title: "CINAQ Social"
+  title: "Social Media"
   description: "Engineerd in Rotterdam, The Netherlands."
-  copyrightText: "cinaq.com"
+  copyrightText: "2021 - cinaq.com"
   copyrightLink: "https://cinaq.com"
   copyrightShow: true
   showSocialMediaIcons: true
