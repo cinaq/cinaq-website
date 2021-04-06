@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Partners on CINAQ</title>
+    <link>/partners/</link>
+    <description>Recent content in Partners on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 05:15:34 +0000</lastBuildDate><atom:link href="/partners/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>/partners/hugo/</link>
+      <pubDate>Wed, 28 Nov 2018 05:15:34 +0000</pubDate>
+      
+      <guid>/partners/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netlify</title>
+      <link>/partners/netlify/</link>
+      <pubDate>Wed, 28 Nov 2018 05:15:34 +0000</pubDate>
+      
+      <guid>/partners/netlify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forestry</title>
+      <link>/partners/forestry/</link>
+      <pubDate>Wed, 28 Nov 2018 05:15:34 +0000</pubDate>
+      
+      <guid>/partners/forestry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>/partners/github/</link>
+      <pubDate>Wed, 28 Nov 2018 05:15:34 +0000</pubDate>
+      
+      <guid>/partners/github/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

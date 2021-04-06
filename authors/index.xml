@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on CINAQ</title>
+    <link>/authors/</link>
+    <description>Recent content in Authors on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Aug 2020 13:37:00 +0000</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xiwen Cheng</title>
+      <link>/authors/xiwen-cheng/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/authors/xiwen-cheng/</guid>
+      <description>Xiwen is a computer science graduate with special drive for business. He favors pragmatic solutions that has impact today.</description>
+    </item>
+    
+  </channel>
+</rss>

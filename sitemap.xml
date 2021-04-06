@@ -1,295 +1,301 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://cinaq.com/</loc>
+    <loc>/appsec-features/block-1/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/features/info-section/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/partners/hugo/</loc>
+    <lastmod>2018-11-28T05:15:34+00:00</lastmod>
+  </url><url>
+    <loc>/features/grid-section/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/block-2/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/partners/netlify/</loc>
+    <lastmod>2018-11-28T05:15:34+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/block-3/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/features/hero-section/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/partners/forestry/</loc>
+    <lastmod>2018-11-28T05:15:34+00:00</lastmod>
+  </url><url>
+    <loc>/features/cta-section/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/block-4/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/block-5/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/block-6/</loc>
+    <lastmod>2020-06-21T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/about-us/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/services/cloud-consultancy/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/contact-us/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/pages/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/privacy/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/services/</loc>
+    <lastmod>2021-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/appsec/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/low-code/</loc>
+  </url><url>
+    <loc>/authors/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/mendix/</loc>
+  </url><url>
+    <loc>/categories/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/</loc>
+  </url><url>
+    <loc>/tags/low-code/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/productivity/</loc>
+  </url><url>
+    <loc>/categories/mendix/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/security/</loc>
+  </url><url>
+    <loc>/tags/mendix/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/</loc>
+  </url><url>
+    <loc>/tags/productivity/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</loc>
+  </url><url>
+    <loc>/categories/security/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/grafana/</loc>
+  </url><url>
+    <loc>/tags/security/</loc>
+    <lastmod>2020-08-09T13:37:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-09T13:37:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/xiwen-cheng/</loc>
+    <lastmod>2020-08-09T13:37:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</loc>
+    <lastmod>2020-08-09T13:37:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/devops/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/ha/</loc>
+  </url><url>
+    <loc>/tags/grafana/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</loc>
+  </url><url>
+    <loc>/tags/ha/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/highly-available/</loc>
+  </url><url>
+    <loc>/posts/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/k8s/</loc>
+  </url><url>
+    <loc>/tags/highly-available/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/keepalived/</loc>
+  </url><url>
+    <loc>/tags/k8s/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/kindie/</loc>
+  </url><url>
+    <loc>/tags/keepalived/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/kubernetes/</loc>
+  </url><url>
+    <loc>/tags/kindie/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/letsencrypt/</loc>
+  </url><url>
+    <loc>/categories/kubernetes/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/loki/</loc>
+  </url><url>
+    <loc>/tags/kubernetes/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/metal-lb/</loc>
+  </url><url>
+    <loc>/tags/letsencrypt/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/nginx-ingress/</loc>
+  </url><url>
+    <loc>/tags/loki/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/prometheus/</loc>
+  </url><url>
+    <loc>/tags/metal-lb/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/ccache/</loc>
+  </url><url>
+    <loc>/tags/nginx-ingress/</loc>
+    <lastmod>2020-05-25T13:37:00+01:00</lastmod>
+  </url><url>
+    <loc>/tags/prometheus/</loc>
+    <lastmod>2020-05-25T13:37:00+01:00</lastmod>
+  </url><url>
+    <loc>/tags/ccache/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/cluster/</loc>
+  </url><url>
+    <loc>/tags/cluster/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/cmake/</loc>
+  </url><url>
+    <loc>/tags/cmake/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/debian/</loc>
+  </url><url>
+    <loc>/tags/debian/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/distcc/</loc>
+  </url><url>
+    <loc>/categories/development/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/docker/</loc>
+  </url><url>
+    <loc>/tags/distcc/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/linux/</loc>
+  </url><url>
+    <loc>/tags/docker/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/make/</loc>
+  </url><url>
+    <loc>/tags/linux/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/orthanc/</loc>
+  </url><url>
+    <loc>/tags/make/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/speed/</loc>
+  </url><url>
+    <loc>/tags/orthanc/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</loc>
+  </url><url>
+    <loc>/tags/speed/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/apple/</loc>
+  </url><url>
+    <loc>/posts/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</loc>
+    <lastmod>2020-05-10T13:37:00+00:00</lastmod>
+  </url><url>
+    <loc>/custom-page-1/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/photography/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/products/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/services/mendix-deployment/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/services/mendix-security-assessment/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/apple/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/apple-watch/</loc>
+  </url><url>
+    <loc>/tags/apple-watch/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/mac/</loc>
+  </url><url>
+    <loc>/categories/lifehacks/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/osx/</loc>
+  </url><url>
+    <loc>/tags/mac/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</loc>
+  </url><url>
+    <loc>/categories/osx/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/bash/</loc>
+  </url><url>
+    <loc>/tags/osx/</loc>
+    <lastmod>2019-06-17T13:37:00+01:00</lastmod>
+  </url><url>
+    <loc>/posts/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</loc>
+    <lastmod>2019-06-17T13:37:00+01:00</lastmod>
+  </url><url>
+    <loc>/tags/bash/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2019/05/29/debug-shell-script-error-not-found/</loc>
+  </url><url>
+    <loc>/posts/2019/05/29/debug-shell-script-error-not-found/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/exec/</loc>
+  </url><url>
+    <loc>/tags/exec/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/script/</loc>
+  </url><url>
+    <loc>/tags/script/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/shell/</loc>
+  </url><url>
+    <loc>/tags/shell/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/shellscript/</loc>
+  </url><url>
+    <loc>/tags/shellscript/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/strace/</loc>
+  </url><url>
+    <loc>/tags/strace/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/aaa/</loc>
+  </url><url>
+    <loc>/tags/aaa/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/flask/</loc>
+  </url><url>
+    <loc>/tags/flask/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/python/</loc>
+  </url><url>
+    <loc>/categories/python/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/python-flask/</loc>
+  </url><url>
+    <loc>/tags/python/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/quality/</loc>
+  </url><url>
+    <loc>/tags/python-flask/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/rest/</loc>
+  </url><url>
+    <loc>/tags/quality/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2019/05/05/simple-high-value-tests-with-python-flask/</loc>
+  </url><url>
+    <loc>/tags/rest/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/tdd/</loc>
+  </url><url>
+    <loc>/posts/2019/05/05/simple-high-value-tests-with-python-flask/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/testing/</loc>
+  </url><url>
+    <loc>/tags/tdd/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/tags/tests/</loc>
+  </url><url>
+    <loc>/categories/testing/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
+  </url><url>
+    <loc>/tags/testing/</loc>
+    <lastmod>2019-05-05T01:11:03+01:00</lastmod>
+  </url><url>
+    <loc>/tags/tests/</loc>
+    <lastmod>2019-05-05T01:11:03+01:00</lastmod>
+  </url><url>
+    <loc>/partners/github/</loc>
+    <lastmod>2018-11-28T05:15:34+00:00</lastmod>
+  </url><url>
+    <loc>/partners/</loc>
+    <lastmod>2018-11-28T05:15:34+00:00</lastmod>
+  </url><url>
+    <loc>/appsec/</loc>
+    <lastmod>2018-02-10T04:52:18+00:00</lastmod>
+  </url><url>
+    <loc>/custom-page-2/</loc>
+    <lastmod>2018-02-10T04:52:18+00:00</lastmod>
+  </url><url>
+    <loc>/custom-page-3/</loc>
+    <lastmod>2018-02-10T04:52:18+00:00</lastmod>
+  </url><url>
+    <loc>/appsec-features/</loc>
+    <lastmod>2018-02-10T11:52:18+07:00</lastmod>
+  </url><url>
+    <loc>/features/</loc>
+    <lastmod>2018-02-10T11:52:18+07:00</lastmod>
+  </url><url>
+    <loc>/works/</loc>
   </url>
-  
-  <url>
-    <loc>https://cinaq.com/post/2018/12/12/hello/</loc>
-    <lastmod>2018-12-12T01:11:03+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/about/</loc>
-    <lastmod>0001-12-12T00:52:09+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/page/</loc>
-    <lastmod>0001-12-12T00:52:09+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cinaq.com/photography/</loc>
-    <lastmod>0001-12-12T00:52:09+01:00</lastmod>
-  </url>
-  
 </urlset>

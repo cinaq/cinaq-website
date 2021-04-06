@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on CINAQ</title>
+    <link>/appsec-features/</link>
+    <description>Recent content in Features on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Feb 2018 11:52:18 +0700</lastBuildDate><atom:link href="/appsec-features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Business Data</title>
+      <link>/appsec-features/block-1/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hacker Lens</title>
+      <link>/appsec-features/block-2/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Confidence in Application Security</title>
+      <link>/appsec-features/block-3/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Privacy</title>
+      <link>/appsec-features/block-4/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>/appsec-features/block-5/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation &amp; AI</title>
+      <link>/appsec-features/block-6/</link>
+      <pubDate>Sun, 21 Jun 2020 14:00:00 +0000</pubDate>
+      
+      <guid>/appsec-features/block-6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

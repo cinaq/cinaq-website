@@ -2,22 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>distcc on CINAQ</title>
-    <link>https://cinaq.com/tags/distcc/</link>
+    <link>/tags/distcc/</link>
     <description>Recent content in distcc on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copy responsibly; give credit</copyright>
-    <lastBuildDate>Sun, 10 May 2020 13:37:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://cinaq.com/tags/distcc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 10 May 2020 13:37:00 +0000</lastBuildDate><atom:link href="/tags/distcc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Speed up docker builds with distcc, ccache and kubernetes</title>
-      <link>https://cinaq.com/post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</link>
+      <link>/posts/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</link>
       <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
       
-      <guid>https://cinaq.com/post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</guid>
+      <guid>/posts/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</guid>
       <description>For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build Orthanc from source. The official docker-images are assembled based on pre-built binaries. So I could not use them.
 Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc from source. Looking through the compilation instructions and inspired by the official docker images I have assembled the following Dockerfile:</description>
     </item>

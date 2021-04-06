@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on CINAQ</title>
+    <link>/pages/</link>
+    <description>Recent content in Pages on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Us</title>
+      <link>/about-us/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/about-us/</guid>
+      <description>Company CINAQ is a registered software consultant company in the Netherlands. We specialize in Internet Technologies.
+In particular the following fields:
+ Software development with Python, Java, Javascript and more DevOps and SRE culture Kubernetes Azure and AWS clouds Security, Micro-services and Cloud Native engineering practices Agile Product development Mendix security and deployments  Our core belief is:
+ A product is never done. We strive to make a difference today while looking forward to the future.</description>
+    </item>
+    
+    <item>
+      <title>Cloud Consultancy</title>
+      <link>/services/cloud-consultancy/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/services/cloud-consultancy/</guid>
+      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>Contact Us</title>
+      <link>/contact-us/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/contact-us/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Services</title>
+      <link>/services/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom Page Example 1</title>
+      <link>/custom-page-1/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/custom-page-1/</guid>
+      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>Custom Page Example 1</title>
+      <link>/photography/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/photography/</guid>
+      <description>2017 italy ravenna beach
+      2018 spain madrid royal palace
+      2018 usa new york world trade center
+      2019 england london hyde park
+      2019 france provence flower
+      2019 france provence lavender fields
+      2019 france provence sunflower</description>
+    </item>
+    
+    <item>
+      <title>Custom Page Example 1</title>
+      <link>/products/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/products/</guid>
+      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>Custom Page Example 1</title>
+      <link>/services/mendix-deployment/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/services/mendix-deployment/</guid>
+      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>Custom Page Example 1</title>
+      <link>/services/mendix-security-assessment/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/services/mendix-security-assessment/</guid>
+      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>AppSec</title>
+      <link>/appsec/</link>
+      <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
+      
+      <guid>/appsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom Page 2</title>
+      <link>/custom-page-2/</link>
+      <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
+      
+      <guid>/custom-page-2/</guid>
+      <description>Content Section Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?
+ Cum det dixit Parcarum qui spemque est Quod consiste agitataque claustraque vicina videt lacertis Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
+    </item>
+    
+    <item>
+      <title>Custom Page 3</title>
+      <link>/custom-page-3/</link>
+      <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
+      
+      <guid>/custom-page-3/</guid>
+      <description>Content Section Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?
+ Cum det dixit Parcarum qui spemque est Quod consiste agitataque claustraque vicina videt lacertis Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
+    </item>
+    
+  </channel>
+</rss>
