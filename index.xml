@@ -214,21 +214,6 @@ Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc f
     
     <item>
       <title>Custom Page Example 1</title>
-      <link>/photography/</link>
-      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/photography/</guid>
-      <description>2017 italy ravenna beach
-      2018 spain madrid royal palace
-      2018 usa new york world trade center
-      2019 england london hyde park
-      2019 france provence flower
-      2019 france provence lavender fields
-      2019 france provence sunflower</description>
-    </item>
-    
-    <item>
-      <title>Custom Page Example 1</title>
       <link>/products/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
@@ -252,6 +237,22 @@ Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc f
       
       <guid>/services/mendix-security-assessment/</guid>
       <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+    </item>
+    
+    <item>
+      <title>Photography</title>
+      <link>/photography/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/photography/</guid>
+      <description>2017 italy ravenna beach
+     2018 spain madrid royal palace
+     2018 usa new york world trade center
+     2019 england london hyde park
+     2019 france provence flower
+     2019 france provence lavender fields
+     2019 france provence sunflower
+     2019 netherlands giethoorn ducks</description>
     </item>
     
     <item>
