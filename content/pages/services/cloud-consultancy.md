@@ -42,7 +42,7 @@ sections:
     theme: base
     classes: ""
   align: left
-  heading: 
+  heading: Cloud Native
   description: Why wait for pages to build on the fly when you can generate them at
     deploy time? When it comes to minimizing the time to first byte, nothing beats
     pre-built files served over a CDN.
@@ -51,7 +51,7 @@ sections:
   options:
     theme: base-offset
   align: right
-  heading: Higher Security
+  heading: Mission Critical
   description: With server-side processes abstracted into microservice APIs, surface
     areas for attacks are reduced. You can also leverage the domain expertise of specialist
     third-party services.
