@@ -20,26 +20,26 @@ paginate = 6
   
 # Main Menu
 
-#[[menu.main]]
-#    name = "Services"
-#    url = "/services"
-#    weight = 1
-#    identifier = 'dropdown_services'
-#    [[menu.main]]
-#        name = "Cloud Consultancy"
-#        url = "/services/cloud-consultancy"
-#        parent = "dropdown_services"
-#        weight = 1
-#    [[menu.main]]
-#        name = "Mendix Security Assessment"
-#        url = "/services/mendix-security-assessment"
-#        parent = "dropdown_services"
-#        weight = 2
-#    [[menu.main]]
-#        name = "Mendix Deployment"
-#        url = "/services/mendix-deployment"
-#        parent = "dropdown_services"
-#        weight = 3
+[[menu.main]]
+    name = "Services"
+    url = "/services"
+    weight = 1
+    identifier = 'dropdown_services'
+    [[menu.main]]
+        name = "Cloud Consultancy"
+        url = "/services/cloud-consultancy"
+        parent = "dropdown_services"
+        weight = 1
+    [[menu.main]]
+        name = "Mendix Security Assessment"
+        url = "/services/mendix-security-assessment"
+        parent = "dropdown_services"
+        weight = 2
+    [[menu.main]]
+        name = "Mendix Deployment"
+        url = "/services/mendix-deployment"
+        parent = "dropdown_services"
+        weight = 3
 
 #[[menu.main]]
 #	name = "Products"

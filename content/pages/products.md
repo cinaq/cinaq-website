@@ -1,8 +1,8 @@
 ---
-title: Custom Page Example 1
+title: Products
 url: "/products"
 date: 2020-03-22
-description: Design Websites In Minutes. Fast, secure and easy to maintain
+description: 
 headerTransparent: true
 sections:
 - template: hero
@@ -21,9 +21,9 @@ sections:
     subHeading: Fast, secure and easy to maintain.
     text: ''
   background:
-    backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
-    opacity: 1
-    monotone: false
+    backgroundImage: "/media/ks-kyung-hoeL5h9Ug5E-unsplash.jpg"
+    opacity: 0.3
+    monotone: true
   image:
     image: ''
     shadow: false

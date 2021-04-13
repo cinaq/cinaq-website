@@ -1,5 +1,5 @@
 ---
-title: Custom Page Example 1
+title: Mendix Security Assessment
 url: "/services/mendix-security-assessment"
 date: 2020-03-22
 description: Design Websites In Minutes. Fast, secure and easy to maintain
@@ -18,10 +18,10 @@ sections:
   height: 700px
   headings:
     heading: Mendix Security Assessment
-    subHeading: Fast, secure and easy to maintain.
+    subHeading: Get your security report within 24 hours.
     text: ''
   background:
-    backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
+    backgroundImage: "/media/scott-graham-5fNmWej4tAA-unsplash.jpg"
     opacity: 1
     monotone: false
   image:
@@ -30,88 +30,35 @@ sections:
     border: false
   buttons:
   - button: 
-    url: /custom-page-2
-    text: Learn More
+    url: /contact-us
+    text: Reach out
     external: false
-  - button: 
-    url: "https://www.zerostatic.io/theme/hugo-paradigm/"
-    text: External Link
-    external: true
-    theme: primary-text
 - template: info
   options:
     paddingTop: true
-    paddingBottom: false
+    paddingBottom: true
     borderTop: false
     borderBottom: false
     theme: base
     classes: ""
   align: left
-  heading: Better Performance
-  description: Why wait for pages to build on the fly when you can generate them at
-    deploy time? When it comes to minimizing the time to first byte, nothing beats
-    pre-built files served over a CDN.
-  image: https://source.unsplash.com/qtYhAQnIwSE/800x600y
-- template: info
-  options:
-    theme: base-offset
-  align: right
-  heading: Higher Security
-  description: With server-side processes abstracted into microservice APIs, surface
-    areas for attacks are reduced. You can also leverage the domain expertise of specialist
-    third-party services.
-  image: https://source.unsplash.com/OfwiURcZwYw/800x600
-  buttons:
-  - button: 
-    text: Features
-    external: false
-    url: "/features"
-  - button: 
-    text: Blog
-    external: false
-    url: "/posts"
-    theme: base-text
-- template: info
-  align: left
-  heading: Cheaper, Easier Scaling
-  description: When your deployment amounts to a stack of files that can be served
-    anywhere, scaling is a matter of serving those files in more places. CDNs are
-    perfect for this, and often include scaling in all of their plans.
-  image: https://source.unsplash.com/VvAcrVa56fc/800x600
-- template: grid
-  options:
-    theme: base-offset
-  heading: Flexible card layouts and grids
-  text: Inject different content types and display them in a grid. Choose different card layouts, customise the number of columns on both desktop and mobile. Limit the number of items and sort order.
-  contentType: features
-  sortBy: weight
-  align: left
-  limit: 4
-  columns: 6
-  columnsMobile: 12
-  card:
-    partial: card
-    shadow: false
-    border: false
-    padding: true
-    showTitle: true
-    showDescription: true
-    showDate: false
-    showThumbnail: true
-    showThumbnailLink: true
-- template: content
-  align: left
-  columns: 8
+  heading: Your app probably has a security flaw
+  description: It's easy to make mistakes in your model security. We use AppSec, a tool developed internally with over 10 years of Mendix experience that helps identify security flaws at record speed. Traditional pentesters focus on the overal security posture of your application. We focus on the business logic built by your engineers.
+  image: /media/MendixWorld-SecurityCert-Blog-Final.png
 - template: cta
   options:
     theme: primary
-  heading: Kickstart your Hugo project
-  description: Save days and weeks with our best practice templates.
+  heading: 80% of Mendix apps have security flaws.
+  description: Is your app an exception?
   buttons:
   - button: 
-    url: https://www.zerostatic.io/theme/hugo-paradigm/
-    text: Buy Theme
-    external: true
+    url: /contact-us
+    text: Find out today
+    external: false
+  - button: 
+    url: /appsec
+    text: Learn more about AppSec
+    external: false
     theme: primary-offset
 ---
 
