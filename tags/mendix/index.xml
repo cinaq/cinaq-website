@@ -6,7 +6,17 @@
     <description>Recent content in mendix on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 13:37:00 +0000</lastBuildDate><atom:link href="/tags/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/tags/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You have built a Mendix app, now what?</title>
+      <link>/posts/2021/04/13/you-have-built-a-mendix-app-now-what/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/posts/2021/04/13/you-have-built-a-mendix-app-now-what/</guid>
+      <description>Recently the first Mendix book was published. It was titled Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.
+What drives me? I joined the Mendix company in 2012, fresh out of university.</description>
+    </item>
+    
     <item>
       <title>Your business logic is the weakest link in Low-Code security</title>
       <link>/posts/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</link>

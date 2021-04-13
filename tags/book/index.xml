@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>book on CINAQ</title>
+    <link>/tags/book/</link>
+    <description>Recent content in book on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You have built a Mendix app, now what?</title>
+      <link>/posts/2021/04/13/you-have-built-a-mendix-app-now-what/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/posts/2021/04/13/you-have-built-a-mendix-app-now-what/</guid>
+      <description>Recently the first Mendix book was published. It was titled Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.
+What drives me? I joined the Mendix company in 2012, fresh out of university.</description>
+    </item>
+    
+  </channel>
+</rss>

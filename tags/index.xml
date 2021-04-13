@@ -6,22 +6,40 @@
     <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 13:37:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>low-code</title>
-      <link>/tags/low-code/</link>
-      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      <title>book</title>
+      <link>/tags/book/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
       
-      <guid>/tags/low-code/</guid>
+      <guid>/tags/book/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mendix</title>
       <link>/tags/mendix/</link>
-      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
       
       <guid>/tags/mendix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mendix-ops-book</title>
+      <link>/tags/mendix-ops-book/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/mendix-ops-book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>low-code</title>
+      <link>/tags/low-code/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/low-code/</guid>
       <description></description>
     </item>
     
