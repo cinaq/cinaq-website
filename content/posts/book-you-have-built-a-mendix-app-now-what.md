@@ -14,7 +14,7 @@ Recently the first Mendix book was published. It was titled [Building Low-Code A
 
 ## What drives me?
 
-I joined the Mendix company in 2012, fresh out of university. Since then, I was convinced Mendix was onto something. A strong player that could change the way the business perceives IT: slow and costly. With almost ten years of Mendix experience, I firmly believe I'm the perfect person to take you and your freshly built application through an unforgettable journey. From proof of concept to modern enterprise landscape. The sole goal is for me to share my experience, which hopefully propels you to success. Not just building and delivering apps at record speed, but also reliably so that you can sleep at night like a lamb.
+I joined the [Mendix company](https://www.mendix.com) in 2012, fresh out of university. Since then, I was convinced Mendix was onto something. A strong player that could change the way the business perceives IT: slow and costly. With almost ten years of Mendix experience, I firmly believe I'm the perfect person to take you and your freshly built application through an unforgettable journey. From proof of concept to modern enterprise landscape. The sole goal is for me to share my experience, which hopefully propels you to success. Not just building and delivering apps at record speed, but also reliably so that you can sleep at night like a lamb.
 
 ## One step at a time
 
@@ -47,5 +47,7 @@ If there are subjects you'd love to see, feel free to reach out to me. You can a
 ## Storyline
 
 The book follows the fictional story of Steven Cheng, a jack-of-all-trades architect at CINAQ enterprise with a strong sense of ownership. Steven's journey with Mendix started when he learned about the platform in 2020 via a LinkedIn-promoted advertisement.
+
+Fast forwarded 1 year, CINAQ is powered by hundreds microservices with significant of them built with Mendix. The business is thriving, innovating and staying ahead of the competition.
 
 > Interested to know how the story unfolds? Follow my social media channels at the bottom of this page.
