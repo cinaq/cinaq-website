@@ -68,7 +68,7 @@
     <loc>/authors/xiwen-cheng/</loc>
     <lastmod>2021-04-13T00:13:37+01:00</lastmod>
   </url><url>
-    <loc>/posts/2021/04/13/you-have-built-a-mendix-app-now-what/</loc>
+    <loc>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</loc>
     <lastmod>2021-04-13T00:13:37+01:00</lastmod>
   </url><url>
     <loc>/about-us/</loc>
@@ -92,7 +92,7 @@
     <loc>/</loc>
     <lastmod>2021-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>/blog/</loc>
     <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/appsec/</loc>
@@ -110,7 +110,7 @@
     <loc>/tags/security/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</loc>
+    <loc>/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</loc>
     <lastmod>2020-08-09T13:37:00+00:00</lastmod>
   </url><url>
     <loc>/categories/devops/</loc>
@@ -122,7 +122,7 @@
     <loc>/tags/ha/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
   </url><url>
-    <loc>/posts/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</loc>
+    <loc>/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</loc>
     <lastmod>2020-05-25T13:37:00+01:00</lastmod>
   </url><url>
     <loc>/tags/highly-available/</loc>
@@ -191,7 +191,7 @@
     <loc>/tags/speed/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</loc>
+    <loc>/blog/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</loc>
     <lastmod>2020-05-10T13:37:00+00:00</lastmod>
   </url><url>
     <loc>/custom-page-1/</loc>
@@ -227,13 +227,13 @@
     <loc>/tags/osx/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</loc>
+    <loc>/blog/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</loc>
     <lastmod>2019-06-17T13:37:00+01:00</lastmod>
   </url><url>
     <loc>/tags/bash/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/05/29/debug-shell-script-error-not-found/</loc>
+    <loc>/blog/2019/05/29/debug-shell-script-error-not-found/</loc>
     <lastmod>2019-05-29T00:13:37+01:00</lastmod>
   </url><url>
     <loc>/tags/exec/</loc>
@@ -272,7 +272,7 @@
     <loc>/tags/rest/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/05/05/simple-high-value-tests-with-python-flask/</loc>
+    <loc>/blog/2019/05/05/simple-high-value-tests-with-python-flask/</loc>
     <lastmod>2019-05-05T01:11:03+01:00</lastmod>
   </url><url>
     <loc>/tags/tdd/</loc>

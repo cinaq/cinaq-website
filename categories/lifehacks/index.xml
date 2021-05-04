@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 17 Jun 2019 13:37:00 +0100</lastBuildDate><atom:link href="/categories/lifehacks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unlock Mac with Apple Watch stopped working</title>
-      <link>/posts/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</link>
+      <link>/blog/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</link>
       <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
       
-      <guid>/posts/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</guid>
+      <guid>/blog/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</guid>
       <description>Occasionally my auto unlock Mac with Apple watch stops working. There are workaround instructions to &amp;ldquo;repair&amp;rdquo; this issue. One of them involves rebooting both Mac and Apple Watch. Just like you I&amp;rsquo;m not very keen of rebooting my workstation. Deeper into researching I found the unlock feature relies on Bluetooth and Wifi.
 So the following steps are needed to reset the auto unlock:
  Open System Preferences Go to Security &amp;amp; Privacy Go to General Uncheck Allow your Apple Watch to unlock your Mac (Step 1) Turn off Bluetooth and then turn it on again (Step 2) Turn off WiFi and then turn it on again (Step 3)  After that turn on auto unlock again:</description>

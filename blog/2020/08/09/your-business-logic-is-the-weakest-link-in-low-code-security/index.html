@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Your business logic is the weakest link in Low-Code security - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="The low-code movement is gaining traction. Low-code platforms enable citizen developers to create applications that solves real world challenges. However these applications are at risk due to weak security or inadequate data handling logics." />
+  <meta property="og:title" content="Your business logic is the weakest link in Low-Code security" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/" />
+  <meta property="og:image" content="/media/sigmund-elHKkgom1VU-unsplash.jpg" />
+  <meta property="og:description" content="The low-code movement is gaining traction. Low-code platforms enable citizen developers to create applications that solves real world challenges. However these applications are at risk due to weak security or inadequate data handling logics."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/sigmund-elHKkgom1VU-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Your business logic is the weakest link in Low-Code security</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                
+                
+                <span class="post-author-date">Apr 13, 2021</span>
+                
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Over the past 5 years <a href="https://trends.google.com/trends/explore?date=2015-01-01%202020-08-02&amp;q=%2Fg%2F11c6cx4nrr">interest in low-code increased 100 folds</a> according to Google Trends:
+<img src="/media/low-code-trends.png" alt="Low-code development trends">
+This correlates with human psychology eager to optimise for efficiency in everything and building software solutions is no exception. As programming is becoming easier and more accessible, in the future, anyone should be able solve their own information automation challenges. Low-code is a relatively new movement that tries to enable those citizen developers with the right tooling lowering the barrier to build applications without writing traditional code. Because most of my professional experience with low-code is around <a href="https://www.mendix.com">Mendix</a>, I will use it as reference through out this article.</p>
+<h2 id="low-to-high-level">Low to high level</h2>
+<p>First computer programs were written in machine code by few experts in the early days. This programming ability felt like a super power to many. Just like the Industrial age boosted the human civilisation, the Information Technology age we are currently in is helping the human race reach new heights. Programming languages are invented or improved to enable more efficient or better programming paradigms. This trend in <a href="https://en.wikipedia.org/wiki/History_of_programming_languages">programming languages timeline</a> is recently leading towards visual programming. In the industry this idea is marked as <a href="https://en.wikipedia.org/wiki/Low-code_development_platform">low-code platforms</a>. To me this is currently the highest programming level because of its high productivity characteristics. Low-code is in a nutshell an unification of deployment and composable building blocks nicely packed to play well together reducing the feedback loop at development and runtime.</p>
+<h2 id="abstraction-penalty">Abstraction penalty</h2>
+<p>The cost of higher abstraction which often correlates with higher productivity is <a href="https://en.wikipedia.org/wiki/High-level_programming_language#Abstraction_penalty">Abstraction penalty</a>. As we move up in the pyramid depicted below, we accomplish more with fewer efforts. That little effort however translates to more execute computing instructions. Due to this fact we loose optimisations and also unaware of the extra assumptions made in between. This problem increases more as applications grow larger and depend on libraries. No matter how well documented the libraries are, they are again abstractions of the actual implementation which might be inaccurate or the user of such library might not know or understand the full extends of the functionalities being leveraged on.</p>
+<p><img src="/media/low-code-productivity-pyramid.png" alt="Higher programming languages result in higher computational instructions count"></p>
+<h2 id="security">Security</h2>
+<p>A critical aspect of abstraction penalty is the unawareness of implied behaviours. Citizen developers (Low-code developers) leverage a lot from low-code platform itself; often with insufficient experience and knowledge of the underlaying runtime environment. This is a natural cause because these platforms were designed and promoted  for easy adoption. In the case of Mendix a typical security pitfall is negligence of <a href="https://docs.mendix.com/refguide/access-rules">entity access on attributes level</a>. Developers often focus on getting the program to work, in this particular case, a developer would grant access to all users. No matter the seniority, people make mistakes and forget access rule must be refined. In low-code platform like this, it’s very easy to make mistakes and leave open major security holes.</p>
+<p>Platforms like Mendix already has <a href="https://www.mendix.com/evaluation-guide/enterprise-capabilities/security">security covered very well</a>. However with a strong platform, you can still build vulnerable applications because the platform does not know or understand your data risk levels. Therefore the weakest link is your business logic on a low-code platform.</p>
+<p><img src="/media/low-code-mendix-security.png" alt="Business logic is weakest link with Mendix"></p>
+<p>A typical example is: developer gives all access to credit card number attribute in the application model. The developer makes a remark to fine tune the access rules later but forgets to do so. Due to time pressure, testers mostly focussed on the happy use cases which did not reveal the CC information leak.</p>
+<p>Therefore it’s crucial to have tooling to help detect these mistakes before they hit production. A tool that could reveal more that meets the eye for developers and testers alike. In Mendix, this would mean bypass the View (from <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model View Controller</a>) showing all accessible data and function calls for a given user. There are few challenges here:</p>
+<ul>
+<li>How to extensively and automatically collect these data</li>
+<li>How to make sense of the collected data to identify security weaknesses</li>
+<li>Finally a repeatable and preferably incremental method to assess the security risk coverage</li>
+</ul>
+<p>Often pentest consultants are called in to assess the security risks of low-code applications. However this process is very labor intensive and error prone. As pointed out, higher generation languages like low-code has a bigger attack vector (related to number of computational instructions together with rapid feature building) requires extensive manual work.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>In this article we learned low-code is an upcoming trend and it helps companies innovate faster by increasing the productivity of its developers. However, with the higher abstraction levels, it’s also easier to make security mistakes leaving the application vulnerable to attacks. As the citizen developers group grows, we need tooling in place to help identity security risks with the same low threshold as it requires to develop an app on a low-code platform.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://www.cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74177616-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74177616-1');
+      </script>
+    
+  
+
+
+
+</body>
+</html>
