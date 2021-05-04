@@ -69,7 +69,7 @@ sections:
   - button: 
     text: Blog
     external: false
-    url: "/posts"
+    url: "/blog"
     theme: base-text
 - template: info
   align: left
