@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "CINAQ"
 theme = "hugo-paradigm"
-enableGitInfo = false
+enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -17,6 +17,12 @@ paginate = 6
     category = "categories"
     work =  "works"
     author = "authors"
+
+[frontmatter]
+    date = ['date', 'publishDate', 'lastmod']
+    expiryDate = ['expiryDate']
+    lastmod = [':git', 'lastmod', 'date', 'publishDate']
+    publishDate = ['publishDate', 'date']
   
 # Main Menu
 
