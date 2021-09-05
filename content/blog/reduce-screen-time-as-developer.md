@@ -20,7 +20,7 @@ Developers spend countless hours in front of computer screens. The majority of p
 
 To start: why should we care about our vision? Written communication has been one of the oldest forms of transferring knowledge. It began as figures then simplified into symbols on caves and papyrus. The evolution continues into alphabets where stories are written in paper books small enough to fit in our pockets. During the industrial age, we enjoyed films in cinemas on large screens. Fast forward to the information age in 2021, and we have video streaming services, news, and social media at our fingertips. This convenience results in even more time spent in front of screens causing [Computer Vision Syndrome](https://www.webmd.com/eye-health/computer-vision-syndrome) or [lazy eyes](https://www.dunyagoz.com/en/corporate/news/digital-eye-fatigue-can-lead-to-lazy-eye-in-children).
 
-Our eyes are precious. Do regular checkups. Once a year is often enough to keep track of your vision strength. With services like [Easee](https://easee.online/) you can even do it online from the comfort of your own (remote) home. It can be as simple as sending yourself an email with the results after the check-up.
+Our eyes are precious. Do regular checkups. Once a year is often enough to keep track of your vision strength. With services like [Easee](https://easee.online/) you can even do it online from the comfort of your own (remote) home. Tracking can be as simple as sending yourself an email with the results after the check-up.
 
 ## Wear protective gear
 
