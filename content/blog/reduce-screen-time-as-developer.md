@@ -20,7 +20,7 @@ Developers spend countless hours in front of computer screens. The majority of p
 
 To start: why should we care about our vision? Written communication has been one of the oldest forms of transferring knowledge. It began as figures then simplified into symbols on caves and papyrus. The evolution continues into alphabets where stories are written in paper books small enough to fit in our pockets. During the industrial age, we enjoyed films in cinemas on large screens. Fast forward to the information age in 2021, and we have video streaming services, news, and social media at our fingertips. This convenience results in even more time spent in front of screens causing [Computer Vision Syndrome](https://www.webmd.com/eye-health/computer-vision-syndrome) or [lazy eyes](https://www.dunyagoz.com/en/corporate/news/digital-eye-fatigue-can-lead-to-lazy-eye-in-children).
 
-Our eyes are precious. Do regular checkups. Once a year is often enough to keep track of your vision strength. It can be as simple as sending yourself an email with the results after the check-up.
+Our eyes are precious. Do regular checkups. Once a year is often enough to keep track of your vision strength. With services like [Easee](https://easee.online/) you can even do it online from the comfort of your own (remote) home. It can be as simple as sending yourself an email with the results after the check-up.
 
 ## Wear protective gear
 
@@ -34,7 +34,7 @@ It’s hard to remind yourself of those small but important activities like shor
 
 I prefer to plan the longer breaks in my calendar. Since these breaks are around 30min, it’s big enough to be relevant. Also, sometimes you get breakthrough ideas while walking and leave your mind wander off. If not, you are still giving your brain time to recharge to be more effective at the next task. Therefore long breaks warrant a place in our busy agendas. It also informs our colleagues we are busy.
 
-## Program your way out of a paper bag
+## Code your way out of a paper bag
 
 Programmers spend the majority of their time writing code on the computer. Nowadays, we are impatient and jump into the editor/IDE immediately and start programming. During my university years, we were taught to program on paper. Sure this only works for elementary and short programs. While on the job, the tasks are a lot more complicated. But the same principle can be applied. We just need to let go of the part of actually writing working, valid and compilable code. But focus on the method and structure of our solution.
 
@@ -64,4 +64,4 @@ E-ink devices are not the most environmentally friendly but are a great alternat
 
 ## Summary
 
-Digital screens are everywhere in today’s modern world. Screens have invaded our daily lives. Be it at work in the office or at home watching a blockbuster on Netflix. As developers we are faced with even more screen exposure. Therefore we have should be extra conscious and protect our eyes and psychological health. We highlighted a few simple changes you can make to improve those fronts, like getting computer glasses and reduce screen time. Take breaks. Sometimes it can even increase your productivity and creativity.
+Digital screens are everywhere in today’s modern world. Screens have invaded our daily lives. Be it at work in the office or at home watching a blockbuster on [Netflix](https://netflix.com). As developers we are faced with even more screen exposure. Therefore we have should be extra conscious and protect our eyes and psychological health. We highlighted a few simple changes you can make to improve those fronts, like getting computer glasses and reduce screen time. Take breaks. Sometimes it can even increase your productivity and creativity.
