@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>breaks on CINAQ</title>
+    <link>/tags/breaks/</link>
+    <description>Recent content in breaks on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Sep 2021 01:11:03 +0100</lastBuildDate><atom:link href="/tags/breaks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce screen time as Developer</title>
+      <link>/blog/2021/09/04/reduce-screen-time-as-developer/</link>
+      <pubDate>Sat, 04 Sep 2021 01:11:03 +0100</pubDate>
+      
+      <guid>/blog/2021/09/04/reduce-screen-time-as-developer/</guid>
+      <description>Developers spend countless hours in front of computer screens. The majority of professions today require interactions with computers. As if that&amp;rsquo;s not enough, it extends further into our private lives in this digital age. Even consumer products like iOS and Android devices have built-in metrics to keep track of your screen time. In this article, we explain why it&amp;rsquo;s essential to reduce screen time and give you ideas on how to do it as an IT engineer; and, in parallel, protect your eyes.</description>
+    </item>
+    
+  </channel>
+</rss>
