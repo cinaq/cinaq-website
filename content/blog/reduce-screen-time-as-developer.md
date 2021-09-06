@@ -36,7 +36,7 @@ I prefer to plan the longer breaks in my calendar. Since these breaks are around
 
 ## Code your way out of a paper bag
 
-Programmers spend the majority of their time writing code on the computer. Nowadays, we are impatient and jump into the editor/IDE immediately and start programming. During my university years, we were taught to program on paper. Sure this only works for elementary and short programs. While on the job, the tasks are a lot more complicated. But the same principle can be applied. We just need to let go of the part of actually writing working, valid and compilable code. But focus on the method and structure of our solution.
+Programmers spend the majority of their time writing code on the computer. Nowadays, we are impatient and jump into the editor/IDE immediately and start programming. During my university years, we were taught to program on paper. Sure this only works for elementary and [short programs](https://noteflakes.com/articles/2021-09-02-how-i-write-code-pen-paper). While on the job, the tasks are a lot more complicated. But the same principle can be applied. We just need to let go of the part of actually writing working, valid and compilable code. But focus on the method and structure of our solution.
 
 While working out your solution on paper, you will very likely run into the need to research finding an appropriate library or reading existing code. That’s fine as long as you keep those sessions short and make notes.
 
@@ -65,3 +65,5 @@ E-ink devices are not the most environmentally friendly but are a great alternat
 ## Summary
 
 Digital screens are everywhere in today’s modern world. Screens have invaded our daily lives. Be it at work in the office or at home watching a blockbuster on [Netflix](https://netflix.com). As developers we are faced with even more screen exposure. Therefore we have should be extra conscious and protect our eyes and psychological health. We highlighted a few simple changes you can make to improve those fronts, like getting computer glasses and reduce screen time. Take breaks. Sometimes it can even increase your productivity and creativity.
+
+In short; try to replace screen time with other activities. Go for the long walk. Now.
