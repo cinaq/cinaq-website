@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Simple high value tests with Python Flask - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="It&#39;s rarely wise to reach 100% code coverage. How do you decide where to spend your limited testing capacities? What are high value tests that you should focus on early in your projects?" />
+  <meta property="og:title" content="Simple high value tests with Python Flask" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2019/05/05/simple-high-value-tests-with-python-flask/" />
+  <meta property="og:image" content="/media/chris-ried-ieic5Tq8YMk-unsplash.jpg" />
+  <meta property="og:description" content="It&#39;s rarely wise to reach 100% code coverage. How do you decide where to spend your limited testing capacities? What are high value tests that you should focus on early in your projects?"  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/chris-ried-ieic5Tq8YMk-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Simple high value tests with Python Flask</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                
+                
+                <span class="post-author-date">Apr 13, 2021</span>
+                
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>After 6 years developing <a href="http://flask.pocoo.org">Python Flask</a> applications, mainly REST API&rsquo;s, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!</p>
+<p>First I will give my opinion on testing and methodology, followed by a demo case to illustrate high value testing with actual code. Feel free to skip all the boring reading and head directly over to the code on <a href="https://github.com/xiwenc/python-flask-app-testing">Github</a>.</p>
+<p>The foundation described in this article is mainly focussed on early projects with limited resources like time and people effort. In these cases you want the lowest possible investment that will generate a high return in value. Note, however, that this is not a silver bullet.</p>
+<h2 id="high-value-tests">High value tests</h2>
+<p>As a software engineer that has built many microservices in the past, I have always believed that having integration tests in the early stages of a product is of utmost importance to detect issues and confirm assumptions. Nowadays it is rare to build fully self contained systems that do not interact with other external systems. This external system could be a webservice or perhaps a complicated library that renders PDF files.</p>
+<p>My definition for &ldquo;High value tests&rdquo; is inspired by <a href="https://medium.com/table-xi/high-cost-tests-and-high-value-tests-a86e27a54df">High Cost Tests and High Value Tests</a>:
+A test case that is <em>efficient</em> and <em>effective</em> that focusses on business logic <em>we</em> have implemented.</p>
+<p>Let&rsquo;s dissect this statement. We want our tests to be <em>efficient</em>, because it is not funny to wait for hours for a test case to finish to discover it failed. Or it demands many resources like compute power or manual labor which could be very costly. <em>Effective</em> because we are only interested in interfacing with a third party library or web service but not their inner workings. Finally there is emphasis on <em>we</em>. Our system is often a composition of one or more other components working in harmony. Full complexity of systems are in fact all the code you have produced together with the code of all your dependencies and their dependencies. As you might have guessed already in practice systems are often very complicated. As we do not have access to infinite resources we have to get the most out of our investments so we test the interfaces of these external dependencies only.</p>
+<p>In practice good test cases are a balance between depth (when do we include external dependencies), simplicity and flexibility.</p>
+<h2 id="anatomy">Anatomy</h2>
+<p>Following the <a href="http://wiki.c2.com/?ArrangeActAssert">AAA (Arrange, Act and Assert) pattern</a> we define the anatomy of a good high value test case to have the follow components:</p>
+<ul>
+<li><strong>Goal</strong>: Why are we writing this test?</li>
+<li><strong>Arrange</strong>: What assumptions do we have if any?</li>
+<li><strong>Act</strong>: Trigger the API endpoint or function call</li>
+<li><strong>Assert</strong>: Verify expected results</li>
+</ul>
+<p>Other non-functional requirements are:</p>
+<ul>
+<li>Simplicity: someone with low programming skills should be able to extend or create new test cases based on existing ones</li>
+<li>Fast: ideally the test case completes in milliseconds</li>
+<li>Readability: conventional programming best practices should be applied to tests also, like short but descriptive variable names</li>
+</ul>
+<h2 id="example-simple-rest-api-with-flask">Example: Simple REST API with Flask</h2>
+<p>Let&rsquo;s consider a simple Flask app that uses a hypothetical mail service implemented as <code>MailService</code>. Below is the file and directory structure of our application with 4 test cases implemented in 2 files (<code>test_errors.py</code> and <code>test_health.py</code>). We will dive deeper into the code in the rest of this section.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">├── README.md
+├── app
+│   ├── __init__.py
+│   └── main.py
+├── example_libs
+│   ├── __init__.py
+│   └── mail_service.py
+├── requirements.txt
+└── tests
+    ├── __init__.py
+    ├── base.py
+    ├── test_errors.py
+    └── test_health.py
+</code></pre></div><p>In the app we have defined two REST endpoints:</p>
+<ul>
+<li>GET /health: responsible for reporting the health status of our app. The app&rsquo;s health is partly determined by whether we can communicate with the mail service. We do this by calling the <code>check()</code> method on the mail service instance.</li>
+<li>PUT /error: throws a generic <code>Exception</code> simulating a runtime error.</li>
+</ul>
+<p>Here&rsquo;s actual source code <code>main.py</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="k">class</span> <span class="nc">App</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail_service</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+        <span class="c1"># Create real service if not mocking</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mail_service</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">example_libs.mail_service</span> <span class="kn">import</span> <span class="n">MailService</span>
+            <span class="n">mail_service</span> <span class="o">=</span> <span class="n">MailService</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mail_service</span> <span class="o">=</span> <span class="n">mail_service</span>
+
+    <span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">()</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+
+        <span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/health&#34;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">])</span>
+        <span class="k">def</span> <span class="nf">health</span><span class="p">():</span>
+            <span class="n">mail_service_health</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mail_service</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&#34;mail_service&#34;</span><span class="p">:</span> <span class="n">mail_service_health</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+        <span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/throw-exception&#34;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;PUT&#34;</span><span class="p">])</span>
+        <span class="k">def</span> <span class="nf">error</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;An error has occurred&#34;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">app</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">App</span><span class="p">()</span><span class="o">.</span><span class="n">create_app</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div><h2 id="test-suite">Test suite</h2>
+<p>Test cases are often located in the <code>tests</code> directory. Each test case is implemented as a TestCase class. The below class diagram depicts the high level composition of such a TestCase.</p>
+<p><img src="/media/diagrams/python-flask-app-testing-overview.png" alt="TestCase class diagram"></p>
+<p>Our test suite contains 4 test cases grouped in 2 files. The test cases are all implemented according to the AAA principle.</p>
+<h3 id="aaamixin">AAAMixin</h3>
+<p>Before we start writing our test cases we first define our <code>AAAMixin</code> class which implements a basic structure according to the AAA methodology discussed earlier. We will use this mixin class later in our test cases. To void the <code>assert</code> keyword we write the main AAA methods which must be implemented by all test cases: <code>ARRANGE()</code>, <code>ACT()</code> and <code>ASSERT()</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">AAAMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Arrange, Act and Assert pattern &#34;&#34;&#34;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34; Called after self.create_app() &#34;&#34;&#34;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ARRANGE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ACT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34; Use make call to live server and return the response
+</span><span class="s2">
+</span><span class="s2">        e.g. return self.client.get(&#34;/health&#34;)
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="c1"># assert is a served keyword</span>
+    <span class="k">def</span> <span class="nf">ASSERT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ARRANGE</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">test_case</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34; Single test case per test class &#34;&#34;&#34;</span>
+
+        <span class="c1"># Commented out because it is called by create_app(...) very early</span>
+        <span class="c1">#self._arrange()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ACT</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ASSERT</span><span class="p">()</span>
+</code></pre></div><p>The <code>AAAMixin</code> class is tightly coupled with the <code>LiveServerTestCase</code> class. Therefore the flow of execution differs a bit than conventional test cases. The following methods are executed in this order:</p>
+<ul>
+<li><code>create_app()</code>: returns the app created by <code>ARRANGE()</code>. This is needed because LiveServerTestCase expects this method to be implemented.
+<ul>
+<li><code>ARRANGE()</code>: to create the app, mocking if any have to be done in here</li>
+</ul>
+</li>
+<li><code>setUp()</code>: extra setup steps, here we pre-create the <code>test_client</code></li>
+<li><code>test_case()</code>: implicit test case. This is comparable to <code>main()</code> as main entry point but this is our test case and all test cases must start with <code>test_</code> prefix.
+<ul>
+<li><code>ACT()</code>: make call to API using <code>self.client</code> and return its response to <code>self.response</code>.</li>
+<li><code>ASSERT()</code>: verify expected results by accessing <code>self.response</code>.</li>
+</ul>
+</li>
+</ul>
+<p>If we disregard non AAA related methods we will see that the AAAMixin forces us to stick to the AAA pattern. It is therefore sufficient for us to implement just these 3 methods to compose our test case.</p>
+<h3 id="integration-test-health">Integration test: /health</h3>
+<p>With the <code>AAAMixin</code> defined we can combine it with <code>LiveServerTestCase</code> from <code>flask_testing</code> package to write our first test case for <code>GET /health</code>. This test shows how we can use the AAA approach with a live server instance of our app to test against a real <code>MailService</code> instance.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TestHealth_integration</span><span class="p">(</span><span class="n">AAAMixin</span><span class="p">,</span> <span class="n">LiveServerTestCase</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Test against real mail service integration &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">ARRANGE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expected_health</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;mail_service&#34;</span><span class="p">:</span> <span class="s2">&#34;OK&#34;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">App</span><span class="p">()</span><span class="o">.</span><span class="n">create_app</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ACT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;/health&#34;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ASSERT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">HTTPStatus</span><span class="o">.</span><span class="n">OK</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_health</span>
+</code></pre></div><h3 id="unit-test-health">Unit test: /health</h3>
+<p>In a real world scenario the MailService could slow down our test. We could have a very limited set of integration tests of this service and mock it most of the time. Mocking is very useful because it&rsquo;s fast and that&rsquo;s were we set our boundaries of where we stop testing logic that was not implemented by us (with the assumption the third party library is well tested on its own).</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TestHealth_sick</span><span class="p">(</span><span class="n">AAAMixin</span><span class="p">,</span> <span class="n">LiveServerTestCase</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Detect when mail service is in sick state &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">ARRANGE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expected_health</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;mail_service&#34;</span><span class="p">:</span> <span class="s2">&#34;sick&#34;</span><span class="p">}</span>
+        <span class="n">mocked_mail_service</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">(</span><span class="n">autospec</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">mocked_mail_service</span><span class="o">.</span><span class="n">check</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">(</span>
+            <span class="n">return_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expected_health</span><span class="p">[</span><span class="s2">&#34;mail_service&#34;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">App</span><span class="p">(</span>
+            <span class="n">mail_service</span><span class="o">=</span><span class="n">mocked_mail_service</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">create_app</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ACT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;/health&#34;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ASSERT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">HTTPStatus</span><span class="o">.</span><span class="n">OK</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_health</span>
+</code></pre></div><h3 id="more-test-cases">More test cases</h3>
+<p>To illustrate how easy and obvious it is to create more test cases we have implemented 2 more test cases to test for errors.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
+<span class="kn">from</span> <span class="nn">flask_testing</span> <span class="kn">import</span> <span class="n">LiveServerTestCase</span>
+<span class="kn">from</span> <span class="nn">http</span> <span class="kn">import</span> <span class="n">HTTPStatus</span>
+
+<span class="kn">from</span> <span class="nn">app.main</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="nn">tests.base</span> <span class="kn">import</span> <span class="n">AAAMixin</span>
+
+
+<span class="k">class</span> <span class="nc">TestErrors_not_found</span><span class="p">(</span><span class="n">AAAMixin</span><span class="p">,</span> <span class="n">LiveServerTestCase</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Unknown path result in Not Found &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">ARRANGE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">App</span><span class="p">()</span><span class="o">.</span><span class="n">create_app</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ACT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;/i-do-not-exist&#34;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ASSERT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">HTTPStatus</span><span class="o">.</span><span class="n">NOT_FOUND</span>
+
+
+<span class="k">class</span> <span class="nc">TestErrors_throw_exception</span><span class="p">(</span><span class="n">AAAMixin</span><span class="p">,</span> <span class="n">LiveServerTestCase</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Exceptions result in internal server error &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">ARRANGE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">App</span><span class="p">()</span><span class="o">.</span><span class="n">create_app</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ACT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&#34;/error&#34;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ASSERT</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">HTTPStatus</span><span class="o">.</span><span class="n">INTERNAL_SERVER_ERROR</span>
+</code></pre></div><h2 id="demo">Demo</h2>
+<p>Enough text, let&rsquo;s see how all of this works:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">python3 -m venv venv
+<span class="nb">source</span> ./venv/bin/activate
+pip3 install -r requirements.txt
+pip3 install -r test-requirements.txt
+python -m pytest ./tests -v
+</code></pre></div><p>Example output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">===========================</span> <span class="nb">test</span> session <span class="nv">starts</span> <span class="o">===========================</span>
+...
+cachedir: .pytest_cache
+rootdir: /Users/xcheng/private/git/flask-app-testing
+collected <span class="m">4</span> items
+
+tests/test_errors.py::TestErrors_not_found::test_case PASSED        <span class="o">[</span> 25%<span class="o">]</span>
+tests/test_errors.py::TestErrors_throw_exception::test_case PASSED  <span class="o">[</span> 50%<span class="o">]</span>
+tests/test_health.py::TestHealth_sick::test_case PASSED             <span class="o">[</span> 75%<span class="o">]</span>
+tests/test_health.py::TestHealth_integration::test_case PASSED      <span class="o">[</span>100%<span class="o">]</span>
+
+<span class="o">============================</span> warnings <span class="nv">summary</span> <span class="o">=============================</span>
+...
+<span class="o">==================</span> <span class="m">4</span> passed, <span class="m">2</span> warnings in 0.68 <span class="nv">seconds</span> <span class="o">===================</span>
+</code></pre></div><p>The two warnings are from the <code>jinja2</code> library version we are using.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>Our final test cases adhere to:</p>
+<ul>
+<li>AAA principles: explicit arrange, act &amp; assert; nothing else</li>
+<li>Simplicity: implement 3 methods and you are good to go</li>
+<li>Fast: runs in milliseconds and allows easy mocking of components</li>
+<li>Readable: the structure is easy to understand</li>
+</ul>
+<p>With the ability to running our tests againt a live server over HTTP, this allows us to test our APIs in more depth. We also have the choice to decide how deep we wish to test, because of the ease of mocking individual pieces of our application. For this to work, our <code>App.create_app()</code> must be able to accept instances to be mocked. Alternatively, one could explore the possibility of monkey patching.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>This test suite is currently being used by a medium sized Python REST API service. It has sped up our development significantly, and onboarding new developers was a breeze.</p>
+<p>Check out the code on <a href="https://github.com/xiwenc/python-flask-app-testing">Github</a></p>
+<h2 id="future">Future</h2>
+<p>In the future we will extend this simple REST API with MySQL database support. In the light of high value tests we will also extend the test suite with support for launching MySQL service to support our tests.
+As our test suite grows, there will be demand for parallelization.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://medium.com/@hakibenita/keeping-tests-dry-with-class-based-tests-in-python-e3f2d815124">https://medium.com/@hakibenita/keeping-tests-dry-with-class-based-tests-in-python-e3f2d815124</a></li>
+<li><a href="https://medium.com/table-xi/high-cost-tests-and-high-value-tests-a86e27a54df">https://medium.com/table-xi/high-cost-tests-and-high-value-tests-a86e27a54df</a></li>
+<li><a href="http://wiki.c2.com/?ArrangeActAssert">http://wiki.c2.com/?ArrangeActAssert</a></li>
+<li><a href="http://softwaretestingfundamentals.com/unit-testing/">http://softwaretestingfundamentals.com/unit-testing/</a></li>
+<li><a href="https://techbeacon.com/devops/6-best-practices-integration-testing-continuous-integration">https://techbeacon.com/devops/6-best-practices-integration-testing-continuous-integration</a></li>
+<li><a href="https://hackernoon.com/low-effort-high-value-integration-tests-in-redux-apps-d3a590bd9fd5">https://hackernoon.com/low-effort-high-value-integration-tests-in-redux-apps-d3a590bd9fd5</a></li>
+<li><a href="https://dev.to/lgraziani2712/the-value-of-unit-or-integration-testing-56i0">https://dev.to/lgraziani2712/the-value-of-unit-or-integration-testing-56i0</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74177616-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74177616-1');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

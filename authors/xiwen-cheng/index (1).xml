@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xiwen Cheng on CINAQ</title>
+    <link>/authors/xiwen-cheng/</link>
+    <description>Recent content in Xiwen Cheng on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/authors/xiwen-cheng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You have built a Mendix app, now what?</title>
+      <link>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</guid>
+      <description>Recently the first Mendix book was published. It was titled Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.
+What drives me? I joined the Mendix company in 2012, fresh out of university.</description>
+    </item>
+    
+    <item>
+      <title>Your business logic is the weakest link in Low-Code security</title>
+      <link>/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</guid>
+      <description>Over the past 5 years interest in low-code increased 100 folds according to Google Trends: This correlates with human psychology eager to optimise for efficiency in everything and building software solutions is no exception. As programming is becoming easier and more accessible, in the future, anyone should be able solve their own information automation challenges. Low-code is a relatively new movement that tries to enable those citizen developers with the right tooling lowering the barrier to build applications without writing traditional code.</description>
+    </item>
+    
+    <item>
+      <title>Highly available Kubernetes with batteries for small business</title>
+      <link>/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</guid>
+      <description>Kindie (Kubernetes Individual) is an opinionated Kubernetes cluster setup for individuals or small business. Batteries included so that you can hit the ground running and add production workload in no time.
+Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes experience looking to build a Kubernetes cluster for production usage with bells and whistles focussed on web workloads. You should be able to have the cluster ready in a few hours.</description>
+    </item>
+    
+    <item>
+      <title>Speed up docker builds with distcc, ccache and kubernetes</title>
+      <link>/blog/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/blog/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/</guid>
+      <description>For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build Orthanc from source. The official docker-images are assembled based on pre-built binaries. So I could not use them.
+Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc from source. Looking through the compilation instructions and inspired by the official docker images I have assembled the following Dockerfile:</description>
+    </item>
+    
+    <item>
+      <title>Unlock Mac with Apple Watch stopped working</title>
+      <link>/blog/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2019/06/17/unlock-mac-with-apple-watch-stopped-working/</guid>
+      <description>Occasionally my auto unlock Mac with Apple watch stops working. There are workaround instructions to &amp;ldquo;repair&amp;rdquo; this issue. One of them involves rebooting both Mac and Apple Watch. Just like you I&amp;rsquo;m not very keen of rebooting my workstation. Deeper into researching I found the unlock feature relies on Bluetooth and Wifi.
+So the following steps are needed to reset the auto unlock:
+ Open System Preferences Go to Security &amp;amp; Privacy Go to General Uncheck Allow your Apple Watch to unlock your Mac (Step 1) Turn off Bluetooth and then turn it on again (Step 2) Turn off WiFi and then turn it on again (Step 3)  After that turn on auto unlock again:</description>
+    </item>
+    
+    <item>
+      <title>Debug shell script error: not found</title>
+      <link>/blog/2019/05/29/debug-shell-script-error-not-found/</link>
+      <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2019/05/29/debug-shell-script-error-not-found/</guid>
+      <description>Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like Ansible, Puppet, Salt, etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.
+$ ./main.sh ./main.sh: 3: exec: ./external.sh: not found $ ls -l -rwxr-xr-x 1 xiwen xiwen 33 May 29 01:25 external.</description>
+    </item>
+    
+    <item>
+      <title>Simple high value tests with Python Flask</title>
+      <link>/blog/2019/05/05/simple-high-value-tests-with-python-flask/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>/blog/2019/05/05/simple-high-value-tests-with-python-flask/</guid>
+      <description>After 6 years developing Python Flask applications, mainly REST API&amp;rsquo;s, in 2019 I still could not find any good articles about how to develop high value tests for Python Flask based applications. That is going to change today!
+First I will give my opinion on testing and methodology, followed by a demo case to illustrate high value testing with actual code. Feel free to skip all the boring reading and head directly over to the code on Github.</description>
+    </item>
+    
+  </channel>
+</rss>

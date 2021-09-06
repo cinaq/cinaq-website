@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Highly available Kubernetes with batteries for small business - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="In this elaborate guide we will setup a production-ready Kubernetes cluster by hand." />
+  <meta property="og:title" content="Highly available Kubernetes with batteries for small business" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/" />
+  <meta property="og:image" content="/media/chuttersnap-xewrfLD8emE-unsplash.jpg" />
+  <meta property="og:description" content="In this elaborate guide we will setup a production-ready Kubernetes cluster by hand."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/chuttersnap-xewrfLD8emE-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Highly available Kubernetes with batteries for small business</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                
+                
+                <span class="post-author-date">Apr 13, 2021</span>
+                
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Kindie (<strong>K</strong>ubernetes <strong>Indi</strong>vidual) is an opinionated Kubernetes cluster setup for individuals or small business. Batteries included so that you can hit the ground running and add production workload in no time.</p>
+<h2 id="target-audience">Target audience</h2>
+<p>Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes experience looking to build a <a href="https://kubernetes.io/">Kubernetes</a> cluster for production usage with bells and whistles focussed on web workloads. You should be able to have the cluster ready in a few hours. If you don&rsquo;t understand some of the information here, please comment below or research it on the internet. This guide is not meant for complete beginners but we try to keep it as accessible as possible without going into too much details.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Highly available (where possible)</li>
+<li>Ingress with <a href="https://letsencrypt.org/">LetsEncrypt</a></li>
+<li>NFS central storage</li>
+<li>Cluster that scales</li>
+<li>Monitoring with <a href="https://prometheus.io/">Prometheus</a>, <a href="https://grafana.com/">Grafana</a> and <a href="https://grafana.com/oss/loki/">Loki</a></li>
+</ul>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>Feel free to change the setup as you wish but you&rsquo;re on your own. Eventhough we claim this is production ready for ourselves, it might not be for you. So adjust and test this setup further until you are satisfied. We deliberately use <code>root</code> user instead of <code>sudo</code> to save time. And because we know what we are doing (most of the time).</p>
+<h2 id="hardware-specifications">Hardware specifications</h2>
+<p><img src="/media/wooden-rack.png" alt="Small business Kubernetes cluster"></p>
+<ul>
+<li>a router with uplink</li>
+<li><a href="https://www.synology.com/en-uk/products/DS918+">Synology DS918+</a> with 16GB memory and 4TB of storage capacity</li>
+<li>UPS for data safety</li>
+<li>2 <a href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc.html">NUC</a> with 100 GB disk storage and 16 GB memory each</li>
+<li>access to manage a domain (example.dev)</li>
+<li><a href="https://releases.ubuntu.com/20.04/ubuntu-20.04-live-server-amd64.iso">Ubuntu server 20.04 ISO</a> downloaded and on USB stick to install the NUC&rsquo;s</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>To give you a birds-eye view of what you&rsquo;re about to build.</p>
+<h2 id="network">Network</h2>
+<p><img src="/media/architecture-Network.png" alt="Network"></p>
+<p>The core router serves the internal network <code>10.0.0.0/16</code>. This is inline with default networks in public cloud services like <a href="https://aws.amazon.com/vpc/">AWS VPC&rsquo;s</a>. There&rsquo;s plenty of room to expand your cluster and you will probably never use all the allocatable addresses here anyway. Of this range we have the following static addresses:</p>
+<ul>
+<li>10.0.0.1 =&gt; Gateway address on the router</li>
+<li>10.0.0.2 =&gt; Synology</li>
+<li>10.0.1.0 =&gt; Floating IP assigned to keepalived master. This address is highly available and therefore used for cluster endpoint of Kubernetes API server and HTTP(s) ingress into the cluster</li>
+<li>10.0.1.1 =&gt; node1 (this is a Virtual Machine (VM) running in Synology)</li>
+<li>10.0.1.2 =&gt; node2</li>
+<li>10.0.1.3 =&gt; node3</li>
+<li>10.0.200.0-10.0.200.255 =&gt; range reserved for internal loadbalancers (Metal LB)</li>
+</ul>
+<p>There&rsquo;s also an optional UPS supporting the core of the system: router + synology. Synology also exposes the NFS so that nodes can use it as central storage.</p>
+<h2 id="kubernetes">Kubernetes</h2>
+<p><img src="/media/architecture-Kubernetes.png" alt="Kubernetes"></p>
+<p>Above merely shows that there are 3 master nodes and N worker nodes where N is larger or equal to zero. Each node will run an ingress controller for HA. In this setup we untaint the master nodes so that regular workloads can be scheduled on them; therefore treat them like worker nodes.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p><img src="/media/architecture-Namespaces.png" alt="Namespaces"></p>
+<p>The batteries included are split up in 2 namespaces:</p>
+<ul>
+<li>sys: internal misc services needed to support apps; sort of like shared infra services</li>
+<li>monitoring: everything related to monitoring</li>
+</ul>
+<h2 id="preparations">Preparations</h2>
+<ul>
+<li>Configure router to have as internal network: <code>10.0.0.0/16</code> and create the port forward rules as described in the Network Architecture diagram.</li>
+<li>Create a DNS record of type A: <code>cluster-endpoint.sys.example.dev</code> =&gt; <code>10.0.1.0</code></li>
+<li>Create a wildcard DNS record of type A (or CNAME if you want): <code>*.app.example.dev</code> =&gt; <code>YOUR_PUBLIC_IP</code></li>
+<li>Create another wildcard DNS record of type A (or CNAME if you want): <code>*.sys.example.dev</code> =&gt; <code>YOUR_PUBLIC_IP</code></li>
+<li>Setup your Synology and set the address to <code>10.0.0.2</code></li>
+<li>Setup Synology to allow NFS mounts from <code>10.0.1.0/24</code></li>
+</ul>
+<p><img src="/media/synology-nfs.png" alt="Synology NFS permission"></p>
+<ul>
+<li>Create a VM in Synology called <code>node1</code> with 7GB RAM and 100GB disk, install ubuntu-server:
+<ul>
+<li>set manual IP to <code>10.0.1.1/16</code></li>
+<li>set hostname to <code>node1</code></li>
+<li>install OpenSSH</li>
+<li>create user <code>ops</code></li>
+</ul>
+</li>
+<li>install all your other physical/dedicated nodes as above (obviously use 10.0.1.2/16 for node2, 10.0.1.3/16 for node3, etc&hellip;)</li>
+</ul>
+<h2 id="kubernetes-cluster">Kubernetes Cluster</h2>
+<p>At this point you have 3 nodes running: node1, node2 and node3. Because the first 3 nodes are master nodes, we will prepare them all with <code>keepalived</code> and <code>kubeadm</code>. For each node login over SSH to it using the <code>ops</code> username and password you used during installation. After you login switch to <code>root</code> user with <code>sudo su</code> and enter your password again.</p>
+<h3 id="keepalived">Keepalived</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt install -y keepalived
+</code></pre></div><p>Create a file <code>/etc/keepalived/keepalived.conf</code> with the content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vrrp_instance VI_1 <span class="o">{</span>
+    state MASTER
+    interface ens3
+    virtual_router_id <span class="m">101</span>
+    priority <span class="m">100</span>
+    advert_int <span class="m">1</span>
+    authentication <span class="o">{</span>
+        auth_type PASS
+        auth_pass RANDOM_STRING_HERE
+    <span class="o">}</span>
+    virtual_ipaddress <span class="o">{</span>
+        10.0.1.0
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>Replace <code>RANDOM_STRING_HERE</code> with a strong password of your choice if you want (since this is internal network this is not a very big deal).</p>
+<p>It is however necessary to set the correct interface name. You can find it with <code>ip a</code>.</p>
+<p>After that we can wrap up with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> keepalived
+systemctl start keepalived
+</code></pre></div><p>We use the same <code>keepalived.conf</code> for all master nodes so that the active master is randomly selected. Feel free to adjust the priority if desired to influence the preference.</p>
+<h3 id="kubernetes-install">Kubernetes install</h3>
+<p>We will use the <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">official installation guide</a> to install Kubernetes:</p>
+<h4 id="container-runtime">Container Runtime</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat &gt; /etc/modules-load.d/containerd.conf <span class="s">&lt;&lt;EOF
+</span><span class="s">overlay
+</span><span class="s">br_netfilter
+</span><span class="s">EOF</span>
+
+modprobe overlay
+modprobe br_netfilter
+
+<span class="c1"># Setup required sysctl params, these persist across reboots.</span>
+cat &gt; /etc/sysctl.d/99-kubernetes-cri.conf <span class="s">&lt;&lt;EOF
+</span><span class="s">net.bridge.bridge-nf-call-iptables  = 1
+</span><span class="s">net.ipv4.ip_forward                 = 1
+</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span class="s">EOF</span>
+
+sysctl --system
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> apt-key add -
+add-apt-repository <span class="se">\
+</span><span class="se"></span>    <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span><span class="s2">    </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \
+</span><span class="s2">    stable&#34;</span>
+apt-get update <span class="o">&amp;&amp;</span> apt-get install -y containerd.io
+mkdir -p /etc/containerd
+containerd config default &gt; /etc/containerd/config.toml
+systemctl restart containerd
+</code></pre></div><h4 id="kubeadm-kubelet-kubectl">Kubeadm, kubelet, kubectl</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get update <span class="o">&amp;&amp;</span> apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span>  apt-key add -
+cat <span class="s">&lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span><span class="s">deb https://apt.kubernetes.io/ kubernetes-xenial main
+</span><span class="s">EOF</span>
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
+</code></pre></div><h4 id="nfs-utils">nfs utils</h4>
+<p>Because we want to be able to mount NFS shares as PVC.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt install -y nfs-common
+</code></pre></div><h3 id="node1">node1</h3>
+<p>To install our first master node on <code>node1</code>, we first turn off keepalived on <code>node2</code> and <code>node3</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh ops@10.0.1.2 <span class="s1">&#39;systemctl stop keepalived&#39;</span>
+ssh ops@10.0.1.3 <span class="s1">&#39;systemctl stop keepalived&#39;</span>
+</code></pre></div><p>Now on <code>node1</code> you can confirm it has the IP <code>10.0.1.0</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ip a <span class="p">|</span> grep <span class="s1">&#39;10.0.1.0&#39;</span>
+</code></pre></div><p>And confirm your DNS record is set correctly:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">host cluster-endpoint.sys.example.dev
+cluster-endpoint.sys.example.dev has address 10.0.1.0
+</code></pre></div><p>After that we are ready to continue:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubeadm init --apiserver-advertise-address<span class="o">=</span><span class="k">$(</span>hostname -I <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f1<span class="k">)</span> --control-plane-endpoint<span class="o">=</span>cluster-endpoint.sys.example.dev --upload-certs
+</code></pre></div><p>Replace the endpoint address.</p>
+<p>After a while you will be greeted with a message similar to:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p <span class="nv">$HOME</span>/.kube
+  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run <span class="s2">&#34;kubectl apply -f [podnetwork].yaml&#34;</span> with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of the control-plane node running the following <span class="nb">command</span> on each as root:
+
+  kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
+</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
+</span><span class="se"></span>    --control-plane --certificate-key XXXX
+
+Please note that the certificate-key gives access to cluster sensitive data, keep it secret!
+As a safeguard, uploaded-certs will be deleted in two hours<span class="p">;</span> If necessary, you can use
+<span class="s2">&#34;kubeadm init phase upload-certs --upload-certs&#34;</span> to reload certs afterward.
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
+</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX
+</code></pre></div><h3 id="node2-and-node3">node2 and node3</h3>
+<p>To install node2 and node3, login to the node as <code>ops</code> and switch to <code>root</code> then execute:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">  kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
+</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
+</span><span class="se"></span>    --control-plane --certificate-key XXXX
+</code></pre></div><p>(Obviously, replace the values)</p>
+<h3 id="join-workers-later">Join workers later</h3>
+<p>On a master node:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubeadm token create --print-join-command
+</code></pre></div><p>Then copy the join command and execute on new worker node</p>
+<h3 id="join-masters-later">Join masters later</h3>
+<p>On a master node:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubeadm init phase upload-certs --upload-certs
+<span class="c1"># copy certificate key</span>
+kubeadm token create --print-join-command --certificate-key <span class="nv">$certificate_key</span>
+</code></pre></div><p>Then copy the join command and execute on new master node</p>
+<h3 id="confirm-nodes">Confirm nodes</h3>
+<p>On <code>node1</code> as <code>root</code> execute:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/kubernetes/admin.conf
+kubectl get nodes
+</code></pre></div><p>It should output something similar to:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">NAME    STATUS   ROLES    AGE     VERSION
+node1   Ready    master   3d2h    v1.18.3
+node2   Ready    master   3d2h    v1.18.3
+node3   Ready    master   5h46m   v1.18.3
+</code></pre></div><p>Let&rsquo;s untaint the master nodes:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl taint nodes --all node-role.kubernetes.io/master-
+</code></pre></div><h3 id="cni-network">CNI (network)</h3>
+<p>If you do <code>kubectl get pods -A</code> you will see <code>coredns</code> is not starting up correctly:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">root@node1:/home/ops# kubectl get pods -A
+NAMESPACE     NAME                            READY   STATUS    RESTARTS   AGE
+kube-system   coredns-66bff467f8-2bqht        0/1     Pending   <span class="m">0</span>          7m15s
+kube-system   coredns-66bff467f8-l7pbt        0/1     Pending   <span class="m">0</span>          7m15s
+....
+</code></pre></div><p>To fix that we need to install a CNI plugin, we choose Calico:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+</code></pre></div><p>After a while <code>coredns</code> is running:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">root@node1:/home/ops# kubectl get pods -A
+NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
+kube-system   calico-kube-controllers-789f6df884-b8tsg   1/1     Running   <span class="m">0</span>          4m58s
+kube-system   calico-node-9fgqj                          1/1     Running   <span class="m">0</span>          4m59s
+kube-system   coredns-66bff467f8-2bqht                   1/1     Running   <span class="m">0</span>          13m
+kube-system   coredns-66bff467f8-l7pbt                   1/1     Running   <span class="m">0</span>          13m
+</code></pre></div><h3 id="smoke-test">Smoke test</h3>
+<p>To smoke test we can run a job:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">root@node1:/home/ops# kubectl run --rm<span class="o">=</span><span class="nb">true</span> -i --tty busybox --image<span class="o">=</span>busybox --restart<span class="o">=</span>Never -- ps
+If you don<span class="err">&#39;</span>t see a <span class="nb">command</span> prompt, try pressing enter.
+Error attaching, falling back to logs: unable to upgrade connection: container busybox not found in pod busybox_default
+PID   USER     TIME  COMMAND
+    <span class="m">1</span> root      0:00 ps
+pod <span class="s2">&#34;busybox&#34;</span> deleted
+</code></pre></div><p>If you do not get output of <code>ps</code> something is broken.</p>
+<h3 id="highly-available-test">Highly available test</h3>
+<p>So now we have 3 master nodes running in our cluster. We can test the high availability of the API server. To do that first we need to bring up <code>keepalived</code> on <code>node2</code> and <code>node3</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh ops@10.0.1.2 <span class="s1">&#39;systemctl start keepalived&#39;</span>
+ssh ops@10.0.1.3 <span class="s1">&#39;systemctl start keepalived&#39;</span>
+</code></pre></div><p>You will notice that <code>node1</code> currently owns the master IP. Let&rsquo;s copy the kubeconfig from the <code>node1</code> to your local machine:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh ops@10.0.1.1 <span class="s1">&#39;sudo cat /etc/kubernetes/admin.conf&#39;</span> &gt;&gt; ~/.kube/config
+</code></pre></div><p>Now you should be able to execute <code>kubectl</code> commands from your local machine. Do for instance:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl get nodes
+NAME    STATUS   ROLES    AGE     VERSION
+node1   Ready    master   3d2h    v1.18.3
+node2   Ready    master   3d2h    v1.18.3
+node3   Ready    master   5h46m   v1.18.3
+</code></pre></div><p>Now if you reboot <code>node1</code>, the master IP is automatically taken over by another node. Therefore <code>kubectl</code> commands still work while <code>node1</code> is being rebooted. As an excercise, find which failover node has the master IP.</p>
+<h2 id="batteries">Batteries</h2>
+<p>Now that we have a kubernetes cluster running with 3 masters and a Highly available endpoint for the API server we can continue to setup the services. From now on you can interact with the Kubernetes cluster from your local machine.</p>
+<h3 id="namespace-sys">Namespace: sys</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl create namespace sys
+</code></pre></div><h4 id="metal-lb">Metal LB</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo update
+
+cat &gt; metallb-config.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">apiVersion: v1
+</span><span class="s">kind: ConfigMap
+</span><span class="s">metadata:
+</span><span class="s">  namespace: sys
+</span><span class="s">  name: metallb-config
+</span><span class="s">data:
+</span><span class="s">  config: |
+</span><span class="s">    address-pools:
+</span><span class="s">    - name: default
+</span><span class="s">      protocol: layer2
+</span><span class="s">      addresses:
+</span><span class="s">      - 10.0.200.0-10.0.255.0
+</span><span class="s">EOF</span>
+kubectl apply -f metallb-config.yaml
+helm install metallb stable/metallb --namespace sys
+</code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/metallb">metallb helm chart</a> for full configuration options.</p>
+<h4 id="nginx-ingress">Nginx-ingress</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
+cat &gt; nginx-ingress-values.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">controller:
+</span><span class="s">  kind: DaemonSet
+</span><span class="s">  daemonset:
+</span><span class="s">    useHostPort: true
+</span><span class="s">    hostPorts:
+</span><span class="s">      http: 30080
+</span><span class="s">      https: 30443
+</span><span class="s">  service:
+</span><span class="s">    enabled: false
+</span><span class="s">  metrics:
+</span><span class="s">    enabled: true
+</span><span class="s">    service:
+</span><span class="s">      annotations:
+</span><span class="s">        prometheus.io/scrape: &#34;true&#34;
+</span><span class="s">        prometheus.io/port: &#34;10254&#34;
+</span><span class="s">
+</span><span class="s">defaultBackend:
+</span><span class="s">  image:
+</span><span class="s">    repository: cinaq/default-backend
+</span><span class="s">    tag: 1.2
+</span><span class="s">  replicaCount: 2
+</span><span class="s">EOF</span>
+helm install nginx-ingress stable/nginx-ingress --namespace sys -f nginx-ingress-values.yaml
+</code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/nginx-ingress">nginx-ingress helm chart</a> for full configuration options.</p>
+<h4 id="cert-manager-letsencrypt">Cert-manager (Letsencrypt)</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+<span class="c1"># updated on 2020-08-12 ref: https://github.com/jetstack/cert-manager/issues/2752</span>
+helm install cert-manager jetstack/cert-manager --namespace sys --version v0.16.1 --set <span class="nv">installCRDs</span><span class="o">=</span><span class="nb">true</span>
+
+cat &gt; issuer_letsencrypt.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">apiVersion: cert-manager.io/v1alpha2
+</span><span class="s">kind: ClusterIssuer
+</span><span class="s">metadata:
+</span><span class="s">  name: letsencrypt
+</span><span class="s">  namespace: sys
+</span><span class="s">spec:
+</span><span class="s">  acme:
+</span><span class="s">    # The ACME server URL
+</span><span class="s">    server: https://acme-v02.api.letsencrypt.org/directory
+</span><span class="s">    # Email address used for ACME registration
+</span><span class="s">    email: letsencrypt@example.dev
+</span><span class="s">    # Name of a secret used to store the ACME account private key
+</span><span class="s">    privateKeySecretRef:
+</span><span class="s">      name: letsencrypt
+</span><span class="s">    # Enable the HTTP-01 challenge provider
+</span><span class="s">    solvers:
+</span><span class="s">    - http01:
+</span><span class="s">        ingress:
+</span><span class="s">          class:  nginx
+</span><span class="s">EOF</span>
+kubectl create -f issuer_letsencrypt.yaml
+</code></pre></div><p>See the <a href="charts.jetstack.io">cert-manager helm chart</a> for full configuration options.</p>
+<h4 id="nfs-client-provisioner">NFS client provisioner</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">helm install nfs-storage stable/nfs-client-provisioner --namespace sys --set nfs.server<span class="o">=</span>10.0.0.2 --set nfs.path<span class="o">=</span>/volume1/kubernetes
+kubectl patch storageclass nfs-client -p <span class="err">&#39;</span><span class="o">{</span><span class="s2">&#34;metadata&#34;</span>: <span class="o">{</span><span class="s2">&#34;annotations&#34;</span>:<span class="o">{</span><span class="s2">&#34;storageclass.kubernetes.io/is-default-class&#34;</span>:<span class="s2">&#34;true&#34;</span><span class="o">}}</span>
+</code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/nfs-server-provisioner">nfs-server-provisioner helm chart</a> for full configuration options.</p>
+<h3 id="namespace-monitoring">Namespace: monitoring</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl create namespace monitoring
+</code></pre></div><h4 id="prometheus">Prometheus</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat &gt; prometheus-values.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">alertmanager:
+</span><span class="s">  replicaCount: 2
+</span><span class="s">pushgateway:
+</span><span class="s">  replicaCount: 2
+</span><span class="s">server:
+</span><span class="s">  replicaCount: 2
+</span><span class="s">  statefulSet:
+</span><span class="s">    enabled: true
+</span><span class="s">EOF</span>
+helm install prometheus stable/prometheus -n monitoring -f prometheus-values.yaml
+</code></pre></div><p>See the <a href="https://github.com/helm/charts/tree/master/stable/prometheus">prometheus helm chart</a> for full configuration options.</p>
+<h4 id="loki">Loki</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">helm repo add loki https://grafana.github.io/loki/charts
+helm repo update
+
+helm install loki loki/loki-stack -n monitoring
+</code></pre></div><p>See the <a href="https://grafana.github.io/loki/charts">loki-stack helm chart</a> for full configuration options.</p>
+<h4 id="grafana">Grafana</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat &gt; grafana-values.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">persistence:
+</span><span class="s">  enabled: true
+</span><span class="s">replicas: 2
+</span><span class="s">EOF</span>
+helm install grafana stable/grafana -n monitoring -f grafana-values.yaml
+</code></pre></div><p>After the helm install, save the grafana password for later.</p>
+<p>See the <a href="https://github.com/helm/charts/tree/master/stable/grafana">grafana helm chart</a> for full configuration options.</p>
+<p>Expose grafana via Ingress:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat &gt; grafana-resources.yaml <span class="s">&lt;&lt;EOF
+</span><span class="s">apiVersion: extensions/v1beta1
+</span><span class="s">kind: Ingress
+</span><span class="s">metadata:
+</span><span class="s">  name: grafana-ingress
+</span><span class="s">  namespace: monitoring
+</span><span class="s">  annotations:
+</span><span class="s">    cert-manager.io/cluster-issuer: &#34;letsencrypt&#34;
+</span><span class="s">    nginx.ingress.kubernetes.io/proxy-body-size: 1m
+</span><span class="s">    nginx.ingress.kubernetes.io/server-snippet: |
+</span><span class="s">      # IP white-listing
+</span><span class="s">      allow 192.168.1.0/24;
+</span><span class="s">      allow YOUR_PUBLIC_IP;
+</span><span class="s">      deny all;
+</span><span class="s">spec:
+</span><span class="s">  tls:
+</span><span class="s">  - hosts:
+</span><span class="s">    - grafana.sys.example.dev
+</span><span class="s">    secretName: dev-grafana-sys-grafana-tls
+</span><span class="s">  rules:
+</span><span class="s">  - host: grafana.sys.example.dev
+</span><span class="s">    http:
+</span><span class="s">      paths:
+</span><span class="s">      - path: /
+</span><span class="s">        backend:
+</span><span class="s">          serviceName: grafana
+</span><span class="s">          servicePort: 80
+</span><span class="s">EOF</span>
+</code></pre></div><p>Now you should be able to visit grafana via the public URL: <a href="http://grafana.sys.example.dev">http://grafana.sys.example.dev</a> and notice you get redirected automatically to HTTPS and it&rsquo;s signed by LetsEncrypt.</p>
+<p>Login here with the password from grafana installation with username <code>admin</code>.</p>
+<p>After login configure the 2 datasources:</p>
+<ul>
+<li>loki: http://loki:3100</li>
+<li>prometheus: http://prometheus-server</li>
+</ul>
+<p>Then import the dashboards:</p>
+<ul>
+<li><a href="https://grafana.com/grafana/dashboards/8685">https://grafana.com/grafana/dashboards/8685</a></li>
+<li><a href="https://grafana.com/grafana/dashboards/9614">https://grafana.com/grafana/dashboards/9614</a></li>
+</ul>
+<h2 id="results">Results</h2>
+<p>Your deployment is now complete. It should look like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ kubectl get pods -A -o wide
+NAMESPACE     NAME                                                 READY   STATUS    RESTARTS   AGE     IP                NODE    NOMINATED NODE   READINESS GATES
+kube-system   calico-kube-controllers-789f6df884-g2gm4             1/1     Running   <span class="m">2</span>          3d2h    192.168.166.149   node1   &lt;none&gt;           &lt;none&gt;
+kube-system   calico-node-8nv5r                                    1/1     Running   <span class="m">1</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+kube-system   calico-node-srxdd                                    1/1     Running   <span class="m">3</span>          3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   calico-node-tslz8                                    1/1     Running   <span class="m">6</span>          3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   coredns-66bff467f8-6dsk5                             1/1     Running   <span class="m">1</span>          5h24m   192.168.135.30    node3   &lt;none&gt;           &lt;none&gt;
+kube-system   coredns-66bff467f8-z2b9h                             1/1     Running   <span class="m">2</span>          3d2h    192.168.166.148   node1   &lt;none&gt;           &lt;none&gt;
+kube-system   etcd-node1                                           1/1     Running   <span class="m">3</span>          3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   etcd-node2                                           1/1     Running   <span class="m">7</span>          3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   etcd-node3                                           1/1     Running   <span class="m">1</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-apiserver-node1                                 1/1     Running   <span class="m">8</span>          3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-apiserver-node2                                 1/1     Running   <span class="m">9</span>          3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-apiserver-node3                                 1/1     Running   <span class="m">1</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-controller-manager-node1                        1/1     Running   <span class="m">35</span>         3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-controller-manager-node2                        1/1     Running   <span class="m">35</span>         3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-controller-manager-node3                        1/1     Running   <span class="m">4</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-proxy-cj42b                                     1/1     Running   <span class="m">5</span>          3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-proxy-nt7zn                                     1/1     Running   <span class="m">2</span>          3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-proxy-s8vgt                                     1/1     Running   <span class="m">1</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-scheduler-node1                                 1/1     Running   <span class="m">30</span>         3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-scheduler-node2                                 1/1     Running   <span class="m">33</span>         3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+kube-system   kube-scheduler-node3                                 1/1     Running   <span class="m">5</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+monitoring    grafana-74f7c48746-9dvxf                             1/1     Running   <span class="m">0</span>          3h31m   192.168.104.53    node2   &lt;none&gt;           &lt;none&gt;
+monitoring    grafana-74f7c48746-txwrv                             1/1     Running   <span class="m">0</span>          3h30m   192.168.135.43    node3   &lt;none&gt;           &lt;none&gt;
+monitoring    loki-0                                               1/1     Running   <span class="m">0</span>          4h39m   192.168.104.47    node2   &lt;none&gt;           &lt;none&gt;
+monitoring    loki-promtail-785qg                                  1/1     Running   <span class="m">4</span>          3d1h    192.168.104.3     node2   &lt;none&gt;           &lt;none&gt;
+monitoring    loki-promtail-8fnkw                                  1/1     Running   <span class="m">1</span>          3d1h    192.168.166.151   node1   &lt;none&gt;           &lt;none&gt;
+monitoring    loki-promtail-8vwpf                                  1/1     Running   <span class="m">1</span>          6h27m   192.168.135.37    node3   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-alertmanager-6fcfd7bb84-mvm9k             2/2     Running   <span class="m">2</span>          5h11m   192.168.135.33    node3   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-alertmanager-6fcfd7bb84-ndbhd             2/2     Running   <span class="m">0</span>          3h27m   192.168.104.61    node2   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-kube-state-metrics-79f5b77cb8-4kh9x       1/1     Running   <span class="m">1</span>          5h24m   192.168.135.27    node3   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-node-exporter-278sb                       1/1     Running   <span class="m">1</span>          6h22m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-node-exporter-czrbw                       1/1     Running   <span class="m">4</span>          3d      10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-node-exporter-xfw7s                       1/1     Running   <span class="m">1</span>          3d      10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-pushgateway-5d85697467-88mp5              1/1     Running   <span class="m">0</span>          3h27m   192.168.104.23    node2   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-pushgateway-5d85697467-hff9t              1/1     Running   <span class="m">1</span>          5h24m   192.168.135.38    node3   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-server-0                                  2/2     Running   <span class="m">0</span>          3h21m   192.168.104.19    node2   &lt;none&gt;           &lt;none&gt;
+monitoring    prometheus-server-1                                  2/2     Running   <span class="m">0</span>          3h20m   192.168.135.44    node3   &lt;none&gt;           &lt;none&gt;
+sqirly        postgresql-545d95dcb9-npnbj                          1/1     Running   <span class="m">0</span>          5h12m   192.168.166.153   node1   &lt;none&gt;           &lt;none&gt;
+sqirly        sqirly-5d674b8d5b-ktbsw                              1/1     Running   <span class="m">1</span>          6h16m   192.168.135.41    node3   &lt;none&gt;           &lt;none&gt;
+sqirly        sqirly-5d674b8d5b-mnzzv                              1/1     Running   <span class="m">5</span>          5h24m   192.168.166.152   node1   &lt;none&gt;           &lt;none&gt;
+sys           cert-manager-678bc78d5d-gmb86                        1/1     Running   <span class="m">1</span>          5h24m   192.168.135.26    node3   &lt;none&gt;           &lt;none&gt;
+sys           cert-manager-cainjector-77bc84779-bq9xx              1/1     Running   <span class="m">4</span>          5h24m   192.168.135.36    node3   &lt;none&gt;           &lt;none&gt;
+sys           cert-manager-webhook-5b5485577f-5wz6c                1/1     Running   <span class="m">1</span>          5h24m   192.168.135.40    node3   &lt;none&gt;           &lt;none&gt;
+sys           distcc-deployment-5d6fb547d7-pjhd7                   1/1     Running   <span class="m">1</span>          5h24m   192.168.135.42    node3   &lt;none&gt;           &lt;none&gt;
+sys           metallb-controller-9f46bdfcb-zbtsw                   1/1     Running   <span class="m">1</span>          6h12m   192.168.135.39    node3   &lt;none&gt;           &lt;none&gt;
+sys           metallb-speaker-4bpqd                                1/1     Running   <span class="m">1</span>          3d2h    10.0.1.1          node1   &lt;none&gt;           &lt;none&gt;
+sys           metallb-speaker-t2jpt                                1/1     Running   <span class="m">4</span>          3d2h    10.0.1.2          node2   &lt;none&gt;           &lt;none&gt;
+sys           metallb-speaker-w4q2s                                1/1     Running   <span class="m">1</span>          6h27m   10.0.1.3          node3   &lt;none&gt;           &lt;none&gt;
+sys           minio-6df88b9995-x8qpt                               1/1     Running   <span class="m">1</span>          5h12m   192.168.135.31    node3   &lt;none&gt;           &lt;none&gt;
+sys           nfs-storage-nfs-client-provisioner-8fcb6b749-nskl4   1/1     Running   <span class="m">1</span>          5h12m   192.168.135.28    node3   &lt;none&gt;           &lt;none&gt;
+sys           nginx-ingress-controller-jxhtn                       1/1     Running   <span class="m">0</span>          3h57m   192.168.166.159   node1   &lt;none&gt;           &lt;none&gt;
+sys           nginx-ingress-controller-kk6sn                       1/1     Running   <span class="m">0</span>          3h57m   192.168.104.20    node2   &lt;none&gt;           &lt;none&gt;
+sys           nginx-ingress-controller-s4ndr                       1/1     Running   <span class="m">1</span>          3h57m   192.168.135.32    node3   &lt;none&gt;           &lt;none&gt;
+sys           nginx-ingress-default-backend-5c667c8479-hn769       1/1     Running   <span class="m">1</span>          5h24m   192.168.135.29    node3   &lt;none&gt;           &lt;none&gt;
+sys           nginx-ingress-default-backend-5c667c8479-zhnl8       1/1     Running   <span class="m">0</span>          4h53m   192.168.166.154   node1   &lt;none&gt;           &lt;none&gt;
+</code></pre></div><p><a href="/media/grafana-k8s-summary.png"><img src="/media/grafana-k8s-summary.png" alt="Grafana K8s Cluster summary"></a></p>
+<p><a href="/media/grafana-nginx-ingress.png"><img src="/media/grafana-nginx-ingress.png" alt="Grafana Nginx-Ingress Controller"></a></p>
+<h2 id="conclusions">Conclusions</h2>
+<p>This setup is not truly highly available. The whole cluster depends on the Synology as data storage. You could improve this further by replacing the centralized NAS with a distributed solution. But besides that the cluster is very solid and scalable. Rebooting any of the NUC&rsquo;s, your application experiences almost zero down time. In case of a node outage, requests active on the broken node will be aborted. Also if the broken node happens to be the active master. But it will failover automatically to another master node.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74177616-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74177616-1');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

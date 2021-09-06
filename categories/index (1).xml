@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on CINAQ</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>/categories/cloud/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/categories/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mendix</title>
+      <link>/categories/mendix/</link>
+      <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
+      
+      <guid>/categories/mendix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AppSec</title>
+      <link>/categories/appsec/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/categories/appsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>/categories/security/</link>
+      <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>/categories/devops/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>/categories/kubernetes/</link>
+      <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>/categories/development/</link>
+      <pubDate>Sun, 10 May 2020 13:37:00 +0000</pubDate>
+      
+      <guid>/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lifehacks</title>
+      <link>/categories/lifehacks/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/lifehacks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSX</title>
+      <link>/categories/osx/</link>
+      <pubDate>Mon, 17 Jun 2019 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>/categories/testing/</link>
+      <pubDate>Sun, 05 May 2019 01:11:03 +0100</pubDate>
+      
+      <guid>/categories/testing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
