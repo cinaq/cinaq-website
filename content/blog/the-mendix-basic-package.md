@@ -5,7 +5,7 @@ draft: false
 tags: ["mendix", "book", "mendix-ops-book", ]
 categories: ['Cloud', 'Mendix']
 authors: ['Xiwen Cheng']
-description: You just showed your freshly built Mendix application to your manager. He/She was blown away and asked you to push it to production. However, your application runs locally on your laptop. What do you do?
+description: The free tier is not sufficient for your application? Or you are considering to use Mendix for your startup? In this article to shed some light on the Mendix Basic Package.
 thumbnail: '/media/mendix-basic-header-thumb.png'
 image: '/media/mendix-basic-header.png'
 ---
