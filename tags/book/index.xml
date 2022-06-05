@@ -6,7 +6,17 @@
     <description>Recent content in book on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Apr 2021 00:13:37 +0100</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 00:13:37 +0100</lastBuildDate><atom:link href="/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is the Mendix Basic Package for me?</title>
+      <link>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</link>
+      <pubDate>Sat, 04 Jun 2022 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</guid>
+      <description>Mendix introduced the Basic package back in September 2021. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.
+With the Basic package Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups.</description>
+    </item>
+    
     <item>
       <title>You have built a Mendix app, now what?</title>
       <link>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</link>

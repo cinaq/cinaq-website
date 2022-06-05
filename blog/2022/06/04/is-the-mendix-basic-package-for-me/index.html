@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Is the Mendix Basic Package for me? - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="You just showed your freshly built Mendix application to your manager. He/She was blown away and asked you to push it to production. However, your application runs locally on your laptop. What do you do?" />
+  <meta property="og:title" content="Is the Mendix Basic Package for me?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2022/06/04/is-the-mendix-basic-package-for-me/" />
+  <meta property="og:image" content="/media/mendix-basic-header-thumb.png" />
+  <meta property="og:description" content="You just showed your freshly built Mendix application to your manager. He/She was blown away and asked you to push it to production. However, your application runs locally on your laptop. What do you do?"  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/mendix-basic-header.png" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Is the Mendix Basic Package for me?</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Jun 4, 2022
+                
+                
+                <i>(Modified on Jun 5, 2022)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Mendix introduced the Basic package back in <a href="https://www.mendix.com/blog/how-to-kickstart-your-app-with-mendix-basic/">September 2021</a>. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.</p>
+<p>With the Basic package Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups. In practice, this classification turns out to be non-trivial as asked <a href="https://forum.mendix.com/link/questions/110291">on Mendix Forum</a>. Or quoting a recent conversation on Mendix Community slack:</p>
+<blockquote>
+<p>Have you guys thought about Mendix&rsquo;s Basic package as a way of testing a web app idea on the market? Well, don&rsquo;t&hellip;</p>
+</blockquote>
+<p>This article will try to help you decide whether the Basic package is right for you. We will also explain why this decision is so important.</p>
+<h2 id="audience">Audience</h2>
+<p>With this article, we hope to help those considering or who have been using the Mendix basic package. This affordable package is paid one year upfront. Depending on your situation this can be a significant investment. Therefore the main target audience is startups, small teams/businesses, and amateur/professional Mendix developers looking to upgrade from the free tier.</p>
+<h2 id="pricing-models">Pricing models</h2>
+<p>Like most things we purchase, the price is very important for our decision-making process. For starters, you can build your app and run it for free using the free tier. The next level is basic which starts from 50 euro/month. The third is the Standard package which starts from 800 euro/month. And finally, there is  Premium for which a quote must be requested.</p>
+<p><img src="/media/mendix-pricing.png" alt="Mendix Pricing"></p>
+<p>The free tier is suitable for low requirements use cases or demos. For example a members portal for your local soccer club. Or manage the inventory at a small florist shop. Because it’s free, there is no customer support unlike the rest of the packages. It’s also great for classes or practice environments.</p>
+<p>If the availability of your app is important, you might need at least the basic package. You have more control over backups, access to monitoring services and receive support when needed. It is basically the first package you could depend on with regard to business continuity.</p>
+<p>In short, the standard package is for more complex applications that require scaling the infrastructure for performance. Best suited for medium-sized businesses. Also great for Software as a Service (SaaS) application types due to its low cost per user. However the steep base price of 800 euro per month is prob</p>
+<p>If you are an enterprise planning to create more than 5 mendix apps, reach out to the mendix sales team for a quote.</p>
+<p>Check the <a href="https://www.mendix.com/pricing/">official pricing page</a> for full details.</p>
+<h2 id="the-basic-package">The Basic package</h2>
+<p>The Basic package is technically fairly <a href="https://docs.mendix.com/developerportal/deploy/basic-package/">well documented</a>. However, there is more to it than just technical capabilities. We hope to help you look at this package from two viewpoints: strategic and use-case oriented. Nonetheless the technical specifications are still relevant and we can sum it up as:</p>
+<ul>
+<li>Runs in the Mendix Cloud</li>
+<li>Supports between five and a hundred (5-100) users</li>
+<li>Has a limited amount of resources and a single cloud environment on Mendix Cloud V4</li>
+<li>1GB App RAM</li>
+<li>0.25 vCPU which is fairly low but enough for small apps</li>
+<li>1GB database schema as a part of a shared database</li>
+<li>10GB file storage for FileDocument and Image entities <a href="https://docs.mendix.com/developerportal/deploy/basic-package/">according to official docs it&rsquo;s 1GB</a> but <a href="https://www.mendix.com/blog/how-to-kickstart-your-app-with-mendix-basic/">another blog article states it&rsquo;s 10GB</a> also the basic plan details claims 10 GB.</li>
+<li>Regular Platform SLA</li>
+<li>Backups allow you to recover from accidents</li>
+<li>(partial) Metrics and alerts</li>
+</ul>
+<p>Main advantage of the Basic package over free apps is the fact your app doesn&rsquo;t go to sleep when there&rsquo;s no activity.</p>
+<h3 id="application-overview">Application overview</h3>
+<p>Basic grants you access to a single production environment.
+<img src="/media/mendix-basic-application-overview.png" alt="Mendix Basic application overview"></p>
+<h3 id="environment-details">Environment details</h3>
+<p>The production environment can be configured with a custom domain. A must have for any business.
+<img src="/media/mendix-basic-environment-details.png" alt="Mendix Basic environment details">
+<img src="/media/mendix-basic-specs.png" alt="Mendix Basic Plan"></p>
+<h2 id="it-barely-handles-4-users">It barely handles 4 users</h2>
+<p>When it comes to how many users your application can handle it&rsquo;s a very complicated discussion. From marketing perspective the pricing model does allow 100 users based on the licensing. However the other specifications, namely technical in this case, does not give that guarantee. That&rsquo;s because it depends on how the application is built.</p>
+<p>On Mendix community slack there was a thread:</p>
+<blockquote>
+<p>Have you guys thought about Mendix&rsquo;s Basic package as a way of testing a web app idea on the market? Well, don&rsquo;t&hellip;  What&rsquo;s sold as a platform for up to 100 users barely manages 4.</p>
+</blockquote>
+<p>Leading to this thread, I did an investigation with the original poster to find out why this SaaS application is so slow. The performance issues were the result of the complicated use case. There were over 50 entities with complex relations of which some entities have thousands of rows. There was this requirement to keep old data around. Also because this app was a multi-tenant app, it makes all the queries much more complicated implicitly.</p>
+<p>Also considering the fact:</p>
+<blockquote>
+<p>There&rsquo;s no step between the €50/month and the €800/month plans (talk about scalability&hellip;)</p>
+</blockquote>
+<p>It&rsquo;s important to design and build your application as efficiently as possible. The rule of thumb here is to keep it simple. The more complicated your domain model, the more likely it is you are going to run into performance issues. Needless to say the basic package is sufficient in most cases to handle 100 users assuming the working dataset is small to modest size.</p>
+<h2 id="caveats">Caveats</h2>
+<p>Besides the steep upgrade cost from Basic package onwards, the main caveat with Basic package is the shared database. Since the database server is not dedicated to your application alone, you&rsquo;re susceptible to noisy neighbours issue. This means that if there is a bad tenant (other customers of Mendix) that consumes all the database resources, your application performance will be impacted negatively. Due to this shared nature, you don&rsquo;t have insight in the overal database performance metrics. So it becomes harder to reason about database performance with quantifiable metrics.</p>
+<h2 id="performance-improvements">Performance improvements</h2>
+<p>There are few advices to help remediate performance issues. In this section we outline a few tips and tricks. These are very important for apps running Basic package due to low budget system specificiations. Nonetheless they are still very much applicable to other packages when your app is suffering from performance issues.</p>
+<h3 id="simplify-domain-model">Simplify domain model</h3>
+<p>Especially when your app is a multi-tenant all queries become more heavy on the database. With multi-level entity relationships queries becomes significantly more expensive to execute especially when some intermediate join tables contain large number of rows. By keeping your domain model simple, this often demands less resources from your database.</p>
+<h3 id="retrieve-less-objects">Retrieve less objects</h3>
+<p>Mendix makes it easy to manipulate and filter objects within Microflows. However you should consider leveraging the database as much as possible by using its querying capabilities and return the minimum objects required for the task at hand. If not, your application runtime may not be able to handle/process the large amount of data in memory. The 1GB memory capacity might sound a lot, but in low-code platforms like Mendix, memory efficiency is quite low at the expense of ease of use.</p>
+<h3 id="experiment-with-indices">Experiment with indices</h3>
+<p>If your queries are slow, adding indices to columns could help speed up the retrieval. However mutations will be more expensive (slower). So be carefull with indices. In Mendix it&rsquo;s easy to add and remove indices without data loss. You should feel comfortable to experiment.</p>
+<h3 id="move-infrequent-accessed-data-to-separate-entity">Move infrequent accessed data to separate entity</h3>
+<p>Depending on your use case, sometimes not all data is equally important or relevant to consider for the common use cases. If your application has a need to keep old records for compliance reasons, you can consider moving these old records into a separate archive entity isolating them from the working set of data. This can be achived with a scheduled event that archives old data. It reduces the strain on the database having to deal with archived data regularly while it&rsquo;s not needed.</p>
+<h2 id="upgrade-as-last-resort">Upgrade as last resort</h2>
+<p>If all the optimization efforts doesn&rsquo;t yield an acceptable peformance for your application it&rsquo;s time to consider upgrading your cloud environment specs. Whether to upgrade the application runtime or database depends on the bottleneck. A good rule of thumb is if your application regularly crashes due to out of memory, increase the application runtime memory. If your queries are slow and you can confirm the database size is larger than the memory capacity alloted to your database, upgrade the database with more memory and CPU.</p>
+<p>Upgrading from basic package is a last resort remediation action because the next package is standard which is a whopping 1600% cost increase (800/50 * 100). Unless you can conclude your growth is more important than optimizing your current solution upgrading shouldn&rsquo;t be your first choice.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>In conclusion the Basic package is a nice addition for small businesses with relatively simple domain model requirements. If you are planning to use this for (micro) SaaS solution, you must keep a check on domain model complexity and amount of data. Perhaps be prepared to upgrade to Standard package any time.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74177616-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74177616-1');
+      </script>
+    
+  
+
+
+
+</body>
+</html>
