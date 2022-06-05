@@ -1,0 +1,42 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-posts-list{{ end }}
+
+{{ define "main" }}
+<div class="strip strip-base">
+    <div class="container">
+
+        {{ if .Params.image }}
+            <div class="col-12 mb-3">
+                <div class="title-image">
+                    <img alt="{{ .Title }}" src="{{ .Params.image | relURL }}" />
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="title">
+                    <h1>{{ .Title }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ $paginator := .Paginate (where .Pages "Type" "blog") }}
+            {{ range $paginator.Pages }}
+                <div class="col-12 mb-6">
+                    {{ partial "cards/card-row.html" (dict "context" . "card" (dict "shadow" false "padding" false "border" false "showThumbnail" true ) "classes" "") }}
+                </div>
+            {{ end }}
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                {{ partial "paginator" . }}
+            </div>
+        </div>
+
+    </div>
+</div>
+{{ end }}

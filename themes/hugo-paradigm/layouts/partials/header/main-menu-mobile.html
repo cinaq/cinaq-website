@@ -1,0 +1,39 @@
+<div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+
+      {{ if .HasChildren }}
+      <li class="menu-item menu-item-{{ .Name | lower }}{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}">
+      <a href="{{ .URL }}">
+        {{ .Pre }}
+        <span>{{ .Name }}</span>
+      </a>
+      {{ range .Children }}
+      <li class="menu-sub-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+      {{else}}
+      <li class="menu-item menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+      <a href="{{.URL}}">
+        {{ .Pre }}
+        <span>{{ .Name }}</span>
+      </a>
+      {{end}}
+      {{end}}
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      {{ if ne .Site.Data.layout.disableDarkMode true }}
+      <ul>
+        <li>Darkmode {{ partial "header/dark-mode.html" (dict "context" .  "classes" "dark-mode-invert") }}</li>
+      </ul>
+      {{ end }}
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.dark-mode {
+  padding: 6px 14px;
+  display: inline-flex;
+  color: var(--color-primary);
+  font-size: 14px;
+  input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .dark-mode-switch {
+    border: 1px solid var(--color-primary);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px;
+    position: relative;
+    width: 34px;
+    .ball {
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      height: 14px;
+      width: 14px;
+      transform: translateX(0px);
+    }
+    .fa-moon {
+      color: inherit;
+    }
+  
+    .fa-sun {
+      color: inherit;
+    }
+    &.dark {
+      .ball {
+        transform: translateX(16px);
+      }
+    }
+    &.animated {
+      .ball {
+        transition: transform 0.2s linear;
+      }
+    }
+  }
+}
+
+.dark-mode-invert {
+  color: var(--color-primary-text);
+  .dark-mode-switch {
+    border: 1px solid var(--color-primary-text);
+  }
+  .dark-mode-switch {
+     .ball {
+      background-color: var(--color-primary-text);
+     }
+  }
+}

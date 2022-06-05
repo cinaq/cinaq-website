@@ -1,0 +1,65 @@
+{{ define "title" }}{{ .Title }} - Blog{{ end }}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-posts-single{{ end }}
+
+{{ define "meta_tags" }}
+  <meta name="description" content="{{ .Params.description }}" />
+  <meta property="og:title" content="{{ .Params.Title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ .Params.thumbnail }}" />
+  <meta property="og:description" content="{{ .Params.description }}"  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{ .Site.Data.seo.og_meta.meta_twitter_site }}" />
+  <meta name="twitter:creator" content="{{ .Site.Data.seo.og_meta.meta_twitter_creator }}" />
+{{ end }}
+
+{{ define "main" }}
+<div class="strip strip-base">
+  <div class="container">
+
+    {{ if .Params.image }}
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="{{ .Params.image | relURL }}" />
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>{{ .Title }}</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          {{- range .Params.authors }}
+            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="{{ .Permalink }}">{{ .Params.name }}</a>
+                {{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "date_format") }}
+                {{ if not .Date.IsZero }}
+                <span class="post-author-date">{{ .Date.Format $dateFormat }}</span>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          {{ end }}
+          <div class="content">{{.Content}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{ end }}

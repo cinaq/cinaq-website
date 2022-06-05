@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{{ $themeId := .Site.Data.themes.themeId }}
+<html lang="en" data-theme="{{ $themeId }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ block "title" . }}{{ .Title }}{{ end }}{{ if .Site.Data.seo.appendSiteTitle }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ .Site.BaseURL }}favicon-32x32.png">
+
+    {{ range where .Site.Data.themes.themes "id" $themeId}}
+        {{ if .google_fonts }}
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="{{ .google_fonts }}" rel="stylesheet">
+        {{ end }}
+    {{ end }}
+
+    {{ if .Site.IsServer }}
+        {{ $theme := resources.Get "scss/theme.scss" | resources.ExecuteAsTemplate "theme.scss" . | toCSS (dict "targetPath" "css/theme.css" "enableSourceMap" true) }}
+        {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
+        <link rel="stylesheet" href="{{ $theme.RelPermalink }}">
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+    {{ else }}
+        {{ $theme := resources.Get "scss/theme.scss" | resources.ExecuteAsTemplate "theme.scss" . | toCSS }}
+        {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS }}
+        <link rel="stylesheet" href="{{ ($theme | minify | fingerprint).RelPermalink  }}">
+        <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink  }}">
+    {{ end }}
+
+    {{ if ne .Site.Data.layout.disableDarkMode true }}
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    {{ end }}
+
+    <link rel="preload" href="{{ .Site.BaseURL }}fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    {{ block "header_css" . }}{{ end }}
+    {{ block "meta_tags" . }}
+        {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
+        {{ if .Title }}<meta property="og:title" content="{{ .Title }}"/>{{ end }}
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{ .Permalink }}"/>
+        {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image }}"/>{{ end }}
+        {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="{{ .Site.Data.seo.og_meta.meta_twitter_site }}"/>
+        <meta name="twitter:creator" content="{{ .Site.Data.seo.og_meta.meta_twitter_creator }}"/>
+    {{ end }}
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            // Optionally include data about your customer here to identify them
+            // customer: {
+            //   name: __CUSTOMER__.name,
+            //   email: __CUSTOMER__.email,
+            //   external_id: __CUSTOMER__.id,
+            //   metadata: {
+            //     plan: "premium"
+            //   }
+            // }
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+{{ $bodyClasses := slice "" }}
+{{ $headerClasses := slice "" }}
+
+{{ with .Params }}
+    {{ if .headerTransparent }}
+        {{ $bodyClasses = $bodyClasses | append "has-transparent-header" }}
+        {{ $headerClasses = $headerClasses | append "header-transparent" }}
+    {{ end }}
+{{ end }}
+{{ with .Site }}
+    {{ if .Data.layout.header.headerFixed }}
+        {{ $bodyClasses = $bodyClasses | append "has-fixed-header" }}
+        {{ $headerClasses = $headerClasses | append "header-fixed" }}
+    {{ end }}
+{{ end }}
+
+<body class='page {{ block "body_classes" . }}{{ end }} {{ delimit $bodyClasses " " }}'>
+
+<div id="header" class='header {{ delimit $headerClasses " " }}'>
+    {{ partial "header/header.html" . }}
+</div>
+
+<div id="wrapper" class="wrapper">
+    {{ block "main" . }}{{ end }}
+</div>
+
+{{ partial "footer/footer.html" . }}
+
+{{ $scripts := resources.Get "js/scripts.js" }}
+{{ $header := resources.Get "js/header.js" }}
+{{ $hamburger := resources.Get "js/hamburger.js" }}
+{{ $js := slice $scripts $header $hamburger | resources.Concat "js/bundle.js" }}
+
+{{ if ne .Site.Data.layout.disableDarkMode true }}
+    {{ $darkMode := resources.Get "js/darkMode.js" }}
+    {{ $jsDarkMode := slice $darkMode | resources.Concat "js/darkModeBundle.js" }}
+    {{ if .Site.IsServer }}
+        <script type="text/javascript" src="{{ $jsDarkMode.RelPermalink }}"></script>
+    {{ else }}
+        <script type="text/javascript" src="{{ ($jsDarkMode | minify | fingerprint).RelPermalink }}"></script>
+    {{ end }}
+{{ end }}
+
+{{ if .Site.IsServer }}
+    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+{{ else }}
+    <script type="text/javascript" src="{{ ($js | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+
+{{ block "footer_js" . }}{{ end }}
+
+{{ partial "google-analytics.html" . }}
+
+</body>
+</html>

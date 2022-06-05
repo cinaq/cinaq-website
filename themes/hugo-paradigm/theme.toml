@@ -1,0 +1,9 @@
+name = "Hugo Paradigm"
+license = "Pro"
+description = "A premium Hugo theme with a flexible layout system."
+homepage = "https://hugo-paradigm.netlify.com"
+min_version = "0.74.3"
+
+[author]
+  name = "Robert Austin"
+  homepage = "https://www.zerostatic.io"

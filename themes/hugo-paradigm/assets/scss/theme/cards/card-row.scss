@@ -1,0 +1,45 @@
+.card-row {
+  flex-direction: row;
+  align-items: flex-start;
+  height: auto;
+  padding: 20px;
+  &.card-no-padding {
+    padding: 0;
+  }
+  .card-thumbnail {
+    border-radius: 3px;
+    overflow: hidden;
+    max-width: 100px;
+    flex: 1 0 auto;
+    margin-right: 20px;
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+      max-width: 200px;
+      margin-right: 30px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .card-thumbnail ~ .card-content {
+    padding-left: 0;
+  }
+  .card-content {
+    flex-grow: 2;
+    padding: 0;
+  }
+
+  .card-footer {
+    border: none;
+    background-color: unset;
+    a {
+      color: var(--color-primary);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+}

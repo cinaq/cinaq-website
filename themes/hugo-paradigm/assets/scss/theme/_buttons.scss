@@ -1,0 +1,56 @@
+button[type='submit'] {
+  border: none;
+  vertical-align: center;
+}
+
+.button {
+  white-space: nowrap;
+  display: inline-block;
+  padding: 8px 20px 9px 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  font-weight: 500;
+  color: var(--color-primary-text);
+  text-decoration: none;
+  transition: all 0.15s linear;
+  outline: none;
+  font-size: 16px;
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.button-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-text) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.button-primary-text {
+  background-color: transparent !important;
+  color: var(--color-primary-text) !important;
+  border-color: var(--color-primary-text) !important;
+}
+
+.button-primary-offset {
+  background-color: var(--color-primary-offset) !important;
+  color: var(--color-primary-text) !important;
+  border-color: var(--color-primary-offset) !important;
+}
+
+.button-base-text {
+  background-color: transparent !important;
+  color: var(--color-base-text) !important;
+  border-color: var(--color-base-text) !important;
+}
+
+.button-base {
+  background-color: transparent !important;
+  color: var(--color-base) !important;
+  border-color: var(--color-base) !important;
+}

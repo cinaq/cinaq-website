@@ -1,0 +1,21 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+
+{{ define "main" }}
+
+    <!-- Sections -->
+    {{ range .Params.sections }}
+        {{ partial "sections/section.html" (dict "context" $ "section" .) }}
+    {{ end }}
+
+{{ end }}
+
+{{ define "footer_js" }}
+    {{ $home := resources.Get "js/pages/home.js" }}
+    {{ $homeJS := slice $home | resources.Concat "js/homeBundle.js" }}
+    {{ if .Site.IsServer }}
+        <script type="text/javascript" src="{{ ($homeJS | fingerprint).RelPermalink }}"></script>
+    {{ else }}
+        <script type="text/javascript" src="{{ ($homeJS | minify | fingerprint).RelPermalink }}"></script>
+    {{ end }}
+{{ end }}

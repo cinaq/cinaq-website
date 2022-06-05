@@ -1,0 +1,58 @@
+{{ $heroClasses := slice "" }}
+{{ $heroStyles := slice "" }}
+
+{{ $heroBackgroundImageClasses := slice "" }}
+{{ $heroBackgroundImageStyles := slice "" }}
+
+{{ $heroContentClasses := slice "" }}
+{{ $heroContentStyles := slice "" }}
+
+{{ $heroImageClasses := slice "" }}
+{{ $heroImageStyles := slice "" }}
+
+{{ with .hero }}
+	{{ if .height }}{{ $heroStyles = $heroStyles | append (printf "%s%s%s" "height: " .height ";" )}}{{ end }}
+	{{ if .background.backgroundColorCustom }}{{ $heroStyles = $heroStyles | append (printf "%s%s%s" "background-color: " .background.backgroundColorCustom ";" )}}{{ end }}
+
+	{{ if eq .background.monotone true }}{{ $heroBackgroundImageClasses = $heroBackgroundImageClasses | append (printf "monotone" )}}{{ end }}
+	{{ if .background.opacity }}{{ $heroBackgroundImageStyles = $heroBackgroundImageStyles | append (printf "%s%s%s" "opacity: " (string .background.opacity) ";" )}}{{ end }}
+	{{ if .background.positionX }}{{ $heroBackgroundImageStyles = $heroBackgroundImageStyles | append (printf "%s%s%s" "background-position-x: " .background.positionX ";" )}}{{ end }}
+	{{ if .background.positionY }}{{ $heroBackgroundImageStyles = $heroBackgroundImageStyles | append (printf "%s%s%s" "background-position-y: " .background.positionY ";" )}}{{ end }}
+
+	{{ if eq .alignVertical "top" }}{{ $heroContentClasses = $heroContentClasses | append "align-items-start" }}{{ end }}
+	{{ if eq .alignVertical "middle" }}{{ $heroContentClasses = $heroContentClasses | append "align-items-center" }}{{ end }}
+	{{ if eq .alignVertical "bottom" }}{{ $heroContentClasses = $heroContentClasses | append "align-items-end" }}{{ end }}
+	{{ if eq .alignHorizontal "left" }}{{ $heroContentClasses = $heroContentClasses | append "justify-content-start" }}{{ end }}
+	{{ if eq .alignHorizontal "center" }}{{ $heroContentClasses = $heroContentClasses | append "justify-content-center" }}{{ end }}
+	{{ if eq .alignHorizontal "right" }}{{ $heroContentClasses = $heroContentClasses | append "justify-content-end" }}{{ end }}
+
+{{ end }}
+
+<div class="hero{{ delimit $heroClasses " " }}" style="{{ delimit $heroStyles " " | safeCSS}}">
+	<div class="hero-background-image{{ delimit $heroBackgroundImageClasses " " }}" style="{{ if .hero.background.backgroundImage }}background-image: url('{{ .hero.background.backgroundImage | relURL }}');{{ end }}{{ delimit $heroBackgroundImageStyles " "  | safeCSS}}"></div>
+	<div class="hero-content container">
+		<div class="row{{ delimit $heroContentClasses " " }}" style="{{ delimit $heroContentStyles " "  | safeCSS}}">
+
+			{{ if .hero.headings }}
+			<div class="col-12 col-md-6 hero-text">
+				{{ partial "sections/hero/hero-text.html" .hero.headings }}
+
+				{{ if .hero.buttons }}
+					<div class="hero-buttons">
+					{{ range .hero.buttons }}
+						{{ partial "components/button.html" . }}
+					{{ end }}
+					</div>
+				{{ end }}
+			</div>
+			{{ end }}
+
+			<div class="col-12 {{ if .hero.headings }}col-md-6{{ else }}col-md-12{{ end }} hero-image">
+				{{ if .hero.image }}
+					{{ partial "sections/hero/hero-image.html" .hero.image }}
+				{{ end }}
+			</div>
+
+		</div>
+	</div>
+</div>

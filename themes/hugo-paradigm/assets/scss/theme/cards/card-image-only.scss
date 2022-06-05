@@ -1,0 +1,15 @@
+.card-image-only {
+  height: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    max-width: 140px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

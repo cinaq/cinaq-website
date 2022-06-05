@@ -1,0 +1,47 @@
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          {{ if .Site.Data.layout.footer.title }}
+            <h3>{{ .Site.Data.layout.footer.title }}</h3>
+          {{ end }}
+          {{ if .Site.Data.layout.footer.showSocialMediaIcons }}
+            {{ partial "footer/social.html" . }}
+          {{ end }}
+          {{ if .Site.Data.layout.footer.description }}
+            <p>{{ .Site.Data.layout.footer.description }}</p>
+          {{ end }}
+          {{ if .Site.Data.layout.footer.copyrightShow }}
+            <a class="copyright" href="{{ .Site.Data.layout.footer.copyrightLink }}">{{ .Site.Data.layout.footer.copyrightText}}</a>
+          {{ end }}
+        </div>
+
+        {{ if .Site.Data.layout.footer.showPrimaryFooterMenu }}
+        <div class="col-12 col-md-3">
+          {{ if .Site.Data.layout.footer.footerMenuPrimaryHeading }}
+            <h3>{{ .Site.Data.layout.footer.footerMenuPrimaryHeading }}</h3>
+          {{ end }}
+          {{ partial "footer/footer-menu.html" (dict "context" . "menu" .Site.Menus.footer_primary) }}
+        </div>
+        {{ end }}
+
+        {{ if .Site.Data.layout.footer.showSecondaryFooterMenu }}
+        <div class="col-12 col-md-3">
+          {{ if .Site.Data.layout.footer.footerMenuSecondaryHeading }}<h3>{{ .Site.Data.layout.footer.footerMenuSecondaryHeading }}</h3>{{ end }}
+          {{ partial "footer/footer-menu.html" (dict "context" . "menu" .Site.Menus.footer_secondary) }}
+        </div>
+        {{ end }}
+
+        {{ if .Site.Data.layout.footer.showThirdFooterMenu }}
+        <div class="col-12 col-md-3">
+          {{ if .Site.Data.layout.footer.footerMenuThirdHeading }}<h3>{{ .Site.Data.layout.footer.footerMenuThirdHeading }}</h3>{{ end }}
+          {{ partial "footer/footer-menu.html" (dict "context" . "menu" .Site.Menus.footer_third) }}
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</div>

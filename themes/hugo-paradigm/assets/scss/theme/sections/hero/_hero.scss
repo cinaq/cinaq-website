@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  @include media-breakpoint-down(sm) {
+    height: auto !important;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 100%;
+  }
+  &.hero-fullscreen {
+    height: 100vh !important;
+  }
+  .hero-background-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.monotone {
+      filter: grayscale(100%);
+      mix-blend-mode: overlay;
+      opacity: 0.6;
+    }
+  }
+  .hero-content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: $strip-padding / 2;
+    padding-bottom: $strip-padding / 2;
+    @include media-breakpoint-up(md) {
+      padding-top: $strip-padding;
+      padding-bottom: $strip-padding;
+    }
+    .row {
+      height: 100%;
+    }
+  }
+  .hero-image {
+    img {
+      z-index: 3;
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      border-radius: $border-radius;
+      &.hero-image-absolute {
+        position: absolute;
+      }
+      &.hero-image-box-shadow {
+        box-shadow: 0 3px 11px 0px rgba(0, 0, 0, 0.2)
+      }
+      &.hero-image-border {
+        border: 1px solid var(--color-base-offset);
+      }
+    }
+  }
+  .hero-text {
+    color: inherit;
+    z-index: 2;
+    position: relative;
+    h1, h2, p {
+      @include media-breakpoint-up(md) {
+        width: 80%;
+      }
+    }
+    h1 {
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: normal;
+      margin-bottom: 0px;
+      color: inherit;
+      opacity: 1;
+      @include media-breakpoint-up(md) {
+        font-size: 52px;
+        font-weight: normal;
+      }
+    }
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: normal;
+      margin-bottom: 30px;
+      color: inherit;
+      @include media-breakpoint-up(md) {
+        font-size: 34px;
+      }
+    }
+    h1 ~ h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.4;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      @include media-breakpoint-up(md) {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+    }
+  }
+  .hero-buttons {
+    margin-bottom: 20px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+    .button {
+      margin-right: 5px;
+    }
+  }
+
+  .hero-down {
+    flex: 0;
+    text-align: center;
+    a {
+      display: inline-block;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+body.has-transparent-header {
+  .hero {
+    .hero-content {
+      padding-top: ($strip-padding + $header-height) / 2;
+      @include media-breakpoint-up(md) {
+        padding-top: ($strip-padding + $header-height);
+      }
+    }
+  }
+}

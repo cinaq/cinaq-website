@@ -1,0 +1,16 @@
+{{ $imgStyles := slice "" }}
+{{ $imgClasses := slice "" }}
+{{ $patternStyles := slice "" }}
+
+{{ if .patternOpacity }}{{ $patternStyles = $patternStyles | append (printf "%s%s%s" "opacity: " .patternOpacity ";" )}}{{ end }}
+
+{{ if eq .overlap true }}{{ $imgClasses = $imgClasses | append "hero-image-absolute" }}{{ end }}
+{{ if eq .shadow true }}{{ $imgClasses = $imgClasses | append "hero-image-box-shadow" }}{{ end }}
+{{ if eq .border true }}{{ $imgClasses = $imgClasses | append "hero-image-border" }}{{ end }}
+
+{{ if .image }}
+	<img width="600" height="400" {{ if .altText }}alt="{{ .altText }}"{{ end }} src="{{ .image | relURL }}" class="img-fluid hero-image{{ delimit $imgClasses " " }}" style="{{ delimit $imgStyles " "  | safeCSS }}"/>
+	{{ if .pattern }}
+		<div class="pattern {{ .pattern }}" style="{{ delimit $patternStyles " "  | safeCSS }}"></div>
+	{{ end }}
+{{ end }}

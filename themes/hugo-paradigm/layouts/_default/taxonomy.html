@@ -1,0 +1,52 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-default-taxonomy{{ end }}
+
+{{ define "main" }}
+<div class="strip strip-base">
+    <div class="container">
+
+        {{ if .Params.image }}
+        {{ if ne .Params.header false }}
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="title-image">
+                    <img alt="{{ .Title }}" src="{{ .Params.image | relURL }}" />
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="title">
+                    <h1>{{ .Title }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-8">
+                {{ $paginator := .Paginate (where .Pages "Type" "blog") }}
+                {{ range $paginator.Pages }}
+                    <div class="col-12 mb-6">
+                        {{ partial "cards/card-row.html"  (dict "context" . ) }}
+                    </div>
+                {{ end }}
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="sidebar">
+                    {{ partial "taxonomy-menu" . }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                {{ partial "paginator" . }}
+            </div>
+        </div>
+
+    </div>
+</div>
+{{ end }}

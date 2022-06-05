@@ -1,0 +1,45 @@
+// Hugo Pipes variables can only be declared in style.scss
+@import 'variables';
+@import 'bootstrap/bootstrap-grid';
+@import 'bootstrap/bootstrap';
+
+$header-height: {{ .Site.Data.layout.header.headerHeight | default "60px" }};
+$strip-padding: $grid-gutter-width * 3;
+
+// Theme
+@import 'theme/body';
+@import 'theme/type';
+@import 'theme/content';
+@import 'theme/buttons';
+@import 'theme/strip';
+@import 'theme/header';
+@import 'theme/footer';
+@import 'theme/main-menu-desktop';
+@import 'theme/main-menu-mobile';
+@import 'theme/sidebar';
+@import 'theme/author';
+@import 'theme/dark-mode';
+@import 'theme/pagination';
+
+@import 'theme/sections/hero/hero';
+@import 'theme/sections/grid/grid';
+@import 'theme/sections/cta/cta';
+@import 'theme/sections/info/info';
+
+@import 'theme/cards/card';
+@import 'theme/cards/card-row';
+@import 'theme/cards/card-image-only';
+
+// Syntax Highlighting
+@import 'libraries/pygments/github';
+
+// Font Awesome
+@import "libraries/fontawesome5/fontawesome.scss";
+@import "libraries/fontawesome5/solid.scss";
+@import "libraries/fontawesome5/brands.scss";
+
+.row > .card-thumbnail {
+    padding-top: 2em !important;
+    max-width: 200px;
+    max-height: 200px;
+}

@@ -1,0 +1,29 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-default-single{{ end }}
+
+{{ define "main" }}
+<div class="strip stripe-base">
+    <div class="container">
+
+        {{ if .Params.image }}
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="title-image">
+                    <img alt="{{ .Title }}" src="{{ .Params.image | relURL }}" />
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+        <div class="row">
+            <div class="col-12">
+                <div class="title">
+                    <h1>{{ .Title }}</h1>
+                    <div class="content">{{.Content}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,46 @@
+$strip-padding: $grid-gutter-width * 3;
+
+.strip {
+  background-repeat: no-repeat;
+  transition: background-color 0.3s;
+  padding-top: $strip-padding / 2;
+  padding-bottom: $strip-padding / 2;
+  @include media-breakpoint-up(md) {
+    padding-top: $strip-padding;
+    padding-bottom: $strip-padding;
+  }
+}
+
+.strip-border {
+  border-top: 1px solid var(--color-bg-offset);
+  border-bottom: 1px solid var(--color-bg-offset);
+}
+.strip-border-top {
+  border-top: 1px solid var(--color-base-offset);
+}
+.strip-border-bottom {
+  border-bottom: 1px solid var(--color-base-offset);
+}
+
+.strip-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  .button {
+    background-color: var(--color-primary-offset);
+    border-color: var(--color-primary-offset);
+    color: var(--color-primary-text);
+  }
+  p {
+    color: var(--color-primary-text-offset);
+  }
+}
+
+.strip-primary-offset {
+  background-color: var(--color-primary-offset);
+  color: var(--color-primary-text);
+}
+
+.strip-base-offset {
+  background-color: var(--color-base-offset);
+  color: var(--color-base-text);
+}

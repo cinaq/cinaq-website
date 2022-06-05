@@ -1,0 +1,15 @@
+<div class="container">
+  {{ partial "header/logo.html" . }}
+  <div class="menus">
+    {{ partial "header/main-menu-nested.html" . }}
+    {{ if ne .Site.Data.layout.disableDarkMode true }}
+      <div class="d-none d-md-block">
+        {{ partial "header/dark-mode.html" (dict "context" . ) }}
+      </div>
+    {{ end }}
+    {{ if ne .Site.Data.layout.header.disableHamburgerMenu true }}
+      {{ partial "header/main-menu-mobile.html" . }}
+      {{ partial "header/hamburger.html" . }}
+    {{ end }}
+  </div>
+</div>

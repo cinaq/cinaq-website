@@ -1,0 +1,12 @@
+<div class="footer-menu">
+  <ul>
+    {{ $currentPage := .context }}
+    {{ range .menu }}
+    <li class="menu-item menu-item-{{ .Name | urlize }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+      <a href="{{.URL}}">
+        {{ .Pre }}{{ .Name }}
+      </a>
+    </li>
+    {{end}}
+  </ul>
+</div>

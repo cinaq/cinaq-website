@@ -1,0 +1,36 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-default-list{{ end }}
+
+{{ define "main" }}
+<div class="strip strip-base">
+    <div class="container">
+
+        {{ if .Params.image }}
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="title-image">
+                    <img alt="{{ .Title }}" src="{{ .Params.image | relURL }}" />
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="title">
+                    <h1>{{ .Title }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ range .Pages }}
+                <div class="col-12 col-md-4 mb-4">
+                    {{ partial "cards/card.html" (dict "context" . "card" (dict "shadow" false) "classes" "") }}
+                </div>
+            {{ end }}
+        </div>
+
+    </div>
+</div>
+{{ end }}

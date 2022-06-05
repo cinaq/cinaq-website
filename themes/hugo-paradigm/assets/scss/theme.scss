@@ -1,0 +1,19 @@
+{{ $themeId := .Site.Data.themes.themeId }}
+{{ $darkMode := .Site.Data.themes.darkMode }}
+
+{{ range where .Site.Data.themes.themes "id" $themeId}}
+  :root {
+    {{ range $key, $value := .colors }}
+      --color-{{ replace $key "_" "-" }}: {{ $value }};
+    {{ end }}
+    {{ range $key, $value := .fonts }}
+      --font-{{ replace $key "_" "-" }}: {{ $value }};
+    {{ end }}
+  }
+{{ end }}
+
+html[data-mode='dark'] {
+  {{ range $key, $value := $darkMode.colors }}
+    --color-{{ replace $key "_" "-" }}: {{ $value }};
+  {{ end }}
+}

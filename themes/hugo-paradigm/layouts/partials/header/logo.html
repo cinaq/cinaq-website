@@ -1,0 +1,37 @@
+{{ $homepageLink := .Site.BaseURL }}
+{{ with .Site.Data.layout.logo }}
+<div class="logos">
+  <div class="logo">
+    {{ if or (.showLogoImageOnDesktop) (.showLogoTextOnDesktop) }}
+      <a href="{{ $homepageLink }}">
+        {{ if .showLogoImageOnDesktop }}<img class="logo-image" height="{{ .logoDesktopHeight }}" alt="{{ .Site.Title }} Logo" src="{{ .logoDesktop | relURL }}" />{{ end }}
+        {{ if .showLogoTextOnDesktop }}<span class="logo-text">{{ .text }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+  <div class="logo-invert">
+    {{ if or (.showLogoImageOnDesktop) (.showLogoTextOnDesktop) }}
+      <a href="{{ $homepageLink }}">
+        {{ if .showLogoImageOnDesktop }}<img class="logo-image" height="{{ .logoDesktopHeight }}" alt="{{ .Site.Title }} Logo" src="{{ .logoDesktopDarkMode | relURL }}" />{{ end }}
+        {{ if .showLogoTextOnDesktop }}<span class="logo-text">{{ .text }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+  <div class="logo-mobile">
+    {{ if or (.showLogoImageOnMobile) (.showLogoTextOnMobile) }}
+      <a href="{{ $homepageLink }}">
+        {{ if .showLogoImageOnMobile }}<img class="logo-image" height="{{ .logoMobileHeight }}" alt="{{ .Site.Title }} Logo" src="{{ .logoMobile | relURL }}" />{{ end }}
+        {{ if .showLogoTextOnMobile }}<span class="logo-text">{{ .text }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+  <div class="logo-invert-mobile">
+    {{ if or (.showLogoImageOnMobile) (.showLogoTextOnMobile) }}
+      <a href="{{ $homepageLink }}">
+        {{ if .showLogoImageOnMobile }}<img class="logo-image" height="{{ .logoMobileHeight }}" alt="{{ .Site.Title }} Logo" src="{{ .logoMobileDarkMode | relURL }}" />{{ end }}
+        {{ if .showLogoTextOnMobile }}<span class="logo-text">{{ .text }}</span>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

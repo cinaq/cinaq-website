@@ -1,0 +1,59 @@
+{{ $stripClasses := slice "" }}
+{{ $stripStyle := slice "" }}
+{{ $container := slice "" }}
+
+{{ if .section.options }}
+    {{ if .section.options.theme }}{{ $stripClasses = $stripClasses | append (printf "%s%s" "strip-" .section.options.theme) }}{{ end }}
+    {{ if .section.options.classes }}{{ $stripClasses = $stripClasses | append .section.options.classes }}{{ end }}
+    {{ if eq .section.options.borderTop true }}{{ $stripClasses = $stripClasses | append print "strip-border-top" }}{{ end }}
+    {{ if eq .section.options.borderBottom true }}{{ $stripClasses = $stripClasses | append print "strip-border-bottom" }}{{ end }}
+    {{ if eq .section.options.paddingTop false }}{{ $stripClasses = $stripClasses | append "pt-0" }}{{ end }}
+    {{ if eq .section.options.paddingBottom false }}{{ $stripClasses = $stripClasses | append "pb-0" }}{{ end }}
+    {{ if .section.options.backgroundColorCustom }}{{ $stripStyle = $stripStyle | append (printf "%s%s%s" "background-color:" .section.options.backgroundColorCustom ";" )}}{{ end }}
+{{ end }}
+
+{{ if eq .section.template "hero" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+    {{ partial "sections/hero/hero.html" (dict "context" .context "hero" .section) }}
+</div>
+{{ end }}
+
+{{ if eq .section.template "grid" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/grid/grid.html" (dict "context" .context "grid" .section) }}
+</div>
+</div>
+{{ end }}
+
+{{ if eq .section.template "info" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/info/info.html" (dict "context" .context "info" .section) }}
+</div>
+</div>
+{{ end }}
+
+{{ if eq .section.template "contact" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/contact/contact.html" (dict "context" .context "contact" .section) }}
+</div>
+</div>
+{{ end }}
+
+{{ if eq .section.template "cta" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/cta/cta.html" (dict "context" .context "cta" .section) }}
+</div>
+</div>
+{{ end }}
+
+{{ if eq .section.template "content" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/content/content.html" (dict "context" .context "content" .section) }}
+</div>
+</div>
+{{ end }}

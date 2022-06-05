@@ -1,0 +1,94 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--color-base);
+  border: 1px solid var(--color-base-offset);
+  box-shadow: 0 3px 11px -3px rgba(0, 0, 0, 0.2);
+  &.card-no-padding {
+    .card-content {
+      padding: 0;
+    }
+  }
+  &.card-no-border {
+    border: none;
+  }
+  &.card-no-shadow {
+    box-shadow: none;
+  }
+  .card-thumbnail {
+    max-height: 180px;
+    overflow: hidden;
+    @include media-breakpoint-up(xl) {
+      max-height: 218px;
+    }
+    a {
+      display: block;
+      img {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
+    }
+  }
+  .card-content {
+    padding: 20px;
+    .card-date {
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    .card-description {
+      font-size: 15px;
+      line-height: 24px;
+      opacity: 0.8;
+      margin: 0;
+      width: 90%;
+    }
+    .card-title + .card-description {
+      padding-top: 0;
+    }
+    .card-categories {
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 12px;
+      strong {
+        margin-right: 10px;
+        font-weight: 700;
+      }
+      a {
+        margin-right: 5px;
+        border-bottom: 1px dotted var(--color-base-offset);
+      }
+    }
+  }
+
+  .card-footer {
+    padding: 10px 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--color-base-offset);
+    background-color: var(--color-base-offset-2);
+    display: flex;
+    justify-content: flex-end;
+    a {
+      color: var(--color-base-text);
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+}

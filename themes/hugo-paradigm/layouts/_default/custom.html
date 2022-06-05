@@ -1,0 +1,11 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-default-custom{{ end }}
+
+{{ define "main" }}
+
+    <!-- Sections -->
+    {{ range .Params.sections }}
+        {{ partial "sections/section.html" (dict "context" $ "section" .) }}
+    {{ end }}
+
+{{ end }}

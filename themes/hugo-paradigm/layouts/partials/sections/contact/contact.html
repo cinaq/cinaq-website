@@ -1,0 +1,36 @@
+<div class="info">
+    <div class="info-columns">
+        <div class="info-content">
+            {{ if .contact.heading }}
+            <h2>{{ .contact.heading }}</h2>
+            {{ end }}
+            {{ if .contact.description }}
+            <p>{{ .contact.description }}</p>
+            {{ end }}
+
+            <form class="pt-3" action="https://getform.io/f/96bf09fe-3fcf-4623-a3d7-7c863417f53d" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="What is your name?">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="What is your email address?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" rows="10" class="form-control" placeholder="What would you want to tell us about?"></textarea>
+                </div>
+                <input type="hidden" name="is_spam" value="nopes">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+        </div>
+        <div class="info-media">
+            {{ if .contact.image }}
+            <img width="600" height="400" {{ if .contact.heading }}alt="{{ .contact.heading }}" {{ end }}
+                class="img-fluid" src="{{ .contact.image | relURL }}" />
+            {{ end }}
+        </div>
+    </div>
+</div>

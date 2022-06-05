@@ -1,0 +1,122 @@
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  font-family: var(--font-base);
+  color: var(--color-base-text-offset);
+  line-height: 1.5;
+  @include media-breakpoint-up(md) {
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: 46px;
+  font-weight: 300;
+  font-family: var(--font-heading);
+  color: var(--color-base-text);
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  font-size: 26px;
+  font-family: var(--font-heading);
+  color: var(--color-base-text);
+  line-height: 1.2;
+  font-weight: normal;
+  @include media-breakpoint-up(md) {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 26px;
+  line-height: 1.4;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+  color: var(--color-base-text-offset);
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// .title {
+//   h1 {
+//       font-size: 44px;
+//       line-height: 1.1;
+//       font-weight: normal;
+//       margin-bottom: 0px;
+//       @include media-breakpoint-up(md) {
+//           font-size: 66px;
+//           font-weight: lighter;
+//       }
+//   }
+//   h2 {
+//       font-size: 30px;
+//       line-height: 1.2;
+//       font-weight: normal;
+//       margin-bottom: 30px;
+//       @include media-breakpoint-up(md) {
+//           font-size: 34px;
+//       }
+//   }
+//   h1 ~ h2 {
+//       margin-top: 20px;
+//       margin-bottom: 20px;
+//   }
+//   p {
+//       opacity: 0.8;
+//       font-size: 18px;
+//       line-height: 1.4;
+//       margin-top: 20px;
+//       margin-bottom: 20px;
+//       @include media-breakpoint-up(md) {
+//           font-size: 20px;
+//           line-height: 1.5;
+//       }
+//   }
+//   .button {
+//       margin-right: 5px;
+//   }
+// }
+
+.title-image {
+  max-height: 460px;
+  overflow: hidden;
+  border-radius: 3px;
+  img {
+      width: 100%;
+      height: auto;
+  }
+}
