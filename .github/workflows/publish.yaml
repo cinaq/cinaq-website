@@ -5,15 +5,20 @@ on:
       - main
       - master
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build and publish
+    - name: Build
+      run: |
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY -b gh-pages public
+        make tools/hugo
+        ./tools/hugo
+
+    - name: Publish
       run: |
         git config --global user.name 'Robot'
         git config --global user.email 'robot@cinaq.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-        make publish
+        cd public && git add . && git commit -m "Publish" && git push origin gh-pages
