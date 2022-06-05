@@ -15,6 +15,7 @@ jobs:
       run: |
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY -b gh-pages public
         make tools/hugo
+        find
         ./tools/hugo
 
     - name: Publish
