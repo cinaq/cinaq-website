@@ -28,16 +28,6 @@ artifacts: $(DIAGRAMS_PNG)
 $(DIAGRAMS_DIR)/%.png: $(DIAGRAMS_DIR)/%.plantuml
 	$(PLANTUML) -tpng $<
 
-build: tools/hugo public artifacts
-	cd public && git fetch
-	cd public && git checkout -b gh-pages || true
-	cd public && git reset --hard origin/gh-pages
-	./tools/hugo
-	cd public && git add . && git diff --staged || true
-
-publish: build
-	cd public && git commit -m "Publish" && git push origin gh-pages
-
 tools/hugo:
 	curl -L -o tools/hugo.tar.gz $(HUGO_URL)
 	tar -xvf tools/hugo.tar.gz -C tools hugo
@@ -45,9 +35,6 @@ tools/hugo:
 
 tools/plantuml.jar:
 	curl -L -o tools/plantuml.jar $(PLANTUML_URL)
-
-public:
-	git clone git@github.com:cinaq/cinaq-website.git -b gh-pages public
 
 clean:
 	rm tools/*
