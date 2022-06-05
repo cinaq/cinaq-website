@@ -6,7 +6,7 @@ categories: ['Kubernetes', 'Development']
 tags: ["docker", "kubernetes", "distcc", "ccache", "orthanc", "speed", "cmake", "make", "cluster", "linux", "debian"]
 authors: ['Xiwen Cheng']
 description: What if your local development machine is not very powerful to compile a large program? You borrow the power of Kubernetes.
-thumbnail: '/media/paolo-candelo-53B17GiIhTA-unsplash.jpg'
+thumbnail: '/media/paolo-candelo-53B17GiIhTA-unsplash-thumb.jpg'
 image: '/media/paolo-candelo-53B17GiIhTA-unsplash.jpg'
 aliases:
   - /post/2020/05/10/speed-up-docker-builds-with-distcc-ccache-and-kubernetes/

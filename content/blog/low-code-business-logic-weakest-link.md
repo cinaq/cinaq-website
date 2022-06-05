@@ -6,7 +6,7 @@ categories: ['Mendix', 'Security', 'AppSec']
 tags: ["mendix", "low-code", "security", "productivity"]
 authors: ['Xiwen Cheng']
 description: The low-code movement is gaining traction. Low-code platforms enable citizen developers to create applications that solves real world challenges. However these applications are at risk due to weak security or inadequate data handling logics.
-thumbnail: '/media/sigmund-elHKkgom1VU-unsplash.jpg'
+thumbnail: '/media/sigmund-elHKkgom1VU-unsplash-thumb.jpg'
 image: '/media/sigmund-elHKkgom1VU-unsplash.jpg'
 aliases:
   - /post/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/

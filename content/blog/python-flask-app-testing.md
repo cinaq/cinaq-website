@@ -6,7 +6,7 @@ categories: ['Development', 'Python', 'Testing']
 tags: ["python", "flask", "python-flask", "testing", "tests", "rest", "AAA", "quality", "TDD"]
 authors: ['Xiwen Cheng']
 description: It's rarely wise to reach 100% code coverage. How do you decide where to spend your limited testing capacities? What are high value tests that you should focus on early in your projects?
-thumbnail: '/media/chris-ried-ieic5Tq8YMk-unsplash.jpg'
+thumbnail: '/media/chris-ried-ieic5Tq8YMk-unsplash-thumb.jpg'
 image: '/media/chris-ried-ieic5Tq8YMk-unsplash.jpg'
 aliases:
   - /post/2019/05/05/simple-high-value-tests-with-python-flask/

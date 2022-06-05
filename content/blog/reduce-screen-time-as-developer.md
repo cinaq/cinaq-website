@@ -7,7 +7,7 @@ categories: ['Self Improvement', 'Time Management', 'Mental Health']
 tags: ["mental-health", "time-management", "time", "breaks", "pomodoro", "whiteboard", "e-ink", "environment", "information", "well-being"]
 authors: ['Xiwen Cheng']
 description: Our ability to see is a gift. In this article we give you some ideas on how to lessen the strain on our eyes.
-thumbnail: '/media/david-travis-aVvZJC0ynBQ-unsplash.jpg'
+thumbnail: '/media/david-travis-aVvZJC0ynBQ-unsplash-thumb.jpg'
 image: '/media/david-travis-aVvZJC0ynBQ-unsplash.jpg'
 ---
 

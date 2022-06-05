@@ -6,7 +6,7 @@ categories: ['Kubernetes', 'DevOps']
 tags: ["k8s", "kubernetes", "ha", "highly-available", "prometheus", "grafana", "loki", "nginx-ingress", "metal-lb", "kindie", "letsencrypt", "keepalived"]
 authors: ['Xiwen Cheng']
 description: In this elaborate guide we will setup a production-ready Kubernetes cluster by hand.
-thumbnail: '/media/chuttersnap-xewrfLD8emE-unsplash.jpg'
+thumbnail: '/media/chuttersnap-xewrfLD8emE-unsplash-thumb.jpg'
 image: '/media/chuttersnap-xewrfLD8emE-unsplash.jpg'
 aliases:
   - /post/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/

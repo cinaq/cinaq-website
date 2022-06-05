@@ -6,7 +6,7 @@ tags: ["mendix", "book", "mendix-ops-book", ]
 categories: ['Cloud', 'Mendix']
 authors: ['Xiwen Cheng']
 description: You just showed your freshly built Mendix application to your manager. He/She was blown away and asked you to push it to production. However, your application runs locally on your laptop. What do you do?
-thumbnail: '/media/mendix-basic-header.png'
+thumbnail: '/media/mendix-basic-header-thumb.png'
 image: '/media/mendix-basic-header.png'
 ---
 

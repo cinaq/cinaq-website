@@ -6,7 +6,7 @@ categories: ['Lifehacks', 'OSX']
 tags: ["mac", "apple watch", "osx", "apple"]
 authors: ['Xiwen Cheng']
 description: Your auto unlock OSX with Apple Watch stopped working? Follow these steps to fix it without rebooting your computer.
-thumbnail: '/media/szabo-viktor-i9tpIg_kTcg-unsplash.jpg'
+thumbnail: '/media/szabo-viktor-i9tpIg_kTcg-unsplash-thumb.jpg'
 image: '/media/szabo-viktor-i9tpIg_kTcg-unsplash.jpg'
 aliases:
   - /post/2019/06/17/unlock-mac-with-apple-watch-stopped-working/

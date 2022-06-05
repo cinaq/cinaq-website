@@ -6,7 +6,7 @@ tags: ["bash", "shell", "linux", "strace", "script", "shellscript", "exec"]
 categories: ['Development', 'DevOps']
 authors: ['Xiwen Cheng']
 description: Shell scripts are easy to write and very effective in solving practical problems. However sometimes its error messages are very cryptic.
-thumbnail: '/media/dan-wilding-ewFbCoV3kA4-unsplash.jpg'
+thumbnail: '/media/dan-wilding-ewFbCoV3kA4-unsplash-thumb.jpg'
 image: '/media/dan-wilding-ewFbCoV3kA4-unsplash.jpg'
 aliases:
   - /post/2019/05/29/debug-shell-script-error-not-found/
