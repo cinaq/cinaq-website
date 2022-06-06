@@ -5,7 +5,7 @@ draft: false
 tags: ["mendix", "book", "mendix-ops-book", ]
 categories: ['Cloud', 'Mendix']
 authors: ['Xiwen Cheng']
-description: The free tier is not sufficient for your application? Or you are considering to use Mendix for your startup? In this article to shed some light on the Mendix Basic Package.
+description: The free tier is not sufficient for your application? Or you are considering using Mendix for your startup? This article sheds some light on the Mendix Basic Package.
 thumbnail: '/media/mendix-basic-header-thumb.png'
 image: '/media/mendix-basic-header.png'
 ---
