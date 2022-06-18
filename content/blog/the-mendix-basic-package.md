@@ -106,12 +106,24 @@ If your queries are slow, adding indices to columns could help speed up the retr
 
 Depending on your use case, sometimes not all data is equally important or relevant to consider for the common use cases. If your application needs to keep old records for compliance reasons, you can consider moving these old records into a separate archive entity isolating them from the working set of data. This can be achieved with a scheduled event that archives old data. It reduces the strain on the database by having to deal with archived data regularly while it's not needed.
 
-## Upgrade as a last resort
+## Upgrade to Standard Package
 
 If all the optimization efforts don't yield an acceptable performance for your application it's time to consider upgrading your cloud environment specs. Whether to upgrade the application runtime or database depends on the bottleneck. A good rule of thumb is if your application regularly crashes due to out-of-memory, increase the application runtime memory. If your queries are slow and you can confirm the database size is larger than the memory capacity allocated to your database, upgrade the database with more memory and CPU.
 
 Upgrading from the Basic Package is a last resort remediation action because the next package is standard which is a whopping 1600% cost increase (800/50 * 100). Unless you can conclude your growth is more important than optimizing your current solution upgrading shouldn't be your first choice.
 
+### Pay from your pocket
+
+If you can afford the costs of the Standard Package, definitely go for it. Building a business means investing in it. Pricing of high productivity platforms is more expensive compared to open source or self-managed because you have fewer responsibilities which means fewer distractions from you. You can focus on adding value and growing your business.
+
+### Mendix Startup Program
+
+Besides paying the full price of the Standard Package, you can also opt to share the cost by joining the [Mendix Startup Program](https://www.mendix.com/startup-program/). In this program, you will share the costs *and* profit with Mendix. This could be an option if you can't afford the full price or want to spread the risks.
+
+## Custom private hosting
+
+While Mendix focuses a lot on standardization of their product offering. We at CINAQ can help you with custom infrastructure tailored to your needs. We can help you with low-cost Cloud infrastructure for single (monolithic) applications or a landscape of microservices for large enterprises. All you need is to bring your Mendix license and we can take care of the rest.
+
 ## Conclusions
 
-In conclusion, the Basic package is a nice addition for small businesses with relatively simple domain model requirements. If you are planning to use this for (micro) SaaS solution, you must keep a check on domain model complexity and amount of data. Perhaps be prepared to upgrade to the Standard Package at any time.
+In conclusion, the Basic package is a nice addition for small businesses with relatively simple domain model requirements. If you are planning to use this for (micro) SaaS solution, you must keep a check on domain model complexity and amount of data. Perhaps be prepared to upgrade to the Standard Package at any time. Or contact [CINAQ](https://www.linkedin.com/company/cinaq/) for more information on private hosting.
