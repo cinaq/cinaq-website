@@ -306,7 +306,7 @@
                 Published on Jun 4, 2022
                 
                 
-                <i>(Modified on Jun 6, 2022)</i>
+                <i>(Modified on Jun 18, 2022)</i>
                 
                 </span>
               </div>
@@ -375,11 +375,17 @@
 <p>If your queries are slow, adding indices to columns could help speed up the retrieval. However, mutations will be more expensive (slower). So be careful with indices. In Mendix it&rsquo;s easy to add and remove indices without data loss. You should feel comfortable experimenting.</p>
 <h3 id="move-infrequently-accessed-data-to-a-separate-entity">Move infrequently accessed data to a separate entity</h3>
 <p>Depending on your use case, sometimes not all data is equally important or relevant to consider for the common use cases. If your application needs to keep old records for compliance reasons, you can consider moving these old records into a separate archive entity isolating them from the working set of data. This can be achieved with a scheduled event that archives old data. It reduces the strain on the database by having to deal with archived data regularly while it&rsquo;s not needed.</p>
-<h2 id="upgrade-as-a-last-resort">Upgrade as a last resort</h2>
+<h2 id="upgrade-to-standard-package">Upgrade to Standard Package</h2>
 <p>If all the optimization efforts don&rsquo;t yield an acceptable performance for your application it&rsquo;s time to consider upgrading your cloud environment specs. Whether to upgrade the application runtime or database depends on the bottleneck. A good rule of thumb is if your application regularly crashes due to out-of-memory, increase the application runtime memory. If your queries are slow and you can confirm the database size is larger than the memory capacity allocated to your database, upgrade the database with more memory and CPU.</p>
 <p>Upgrading from the Basic Package is a last resort remediation action because the next package is standard which is a whopping 1600% cost increase (800/50 * 100). Unless you can conclude your growth is more important than optimizing your current solution upgrading shouldn&rsquo;t be your first choice.</p>
+<h3 id="pay-from-your-pocket">Pay from your pocket</h3>
+<p>If you can afford the costs of the Standard Package, definitely go for it. Building a business means investing in it. Pricing of high productivity platforms is more expensive compared to open source or self-managed because you have fewer responsibilities which means fewer distractions from you. You can focus on adding value and growing your business.</p>
+<h3 id="mendix-startup-program">Mendix Startup Program</h3>
+<p>Besides paying the full price of the Standard Package, you can also opt to share the cost by joining the <a href="https://www.mendix.com/startup-program/">Mendix Startup Program</a>. In this program, you will share the costs <em>and</em> profit with Mendix. This could be an option if you can&rsquo;t afford the full price or want to spread the risks.</p>
+<h2 id="custom-private-hosting">Custom private hosting</h2>
+<p>While Mendix focuses a lot on standardization of their product offering. We at CINAQ can help you with custom infrastructure tailored to your needs. We can help you with low-cost Cloud infrastructure for single (monolithic) applications or a landscape of microservices for large enterprises. All you need is to bring your Mendix license and we can take care of the rest.</p>
 <h2 id="conclusions">Conclusions</h2>
-<p>In conclusion, the Basic package is a nice addition for small businesses with relatively simple domain model requirements. If you are planning to use this for (micro) SaaS solution, you must keep a check on domain model complexity and amount of data. Perhaps be prepared to upgrade to the Standard Package at any time.</p>
+<p>In conclusion, the Basic package is a nice addition for small businesses with relatively simple domain model requirements. If you are planning to use this for (micro) SaaS solution, you must keep a check on domain model complexity and amount of data. Perhaps be prepared to upgrade to the Standard Package at any time. Or contact <a href="https://www.linkedin.com/company/cinaq/">CINAQ</a> for more information on private hosting.</p>
 </div>
         </div>
       </div>
