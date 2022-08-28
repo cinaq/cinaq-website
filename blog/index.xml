@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Mysterious Ipad screen mirror app detected by PSI Secure browser</title>
+      <link>/blog/2022/08/28/mysterious-ipad-screen-mirror-app-detected-by-psi-secure-browser/</link>
+      <pubDate>Sun, 28 Aug 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2022/08/28/mysterious-ipad-screen-mirror-app-detected-by-psi-secure-browser/</guid>
+      <description>If you&amp;rsquo;re in a rush for the solution, jump to the bottom of this page.
+ Recently I had my CKS (Certified Kubernetes Security Specialist) exam via the PSI platform. A few weeks earlier when I scheduled the exam I made sure to run the system check because I had troubles with these in the past with my macbook (OSX). I don&amp;rsquo;t recall which exam platform it was.
+10 minutes before the scheduled exam I opened the PSI portal to start the check-in process.</description>
+    </item>
+    
+    <item>
       <title>Is the Mendix Basic Package for me?</title>
       <link>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</link>
       <pubDate>Sat, 04 Jun 2022 00:13:37 +0100</pubDate>
