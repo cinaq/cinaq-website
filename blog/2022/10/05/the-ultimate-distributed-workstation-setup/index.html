@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The ultimate distributed workstation setup - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="Two-way synchronize files across different systems and against google drive for the ultimate distributed workstation experience." />
+  <meta property="og:title" content="The ultimate distributed workstation setup" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2022/10/05/the-ultimate-distributed-workstation-setup/" />
+  <meta property="og:image" content="/media/luke-peters-rDxfSzXyBqU-unsplash-thumb.jpg" />
+  <meta property="og:description" content="Two-way synchronize files across different systems and against google drive for the ultimate distributed workstation experience."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/luke-peters-rDxfSzXyBqU-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>The ultimate distributed workstation setup</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Oct 5, 2022
+                
+                
+                <i>(Modified on Oct 5, 2022)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the <code>.gitignore</code> concept and there is a <code>git clean</code> command that removes untracked files. I needed that but for Syncthing.</p>
+<h2 id="requirements">Requirements</h2>
+<p>In order to explain my problem one needs to understand the context. My primary use case is that I want access to all my files at all times on different devices. The type of files are:</p>
+<ul>
+<li>Google files; I use google workspace for most of my work and personal files</li>
+<li>Lots of git repositories</li>
+<li>critical (encrypted) files</li>
+</ul>
+<p>Since I tend to get ideas at weird random places and I prefer to use the tool/device best suited for the job I need access to my files on:</p>
+<ul>
+<li>Macbook with OSX</li>
+<li>Linux desktop for when I need bare Linux performance and focus</li>
+<li>Windows desktop for when I need bare Windows performance (Linux and Windows dualboots on the same desktop)</li>
+<li>Remote access on my iPhone and Ipad</li>
+<li>Use google workspace products</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>To accomplish above the following architecture has been implemented:</p>
+<p><img src="/media/ha-workstations.jpg" alt="devices-syncthing-google-drive"></p>
+<p>A few things to note is that Macbook and desktops synchronize almost real-time against the syncthing server running 24/7 on my Synology NAS. The Synology in turn synchronizes against google drive every 5 minutes. Note that all synchronization paths are two-way.
+Since Synology is online 24/7, it catches up in no-time with google drive.</p>
+<h2 id="do-not-sync-everything">Do not sync everything</h2>
+<p>As noted I have quite some git repositories. And large part of them are nodejs backends or frontends. As you might have seen it coming already: <code>node_modules</code>. They are big (lots of files and consumes quite some disk space) and platform dependent. As such there&rsquo;s no reason to synchronize them across to other devices/platforms. This is just one of the many examples of directories that should be excluded from this whole synchronization madness.</p>
+<p>Over the years I have composed the following list:</p>
+<ul>
+<li>node_modules</li>
+<li>.DS_Store</li>
+<li>*.pyc</li>
+</ul>
+<p>and many more (See appendix for full list)</p>
+<p>This <code>.stglobalignore</code> file is also synchronized across to all devices. To really use this file, a <code>.stigore</code> file must be created by hand (if i recall correctly; haven&rsquo;t set up new device in a long time) with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// .stignore
+</span><span class="c1">// 2
+</span><span class="c1"></span><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
+</code></pre></div><p>This trick was taken from <a href="https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905">syncthing forum</a></p>
+<h2 id="issues-with-dsm-cloud-sync">Issues with DSM Cloud Sync</h2>
+<p>Few months ago I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that where supposed to be ignored from synchronization were uploaded to Google drive.</p>
+<h2 id="dsm-cloud-sync-back-in-business">DSM Cloud Sync back in business</h2>
+<p>Recently there was a <a href="https://www.synology.com/en-global/releaseNote/CloudSync">new version of Cloud Sync that solves some synchronization issue with Google drive</a>. That looked interesting so I switched back. However my files are now polluted with a lot files that should be ignored. Thanks Google!</p>
+<h2 id="git-clean-for-syncthing">git clean for Syncthing</h2>
+<p>To clean up files from my Synology and Google drive, I created <code>clean.py</code> which reads in <code>.stglobalignore</code> file and finds all paths that match the patterns listed there. That list of files and directories are then presented to the user as confirmation before they are deleted.</p>
+<p>An example run looks like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ python ~/tools/clean.py
+To be removed:
+<span class="o">====</span>
+git/appsec/appsec/api/models/__pycache__/scan.cpython-39.pyc
+git/appsec/appsec/api/models/__pycache__/audit.cpython-39.pyc
+resources/.DS_Store
+git/appsec/data
+git/kubernetes/data
+git/mx-foundation/live/foundation/vpc/.terragrunt-cache
+Continue removal? YES/NO
+</code></pre></div><h2 id="summary">Summary</h2>
+<p>It is possible to have two-way files synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise. Even-though computers are fast nowadays it&rsquo;s still crucial to do housekeeping on what files should be excluded from synchronization because this can have significant impact on the synchronization performance. Before the clean up of ignored files, my working copy was 14GB compared to 8GB.</p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="stglobalignore">.stglobalignore</h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// .stglobalignore
+</span><span class="c1"></span>
+<span class="c1">// Incomplete Downloads
+</span><span class="c1">// At least for now, these prevent Syncthing from transferring data that&#39;s
+</span><span class="c1">// going to be thrown out anyway once the download is finished and the
+</span><span class="c1">// file is renamed. Things may change when Syncthing gets smarter.
+</span><span class="c1">//
+</span><span class="c1">// Firefox downloads and other things
+</span><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">part</span>
+<span class="c1">// Chrom(ium|e) downloads
+</span><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">crdownload</span>
+
+<span class="c1">// Temporary / Backup Files
+</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*~</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="o">*</span><span class="p">.</span><span class="nx">swp</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">tmp</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">pyc</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">temp</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">sync</span><span class="o">-</span><span class="nx">conflict</span><span class="o">-*</span>
+
+<span class="c1">// OS-generated files (OS X)
+</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">DS_Store</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Spotlight</span><span class="o">-</span><span class="nx">V100</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Trashes</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">_</span><span class="o">*</span>
+
+<span class="c1">// OS-generated files (Windows)
+</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">desktop</span><span class="p">.</span><span class="nx">ini</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">ehthumbs</span><span class="p">.</span><span class="nx">db</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">Thumbs</span><span class="p">.</span><span class="nx">db</span>
+
+<span class="c1">// BTSync files
+</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">sync</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">bts</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="o">!</span><span class="nx">Sync</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncID</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncIgnore</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncArchive</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncPart</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncTemp</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncOld</span>
+
+<span class="c1">// Synology files
+</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="err">@</span><span class="nx">eaDir</span>
+
+
+<span class="c1">// Blacklisted dirs
+</span><span class="c1"></span><span class="err">/Moments</span>
+<span class="err">/Backup</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">tox</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">cache</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">mypy_cache</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">node_modules</span>
+<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">/</span><span class="nx">git</span><span class="cm">/*/data
+</span><span class="cm">(?d).terragrunt-cache
+</span><span class="cm">(?d).tmp.drivedownload
+</span><span class="cm">(?d).tmp.driveupload
+</span><span class="cm">(?d)/git/*/</span><span class="nx">dist</span>
+</code></pre></div><h3 id="cleanpy">clean.py</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;IGNORE_FILE&#34;</span><span class="p">,</span> <span class="s2">&#34;.stglobalignore&#34;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+
+<span class="n">to_be_removed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;//&#34;</span><span class="p">):</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">):</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">,</span> <span class="s2">&#34;**/&#34;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;*&#34;</span><span class="p">):</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="s2">&#34;**/&#34;</span> <span class="o">+</span> <span class="n">line</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">to_be_removed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;To be removed:&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;====&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Continue removal? YES/NO</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&#34;YES&#34;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Failed to remove </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74177616-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-74177616-1');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

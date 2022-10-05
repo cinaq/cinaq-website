@@ -6,7 +6,79 @@
     <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Aug 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DSM</title>
+      <link>/tags/dsm/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/dsm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>files</title>
+      <link>/tags/files/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/files/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google drive</title>
+      <link>/tags/google-drive/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/google-drive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google workspaces</title>
+      <link>/tags/google-workspaces/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/google-workspaces/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>osx</title>
+      <link>/tags/osx/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stignore</title>
+      <link>/tags/stignore/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/stignore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syncthing</title>
+      <link>/tags/syncthing/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/syncthing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synology</title>
+      <link>/tags/synology/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/tags/synology/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>apple</title>
       <link>/tags/apple/</link>
@@ -40,15 +112,6 @@
       <pubDate>Sun, 28 Aug 2022 13:37:00 +0100</pubDate>
       
       <guid>/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>osx</title>
-      <link>/tags/osx/</link>
-      <pubDate>Sun, 28 Aug 2022 13:37:00 +0100</pubDate>
-      
-      <guid>/tags/osx/</guid>
       <description></description>
     </item>
     

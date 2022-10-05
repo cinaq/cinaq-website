@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The ultimate distributed workstation setup</title>
+      <link>/blog/2022/10/05/the-ultimate-distributed-workstation-setup/</link>
+      <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2022/10/05/the-ultimate-distributed-workstation-setup/</guid>
+      <description>For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the .gitignore concept and there is a git clean command that removes untracked files. I needed that but for Syncthing.
+Requirements In order to explain my problem one needs to understand the context. My primary use case is that I want access to all my files at all times on different devices.</description>
+    </item>
+    
+    <item>
       <title>Mysterious Ipad screen mirror app detected by PSI Secure browser</title>
       <link>/blog/2022/08/28/mysterious-ipad-screen-mirror-app-detected-by-psi-secure-browser/</link>
       <pubDate>Sun, 28 Aug 2022 13:37:00 +0100</pubDate>
