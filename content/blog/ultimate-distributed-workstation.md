@@ -11,7 +11,7 @@ image: '/media/luke-peters-rDxfSzXyBqU-unsplash.jpg'
 
 ---
 
-For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the `.gitignore` concept and there is a `git clean` command that removes untracked files. I needed that but for Syncthing.
+For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the `.gitignore` concept in git and there is a `git clean` command that removes untracked files. I needed that but for [Syncthing](https://syncthing.net/).
 
 ## Requirements
 
@@ -36,13 +36,13 @@ To accomplish above the following architecture has been implemented:
 ![devices-syncthing-google-drive](/media/ha-workstations.jpg)
 
 A few things to note is that Macbook and desktops synchronize almost real-time against the syncthing server running 24/7 on my Synology NAS. The Synology in turn synchronizes against google drive every 5 minutes. Note that all synchronization paths are two-way.
-Since Synology is online 24/7, it catches up in no-time with google drive.
+Since Synology is online 24/7, it catches up in no-time with google drive. This allows me to pack up macbook quickly and continue via google drive.
 
 ## Do not sync everything
 
-As noted I have quite some git repositories. And large part of them are nodejs backends or frontends. As you might have seen it coming already: `node_modules`. They are big (lots of files and consumes quite some disk space) and platform dependent. As such there's no reason to synchronize them across to other devices/platforms. This is just one of the many examples of directories that should be excluded from this whole synchronization madness.
+As noted I have quite some git repositories. And large part of them are nodejs backends or javascript frontends. As you might have seen it coming already: `node_modules`. They are big, lots of files and consumes quite some disk space, and platform dependent. As such there's no reason to synchronize them across to other devices/platforms. This is just one of the many examples of directories that should be excluded from this whole synchronization madness.
 
-Over the years I have composed the following list:
+Over the years I have composed the following list kept in `.stglobalignore`:
 
 * node_modules
 * .DS_Store
@@ -58,11 +58,11 @@ This `.stglobalignore` file is also synchronized across to all devices. To reall
 #include .stglobalignore
 ```
 
-This trick was taken from [syncthing forum](https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905)
+This trick was taken from [syncthing forum](https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905).
 
 ## Issues with DSM Cloud Sync
 
-Few months ago I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that where supposed to be ignored from synchronization were uploaded to Google drive.
+Last year I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that where supposed to be ignored from synchronization were uploaded to Google drive.
 
 ## DSM Cloud Sync back in business
 
@@ -87,9 +87,13 @@ git/mx-foundation/live/foundation/vpc/.terragrunt-cache
 Continue removal? YES/NO
 ```
 
+this was run on the synology which propagates the removal to Google drive via Cloud Sync.
+
 ## Summary
 
-It is possible to have two-way files synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise. Even-though computers are fast nowadays it's still crucial to do housekeeping on what files should be excluded from synchronization because this can have significant impact on the synchronization performance. Before the clean up of ignored files, my working copy was 14GB compared to 8GB.
+It is possible to have two-way files synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise.
+
+Even-though computers are fast nowadays it's still crucial to do housekeeping on what files should be excluded from synchronization because this can have significant impact on the synchronization performance. Before the clean up of ignored files, my working copy was 14GB compared to 8GB after running `clean.py`.
 
 ## Appendix
 
