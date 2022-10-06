@@ -131,7 +131,7 @@
       
       <guid>/blog/2022/10/05/the-ultimate-distributed-workstation-setup/</guid>
       <description>For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the .gitignore concept in git and there is a git clean command that removes untracked files. I needed that but for Syncthing.
-Requirements In order to explain my problem one needs to understand the context. My primary use case is that I want access to all my files at all times on different devices.</description>
+Requirements To explain my problem I will start with the context. My primary use case is that I want access to all my files at all times on different devices.</description>
     </item>
     
     <item>
