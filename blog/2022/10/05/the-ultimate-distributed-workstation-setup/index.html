@@ -313,7 +313,7 @@
             </div>
             
           
-          <div class="content"><p>For my multi-workstation setup I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the <code>.gitignore</code> concept in git and there is a <code>git clean</code> command that removes untracked files. I needed that but for <a href="https://syncthing.net/">Syncthing</a>.</p>
+          <div class="content"><p>For my multi-workstation setup, I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the <code>.gitignore</code> concept in git and there is a <code>git clean</code> command that removes untracked files. I needed that but for <a href="https://syncthing.net/">Syncthing</a>.</p>
 <h2 id="requirements">Requirements</h2>
 <p>To explain my problem I will start with the context. My primary use case is that I want access to all my files at all times on different devices. The type of files are:</p>
 <ul>
@@ -330,12 +330,12 @@
 <li>Use google workspace products</li>
 </ul>
 <h2 id="architecture">Architecture</h2>
-<p>To accomplish above the following architecture has been implemented:</p>
+<p>To accomplish the above the following architecture has been implemented:</p>
 <p><img src="/media/ha-workstations.jpg" alt="devices-syncthing-google-drive"></p>
-<p>A few things to note is that Macbook and desktops synchronize almost real-time against the syncthing server running 24/7 on my Synology NAS. The Synology in turn synchronizes against google drive every 5 minutes. Note that all synchronization paths are two-way.
-Since Synology is online 24/7, it catches up in no-time with google drive. This allows me to pack up macbook quickly and continue via google drive.</p>
+<p>A few things to note are that my Macbook and desktops synchronize almost real-time against the syncthing server running 24/7 on my Synology NAS. The Synology in turn synchronizes against google drive every 5 minutes. Note that all synchronization paths are two-way.
+Since Synology is online 24/7, it catches up in no time with google drive. This allows me to pack up my Macbook quickly and continue via google drive.</p>
 <h2 id="do-not-sync-everything">Do not sync everything</h2>
-<p>As noted I have quite some git repositories. And large part of them are nodejs backends or javascript frontends. As you might have seen it coming already: <code>node_modules</code>. They are big, lots of files and consumes quite some disk space, and platform dependent. As such there&rsquo;s no reason to synchronize them across to other devices/platforms. This is just one of the many examples of directories that should be excluded from this whole synchronization madness.</p>
+<p>As noted I have quite some git repositories. And a large part of them is nodejs backends or javascript frontends. As you might have seen it coming already: <code>node_modules</code>. They are big, have lots of files and consume quite some disk space, and are platform-dependent. As such there&rsquo;s no reason to synchronize them across to other devices/platforms. This is just one of the many examples of directories that should be excluded from this whole synchronization madness.</p>
 <p>Over the years I have composed the following list kept in <code>.stglobalignore</code>:</p>
 <ul>
 <li>node_modules</li>
@@ -349,12 +349,12 @@ Since Synology is online 24/7, it catches up in no-time with google drive. This 
 </span><span class="c1"></span><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
 </code></pre></div><p>This trick was taken from <a href="https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905">syncthing forum</a>.</p>
 <h2 id="issues-with-dsm-cloud-sync">Issues with DSM Cloud Sync</h2>
-<p>Last year I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that where supposed to be ignored from synchronization were uploaded to Google drive.</p>
-<h2 id="dsm-cloud-sync-back-in-business">DSM Cloud Sync back in business</h2>
-<p>Recently there was a <a href="https://www.synology.com/en-global/releaseNote/CloudSync">new version of Cloud Sync that solves some synchronization issue with Google drive</a>. That looked interesting so I switched back. However my files are now polluted with a lot files that should be ignored. Thanks Google!</p>
+<p>Last year I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that were supposed to be ignored from synchronization were uploaded to Google drive.</p>
+<h2 id="dsm-cloud-sync-is-back-in-business">DSM Cloud Sync is back in business</h2>
+<p>Recently there was a <a href="https://www.synology.com/en-global/releaseNote/CloudSync">new version of Cloud Sync that solves some synchronization issues with Google drive</a>. That looked interesting so I switched back. However, my files are now polluted with a lot of files that should be ignored. Thanks you Google!</p>
 <h2 id="git-clean-for-syncthing">git clean for Syncthing</h2>
-<p>To clean up files from my Synology and Google drive, I created <code>clean.py</code> which reads in <code>.stglobalignore</code> file and finds all paths that match the patterns listed there. That list of files and directories are then presented to the user as confirmation before they are deleted.</p>
-<p>An example run looks like:</p>
+<p>To clean up files from my Synology and Google drive, I created <code>clean.py</code> which reads in <code>.stglobalignore</code> file and finds all paths that match the patterns listed there. That list of files and directories is then presented to the user as confirmation before they are deleted.</p>
+<p>An example run looks like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ python ~/tools/clean.py
 To be removed:
 <span class="o">====</span>
@@ -367,8 +367,8 @@ git/mx-foundation/live/foundation/vpc/.terragrunt-cache
 Continue removal? YES/NO
 </code></pre></div><p>this was run on the synology which propagates the removal to Google drive via Cloud Sync.</p>
 <h2 id="summary">Summary</h2>
-<p>It is possible to have two-way files synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise.</p>
-<p>Even-though computers are fast nowadays it&rsquo;s still crucial to do housekeeping on what files should be excluded from synchronization because this can have significant impact on the synchronization performance. Before the clean up of ignored files, my working copy was 14GB compared to 8GB after running <code>clean.py</code>.</p>
+<p>It is possible to have two-way file synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise.</p>
+<p>Even-though computers are fast nowadays it&rsquo;s still crucial to do housekeeping on what files should be excluded from synchronization because this can have a significant impact on the synchronization performance. Before the cleanup of ignored files, my working copy was 14GB compared to 8GB after running <code>clean.py</code>.</p>
 <h2 id="appendix">Appendix</h2>
 <h3 id="stglobalignore">.stglobalignore</h3>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// .stglobalignore
