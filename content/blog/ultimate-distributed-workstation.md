@@ -15,7 +15,7 @@ For my multi-workstation setup I often need my files synchronized across multipl
 
 ## Requirements
 
-In order to explain my problem one needs to understand the context. My primary use case is that I want access to all my files at all times on different devices. The type of files are:
+To explain my problem I will start with the context. My primary use case is that I want access to all my files at all times on different devices. The type of files are:
 
 * Google files; I use google workspace for most of my work and personal files
 * Lots of git repositories
