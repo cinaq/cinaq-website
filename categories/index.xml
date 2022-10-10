@@ -6,7 +6,25 @@
     <description>Recent content in Categories on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Psychology</title>
+      <link>/categories/psychology/</link>
+      <pubDate>Mon, 10 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/psychology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self-reflection</title>
+      <link>/categories/self-reflection/</link>
+      <pubDate>Mon, 10 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/categories/self-reflection/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Lifehack</title>
       <link>/categories/lifehack/</link>
