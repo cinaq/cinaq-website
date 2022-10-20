@@ -43,7 +43,7 @@ sections:
     classes: ""
   align: left
   heading: Your app probably has a security flaw
-  description: It's easy to make mistakes in your model security. We use AppSec, a tool developed internally with over 10 years of Mendix experience that helps identify security flaws at record speed. Traditional pentesters focus on the overal security posture of your application. We focus on the business logic built by your engineers.
+  description: It's easy to make mistakes in your model security. We use AppSec, a tool developed internally with over 10 years of Mendix experience that helps identify security flaws at record speed. Traditional pentesters focus on the overall security posture of your application. We focus on the business logic built by your engineers.
   image: /media/MendixWorld-SecurityCert-Blog-Final.png
 - template: cta
   options:

@@ -99,6 +99,10 @@ paginate = 6
     url = "https://github.com/xiwenc/fastpush"
     weight = 3
 [[menu.footer_secondary]]
+    name = "mendix-userlib-cleaner"
+    url = "https://github.com/cinaq/mendix-userlib-cleaner"
+    weight = 3
+[[menu.footer_secondary]]
     name = "Photography"
     url = "/photography"
     weight = 4

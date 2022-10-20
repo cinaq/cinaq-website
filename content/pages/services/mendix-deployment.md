@@ -43,6 +43,6 @@ sections:
     classes: ""
   align: left
   heading: Mission Critical
-  description: With over 10 years of experiencing operating thousands of Mendix applications, we know our way around Mendix like the back of our hand. We can solve all issues related to running your Mendix app in private cloud and on-prem. We specialize in topics like performance, security, disaster recovery, backups, pipelines, devops, CICD, Architecture design.
+  description: With over 10 years of experience operating thousands of Mendix applications, we know our way around Mendix like the back of our hand. We can solve all issues related to running your Mendix app in private cloud and on-prem. We specialize in topics like performance, security, disaster recovery, backups, pipelines, devops, CICD, Architecture design.
   image: /media/mendix.png
 ---
