@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mendix SVG Hunt - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="Mxbuild fails to build due to SVG documents in the mendix model. You have removed all SVG&#39;s yet it does not solve the issue. Where the heck are these SVG&#39;s?" />
+  <meta property="og:title" content="Mendix SVG Hunt" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2022/10/20/mendix-svg-hunt/" />
+  <meta property="og:image" content="/media/marc-schaefer-6NylLLcku8w-unsplash-thumb.jpg" />
+  <meta property="og:description" content="Mxbuild fails to build due to SVG documents in the mendix model. You have removed all SVG&#39;s yet it does not solve the issue. Where the heck are these SVG&#39;s?"  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/marc-schaefer-6NylLLcku8w-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Mendix SVG Hunt</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Oct 20, 2022
+                
+                
+                <i>(Modified on Oct 20, 2022)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.</p>
+<h2 id="the-error">The error</h2>
+<p>As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A. Reading stacktraces is almost like an art-form. Specially when we do not have the accompanying source code.</p>
+<p>But not all is lost. With a bit of field experience as programmer and system engineer I concluded the problem is related to SVG:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">  at Mendix.Modeler.Images.MxImage.ParseSvgDocument (byte[]) &lt;0x0005b&gt;
+  at Mendix.Modeler.Images.MxImage.ParseImage (byte[]) &lt;0x0016f&gt;
+  at Mendix.Modeler.Images.MxImage.set_ImageData (byte[]) &lt;0x0004f&gt;
+</code></pre></div><p>The mxbuild process running inside of a Linux container with Mono is failing to parse an SVG document.</p>
+<h2 id="remove-svgs">Remove SVG&rsquo;s</h2>
+<p>With this finding I was super excited to share this solution with the client. Client proceeded to remove all SVG&rsquo;s from the app. However that did not resolve the problem. mxbuild is still failing.</p>
+<h2 id="where-are-the-svgs">Where are the SVG&rsquo;s??</h2>
+<p>Somehow mxbuild is tripping over SVG&rsquo;s. Yet there are no SVG&rsquo;s to be found in the model anymore.</p>
+<p>With my prior experience building <a href="https://cinaq.com/appsec">appsec</a> and deep understanding of Mendix internals, I put my mechanics (reverse engineering?) skills to work.</p>
+<p>I quickly drafted a tool in python to analyze the MPR file (mendix model) looking at the bits level. With this tool we found 3 SVG documents:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ERROR:root:{&#39;$ID&#39;: b&#39;l\x030\xd6\xeb\xa4 O\x90\xe4\xd7\xc4\xd3z&lt;\xe0&#39;, &#39;$Type&#39;: &#39;Images$Image&#39;, &#39;Image&#39;: b&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34;; width=&#34;81.844&#34; height=&#34;52.083&#34; viewBox=&#34;0 0 81.844 52.083&#34;&gt;\r\n &lt;path id=&#34;ic_people_24px&#34; d=&#34;M56.8,27.321A11.161,11.161,0,1,0,45.642,16.161,11.114,11.114,0,0,0,56.8,27.321Zm-29.761,0A11.161,11.161,0,1,0,15.881,16.161,11.114,11.114,0,0,0,27.041,27.321Zm0,7.44C18.373,34.761,1,39.114,1,47.782v9.3H53.083v-9.3C53.083,39.114,35.709,34.761,27.041,34.761Zm29.761,0c-1.079,0-2.307.074-3.609.186,4.315,3.125,7.329,7.329,7.329,12.835v9.3H82.844v-9.3C82.844,39.114,65.471,34.761,56.8,34.761Z&#34; transform=&#34;translate(-1 -5)&#34; fill=&#34;#9c835d&#34;/&gt;\r\n&lt;/svg&gt;\r\n&#39;, &#39;Name&#39;: &#39;GeneralInfo&#39;}
+ERROR:root:cannot identify image file &lt;_io.BytesIO object at 0x159d43950&gt;
+ERROR:root:{&#39;$ID&#39;: b&#34;H1Y\xd4b\x17?A\x8c\xae\x18&#39;M\x03v7&#34;, &#39;$Type&#39;: &#39;Images$Image&#39;, &#39;Image&#39;: b&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34;; width=&#34;52.002&#34; height=&#34;53&#34; viewBox=&#34;0 0 52.002 53&#34;&gt;\r\n &lt;g id=&#34;Release_notes&#34; data-name=&#34;Release notes&#34; transform=&#34;translate(-1232 -6470)&#34;&gt;\r\n &lt;path id=&#34;ic_insert_drive_file_24px&#34; d=&#34;M9.3,2A5.293,5.293,0,0,0,4.027,7.3L4,49.7A5.293,5.293,0,0,0,9.274,55H41.1a5.316,5.316,0,0,0,5.3-5.3V17.9L30.5,2ZM27.85,20.55V5.975L42.425,20.55Z&#34; transform=&#34;translate(1228 6468)&#34; fill=&#34;#9c835d&#34;/&gt;\r\n &lt;path id=&#34;ic_edit_24px&#34; d=&#34;M3,27.542V34H9.458L28.5,14.953,22.047,8.5ZM33.5,9.959a1.715,1.715,0,0,0,0-2.428L29.469,3.5a1.715,1.715,0,0,0-2.428,0L23.889,6.653l6.458,6.458L33.5,9.959Z&#34; transform=&#34;translate(1250 6485.002)&#34; fill=&#34;#425563&#34;/&gt;\r\n &lt;/g&gt;\r\n&lt;/svg&gt;\r\n&#39;, &#39;Name&#39;: &#39;Release_notes&#39;}
+ERROR:root:cannot identify image file &lt;_io.BytesIO object at 0x159d43950&gt;
+ERROR:root:{&#39;$ID&#39;: b&#39;\xdf\xb6\x1f\xc3\xb9\x1e\xd6I\xbeG\xaa\xea3\x88\x1a\xdc&#39;, &#39;$Type&#39;: &#39;Images$Image&#39;, &#39;Image&#39;: b&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;\r\n&lt;!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --&gt;\r\n&lt;svg version=&#34;1.1&#34; id=&#34;Laag_1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;; x=&#34;0px&#34; y=&#34;0px&#34;\r\n\t viewBox=&#34;0 0 52 48.32&#34; style=&#34;enable-background:new 0 0 52 48.32;&#34; xml:space=&#34;preserve&#34;&gt;\r\n&lt;style type=&#34;text/css&#34;&gt;\r\n\t.st0{fill:#9D845E;}\r\n\t.st1{fill:#FFFFFF;}\r\n&lt;/style&gt;\r\n&lt;path class=&#34;st0&#34; d=&#34;M0,48.32c-0.02-1.89,0.23-41.18,0.31-44.2C0.41,0.8,1.91-0.06,5.18,0c7.49,0.15,43.14,0,43.14,0\r\n\tS52,0.09,52,3.79c0,5.24,0,33.29,0,33.29s0,3.37-3,3.75c-3,0.37-41.57,0.37-41.57,0.37L0,48.32z&#34;/&gt;\r\n&lt;rect x=&#34;23.74&#34; y=&#34;7.14&#34; class=&#34;st1&#34; width=&#34;5.22&#34; height=&#34;16.9&#34;/&gt;\r\n&lt;rect x=&#34;23.74&#34; y=&#34;27.24&#34; class=&#34;st1&#34; width=&#34;5.22&#34; height=&#34;4.32&#34;/&gt;\r\n&lt;/svg&gt;\r\n&#39;, &#39;Name&#39;: &#39;tooltip_brown_helpcenter&#39;}
+ERROR:root:cannot identify image file &lt;_io.BytesIO object at 0x159d43950&gt;
+</code></pre></div><p>These 3 images are known with names:</p>
+<ul>
+<li>GeneralInfo</li>
+<li>Release_notes</li>
+<li>tooltip_brown_helpcenter</li>
+</ul>
+<h2 id="svg-not-found">SVG not found</h2>
+<p>Now also super excited I launched Mendix Studio, hit <code>ctrl+f</code> and typed <code>tooltip_brown_helpcenter</code>:</p>
+<p><img src="/media/svg-document-search.png" alt="Search for SVG document"></p>
+<p>Hit <code>enter</code> and hit a wall:</p>
+<p><img src="/media/svg-document-not-found.png" alt="No results"></p>
+<p>What the hell? Proceeded with the other 2 image names without results.</p>
+<h2 id="we-got-this-far-why-stop-here">We got this far, why stop here?</h2>
+<p>Remember we analyzed the MPR file? If we can read it, why not modify it? Great idea! The MPR file is <code>sqlite3</code> file. So we fire up sqlite3:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">sqlite3</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Mendix</span><span class="o">/</span><span class="n">myapp</span><span class="o">/</span><span class="n">myapp</span><span class="p">.</span><span class="n">mpr</span>
+<span class="n">sqlite</span><span class="o">&gt;</span> <span class="p">.</span><span class="k">schema</span> 
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">_MetaData</span><span class="p">(</span><span class="n">_ProductVersion</span> <span class="nb">TEXT</span><span class="p">,</span><span class="n">_BuildVersion</span> <span class="nb">TEXT</span><span class="p">,</span><span class="n">_SchemaHash</span> <span class="nb">TEXT</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Unit</span><span class="p">(</span><span class="n">UnitID</span> <span class="nb">BLOB</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span><span class="n">ContainerID</span> <span class="nb">BLOB</span><span class="p">,</span><span class="n">ContainmentName</span> <span class="nb">TEXT</span><span class="p">,</span><span class="n">TreeConflict</span> <span class="n">LONG</span><span class="p">,</span><span class="n">ContentsHash</span> <span class="nb">TEXT</span><span class="p">,</span><span class="n">ContentsConflicts</span> <span class="nb">TEXT</span><span class="p">,</span><span class="n">Contents</span> <span class="nb">BLOB</span><span class="p">,</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">UnitID</span><span class="p">));</span>
+</code></pre></div><p><code>ContentsHash</code> looks interesting. We proceed to modify my tool to return the <code>ContentsHash</code> value when it fails to parse an image.</p>
+<p>With this <code>ContentsHash</code> we can remove it from our MPR:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">delete</span> <span class="k">from</span> <span class="n">Unit</span> <span class="k">where</span> <span class="n">ContentsHash</span> <span class="o">=</span> <span class="s1">&#39;ubMSXQlsAv0hXeSMoMxKRhO0p1EaiflpQyg3ynKAQ/U=&#39;</span><span class="p">;</span>
+</code></pre></div><h2 id="it-lives">It lives!</h2>
+<p>With MPR file modified, it&rsquo;s time to test!</p>
+<ol>
+<li>First off we open our modified MPR with Mendix Studio Pro. It passes the consistency check. Great!</li>
+<li>Next up, does the local package creation work? Yes!</li>
+<li>Finally, what about the pipeline run in Linux container? Bingo! See Appendix B.</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>mxbuild running through Mono on Linux hosts sometimes cannot build Mendix models containing SVG documents embedded into the model. We have developed a tool to analyze the MPR file to determine what SVG documents are present that might not be visible in the Mendix Studio pro. Using this tool we can remove these hidden SVG documents from the model.</p>
+<p>Should you do this? Probably not.</p>
+<p>Aside from this little adventure, support for SVG is actually in Mendix. However for some unknown reason it does not work well with Mono in Linux. As a test the same troubling app was compiled with an experimental lab setup <a href="https://github.com/cinaq/mendix-docker">cinaq/mendix-docker</a>. There the project succeeds. With this I&rsquo;m concluding there&rsquo;s a bug in <a href="https://github.com/mendix/docker-mendix-buildpack">mendix-docker-buildpack</a> or in <a href="https://github.com/mendix/cf-mendix-buildpack/">cf-mendix-buildpack</a></p>
+<p>Liked this post? Subscribe to this blog and/or follow us on social media. Links are at the bottom of this page.</p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="a-mxbuild-stacktrace">A: mxbuild stacktrace</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">INFO</span><span class="p">:</span> <span class="nx">Preflight</span> <span class="nx">check</span> <span class="nx">on</span> <span class="nx">Mendix</span> <span class="nx">version</span> <span class="p">[</span><span class="mf">7.23.33.54646</span><span class="p">]</span> <span class="nx">and</span> <span class="nx">stack</span> <span class="p">[</span><span class="nx">None</span><span class="p">]</span><span class="o">...</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Preflight</span> <span class="nx">check</span> <span class="nx">completed</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Building</span> <span class="nx">from</span> <span class="nx">source</span><span class="o">...</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Selecting</span> <span class="nx">Mono</span> <span class="nx">Runtime</span><span class="p">:</span> <span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span>
+   <span class="nx">__</span>  <span class="nx">__</span>      <span class="nx">____</span>        <span class="nx">_</span> <span class="nx">_</span>     <span class="nx">_</span> 
+  <span class="p">|</span>  <span class="err">\</span><span class="o">/</span>  <span class="p">|</span>    <span class="p">|</span>  <span class="nx">_</span> <span class="err">\</span>      <span class="p">(</span><span class="nx">_</span><span class="p">)</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>
+  <span class="p">|</span> <span class="err">\</span>  <span class="o">/</span> <span class="p">|</span><span class="nx">_</span>  <span class="nx">_</span><span class="p">|</span> <span class="p">|</span><span class="nx">_</span><span class="p">)</span> <span class="p">|</span><span class="nx">_</span>   <span class="nx">_</span> <span class="nx">_</span><span class="p">|</span> <span class="p">|</span> <span class="nx">__</span><span class="p">|</span> <span class="p">|</span>
+  <span class="p">|</span> <span class="p">|</span><span class="err">\</span><span class="o">/</span><span class="p">|</span> <span class="err">\</span> <span class="err">\</span><span class="o">/</span> <span class="o">/</span>  <span class="nx">_</span> <span class="p">&lt;|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span><span class="o">/</span> <span class="nx">_</span><span class="s">` |
+</span><span class="s">  | |  | |&gt;  &lt;| |_) | |_| | | | (_| |
+</span><span class="s">  |_|  |_/_/\_\____/ \__,_|_|_|\__,_|
+</span><span class="s">   v7.23.33.54646
+</span><span class="s">Starting build for Mendix Project file: /opt/mendix/build/mxapp.mpr
+</span><span class="s">Using the following options:
+</span><span class="s"> * Build target: Package
+</span><span class="s"> * Deployment package file: /tmp/model.mda
+</span><span class="s">Reading project file...
+</span><span class="s">* Assertion at local-propagation.c:330, condition `</span><span class="nx">ins</span><span class="o">-</span><span class="p">&gt;</span><span class="nx">opcode</span> <span class="p">&gt;</span> <span class="nx">MONO_CEE_LAST</span><span class="err">&#39;</span> <span class="nx">not</span> <span class="nx">met</span>
+<span class="nx">Stacktrace</span><span class="p">:</span>
+  <span class="nx">at</span> <span class="p">&lt;</span><span class="nx">unknown</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="mh">0xffffffff</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">System</span><span class="p">.</span><span class="nx">MemoryExtensions</span><span class="p">..</span><span class="nf">cctor</span> <span class="p">()</span> <span class="p">&lt;</span><span class="mh">0x0000b</span><span class="p">&gt;</span>
+  <span class="nf">at</span> <span class="p">(</span><span class="nx">wrapper</span> <span class="nx">runtime</span><span class="o">-</span><span class="nx">invoke</span><span class="p">)</span> <span class="nx">object</span><span class="p">.</span><span class="nf">runtime_invoke_void</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00062</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="p">&lt;</span><span class="nx">unknown</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="mh">0xffffffff</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Svg</span><span class="p">.</span><span class="nx">SvgPropertyDescriptor</span><span class="s">`2&lt;Svg.SvgFragment, Svg.SvgUnit&gt;.SetValue (object,System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,object) &lt;0x0007f&gt;
+</span><span class="s">  at Svg.SvgFragment.SetValue (string,System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,object) &lt;0x0007c&gt;
+</span><span class="s">  at Svg.SvgDocument.SetValue (string,System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,object) &lt;0x0010b&gt;
+</span><span class="s">  at Svg.SvgElementFactory.SetPropertyValue (Svg.SvgElement,string,string,string,Svg.SvgDocument,bool) &lt;0x00096&gt;
+</span><span class="s">  at Svg.SvgElementFactory.SetAttributes (Svg.SvgElement,System.Xml.XmlReader,Svg.SvgDocument) &lt;0x00473&gt;
+</span><span class="s">  at Svg.SvgElementFactory.CreateElement&lt;T_REF&gt; (System.Xml.XmlReader,bool,Svg.SvgDocument) &lt;0x001a3&gt;
+</span><span class="s">  at Svg.SvgElementFactory.CreateDocument&lt;T_REF&gt; (System.Xml.XmlReader) &lt;0x00067&gt;
+</span><span class="s">  at Svg.SvgDocument.Create&lt;T_REF&gt; (System.Xml.XmlReader) &lt;0x00327&gt;
+</span><span class="s">  at Svg.SvgDocument.Open&lt;T_REF&gt; (System.IO.Stream,System.Collections.Generic.Dictionary`</span><span class="mi">2</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">&gt;)</span> <span class="p">&lt;</span><span class="mh">0x00117</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Svg</span><span class="p">.</span><span class="nx">SvgDocument</span><span class="p">.</span><span class="nx">Open</span><span class="p">&lt;</span><span class="nx">T_REF</span><span class="p">&gt;</span> <span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">IO</span><span class="p">.</span><span class="nx">Stream</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00027</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Images</span><span class="p">.</span><span class="nx">MxImage</span><span class="p">.</span><span class="nf">ParseSvgDocument</span> <span class="p">(</span><span class="kt">byte</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x0005b</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Images</span><span class="p">.</span><span class="nx">MxImage</span><span class="p">.</span><span class="nf">ParseImage</span> <span class="p">(</span><span class="kt">byte</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x0016f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Images</span><span class="p">.</span><span class="nx">MxImage</span><span class="p">.</span><span class="nf">set_ImageData</span> <span class="p">(</span><span class="kt">byte</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x0004f</span><span class="p">&gt;</span>
+  <span class="nf">at</span> <span class="p">(</span><span class="nx">wrapper</span> <span class="nx">runtime</span><span class="o">-</span><span class="nx">invoke</span><span class="p">)</span> <span class="p">&lt;</span><span class="nx">Module</span><span class="p">&gt;.</span><span class="nf">runtime_invoke_void__this___object</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x000df</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="p">&lt;</span><span class="nx">unknown</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="mh">0xffffffff</span><span class="p">&gt;</span>
+  <span class="nf">at</span> <span class="p">(</span><span class="nx">wrapper</span> <span class="nx">managed</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">native</span><span class="p">)</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">MonoMethod</span><span class="p">.</span><span class="nf">InternalInvoke</span> <span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">MonoMethod</span><span class="p">,</span><span class="nx">object</span><span class="p">,</span><span class="nx">object</span><span class="p">[],</span><span class="nx">System</span><span class="p">.</span><span class="nx">Exception</span><span class="o">&amp;</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00073</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">MonoMethod</span><span class="p">.</span><span class="nf">Invoke</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">BindingFlags</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">Binder</span><span class="p">,</span><span class="nx">object</span><span class="p">[],</span><span class="nx">System</span><span class="p">.</span><span class="nx">Globalization</span><span class="p">.</span><span class="nx">CultureInfo</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x000a3</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">MonoProperty</span><span class="p">.</span><span class="nf">SetValue</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">object</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">BindingFlags</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">Binder</span><span class="p">,</span><span class="nx">object</span><span class="p">[],</span><span class="nx">System</span><span class="p">.</span><span class="nx">Globalization</span><span class="p">.</span><span class="nx">CultureInfo</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00106</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">PropertyInfo</span><span class="p">.</span><span class="nf">SetValue</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">object</span><span class="p">,</span><span class="nx">object</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x00040</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">FillProperties</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageObject</span><span class="p">,</span><span class="nx">Newtonsoft</span><span class="p">.</span><span class="nx">Json</span><span class="p">.</span><span class="nx">Linq</span><span class="p">.</span><span class="nx">JObject</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Caches</span><span class="p">.</span><span class="nx">ICachedType</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00638</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">ConstructObjectInternal</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageObject</span><span class="p">,</span><span class="nx">Newtonsoft</span><span class="p">.</span><span class="nx">Json</span><span class="p">.</span><span class="nx">Linq</span><span class="p">.</span><span class="nx">JObject</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00413</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">ConvertFromStorage</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageObject</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Caches</span><span class="p">.</span><span class="nx">ICachedProperty</span><span class="p">,</span><span class="nx">Newtonsoft</span><span class="p">.</span><span class="nx">Json</span><span class="p">.</span><span class="nx">Linq</span><span class="p">.</span><span class="nx">JToken</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x0016f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">FillProperties</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageObject</span><span class="p">,</span><span class="nx">Newtonsoft</span><span class="p">.</span><span class="nx">Json</span><span class="p">.</span><span class="nx">Linq</span><span class="p">.</span><span class="nx">JObject</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Caches</span><span class="p">.</span><span class="nx">ICachedType</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x0059f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">ConstructObjectInternal</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageObject</span><span class="p">,</span><span class="nx">Newtonsoft</span><span class="p">.</span><span class="nx">Json</span><span class="p">.</span><span class="nx">Linq</span><span class="p">.</span><span class="nx">JObject</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00413</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitContentsLoader</span><span class="p">.</span><span class="nf">ConstructUnitFromContents</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="kt">byte</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x0003f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitLoader</span><span class="p">.</span><span class="nf">ConstructUnit</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Common</span><span class="p">.</span><span class="nx">DbDataReader</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x0011f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Operations</span><span class="p">.</span><span class="nx">UnitLoader</span><span class="p">.</span><span class="nf">LoadUnits</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">Generic</span><span class="p">.</span><span class="nx">IList</span><span class="s">`1&lt;System.Guid&gt;) &lt;0x00153&gt;
+</span><span class="s">  at Mendix.Modeler.Storage.Operations.UnitLoader.LoadChildUnits (Mendix.Modeler.Storage.IStorageUnit) &lt;0x006f7&gt;
+</span><span class="s">  at Mendix.Modeler.Storage.Operations.UnitLoader.LoadChildUnits (Mendix.Modeler.Storage.IStorageUnit) &lt;0x00b6f&gt;
+</span><span class="s">  at Mendix.Modeler.Storage.Operations.UnitLoader.Load&lt;T_REF&gt; (Mendix.Modeler.Utility.Progress.IProgressInfo,System.Collections.Generic.Dictionary`</span><span class="mi">2</span><span class="p">&lt;</span><span class="nx">System</span><span class="p">.</span><span class="nx">Guid</span><span class="p">,</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">IStorageUnit</span><span class="p">&gt;)</span> <span class="p">&lt;</span><span class="mh">0x00337</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Database</span><span class="p">.</span><span class="nx">Load</span><span class="p">&lt;</span><span class="nx">T_REF</span><span class="p">&gt;</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nx">Progress</span><span class="p">.</span><span class="nx">IProgressInfo</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">Generic</span><span class="p">.</span><span class="nx">Dictionary</span><span class="s">`2&lt;System.Guid, Mendix.Modeler.Storage.IStorageUnit&gt;,bool) &lt;0x0006b&gt;
+</span><span class="s">  at Mendix.MxBuild.ProjectLoader/&lt;&gt;c__DisplayClass9_0.&lt;LoadProject&gt;b__0 (Mendix.Modeler.Storage.Database) &lt;0x00083&gt;
+</span><span class="s">  at Mendix.Modeler.Storage.Database/&lt;&gt;c__DisplayClass24_0`</span><span class="mi">1</span><span class="p">&lt;</span><span class="nx">TResult_REF</span><span class="p">&gt;.&lt;</span><span class="nx">Do</span><span class="p">&gt;</span><span class="nf">b__0</span> <span class="p">(</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nx">DbConnectors</span><span class="p">.</span><span class="nx">IDbConnector</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x00058</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nx">DbConnectors</span><span class="p">.</span><span class="nx">SQLiteConnector</span><span class="o">/</span><span class="p">&lt;&gt;</span><span class="nx">c__DisplayClass5_0</span><span class="s">`1&lt;TResult_REF&gt;.&lt;Do&gt;b__1 () &lt;0x00021&gt;
+</span><span class="s">  at Mendix.Modeler.Utility.DbConnectors.DbConnector.WithoutTransactionDo&lt;TResult_REF&gt; (System.Func`</span><span class="mi">1</span><span class="p">&lt;</span><span class="nx">TResult_REF</span><span class="p">&gt;)</span> <span class="p">&lt;</span><span class="mh">0x00022</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nx">DbConnectors</span><span class="p">.</span><span class="nx">SQLiteConnector</span><span class="p">.</span><span class="nx">Do</span><span class="p">&lt;</span><span class="nx">TResult_REF</span><span class="p">&gt;</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="kt">bool</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Func</span><span class="s">`2&lt;Mendix.Modeler.Utility.DbConnectors.IDbConnector, TResult_REF&gt;) &lt;0x00217&gt;
+</span><span class="s">  at Mendix.Modeler.Storage.Database.Do&lt;TResult_REF&gt; (string,bool,System.Func`</span><span class="mi">2</span><span class="p">&lt;</span><span class="nx">Mendix</span><span class="p">.</span><span class="nx">Modeler</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Database</span><span class="p">,</span> <span class="nx">TResult_REF</span><span class="p">&gt;)</span> <span class="p">&lt;</span><span class="mh">0x0011b</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">MxBuild</span><span class="p">.</span><span class="nx">ProjectLoader</span><span class="p">.</span><span class="nf">LoadProject</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">Generic</span><span class="p">.</span><span class="nx">Dictionary</span><span class="s">`2&lt;System.Guid, Mendix.Modeler.Storage.IStorageUnit&gt;) &lt;0x0010f&gt;
+</span><span class="s">  at Mendix.MxBuild.ProjectLoader.Load (string,bool,bool) &lt;0x005db&gt;
+</span><span class="s">  at Mendix.MxBuild.BuildRunner.Execute (Mendix.MxBuild.IBuildOptions) &lt;0x001c9&gt;
+</span><span class="s">  at Mendix.MxBuild.BuildRunnerMode.ExecuteBuild (Mendix.MxBuild.IBuildOptions) &lt;0x0006b&gt;
+</span><span class="s">  at Mendix.MxBuild.BuildRunnerMode.Run (System.Collections.Generic.IList`</span><span class="mi">1</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;)</span> <span class="p">&lt;</span><span class="mh">0x0008f</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">MxBuild</span><span class="p">.</span><span class="nx">ApplicationRunner</span><span class="p">.</span><span class="nf">Run</span> <span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">Generic</span><span class="p">.</span><span class="nx">IEnumerable</span><span class="s">`1&lt;string&gt;) &lt;0x00194&gt;
+</span><span class="s">  at Mendix.MxBuild.Program/&lt;&gt;c__DisplayClass1_0.&lt;Main&gt;b__0 (Mendix.MxBuild.IApplicationRunner) &lt;0x0002c&gt;
+</span><span class="s">  at Mendix.CommandLine.Shared.ProgramHelper.InitializeAndRun&lt;T_REF&gt; (System.Func`</span><span class="mi">2</span><span class="p">&lt;</span><span class="nx">T_REF</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;,</span><span class="nx">System</span><span class="p">.</span><span class="nx">Reflection</span><span class="p">.</span><span class="nx">Assembly</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x00085</span><span class="p">&gt;</span>
+  <span class="nx">at</span> <span class="nx">Mendix</span><span class="p">.</span><span class="nx">MxBuild</span><span class="p">.</span><span class="nx">Program</span><span class="p">.</span><span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[])</span> <span class="p">&lt;</span><span class="mh">0x0017f</span><span class="p">&gt;</span>
+  <span class="nf">at</span> <span class="p">(</span><span class="nx">wrapper</span> <span class="nx">runtime</span><span class="o">-</span><span class="nx">invoke</span><span class="p">)</span> <span class="p">&lt;</span><span class="nx">Module</span><span class="p">&gt;.</span><span class="nf">runtime_invoke_int_object</span> <span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">,</span><span class="nx">intptr</span><span class="p">)</span> <span class="p">&lt;</span><span class="mh">0x000fd</span><span class="p">&gt;</span>
+<span class="nx">Native</span> <span class="nx">stacktrace</span><span class="p">:</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0xa7394</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62c79394</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">x86_64</span><span class="o">-</span><span class="nx">linux</span><span class="o">-</span><span class="nx">gnu</span><span class="o">/</span><span class="nx">libpthread</span><span class="p">.</span><span class="nx">so</span><span class="mf">.0</span><span class="p">(</span><span class="o">+</span><span class="mh">0x12980</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x7f7c4412b980</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">x86_64</span><span class="o">-</span><span class="nx">linux</span><span class="o">-</span><span class="nx">gnu</span><span class="o">/</span><span class="nx">libc</span><span class="p">.</span><span class="nx">so</span><span class="mf">.6</span><span class="p">(</span><span class="nx">gsignal</span><span class="o">+</span><span class="mh">0xc7</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x7f7c43b4ee87</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">x86_64</span><span class="o">-</span><span class="nx">linux</span><span class="o">-</span><span class="nx">gnu</span><span class="o">/</span><span class="nx">libc</span><span class="p">.</span><span class="nx">so</span><span class="mf">.6</span><span class="p">(</span><span class="nx">abort</span><span class="o">+</span><span class="mh">0x141</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x7f7c43b507f1</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x25e733</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62e30733</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x25e4cd</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62e304cd</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x25e681</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62e30681</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x98421</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62c6a421</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x103c7a</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62cd5c7a</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x104789</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62cd6789</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0x39641</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62c0b641</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0xa8f4a</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62c7af4a</span><span class="p">]</span>
+	<span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nf">mono</span><span class="p">(</span><span class="o">+</span><span class="mh">0xa968c</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x562b62c7b68c</span><span class="p">]</span>
+	<span class="p">[</span><span class="mh">0x408e6398</span><span class="p">]</span>
+<span class="nx">Debug</span> <span class="nx">info</span> <span class="nx">from</span> <span class="nx">gdb</span><span class="p">:</span>
+<span class="o">================================================================</span><span class="p">=</span>
+<span class="nx">Got</span> <span class="nx">a</span> <span class="nx">SIGABRT</span> <span class="nx">while</span> <span class="nx">executing</span> <span class="nx">native</span> <span class="nx">code</span><span class="p">.</span> <span class="nx">This</span> <span class="nx">usually</span> <span class="nx">indicates</span>
+<span class="nx">a</span> <span class="nx">fatal</span> <span class="kt">error</span> <span class="nx">in</span> <span class="nx">the</span> <span class="nx">mono</span> <span class="nx">runtime</span> <span class="nx">or</span> <span class="nx">one</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">native</span> <span class="nx">libraries</span> 
+<span class="nx">used</span> <span class="nx">by</span> <span class="nx">your</span> <span class="nx">application</span><span class="p">.</span>
+<span class="o">================================================================</span><span class="p">=</span>
+<span class="nx">ERROR</span><span class="p">:</span> <span class="nx">Could</span> <span class="nx">not</span> <span class="nx">read</span> <span class="nx">MxBuild</span> <span class="kt">error</span> <span class="nx">file</span>
+<span class="nf">Traceback</span> <span class="p">(</span><span class="nx">most</span> <span class="nx">recent</span> <span class="nx">call</span> <span class="nx">last</span><span class="p">):</span>
+  <span class="nx">File</span> <span class="s">&#34;/opt/mendix/buildpack/buildpack/mxbuild.py&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">57</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">build_from_source</span>
+    <span class="nx">subprocess</span><span class="p">.</span><span class="nf">check_call</span><span class="p">(</span><span class="nx">args</span><span class="p">,</span> <span class="nx">env</span><span class="p">=</span><span class="nx">mono_env</span><span class="p">)</span>
+  <span class="nx">File</span> <span class="s">&#34;/usr/lib/python3.6/subprocess.py&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">311</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">check_call</span>
+    <span class="nx">raise</span> <span class="nf">CalledProcessError</span><span class="p">(</span><span class="nx">retcode</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">)</span>
+<span class="nx">subprocess</span><span class="p">.</span><span class="nx">CalledProcessError</span><span class="p">:</span> <span class="nx">Command</span> <span class="sc">&#39;[&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">mono</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">config</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">mono</span><span class="o">/</span><span class="nx">config</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">mxbuild</span><span class="o">/</span><span class="nx">modeler</span><span class="o">/</span><span class="nx">mxbuild</span><span class="p">.</span><span class="nx">exe</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">target</span><span class="p">=</span><span class="kn">package</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">output</span><span class="p">=</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">model</span><span class="p">.</span><span class="nx">mda</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">java</span><span class="o">-</span><span class="nx">home</span><span class="p">=</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">jvm</span><span class="o">/</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">jdk</span><span class="o">-</span><span class="mi">8</span><span class="nx">u282</span><span class="o">-</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">x64</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">java</span><span class="o">-</span><span class="nx">exe</span><span class="o">-</span><span class="nx">path</span><span class="p">=</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">jvm</span><span class="o">/</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">jdk</span><span class="o">-</span><span class="mi">8</span><span class="nx">u282</span><span class="o">-</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">x64</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">java</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">write</span><span class="o">-</span><span class="nx">errors</span><span class="p">=</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">builderrors</span><span class="p">.</span><span class="nx">json</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">mxapp</span><span class="p">.</span><span class="nx">mpr</span><span class="sc">&#39;]&#39;</span> <span class="nx">died</span> <span class="nx">with</span> <span class="p">&lt;</span><span class="nx">Signals</span><span class="p">.</span><span class="nx">SIGABRT</span><span class="p">:</span> <span class="mi">6</span><span class="p">&gt;.</span>
+<span class="nx">During</span> <span class="nx">handling</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">above</span> <span class="nx">exception</span><span class="p">,</span> <span class="nx">another</span> <span class="nx">exception</span> <span class="nx">occurred</span><span class="p">:</span>
+<span class="nf">Traceback</span> <span class="p">(</span><span class="nx">most</span> <span class="nx">recent</span> <span class="nx">call</span> <span class="nx">last</span><span class="p">):</span>
+  <span class="nx">File</span> <span class="s">&#34;/opt/mendix/buildpack/buildpack/mxbuild.py&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">104</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">_log_buildstatus_errors</span>
+    <span class="nx">with</span> <span class="nx">codecs</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">error_file</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="nx">encoding</span><span class="p">=</span><span class="s">&#34;utf-8-sig&#34;</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">errorfile</span><span class="p">:</span>
+  <span class="nx">File</span> <span class="s">&#34;/usr/lib/python3.6/codecs.py&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">897</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">open</span>
+    <span class="nx">file</span> <span class="p">=</span> <span class="nx">builtins</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">mode</span><span class="p">,</span> <span class="nx">buffering</span><span class="p">)</span>
+<span class="nx">FileNotFoundError</span><span class="p">:</span> <span class="p">[</span><span class="nx">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="nx">No</span> <span class="nx">such</span> <span class="nx">file</span> <span class="nx">or</span> <span class="nx">directory</span><span class="p">:</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">builderrors</span><span class="p">.</span><span class="nx">json</span><span class="err">&#39;</span>
+<span class="nx">ERROR</span><span class="p">:</span> <span class="nx">MxBuild</span> <span class="nx">returned</span> <span class="nx">errors</span><span class="p">:</span> <span class="p">{</span><span class="s">&#34;problems&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&#34;severity&#34;</span><span class="p">:</span> <span class="s">&#34;Error&#34;</span><span class="p">,</span> <span class="s">&#34;message&#34;</span><span class="p">:</span> <span class="s">&#34;Failed to build the model,please check application logs for details.&#34;</span><span class="p">,</span> <span class="s">&#34;locations&#34;</span><span class="p">:</span> <span class="p">[]}]}</span>
+<span class="nx">ERROR</span><span class="p">:</span> <span class="nx">Command</span> <span class="sc">&#39;[&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">mono</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">config</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">mono</span><span class="o">/</span><span class="nx">config</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">mxbuild</span><span class="o">/</span><span class="nx">modeler</span><span class="o">/</span><span class="nx">mxbuild</span><span class="p">.</span><span class="nx">exe</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">target</span><span class="p">=</span><span class="kn">package</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">output</span><span class="p">=</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">model</span><span class="p">.</span><span class="nx">mda</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">java</span><span class="o">-</span><span class="nx">home</span><span class="p">=</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">jvm</span><span class="o">/</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">jdk</span><span class="o">-</span><span class="mi">8</span><span class="nx">u282</span><span class="o">-</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">x64</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">java</span><span class="o">-</span><span class="nx">exe</span><span class="o">-</span><span class="nx">path</span><span class="p">=</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="p">.</span><span class="nx">local</span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">jvm</span><span class="o">/</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">jdk</span><span class="o">-</span><span class="mi">8</span><span class="nx">u282</span><span class="o">-</span><span class="nx">AdoptOpenJDK</span><span class="o">-</span><span class="nx">x64</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">java</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">--</span><span class="nx">write</span><span class="o">-</span><span class="nx">errors</span><span class="p">=</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">builderrors</span><span class="p">.</span><span class="nx">json</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">mxapp</span><span class="p">.</span><span class="nx">mpr</span><span class="sc">&#39;]&#39;</span> <span class="nx">died</span> <span class="nx">with</span> <span class="p">&lt;</span><span class="nx">Signals</span><span class="p">.</span><span class="nx">SIGABRT</span><span class="p">:</span> <span class="mi">6</span><span class="p">&gt;.</span>
+<span class="nf">Traceback</span> <span class="p">(</span><span class="nx">most</span> <span class="nx">recent</span> <span class="nx">call</span> <span class="nx">last</span><span class="p">):</span>
+  <span class="nx">File</span> <span class="s">&#34;./compilation&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">65</span><span class="p">,</span> <span class="nx">in</span> <span class="p">&lt;</span><span class="nx">module</span><span class="p">&gt;</span>
+    <span class="nx">exit_code</span> <span class="p">=</span> <span class="nf">call_buildpack_compilation</span><span class="p">()</span>
+  <span class="nx">File</span> <span class="s">&#34;./compilation&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">37</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">call_buildpack_compilation</span>
+    <span class="k">return</span> <span class="nx">subprocess</span><span class="p">.</span><span class="nf">check_call</span><span class="p">([</span><span class="s">&#34;/opt/mendix/buildpack/buildpack/stage.py&#34;</span><span class="p">,</span> <span class="nx">BUILD_PATH</span><span class="p">,</span> <span class="nx">CACHE_PATH</span><span class="p">])</span>
+  <span class="nx">File</span> <span class="s">&#34;/usr/lib/python3.6/subprocess.py&#34;</span><span class="p">,</span> <span class="nx">line</span> <span class="mi">311</span><span class="p">,</span> <span class="nx">in</span> <span class="nx">check_call</span>
+    <span class="nx">raise</span> <span class="nf">CalledProcessError</span><span class="p">(</span><span class="nx">retcode</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">)</span>
+<span class="nx">subprocess</span><span class="p">.</span><span class="nx">CalledProcessError</span><span class="p">:</span> <span class="nx">Command</span> <span class="sc">&#39;[&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">buildpack</span><span class="o">/</span><span class="nx">buildpack</span><span class="o">/</span><span class="nx">stage</span><span class="p">.</span><span class="nx">py</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">buildcache</span><span class="sc">&#39;]&#39;</span> <span class="nx">returned</span> <span class="nx">non</span><span class="o">-</span><span class="nx">zero</span> <span class="nx">exit</span> <span class="nx">status</span> <span class="mf">1.</span>
+<span class="kt">error</span> <span class="nx">building</span> <span class="nx">image</span><span class="p">:</span> <span class="kt">error</span> <span class="nx">building</span> <span class="nx">stage</span><span class="p">:</span> <span class="nx">failed</span> <span class="nx">to</span> <span class="nx">execute</span> <span class="nx">command</span><span class="p">:</span> <span class="nx">waiting</span> <span class="k">for</span> <span class="nx">process</span> <span class="nx">to</span> <span class="nx">exit</span><span class="p">:</span> <span class="nx">exit</span> <span class="nx">status</span> <span class="mi">1</span>
+</code></pre></div><h3 id="b-mxbuild-succeeds">B: mxbuild succeeds</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">INFO</span><span class="p">:</span> <span class="nx">Preflight</span> <span class="nx">check</span> <span class="nx">on</span> <span class="nx">Mendix</span> <span class="nx">version</span> <span class="p">[</span><span class="mf">7.23.33.54646</span><span class="p">]</span> <span class="nx">and</span> <span class="nx">stack</span> <span class="p">[</span><span class="nx">None</span><span class="p">]</span><span class="o">...</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Preflight</span> <span class="nx">check</span> <span class="nx">completed</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Building</span> <span class="nx">from</span> <span class="nx">source</span><span class="o">...</span>
+<span class="nx">INFO</span><span class="p">:</span> <span class="nx">Selecting</span> <span class="nx">Mono</span> <span class="nx">Runtime</span><span class="p">:</span> <span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span>
+   <span class="nx">__</span>  <span class="nx">__</span>      <span class="nx">____</span>        <span class="nx">_</span> <span class="nx">_</span>     <span class="nx">_</span> 
+  <span class="p">|</span>  <span class="err">\</span><span class="o">/</span>  <span class="p">|</span>    <span class="p">|</span>  <span class="nx">_</span> <span class="err">\</span>      <span class="p">(</span><span class="nx">_</span><span class="p">)</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>
+  <span class="p">|</span> <span class="err">\</span>  <span class="o">/</span> <span class="p">|</span><span class="nx">_</span>  <span class="nx">_</span><span class="p">|</span> <span class="p">|</span><span class="nx">_</span><span class="p">)</span> <span class="p">|</span><span class="nx">_</span>   <span class="nx">_</span> <span class="nx">_</span><span class="p">|</span> <span class="p">|</span> <span class="nx">__</span><span class="p">|</span> <span class="p">|</span>
+  <span class="p">|</span> <span class="p">|</span><span class="err">\</span><span class="o">/</span><span class="p">|</span> <span class="err">\</span> <span class="err">\</span><span class="o">/</span> <span class="o">/</span>  <span class="nx">_</span> <span class="p">&lt;|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span><span class="o">/</span> <span class="nx">_</span><span class="err">`</span> <span class="p">|</span>
+  <span class="p">|</span> <span class="p">|</span>  <span class="p">|</span> <span class="p">|&gt;</span>  <span class="p">&lt;|</span> <span class="p">|</span><span class="nx">_</span><span class="p">)</span> <span class="p">|</span> <span class="p">|</span><span class="nx">_</span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">(</span><span class="nx">_</span><span class="p">|</span> <span class="p">|</span>
+  <span class="p">|</span><span class="nx">_</span><span class="p">|</span>  <span class="p">|</span><span class="nx">_</span><span class="o">/</span><span class="nx">_</span><span class="o">/</span><span class="err">\</span><span class="nx">_</span><span class="err">\</span><span class="nx">____</span><span class="o">/</span> <span class="err">\</span><span class="nx">__</span><span class="p">,</span><span class="nx">_</span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="err">\</span><span class="nx">__</span><span class="p">,</span><span class="nx">_</span><span class="p">|</span>
+   <span class="nx">v7</span><span class="mf">.23.33.54646</span>
+<span class="nx">Starting</span> <span class="nx">build</span> <span class="k">for</span> <span class="nx">Mendix</span> <span class="nx">Project</span> <span class="nx">file</span><span class="p">:</span> <span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">myapp</span><span class="p">.</span><span class="nx">mpr</span>
+<span class="nx">Using</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">options</span><span class="p">:</span>
+ <span class="o">*</span> <span class="nx">Build</span> <span class="nx">target</span><span class="p">:</span> <span class="nx">Package</span>
+ <span class="o">*</span> <span class="nx">Deployment</span> <span class="kn">package</span> <span class="nx">file</span><span class="p">:</span> <span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">model</span><span class="p">.</span><span class="nx">mda</span>
+<span class="nx">Reading</span> <span class="nx">project</span> <span class="nx">file</span><span class="o">...</span>
+<span class="nx">Building</span> <span class="nx">project</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Synchronize</span> <span class="nx">with</span> <span class="nx">file</span> <span class="nx">system</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Synchronizing</span> <span class="nx">with</span> <span class="nx">file</span> <span class="nx">system</span><span class="o">...</span>
+<span class="nx">libpng</span> <span class="nx">warning</span><span class="p">:</span> <span class="nx">iCCP</span><span class="p">:</span> <span class="nx">known</span> <span class="nx">incorrect</span> <span class="nx">sRGB</span> <span class="nx">profile</span>
+<span class="nx">libpng</span> <span class="nx">warning</span><span class="p">:</span> <span class="nx">iCCP</span><span class="p">:</span> <span class="nx">known</span> <span class="nx">incorrect</span> <span class="nx">sRGB</span> <span class="nx">profile</span>
+<span class="nx">libpng</span> <span class="nx">warning</span><span class="p">:</span> <span class="nx">iCCP</span><span class="p">:</span> <span class="nx">known</span> <span class="nx">incorrect</span> <span class="nx">sRGB</span> <span class="nx">profile</span>
+<span class="nx">libpng</span> <span class="nx">warning</span><span class="p">:</span> <span class="nx">iCCP</span><span class="p">:</span> <span class="nx">known</span> <span class="nx">incorrect</span> <span class="nx">sRGB</span> <span class="nx">profile</span>
+<span class="nx">libpng</span> <span class="nx">warning</span><span class="p">:</span> <span class="nx">iCCP</span><span class="p">:</span> <span class="nx">known</span> <span class="nx">incorrect</span> <span class="nx">sRGB</span> <span class="nx">profile</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Initialize</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Preparing</span> <span class="nx">deployment</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Check</span> <span class="nx">prerequisites</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Checking</span> <span class="k">for</span> <span class="nx">errors</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Clean</span> <span class="nx">deployment</span> <span class="nx">directory</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Cleaning</span> <span class="nx">deployment</span> <span class="nx">directory</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Cleaning</span> <span class="nx">web</span> <span class="nx">deployment</span> <span class="nx">directory</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Prepare</span> <span class="nx">deployment</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Writing</span> <span class="nx">files</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Build</span> <span class="nx">deployment</span> <span class="nx">structure</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Compiling</span> <span class="nx">Java</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Generating</span> <span class="nx">integration</span> <span class="nx">files</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Exporting</span> <span class="nx">a</span> <span class="nx">theme</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Exporting</span> <span class="nx">pages</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Optimizing</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Exporting</span> <span class="nx">custom</span> <span class="nx">widgets</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Bundling</span> <span class="nx">custom</span> <span class="nx">widgets</span><span class="o">...</span>
+ <span class="o">*</span> <span class="nx">Compressing</span> <span class="nx">web</span> <span class="nx">resources</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Save</span> <span class="nx">model</span> <span class="nx">to</span> <span class="nx">deployment</span> <span class="nx">directory</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Saving</span> <span class="nx">model</span> <span class="nx">to</span> <span class="nx">deployment</span> <span class="nx">directory</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Create</span> <span class="nx">deployment</span> <span class="kn">package</span><span class="err">&#39;</span>
+ <span class="o">*</span> <span class="nx">Creating</span> <span class="nx">deployment</span> <span class="kn">package</span><span class="o">...</span>
+<span class="nx">Executing</span> <span class="nx">step</span> <span class="err">&#39;</span><span class="nx">Finalize</span> <span class="nx">deployment</span> <span class="kn">package</span><span class="err">&#39;</span>
+<span class="nx">BUILD</span> <span class="nx">SUCCEEDED</span>
+</code></pre></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2021 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

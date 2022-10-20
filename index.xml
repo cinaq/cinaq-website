@@ -125,6 +125,16 @@
     </item>
     
     <item>
+      <title>Mendix SVG Hunt</title>
+      <link>/blog/2022/10/20/mendix-svg-hunt/</link>
+      <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2022/10/20/mendix-svg-hunt/</guid>
+      <description>Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&amp;rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.
+The error As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A.</description>
+    </item>
+    
+    <item>
       <title>Side effects of traveling frequently</title>
       <link>/blog/2022/10/10/side-effects-of-traveling-frequently/</link>
       <pubDate>Mon, 10 Oct 2022 13:37:00 +0100</pubDate>
