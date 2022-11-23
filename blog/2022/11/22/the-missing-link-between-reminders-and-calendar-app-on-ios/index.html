@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The missing link between Reminders and Calendar app on iOS - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2fad554942a0618dbdc82e108c8707f02e34ba005607f3b364defcf7e22c9a1b.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="The native productivity tools on iOS is great. They work seamlessly with Apple&#39;s ecosystem. Except for reminders and calendar app." />
+  <meta property="og:title" content="The missing link between Reminders and Calendar app on iOS" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2022/11/22/the-missing-link-between-reminders-and-calendar-app-on-ios/" />
+  <meta property="og:image" content="/media/towfiqu-barbhuiya-jOeh3Lv88xA-unsplash-thumb.jpg" />
+  <meta property="og:description" content="The native productivity tools on iOS is great. They work seamlessly with Apple&#39;s ecosystem. Except for reminders and calendar app."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/towfiqu-barbhuiya-jOeh3Lv88xA-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>The missing link between Reminders and Calendar app on iOS</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Nov 22, 2022
+                
+                
+                <i>(Modified on Nov 23, 2022)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>My obsession to live by my calendar meant I was always on the look out how to optimize my agenda workflow. The Apple ecosystem works very nicely together. And don&rsquo;t forget the fact usability are top notch and well thought out. My quest to finding the perfect productivity setup has come full circle: started with Apple apps, tried many third party tools, and finally we are back to square one with Apple apps. But now with a tiny modern enhancement.</p>
+<h2 id="the-contenders">The contenders</h2>
+<p>For a long time I have used the <a href="https://apps.apple.com/nl/app/calendars-5-by-readdle/id697927927">Calendars 5</a> app together with <a href="https://apps.apple.com/nl/app/spark-mail-smart-email-inbox/id997102246">Spark mail</a>. They are fantastic products that work very well. These are the first apps I ever decided to buy. Why? Because they really increased my productivity. Some Spark advantages:</p>
+<ul>
+<li>Magically syncs accounts across devices</li>
+<li>Includes an extra pane for Calendar</li>
+</ul>
+<p>There are many more, but these are my highlights.</p>
+<p>With regard Calendars 5 the advantages are:</p>
+<ul>
+<li>works with native ios reminders and calendars</li>
+<li>shows reminders/tasks in the same calendar view</li>
+</ul>
+<p>Both apps have pretty good UX.</p>
+<h2 id="triggers">Triggers</h2>
+<p>Recently there were few changes that forced me to look around. The first is Spark released a new version that added Spark footnote to all outgoing emails unless you pay for a subscription. As a long time, early adopter, I paid for the product many years ago. It&rsquo;s understandable Readdle Technologies (publisher) is finding ways to increase its revenue. This attempt caused many <a href="https://forums.macrumors.com/threads/popular-email-client-spark-gets-major-redesign-for-mac-moves-to-subscription-model.2363830/page-11">early adopters to shop for an alternative</a>. Few weeks after that release, Readdle decided to remove this footnote for early adopters. That&rsquo;s nice of them but the damage has already been done.</p>
+<p>Second, with the new releases of iOS (15 and 16), the widget of Calendars 5 often do not display the events. I&rsquo;m not sure what exactly causes the bug. But reboot solves the problem. However I&rsquo;m not the type that reboots the phone regularly. This contributed greatly to the ongoing irritation.</p>
+<h2 id="back-to-good-old-apple">Back to good old Apple</h2>
+<p>I often fantasized going back to Apple-only productivity suite because the UX of these apps are unbeatable. Reminders and calendars synced across all devices seamlessly. Why is this important?</p>
+<ul>
+<li>I can add reminders while at the gym doing bench presses or swimming. I do reflections during those sessions and sometimes I get great ideas during a workout.</li>
+<li>On the go with Apple Watch or iPhone i get access to my agenda</li>
+<li>Need more planning freedom? Open up macbook</li>
+<li>Driving in the car? Access via Carplay</li>
+</ul>
+<p>The UX of Apple Reminders, Mail and Calendar app are not as feature rich as Readdle suite. But UX is pretty damn good. However there is one issue: Reminders and Calendar events are not connected in any way. It kinda makes sense but at the same it doesn&rsquo;t. Because Reminders is essentially a few list of todo items. However a task can have a deadline. When the deadline is defined, why wouldn&rsquo;t Apple use this information and show it in Calendar app?</p>
+<h2 id="reminders2calendar">Reminders2Calendar</h2>
+<p>Few years ago <a href="https://en.wikipedia.org/wiki/Shortcuts_(app)">Apple acquired Workflow app</a>. It has been rebuild and rebranched to Shortcuts app now included in iOS. As an automation fanboy, by profession and privately, I started exploring the capabilities of the Shortcuts app. There are few shortcuts that automates my workflows at home and on the go.</p>
+<p>With my adventure going back to Apple-only ecosystem, I have identified the biggest blocker:</p>
+<blockquote>
+<p>reminder tasks are not shown in my calendar.</p>
+</blockquote>
+<p>The pseudo code looks like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">
+todos_with_deadlines = get_reminders(completed=false, from=today, to=7days_from_now)
+
+foreach todo in todos_with_deadlines:
+  upsert_calendar_event(todo)
+
+completed = get_reminders(completed=true, from=7days_ago, to=today)
+foreach task in completed:
+  update_calendar_event(task)
+
+</code></pre></div><p>After a few days of tinkering and doing low-code on the phone I have finally reached the final version of <a href="https://www.icloud.com/shortcuts/615ac60bbb534edcae6c07a95221eb95">Reminders2Calendar</a>.</p>
+<p><img src="/media/reminders-calendar.gif" alt="reminders2calendar demo"></p>
+<h2 id="automate-synchronization">Automate synchronization</h2>
+<p>In above video you can see me running a shortcut by hand. <a href="https://www.icloud.com/shortcuts/8994e764a7cf4b88835896857ce30598">That shortcut is a wrapper</a> that enables me to push multiple Reminder lists to Calendars. As pointed out earlier, I&rsquo;m a lazy person that prefers automation over manual repetitive tasks. One of the issues I got with Apple Shortcuts is the lack of timer based triggers. To simulate regular trigger, I noticed I charge my phone multiple times across the day. At least once a day because the battery drains too quick. This trick looks like:</p>
+<p><img src="/media/automation.png" alt="Automdate synchronization"></p>
+<h2 id="conclusions">Conclusions</h2>
+<p>As you can see, with a little automation help we can make our lives more productive. Now we get more benefits from the Apple products. I&rsquo;ve removed the Readdle product suite from my systems and I&rsquo;m now fully back on Apple. Hopefully one day Apple decides to implement this automation workflow into its native products.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-userlib-cleaner">
+      <a href="https://github.com/cinaq/mendix-userlib-cleaner">
+        mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>
