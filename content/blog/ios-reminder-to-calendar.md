@@ -81,7 +81,14 @@ foreach task in completed:
 
 After a few days of tinkering and doing low-code on the phone I have finally reached the final version of [Reminders2Calendar](https://www.icloud.com/shortcuts/615ac60bbb534edcae6c07a95221eb95).
 
-![reminders2calendar demo](/media/reminders-calendar.gif)
+{{< rawhtml >}} 
+
+<video controls autoplay>
+    <source src="/media/reminders2calendar.mp4" type="video/mp4">
+    Your browser does not support the video tag.  
+</video>
+
+{{< /rawhtml >}}
 
 ## Automate synchronization
 
