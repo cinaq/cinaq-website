@@ -91,16 +91,7 @@ After a few days of tinkering and doing low-code on the phone I have finally rea
 
 ## Automate synchronization
 
-In above video you can see me running a shortcut by hand. [That shortcut is a wrapper](https://www.icloud.com/shortcuts/8994e764a7cf4b88835896857ce30598) that enables me to push multiple Reminder lists to Calendars.
-
-As pointed out earlier, I'm a lazy person that prefers automation over manual repetitive tasks. ~~One of the issues I got with Apple Shortcuts is the lack of timer based triggers. To simulate regular trigger, I noticed I charge my phone multiple times during the day. At least once a day because the battery drains too quick. ~~
-
-As of this writing it's not possible to have time based triggers without user-confirmation:
-
-![Time based trigger](/media/remindes2calendar-time-based.png)
-
-Alternatively the trigger can be based on app being opened/closed. In this case we would trigger a synchronization whenever the Reminders.app or Calendars.app is opened or closed:
-![event based trigger](/media/reminders2calendar-event-based.png)
+In above video, you can see me running a shortcut by hand. [That shortcut is a wrapper](https://www.icloud.com/shortcuts/8994e764a7cf4b88835896857ce30598) that enables me to push multiple Reminder lists to Calendars.
 
 ## Quick start
 
@@ -129,7 +120,7 @@ Personally I have 2 lists I need to synchronize. To simplify the automation we c
 
 Now you can call this master shortcut based on triggers:
 
-![Time based trigger](/media/remindes2calendar-time-based.png)
+![Time based trigger](/media/reminders2calendar-time-based.png)
 ![event based trigger](/media/reminders2calendar-event-based.png)
 
 
