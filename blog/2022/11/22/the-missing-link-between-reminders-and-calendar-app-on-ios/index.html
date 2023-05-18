@@ -314,6 +314,30 @@
             
           
           <div class="content"><p>My obsession to live by my calendar meant I was always on the lookout for optimizing my agenda workflow. The Apple ecosystem works very nicely together. And don&rsquo;t forget the fact usability is top-notch and well-thought-out. My quest to find the perfect productivity setup has come full circle: started with Apple apps, tried many third-party tools, and finally, we are back to square one with Apple apps. But now with a tiny modern enhancement.</p>
+<h2 id="quick-start">Quick start</h2>
+<p>Since the publishing of this article there have been a few visitors that had trouble setting up their own synchronization. In this section help you get started as quickly as possible.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Reminders list name: this is the name of your reminders list. It also must match with your calendar name.</li>
+<li>Import <a href="https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7">Reminders2Calendar</a> into your shortcuts on your iPhone.</li>
+</ul>
+<h3 id="setup-single-list">Setup single list</h3>
+<ul>
+<li>Open Shortcuts.app</li>
+<li>Create a new shortcut. I call it <strong>Reminders2Calendar Personal</strong></li>
+<li>in this new shortcut add 2 actions so that it looks like. <strong>Personal</strong> is my Reminders list:
+<img src="/media/reminders2calendar-personal.png" alt="Reminders2Calendar Personal"></li>
+</ul>
+<p>Repeat this procedure if you have multiple lists.</p>
+<h3 id="synchronize-all">Synchronize all</h3>
+<p>Personally I have 2 lists I need to synchronize. To simplify the automation we can group them into a master shortcut called <strong>Reminders2Calendar ALL</strong>:
+<img src="/media/reminders2calendar-all.png" alt="Reminders2Calendar ALL"></p>
+<h3 id="triggers">Triggers</h3>
+<p>Now you can call this master shortcut based on triggers:</p>
+<p><img src="/media/reminders2calendar-time-based.png" alt="Time based trigger">
+<img src="/media/reminders2calendar-event-based.png" alt="event based trigger"></p>
+<h1 id="backstory">Backstory</h1>
+<p>In case you&rsquo;re interested in the story behind this tool checkout the rest of this article.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <p>For a long time, I have used the <a href="https://apps.apple.com/nl/app/calendars-5-by-readdle/id697927927">Calendars 5</a> app together with <a href="https://apps.apple.com/nl/app/spark-mail-smart-email-inbox/id997102246">Spark mail</a>. They are fantastic products that work very well. These were the first apps I ever decided to buy in Apple Appstore. Why? Because they really increased my productivity.</p>
 <p>Some Spark advantages:</p>
@@ -329,7 +353,7 @@
 <li>shows reminders/tasks in the same calendar view</li>
 </ul>
 <p>Both apps have pretty good UX.</p>
-<h2 id="triggers">Triggers</h2>
+<h2 id="triggers-1">Triggers</h2>
 <p>Recently there were a few changes that forced me to look around.</p>
 <p>The first Spark has released a new version that added Spark signature to all outgoing emails unless you pay for a subscription. As a long-time, early adopter, I paid for the product many years ago. Understandably Readdle Technologies (publisher) is finding ways to increase its revenue. This attempt caused many <a href="https://forums.macrumors.com/threads/popular-email-client-spark-gets-major-redesign-for-mac-moves-to-subscription-model.2363830/page-11">early adopters to shop for an alternative</a>. A few weeks after that release, Readdle decided to remove this signature for early adopters. That&rsquo;s nice of them but the damage has already been done.</p>
 <p>Second, with the new releases of iOS (15 and 16), the widget of Calendars 5 often does not display the events. I&rsquo;m not sure what exactly causes the bug. But reboot solves the problem. However, I&rsquo;m not the type that reboots the phone regularly. This contributed greatly to the ongoing irritations.</p>
@@ -375,28 +399,6 @@ foreach task in completed:
 
 <h2 id="automate-synchronization">Automate synchronization</h2>
 <p>In above video, you can see me running a shortcut by hand. <a href="https://www.icloud.com/shortcuts/8994e764a7cf4b88835896857ce30598">That shortcut is a wrapper</a> that enables me to push multiple Reminder lists to Calendars.</p>
-<h2 id="quick-start">Quick start</h2>
-<p>Since the publishing of this article there have been a few visitors that had trouble setting up their own synchronization. In this section help you get started as quickly as possible.</p>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>Reminders list name: this is the name of your reminders list. It also must match with your calendar name.</li>
-<li>Import <a href="https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7">Reminders2Calendar</a> into your shortcuts on your iPhone.</li>
-</ul>
-<h3 id="setup-single-list">Setup single list</h3>
-<ul>
-<li>Open Shortcuts.app</li>
-<li>Create a new shortcut. I call it <strong>Reminders2Calendar Personal</strong></li>
-<li>in this new shortcut add 2 actions so that it looks like. <strong>Personal</strong> is my Reminders list:
-<img src="/media/reminders2calendar-personal.png" alt="Reminders2Calendar Personal"></li>
-</ul>
-<p>Repeat this procedure if you have multiple lists.</p>
-<h3 id="synchronize-all">Synchronize all</h3>
-<p>Personally I have 2 lists I need to synchronize. To simplify the automation we can group them into a master shortcut called <strong>Reminders2Calendar ALL</strong>:
-<img src="/media/reminders2calendar-all.png" alt="Reminders2Calendar ALL"></p>
-<h3 id="triggers-1">Triggers</h3>
-<p>Now you can call this master shortcut based on triggers:</p>
-<p><img src="/media/reminders2calendar-time-based.png" alt="Time based trigger">
-<img src="/media/reminders2calendar-event-based.png" alt="event based trigger"></p>
 <h2 id="conclusions">Conclusions</h2>
 <p>As you can see, with a little automation help we can make our lives more productive. Now we get more benefits from the Apple products. I&rsquo;ve removed the Readdle product suite from my systems and I&rsquo;m now fully back on Apple. Hopefully one day Apple decides to implement this automation workflow into its native products.</p>
 </div>
