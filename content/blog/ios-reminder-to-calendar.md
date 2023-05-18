@@ -20,7 +20,7 @@ Since the publishing of this article there have been a few visitors that had tro
 ### Prerequisites
 
 - Reminders list name: this is the name of your reminders list. It also must match with your calendar name. 
-- Import [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7) into your shortcuts on your iPhone.
+- Import [Reminders2Calendar](https://www.icloud.com/shortcuts/51801f673be94a6d86f1678d62c1cfbf) into your shortcuts on your iPhone.
 
 ### Setup single list
 
@@ -114,6 +114,8 @@ foreach task in completed:
 ```
 
 After a few days of tinkering and doing low-code on the phone I have finally reached the final version of [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7).
+
+- [2023-05-18](https://www.icloud.com/shortcuts/8c7790366cec41828b51a3b806abc4d2) Fixes event duplication
 
 {{< rawhtml >}} 
 
