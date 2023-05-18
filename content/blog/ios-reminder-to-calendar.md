@@ -13,6 +13,41 @@ image: '/media/towfiqu-barbhuiya-jOeh3Lv88xA-unsplash.jpg'
 
 My obsession to live by my calendar meant I was always on the lookout for optimizing my agenda workflow. The Apple ecosystem works very nicely together. And don't forget the fact usability is top-notch and well-thought-out. My quest to find the perfect productivity setup has come full circle: started with Apple apps, tried many third-party tools, and finally, we are back to square one with Apple apps. But now with a tiny modern enhancement.
 
+## Quick start
+
+Since the publishing of this article there have been a few visitors that had trouble setting up their own synchronization. In this section help you get started as quickly as possible.
+
+### Prerequisites
+
+- Reminders list name: this is the name of your reminders list. It also must match with your calendar name. 
+- Import [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7) into your shortcuts on your iPhone.
+
+### Setup single list
+
+- Open Shortcuts.app
+- Create a new shortcut. I call it **Reminders2Calendar Personal**
+- in this new shortcut add 2 actions so that it looks like. **Personal** is my Reminders list:
+![Reminders2Calendar Personal](/media/reminders2calendar-personal.png)
+
+Repeat this procedure if you have multiple lists.
+
+### Synchronize all
+
+Personally I have 2 lists I need to synchronize. To simplify the automation we can group them into a master shortcut called **Reminders2Calendar ALL**:
+![Reminders2Calendar ALL](/media/reminders2calendar-all.png)
+
+### Triggers
+
+Now you can call this master shortcut based on triggers:
+
+![Time based trigger](/media/reminders2calendar-time-based.png)
+![event based trigger](/media/reminders2calendar-event-based.png)
+
+
+# Backstory
+
+In case you're interested in the story behind this tool checkout the rest of this article.
+
 ## The Contenders
 
 For a long time, I have used the [Calendars 5](https://apps.apple.com/nl/app/calendars-5-by-readdle/id697927927) app together with [Spark mail](https://apps.apple.com/nl/app/spark-mail-smart-email-inbox/id997102246). They are fantastic products that work very well. These were the first apps I ever decided to buy in Apple Appstore. Why? Because they really increased my productivity.
@@ -92,36 +127,6 @@ After a few days of tinkering and doing low-code on the phone I have finally rea
 ## Automate synchronization
 
 In above video, you can see me running a shortcut by hand. [That shortcut is a wrapper](https://www.icloud.com/shortcuts/8994e764a7cf4b88835896857ce30598) that enables me to push multiple Reminder lists to Calendars.
-
-## Quick start
-
-Since the publishing of this article there have been a few visitors that had trouble setting up their own synchronization. In this section help you get started as quickly as possible.
-
-### Prerequisites
-
-- Reminders list name: this is the name of your reminders list. It also must match with your calendar name. 
-- Import [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7) into your shortcuts on your iPhone.
-
-### Setup single list
-
-- Open Shortcuts.app
-- Create a new shortcut. I call it **Reminders2Calendar Personal**
-- in this new shortcut add 2 actions so that it looks like. **Personal** is my Reminders list:
-![Reminders2Calendar Personal](/media/reminders2calendar-personal.png)
-
-Repeat this procedure if you have multiple lists.
-
-### Synchronize all
-
-Personally I have 2 lists I need to synchronize. To simplify the automation we can group them into a master shortcut called **Reminders2Calendar ALL**:
-![Reminders2Calendar ALL](/media/reminders2calendar-all.png)
-
-### Triggers
-
-Now you can call this master shortcut based on triggers:
-
-![Time based trigger](/media/reminders2calendar-time-based.png)
-![event based trigger](/media/reminders2calendar-event-based.png)
 
 
 ## Conclusions
