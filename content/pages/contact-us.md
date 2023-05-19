@@ -30,6 +30,6 @@ sections:
     border: false
 - template: contact
   heading: Contact us
-  description: Please fill in the form below to reach out to us. You can also get in touch via our social media channels if you prefer so. These can be found at the bottom of this page. You can expect a reply from us within 24 hours. Thanks!
+  description: Send us an email at hello@cinaq.com and we will get back to you within 24 hours.
   image: /media/aaron-burden-y02jEX_B0O0-unsplash.jpg
 ---

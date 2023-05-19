@@ -12,8 +12,8 @@ sections:
     classes: 'my-example-class'
     theme: base
   headings:
-    heading: "Mendix application security"
-    text: "Delivering secure applications doesn't have to be slow or costly. We help you improve security posture of your Mendix application with fast and user-friendly tools."
+    heading: "Deploy Mendix apps to Private Cloud in minutes"
+    text: "Low-Ops platform helps organizations accelerate Mendix adoption without compromising security, compliance, user-friendliness and speed. If you love low-code, you will love low-ops."
   height: auto
   alignHorizontal: left
   alignVertical: middle
@@ -22,17 +22,17 @@ sections:
     monotone: false
     opacity: ''
   image:
-    image: "/media/appsec-report.png"
+    image: "/media/low-ops.png"
     overlap: false
     border: false
     borderRadius: true
     shadow: false
-    altText: "AppSec"
+    altText: "Low-Ops Platform"
   buttons:
     - button: 
       url: "/contact-us"
       text: Request a demo
     - button: 
-      url: "/appsec"
+      url: "https://low-ops.com"
       text: Learn more
 ---
