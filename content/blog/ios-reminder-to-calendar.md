@@ -116,6 +116,7 @@ foreach task in completed:
 After a few days of tinkering and doing low-code on the phone I have finally reached the final version of [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7).
 
 - [2023-05-18](https://www.icloud.com/shortcuts/8c7790366cec41828b51a3b806abc4d2) Fixes event duplication
+- [2023-05-19](https://www.icloud.com/shortcuts/8d90c9b4839945df926a8102d8f8d556) Fixes duplication of completed reminders in the calendar
 
 {{< rawhtml >}} 
 
