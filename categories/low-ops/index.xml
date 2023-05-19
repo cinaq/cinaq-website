@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Low-Ops on CINAQ</title>
+    <link>/categories/low-ops/</link>
+    <description>Recent content in Low-Ops on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 May 2023 13:37:00 +0000</lastBuildDate><atom:link href="/categories/low-ops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Low-Ops Platform: The 7-Star Hotel for Apps</title>
+      <link>/blog/2023/05/18/low-ops-platform-the-7-star-hotel-for-apps/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/blog/2023/05/18/low-ops-platform-the-7-star-hotel-for-apps/</guid>
+      <description>In the world of technology, efficiency and convenience are paramount. Just like how you would prefer to stay in a luxurious 7-star hotel during your holidays, IT professionals and app developers also seek an environment where everything is taken care of seamlessly. This desire for a hassle-free experience is what makes a low-ops platform akin to a 7-star hotel for apps. While traditional app delivery may resemble renting a low-budget apartment, where you have more freedom but a lot on your plate, a low-ops platform offers a superior alternative.</description>
+    </item>
+    
+  </channel>
+</rss>

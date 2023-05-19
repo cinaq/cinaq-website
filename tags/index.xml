@@ -6,7 +6,61 @@
     <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Nov 2022 13:37:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 13:37:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>/tags/devops/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>/tags/kubernetes/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>low-ops</title>
+      <link>/tags/low-ops/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/low-ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mendix</title>
+      <link>/tags/mendix/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/mendix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>platform</title>
+      <link>/tags/platform/</link>
+      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
+      
+      <guid>/tags/platform/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>calendar</title>
       <link>/tags/calendar/</link>
@@ -76,24 +130,6 @@
       <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
       
       <guid>/tags/gitlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>/tags/kubernetes/</link>
-      <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
-      
-      <guid>/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mendix</title>
-      <link>/tags/mendix/</link>
-      <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
-      
-      <guid>/tags/mendix/</guid>
       <description></description>
     </item>
     
