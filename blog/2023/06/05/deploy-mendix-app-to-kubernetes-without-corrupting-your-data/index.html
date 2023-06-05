@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Deploy Mendix app to Kubernetes without corrupting your data - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.1c52a8d29f39c8256be81491d1cd50ab0e4584ec609c1f944c1df8cd5a1cc906.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="If you’re running your mendix app in kubernetes private cloud you might be at risk of corrupting your data. In this session we will show you the problem and what you can do to mitigate it." />
+  <meta property="og:title" content="Deploy Mendix app to Kubernetes without corrupting your data" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/" />
+  <meta property="og:image" content="/media/carlos-martinez-H_eH-TrNhhU-unsplash-thumb.jpg" />
+  <meta property="og:description" content="If you’re running your mendix app in kubernetes private cloud you might be at risk of corrupting your data. In this session we will show you the problem and what you can do to mitigate it."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-low-ops">
+            <a href="https://low-ops.com">
+                
+                <span>Low-Ops</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        
+        <span>Low-Ops</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/carlos-martinez-H_eH-TrNhhU-unsplash.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Deploy Mendix app to Kubernetes without corrupting your data</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Jun 5, 2023
+                
+                
+                <i>(Modified on Jun 5, 2023)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process. By implementing the suggested strategies, developers can minimize the risk of data corruption and streamline the operation of Mendix apps in Kubernetes environments.</p>
+<h1 id="no-blue-green-with-mendix-app">No blue-green with Mendix app</h1>
+<p>Mendix apps are <em>cloud native</em>. To be specific, theirs a nuance to factor 8 which is <strong>Concurrency</strong> from the <a href="https://12factor.net/">12 factors framework</a>. With Mendix, horizontal scaling is achieved using the leader-workers model.</p>
+<p><img src="/media/leader-workers.png" alt="leader-workers model"></p>
+<p>There can be only 1 leader of the app active at any point in time. The leader is responsible for <a href="https://docs.mendix.com/refguide/clustered-mendix-runtime/#5-cluster-startup">updating the database schema</a> so that it is compatible with the active model version. Depending on the changes between the old and new model, sometimes this updating process can take longer time when more complicated actions are needed like converting one attribute(column in the database) from one type to another.</p>
+<p>Therefore your users could be using an old model against a newer database schema and data if we would allow both versions to be active concurrently. That could pose a big risk resulting in undefined behavior.</p>
+<p>Besides the multi-model issue there is also a potentially higher risk: if the window of which two leader pods are active is longer than a few minutes, it’s possible a <a href="https://docs.mendix.com/refguide/clustered-mendix-runtime/#5-cluster-startup">scheduled event is fired multiple times</a>. If the developer did not anticipate that (most don’t), it can cause data corruption internally or externally if not handled correctly like having an idempotent behavior.</p>
+<h2 id="custom-private-cloud-with-docker-mendix-buildpack">Custom private cloud with docker-mendix-buildpack</h2>
+<p>In the early days of running mendix apps in Kubernetes you probably have used the <a href="https://github.com/mendix/docker-mendix-buildpack">docker-mendix-buildpack</a>. This method is most flexible where you package your mendix app runtime into a single self-contained <a href="https://opencontainers.org/">OCI image</a>. This image is just like any other images, can then be deployed into Kubernetes using in most cases a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment resource</a>.</p>
+<p>For scalability, it is advised to create two deployments instead to implement the <a href="https://docs.mendix.com/refguide/clustered-mendix-runtime/#cluster-leader-follower">leader-workers model</a>. Most deployments overlook a tiny detail that will in practice allow multiple leader pods to co-exist for a few minutes. This detail is the <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy">deployment strategy</a> which by default has the value <strong>RollingUpdate</strong>. This means during a <strong>Deployment update</strong> the old pod is kept alive until the new pod is in <strong>ready</strong> state. Regular cloud native apps often can deal with it.</p>
+<p><img src="/media/k8s-rolling-update.png" alt="Kubernetes Rolling update strategy"></p>
+<p>Do note this issue is not strictly limited to Mendix apps. However, mendix apps are more susceptible to data corruption because mendix developers often do not consider this scenario neither does the internal db schema update system.</p>
+<h2 id="mendix-for-private-cloud">Mendix for private cloud</h2>
+<p>In recent years there is a product offering called <a href="https://docs.mendix.com/developerportal/deploy/private-cloud/">Mendix for private cloud</a>. It simplifies mendix app deployment by introducing a new <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">Custom Resource Definition</a> called <a href="https://docs.mendix.com/developerportal/deploy/private-cloud-operator/#edit-cr">MendixApp</a>. In here you describe the deployment specification in which the mendix operator will read as input. It manages kubernetes resources like <code>Secrets</code> and <code>Deployments</code> where it abstracts away some of the complexities of operating mendix apps.</p>
+<p><img src="/media/mendix-operator-app-deployments.png" alt="mendix app with leader-workers deployment"></p>
+<p>Similar to the custom approach it implements the leader-workers method. The Mendix operator has addressed this edge case. We will show how in the mitigation section below.</p>
+<p><img src="/media/mendix-operator-app-with-4-replicas.png" alt="mendix app with 4 replicas"></p>
+<h2 id="demo-problem">Demo: problem</h2>
+
+ 
+
+<video controls autoplay>
+    <source src="/media/mendix-rolling-update-leader.mp4" type="video/mp4">
+    Your browser does not support the video tag.  
+</video>
+
+
+<p>When <code>RollingUpdate</code> is used, there&rsquo;s a window of which 2 leader pods are active at the same time. In the video above we re-purposed a mendix for private cloud managed deployment to show the issue of RollingUpdate.</p>
+<h2 id="mitigation">Mitigation</h2>
+<p>Due to the leader-worker model it is difficult to have a single solution that works in all possible scenarios. However, we still have a simple solution:</p>
+<p>The leader deployment must have deployment strategy <code>Recreate</code>. This means that when the deployment is updated due to model version change or restarted due to node upgrades, the old pod is first terminated prior to new pod is created. Mendix operator (verified in version ) has this already implemented.</p>
+<p><img src="/media/mx4pc-leader-with-recreate.png" alt="mx4pc leader with recreate"></p>
+<p>This solves the problem of accidentally having two leaders active at the same time by leveraging the internal capabilities of Kubernetes deployment controller.</p>
+<p>With the above, we have mitigated the problem for the leader deployment. What about the workers? During maintenance, there is no issue because workers can be spawn up and down as needed. Therefore the default <code>RollingUpdate</code> is fine and desirable.</p>
+<p>However what about during a new model version update? For that you must handle it during deployment; often in your pipeline:</p>
+<ul>
+<li>scale down the worker deployment replicas to zero. This stops all worker pods. Alternatively you can also remove the worker deployment all-together if desired. As long as all worker pods are terminated. For safety reasons you should wait until all pods are terminated before proceeding with next step</li>
+<li>Update the leader deployment with new model version. In practice it’s better to wait because sometimes the leader pod may fail to start. In that case it’s best to fail the whole pipeline and remediate the issue.</li>
+<li>Update (or create if previously removed) the worker deployment with the new model version and the desired number of replicas. New worker pods block until the leader has started successfully.</li>
+</ul>
+<p>That’s it. With the above strategy, we have minimized the risk of data corruption by ensuring the leader pod is always running once. With this approach we are also safe from potential data corruption during a cluster maintenance when pods are restarted according to their parent <code>Deployment</code> strategy.</p>
+<h2 id="demo">Demo</h2>
+
+ 
+
+<video controls autoplay>
+    <source src="/media/mendix-recreate-leader.mp4" type="video/mp4">
+    Your browser does not support the video tag.  
+</video>
+
+
+<p>Here we see the old pod is first terminated before the new version is instantiated in the <code>Recreate</code> mode. This way there&rsquo;s only 1 version active at any point in time.</p>
+<h2 id="summary">Summary</h2>
+<p>Deploying mendix apps in Kubernetes is harder than most think. Edge cases are just around the corner that could cause silent data corruption.</p>
+<p>Today you have learned some of these edge cases and how to mitigate them successfully using proper <code>Deployment</code> strategy at both Kubernetes and pipeline level.</p>
+<p><a href="https://low-ops.com">Low-Ops platform</a> implements these best practices straight out of the box so that you don’t have to.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        Low-Ops
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-userlib-cleaner">
+      <a href="https://github.com/cinaq/mendix-userlib-cleaner">
+        mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

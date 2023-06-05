@@ -6,7 +6,16 @@
     <description>Recent content in docker on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Mendix app to Kubernetes without corrupting your data</title>
+      <link>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</link>
+      <pubDate>Mon, 05 Jun 2023 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</guid>
+      <description>Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process.</description>
+    </item>
+    
     <item>
       <title>Mendix SVG Hunt</title>
       <link>/blog/2022/10/20/mendix-svg-hunt/</link>

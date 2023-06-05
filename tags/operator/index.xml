@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>operator on CINAQ</title>
+    <link>/tags/operator/</link>
+    <description>Recent content in operator on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/tags/operator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Mendix app to Kubernetes without corrupting your data</title>
+      <link>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</link>
+      <pubDate>Mon, 05 Jun 2023 13:37:00 +0100</pubDate>
+      
+      <guid>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</guid>
+      <description>Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process.</description>
+    </item>
+    
+  </channel>
+</rss>
