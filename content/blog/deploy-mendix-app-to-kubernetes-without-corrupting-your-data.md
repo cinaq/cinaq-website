@@ -6,12 +6,12 @@ categories: ['Mendix', 'Hack', 'Private Cloud']
 tags: ['mendix', 'mxbuild', 'docker', 'docker-mendix-buildpack', 'kubernetes', 'ci', 'mx4pc', 'operator']
 authors: ['Xiwen Cheng']
 description: If you’re running your mendix app in kubernetes private cloud you might be at risk of corrupting your data. In this session we will show you the problem and what you can do to mitigate it.
-thumbnail: '/media/marc-schaefer-6NylLLcku8w-unsplash-thumb.jpg'
-image: '/media/marc-schaefer-6NylLLcku8w-unsplash.jpg'
+thumbnail: '/media/carlos-martinez-H_eH-TrNhhU-unsplash-thumb.jpg'
+image: '/media/carlos-martinez-H_eH-TrNhhU-unsplash.jpg'
 
 ---
 
-Intro...
+Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process. By implementing the suggested strategies, developers can minimize the risk of data corruption and streamline the operation of Mendix apps in Kubernetes environments.
 
 # No blue-green with Mendix app
 
@@ -56,7 +56,7 @@ Similar to the custom approach it implements the leader-workers method. The Mend
 
 {{< /rawhtml >}}
 
-When `RollingUpdate` is used, there's a window of which 2 leader pods are active at the same time.
+When `RollingUpdate` is used, there's a window of which 2 leader pods are active at the same time. In the video above we re-purposed a mendix for private cloud managed deployment to show the issue of RollingUpdate.
 
 ## Mitigation
 
@@ -88,6 +88,8 @@ That’s it. With the above strategy, we have minimized the risk of data corrupt
 </video>
 
 {{< /rawhtml >}}
+
+Here we see the old pod is first terminated before the new version is instantiated in the `Recreate` mode. This way there's only 1 version active at any point in time.
 
 ## Summary
 
