@@ -20,7 +20,7 @@ Since the publishing of this article there have been a few visitors that had tro
 ### Prerequisites
 
 - Reminders list name: this is the name of your reminders list. It also must match with your calendar name. 
-- Import [Reminders2Calendar](https://www.icloud.com/shortcuts/310cffa3a4254701bb8ead6ee33e8854) into your shortcuts on your iPhone.
+- Import [Reminders2Calendar](https://github.com/cinaq/reminders2calendar) into your shortcuts on your iPhone.
 
 ### Setup single list
 
@@ -113,11 +113,7 @@ foreach task in completed:
 
 ```
 
-After a few days of tinkering and doing low-code on the phone I have finally reached the final version of [Reminders2Calendar](https://www.icloud.com/shortcuts/af92df99d9d149c0ab74d59aee491cb7).
-
-- [2023-05-18](https://www.icloud.com/shortcuts/8c7790366cec41828b51a3b806abc4d2) Fixes event duplication
-- [2023-05-19](https://www.icloud.com/shortcuts/8d90c9b4839945df926a8102d8f8d556) Fixes duplication of completed reminders in the calendar
-- [2023-06-18](https://www.icloud.com/shortcuts/310cffa3a4254701bb8ead6ee33e8854) Refactor the calendar lookup logic and simplify the whole program. Now with support for Time based deadline. If a deadline time is set, it is used. If not the reminder is all-day.
+After a few days of tinkering and doing low-code on the phone I have finally reached the final version of [Reminders2Calendar](https://github.com/cinaq/reminders2calendar).
 
 {{< rawhtml >}} 
 
