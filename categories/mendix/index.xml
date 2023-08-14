@@ -6,7 +6,16 @@
     <description>Recent content in Mendix on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/categories/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/categories/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS</title>
+      <link>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</guid>
+      <description>As of August 10, HashiCorp made an important announcement regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the Business Source License version 1.1 (BSL v1.1) has generated considerable discussions and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like heroku, fly.</description>
+    </item>
+    
     <item>
       <title>Deploy Mendix app to Kubernetes without corrupting your data</title>
       <link>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</link>

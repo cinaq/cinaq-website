@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>paas on CINAQ</title>
+    <link>/tags/paas/</link>
+    <description>Recent content in paas on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/tags/paas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS</title>
+      <link>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</guid>
+      <description>As of August 10, HashiCorp made an important announcement regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the Business Source License version 1.1 (BSL v1.1) has generated considerable discussions and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like heroku, fly.</description>
+    </item>
+    
+  </channel>
+</rss>

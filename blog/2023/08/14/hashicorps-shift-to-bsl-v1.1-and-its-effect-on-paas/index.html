@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.1c52a8d29f39c8256be81491d1cd50ab0e4584ec609c1f944c1df8cd5a1cc906.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="Hashicorp products license shift from MPL to BSL, what does it mean for companies that develop their PaaS products integrated with Terrafrom, Vault, Consul, etc." />
+  <meta property="og:title" content="HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/" />
+  <meta property="og:image" content="/media/license-thumb.jpg" />
+  <meta property="og:description" content="Hashicorp products license shift from MPL to BSL, what does it mean for companies that develop their PaaS products integrated with Terrafrom, Vault, Consul, etc."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-low-ops">
+            <a href="https://low-ops.com">
+                
+                <span>Low-Ops</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-appsec">
+            <a href="/appsec">
+                
+                <span>AppSec</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        
+        <span>Low-Ops</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        
+        <span>AppSec</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-security-assessment">Mendix Security Assessment</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/license.jpg" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/viktor.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/viktor-berlov/">Viktor Berlov</a>
+                <span class="post-author-date">
+                
+                Published on Aug 14, 2023
+                
+                
+                <i>(Modified on Aug 14, 2023)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>As of August 10, HashiCorp made an important <a href="https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license">announcement</a> regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the <a href="https://www.hashicorp.com/bsl">Business Source License version 1.1 (BSL v1.1)</a> has generated considerable <a href="https://news.ycombinator.com/item?id=37081306">discussions</a> and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like <a href="https://www.heroku.com">heroku</a>, <a href="https://fly.io">fly.io</a>, <a href="https://render.com">render.com</a> that utilize or consider using HashiCorp&rsquo;s products in their PaaS.</p>
+<h2 id="why-its-happening">Why it&rsquo;s happening?</h2>
+<p>In the current landscape, we are witnessing a surge in highly integrated service providers offering Open Source products tailored as comprehensive services. An illustrative case in point is Amazon&rsquo;s transformation of Elasticsearch into a commercial offering known as Amazon Elasticsearch Service (Salil Deshpande analyzed this in detail in the <a href="https://techcrunch.com/2019/05/30/lack-of-leadership-in-open-source-results-in-source-available-licenses/">post</a>](<a href="https://techcrunch.com/2019/05/30/lack-of-leadership-in-open-source-results-in-source-available-licenses/))">https://techcrunch.com/2019/05/30/lack-of-leadership-in-open-source-results-in-source-available-licenses/))</a>. This shift has reverberated across the industry, prompting other enterprises that fostered Open Source (OOS) database distributions, like MariaDB and CockroachDB, to pivot towards the Business Source License version 1.1 (BSL v1.1). The outcomes of this shift have led to a recalibration in product usage, particularly within the realm of Database-as-a-Service (DBaaS) offerings.</p>
+<h2 id="what-does-it-mean-for-paas-solutions">What does it mean for PaaS solutions?</h2>
+<p>HashiCorp&rsquo;s decision to transition its licensing structure might carry weight for those who rely on its products for building application platforms. Let’s take a closer look at what this change means to your PaaS. This prompts us to evaluate how this change aligns with our approach and commitment to delivering a top-notch platform as a service solution.</p>
+<p>As outlined in <a href="https://www.hashicorp.com/license-faq">HashiCorp&rsquo;s FAQ</a>: organizations offering rival solutions to HashiCorp&rsquo;s products will no longer have the privilege of accessing community edition products free of charge under the BSL license. This development carries specific implications for teams crafting Platform-as-a-Service (PaaS) offerings integrated with HashiCorp&rsquo;s tools. It&rsquo;s essential to note that such integrations and embeddings do not breach the license unless they cross the threshold of commercializing HashiCorp&rsquo;s code as a standalone service.</p>
+<h2 id="why-it-matters">Why It Matters?</h2>
+<p>In our journey to creating a powerful and user-friendly platform, licensing considerations hold a pivotal role. A well-thought-out platform demands meticulous effort and strategic decisions, and these decisions could significantly impact our business landscape. It&rsquo;s prudent to recognize that licenses are subject to change over time, underscoring the importance of making careful license considerations before integrating a specific product or tool into our platform ecosystem.
+Here are some key considerations that we are focusing on:</p>
+<ul>
+<li>License Compliance for Clients: Ensuring that our clients are compliant with the evolving licensing terms is of utmost importance. Open communication and transparency are vital in this regard.</li>
+<li>Client Expectations and Agreements: Addressing any shifts in licensing terms with our clients is essential to maintaining a trusting and mutually beneficial relationship.</li>
+<li>Long-Term Strategy: The evolving licensing landscape prompts us to assess the long-term alignment of our platform&rsquo;s roadmap and strategy.</li>
+<li>Exploring Alternative Solutions: We remain open to exploring alternative solutions that align with our platform&rsquo;s goals while respecting the evolving licensing framework.</li>
+</ul>
+<p><a href="https://low-ops.com">Low-ops</a> platform integrates several HashiCorp products to establish a robust foundation. Terraform is instrumental in building this foundation, while Consul and Vault enhance its capabilities by offering secure storage and management of sensitive data. These products synergize to create an environment that fosters fast and efficient <a href="https://www.mendix.com">Mendix</a> application development and deployment.
+As we plan for future platform upgrades, we emphasize ensuring that our platform components remain secure, up-to-date, and equipped with the latest features and security patches. These considerations align with our strategy of consistently delivering optimal performance and user experience to our clients.</p>
+<h2 id="our-position">Our Position</h2>
+<p>We have contacted HashiCorp’s legal department to ensure that our interpretation of BSL v1.1 is correct and, after clarifying our usage of their products and <a href="https://low-ops.com">Low-ops</a> purpose, we promptly received a positive reply.
+It&rsquo;s worth noting that the HashiCorp products integrated into the <a href="https://low-ops.com">Low-ops</a> platform are utilized as internal implementation details, serving to enhance our platform&rsquo;s performance and capabilities. Importantly, these integrations are not positioned as direct competitors to HashiCorp&rsquo;s offerings, meaning that we uphold the guidelines set forth by the BSL v1.1 license.</p>
+<blockquote>
+<p><strong>Disclaimer</strong>: This blog post is intended for informational purposes only and does not constitute legal advice. The information provided is based on the situation as of the publication date.
+We remain committed to delivering a powerful and compliant platform experience, and our approach will continue to be guided by the best interests of our clients and partners.</p>
+</blockquote>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://twitter.com/cinaq_com" target="blank" title="Twitter">
+      <i class="fab fa-twitter" ></i>
+    </a>
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        Low-Ops
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-appsec">
+      <a href="/appsec">
+        AppSec
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-hackme">
+      <a href="https://github.com/cinaq/hackme">
+        HackMe
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-fastpush">
+      <a href="https://github.com/xiwenc/fastpush">
+        Fastpush
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-userlib-cleaner">
+      <a href="https://github.com/cinaq/mendix-userlib-cleaner">
+        mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

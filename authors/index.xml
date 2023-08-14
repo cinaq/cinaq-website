@@ -6,7 +6,16 @@
     <description>Recent content in Authors on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Viktor Berlov</title>
+      <link>/authors/viktor-berlov/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/viktor-berlov/</guid>
+      <description>Viktor is a low-ops platform architect.</description>
+    </item>
+    
     <item>
       <title>Xiwen Cheng</title>
       <link>/authors/xiwen-cheng/</link>

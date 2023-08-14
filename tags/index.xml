@@ -6,7 +6,61 @@
     <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bsl</title>
+      <link>/tags/bsl/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/bsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hashicorp</title>
+      <link>/tags/hashicorp/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/hashicorp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>license</title>
+      <link>/tags/license/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/license/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>low-ops</title>
+      <link>/tags/low-ops/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/low-ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mpl</title>
+      <link>/tags/mpl/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/mpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paas</title>
+      <link>/tags/paas/</link>
+      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/paas/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ci</title>
       <link>/tags/ci/</link>
@@ -94,15 +148,6 @@
       <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
       
       <guid>/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>low-ops</title>
-      <link>/tags/low-ops/</link>
-      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
-      
-      <guid>/tags/low-ops/</guid>
       <description></description>
     </item>
     
