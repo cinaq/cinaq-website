@@ -1,16 +1,24 @@
 ---
-title: "HashiCorp's Shift to BSL v1.1 and its Effect on aPaaS"
+title: "HashiCorp's Shift to BSL v1.1 and its Effect on PaaS"
+date: 2023-08-14T00:13:37+01:00
+draft: false
+tags: ["hashicorp", "low-ops", "bsl", "mpl", "license", "paas"]
+categories: ['Platform', 'Mendix']
+authors: ['Viktor Berlov']
+description: Hashicorp products license shift from MPL to BSL, what does it mean for companies that develop their PaaS products integrated with Terrafrom, Vault, Consul, etc.
+thumbnail: '/media/license-thumb.jpg'
+image: '/media/license.jpg'
 ---
 
-As of August 10, HashiCorp made an important [announcement](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the Business Source License version 1.1 (BSL v1.1) has generated considerable discussion and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like [heroku](https://www.heroku.com), [fly.io](https://fly.io), [render.com](https://render.com) that utilize or consider using HashiCorp's products in their aPaaS.
+As of August 10, HashiCorp made an important [announcement](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the Business Source License version 1.1 (BSL v1.1) has generated considerable [discussion](https://news.ycombinator.com/item?id=37081306) and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like [heroku](https://www.heroku.com), [fly.io](https://fly.io), [render.com](https://render.com) that utilize or consider using HashiCorp's products in their PaaS.
 
 ##  Why it's happening?
 
 In the current landscape, we are witnessing a surge in highly integrated service providers offering Open Source products tailored as comprehensive services. An illustrative case in point is Amazon's transformation of Elasticsearch into a commercial offering known as Amazon Elasticsearch Service (Salil Deshpande analized in detail at the [post](https://techcrunch.com/2019/05/30/lack-of-leadership-in-open-source-results-in-source-available-licenses/)). This shift has reverberated across the industry, prompting other enterprises that fostered Open Source (OOS) database distributions, like MariaDB and CockroachDB, to pivot towards the Business Source License version 1.1 (BSL v1.1). The outcomes of this shift have led to a recalibration in product usage, particularly within the realm of Database-as-a-Service (DBaaS) offerings.
 
-## What does it mean for aPaaS solutions?
+## What does it mean for PaaS solutions?
 
-HashiCorp's decision to transition its licensing structure might carry weight for those who rely on their products for building application platforms. Let’s take a closer look at what this change means to your aPaaS. This prompts us to evaluate how this change aligns with our approach and commitment to delivering a top-notch platform as a service solution.
+HashiCorp's decision to transition its licensing structure might carry weight for those who rely on their products for building application platforms. Let’s take a closer look at what this change means to your PaaS. This prompts us to evaluate how this change aligns with our approach and commitment to delivering a top-notch platform as a service solution.
 
 As outlined in [HashiCorp's FAQ](https://www.hashicorp.com/license-faq): organizations offering rival solutions to HashiCorp's products will no longer have the privilege of accessing community edition products free of charge under the BSL license. This development carries specific implications for teams crafting Platform-as-a-Service (PaaS) offerings integrated with HashiCorp's tools. It's essential to note that such integrations and embeddings do not breach the license, unless they cross the threshold into commercializing HashiCorp's code as a standalone service.
 
@@ -22,6 +30,7 @@ Here are some key considerations that we are focusing on:
  - Client Expectations and Agreements: Addressing any shifts in licensing terms with our clients is essential to maintaining a trusting and mutually beneficial relationship.
  - Long-Term Strategy: The evolving licensing landscape prompts us to assess the long-term alignment of our platform's roadmap and strategy.
  - Exploring Alternative Solutions: We remain open to exploring alternative solutions that align with our platform's goals while respecting the evolving licensing framework.
+
 [Low-ops](https://low-ops.com) platform integrates several HashiCorp products to establish a robust foundation. Terraform is instrumental in building this foundation, while Consul and Vault enhance its capabilities by offering secure storage and management of sensitive data. These products synergize to create an environment that fosters fast and efficient [Mendix](https://www.mendix.com) application development and deployment.
 As we plan for future platform upgrades, we place emphasis on ensuring that our platform components remain secure, up-to-date, and equipped with the latest features and security patches. These considerations align with our strategy of consistently delivering optimal performance and user experience to our clients.
 
