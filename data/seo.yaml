@@ -5,9 +5,6 @@ og_meta:
   meta_twitter_site: "@cinaq_com"
   meta_twitter_creator: "@xiwenc"
 social:
-  - title: "Twitter"
-    fa_icon: "fab fa-twitter"
-    url: "https://twitter.com/cinaq_com"
   - title: "Github"
     fa_icon: "fab fa-github"
     url: "https://github.com/cinaq"

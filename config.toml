@@ -37,11 +37,6 @@ paginate = 6
         parent = "dropdown_services"
         weight = 1
     [[menu.main]]
-        name = "Mendix Security Assessment"
-        url = "/services/mendix-security-assessment"
-        parent = "dropdown_services"
-        weight = 2
-    [[menu.main]]
         name = "Mendix Deployment"
         url = "/services/mendix-deployment"
         parent = "dropdown_services"
@@ -52,11 +47,6 @@ paginate = 6
 	url = "https://low-ops.com"
     weight = 1
 #    identifier = 'dropdown_products'
-[[menu.main]]
-    name = "AppSec"
-    url = "/appsec"
-#   parent = "dropdown_products"
-    weight = 2
 
 [[menu.main]]
     name = "Blog"
@@ -91,16 +81,8 @@ paginate = 6
     url = "https://low-ops.com"
     weight = 1
 [[menu.footer_secondary]]
-    name = "AppSec"
-    url = "/appsec"
-    weight = 2
-[[menu.footer_secondary]]
-    name = "HackMe"
-    url = "https://github.com/cinaq/hackme"
-    weight = 2
-[[menu.footer_secondary]]
-    name = "Fastpush"
-    url = "https://github.com/xiwenc/fastpush"
+    name = "mendix-cli"
+    url = "https://github.com/cinaq/mendix-cli"
     weight = 3
 [[menu.footer_secondary]]
     name = "mendix-userlib-cleaner"
