@@ -328,15 +328,6 @@ Orthanc Dockerfile The first step is create a Dockerfile that compiles Orthanc f
     </item>
     
     <item>
-      <title>Mendix Security Assessment</title>
-      <link>/services/mendix-security-assessment/</link>
-      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/services/mendix-security-assessment/</guid>
-      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
-    </item>
-    
-    <item>
       <title>Photography</title>
       <link>/photography/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
@@ -398,15 +389,6 @@ First I will give my opinion on testing and methodology, followed by a demo case
       <pubDate>Wed, 28 Nov 2018 05:15:34 +0000</pubDate>
       
       <guid>/partners/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AppSec</title>
-      <link>/appsec/</link>
-      <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
-      
-      <guid>/appsec/</guid>
       <description></description>
     </item>
     
