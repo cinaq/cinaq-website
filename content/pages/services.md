@@ -19,7 +19,7 @@ sections:
   headings:
     heading: Professional Services
     subHeading: 
-    text: 'With over 10 years of professional Software development, Cloud engineering, Mendix Security and Deployment experiences. Your mission critical applications are in capable hands.'
+    text: 'With over 10 years of professional Software development, Cloud engineering and Deployment experiences. Your mission critical applications are in capable hands.'
   background:
     backgroundImage: "/images/pages/lance-anderson-GOK4iscFSkA-unsplash-2000.jpg"
     opacity: 1
