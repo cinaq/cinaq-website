@@ -34,10 +34,6 @@ sections:
     text: Cloud
     external: false
   - button: 
-    url: "/services/mendix-security-assessment"
-    text: Mendix Security Assessement
-    external: false
-  - button: 
     url: "/services/mendix-deployment"
     text: Mendix Deployment
     external: false
