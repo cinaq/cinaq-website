@@ -6,8 +6,8 @@ tags: ["low-ops", "paas", "internal developer platform", "idp", "platform", "por
 categories: ['Platform', 'Mendix']
 authors: ['Xiwen Cheng']
 description: Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.
-thumbnail: '/media/license-thumb.jpg'
-image: '/media/license.jpg'
+thumbnail: '/media/fons-heijnsbroek-cCu6Knlzelo-unsplash-thumb.jpg'
+image: '/media/fons-heijnsbroek-cCu6Knlzelo-unsplash.jpg'
 ---
 
 Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.
