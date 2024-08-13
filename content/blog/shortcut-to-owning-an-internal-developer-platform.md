@@ -26,7 +26,7 @@ For most applications, they share a common foundation. The 80/20 percent rule is
 What organizations benefit from IDP?
 ==
 
-For most small or low-complexity organizations IDP is probably overkill. These organizations  are better off  setting up a single environment or leveraging  PaaS platforms like [Heruko](https://heroku.com), [Render](https://render.com), [Fly.io](https://fly.io), and similar, which address most of their infrastructure requirements already.
+For most small or low-complexity organizations IDP is probably overkill. These organizations  are better off  setting up a single environment or leveraging  PaaS platforms like [Heroku](https://heroku.com), [Render](https://render.com), [Fly.io](https://fly.io), and similar, which address most of their infrastructure requirements already.
 
 Any organization that either already has or aspires to have 10 or more apps can greatly benefit from an IDP, such as tech startups or businesses, and specially enterprises. This benefit increases when the number of apps reaches hundreds and thousands. With many apps built, a standardized infrastructure onboarding and workflow accelerates time to market, enables sooner and faster iterations, and encourages team members to switch projects because they do not need to spend months onboarding themselves in a new platform, and the workflow feels familiar despite a foreign project.
 
