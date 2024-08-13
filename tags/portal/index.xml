@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>portal on CINAQ</title>
+    <link>/tags/portal/</link>
+    <description>Recent content in portal on CINAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Aug 2024 00:13:37 +0100</lastBuildDate><atom:link href="/tags/portal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A shortcut to owning an internal developers platform</title>
+      <link>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</guid>
+      <description>Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.
+What is an internal developer platform? An IDP is like a town square where developers who own applications or want to own applications come together.</description>
+    </item>
+    
+  </channel>
+</rss>

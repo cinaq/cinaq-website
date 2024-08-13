@@ -6,7 +6,79 @@
     <description>Recent content in Tags on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 00:13:37 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>idp</title>
+      <link>/tags/idp/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/idp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internal developer platform</title>
+      <link>/tags/internal-developer-platform/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/internal-developer-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>low-ops</title>
+      <link>/tags/low-ops/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/low-ops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paas</title>
+      <link>/tags/paas/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/paas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>platform</title>
+      <link>/tags/platform/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>portal</title>
+      <link>/tags/portal/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/portal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>private idp</title>
+      <link>/tags/private-idp/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/private-idp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>saas</title>
+      <link>/tags/saas/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/tags/saas/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bsl</title>
       <link>/tags/bsl/</link>
@@ -35,29 +107,11 @@
     </item>
     
     <item>
-      <title>low-ops</title>
-      <link>/tags/low-ops/</link>
-      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
-      
-      <guid>/tags/low-ops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mpl</title>
       <link>/tags/mpl/</link>
       <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
       
       <guid>/tags/mpl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>paas</title>
-      <link>/tags/paas/</link>
-      <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
-      
-      <guid>/tags/paas/</guid>
       <description></description>
     </item>
     
@@ -148,15 +202,6 @@
       <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
       
       <guid>/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>platform</title>
-      <link>/tags/platform/</link>
-      <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
-      
-      <guid>/tags/platform/</guid>
       <description></description>
     </item>
     

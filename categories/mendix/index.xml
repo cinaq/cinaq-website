@@ -6,7 +6,17 @@
     <description>Recent content in Mendix on CINAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 00:13:37 +0100</lastBuildDate><atom:link href="/categories/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 00:13:37 +0100</lastBuildDate><atom:link href="/categories/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A shortcut to owning an internal developers platform</title>
+      <link>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</link>
+      <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
+      
+      <guid>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</guid>
+      <description>Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.
+What is an internal developer platform? An IDP is like a town square where developers who own applications or want to own applications come together.</description>
+    </item>
+    
     <item>
       <title>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS</title>
       <link>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</link>
