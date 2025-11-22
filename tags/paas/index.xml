@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>paas on CINAQ</title>
+    <title>Paas on CINAQ</title>
     <link>/tags/paas/</link>
-    <description>Recent content in paas on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Paas on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2024 00:13:37 +0100</lastBuildDate><atom:link href="/tags/paas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/paas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A shortcut to owning an internal developers platform</title>
       <link>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</link>
       <pubDate>Tue, 13 Aug 2024 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2024/08/13/a-shortcut-to-owning-an-internal-developers-platform/</guid>
-      <description>Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.
-What is an internal developer platform? An IDP is like a town square where developers who own applications or want to own applications come together.</description>
+      <description>&lt;p&gt;Internal developer platform (IDP) is trending lately as it catches IT leaders’ attention. The quest for never-ending efficiency evolved from centralized sysadmin teams to decentralized DevOps, SRE and platforms. All with the ultimate goal to enable rapid value delivery. This is critical in today’s fast-paced world where time to market is crucial for business success.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-an-internal-developer-platform&#34;&gt;What is an internal developer platform?&lt;/h1&gt;&#xA;&lt;p&gt;An IDP is like a town square where developers who own applications or want to own applications come together. Often, this place is a portal (internal developer portal) supported by a catalog listing and one or more app templates. The catalog enables others to discover the existence of apps and their APIs, while app templates enable new app owners to kickstart their app development at a rapid pace instead of ramping up in months.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HashiCorp&#39;s Shift to BSL v1.1 and its Effect on PaaS</title>
       <link>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</link>
       <pubDate>Mon, 14 Aug 2023 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2023/08/14/hashicorps-shift-to-bsl-v1.1-and-its-effect-on-paas/</guid>
-      <description>As of August 10, HashiCorp made an important announcement regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the Business Source License version 1.1 (BSL v1.1) has generated considerable discussions and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like heroku, fly.</description>
+      <description>&lt;p&gt;As of August 10, HashiCorp made an important &lt;a href=&#34;https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license&#34;&gt;announcement&lt;/a&gt; regarding a significant shift in its licensing strategy. The transition from the Mozilla Public License 2.0 (MPL 2.0) to the &lt;a href=&#34;https://www.hashicorp.com/bsl&#34;&gt;Business Source License version 1.1 (BSL v1.1)&lt;/a&gt; has generated considerable &lt;a href=&#34;https://news.ycombinator.com/item?id=37081306&#34;&gt;discussions&lt;/a&gt; and anticipation within the technology community. In this post, we aim to shed light on the implications of this change, not only for our team but also for companies like &lt;a href=&#34;https://www.heroku.com&#34;&gt;heroku&lt;/a&gt;, &lt;a href=&#34;https://fly.io&#34;&gt;fly.io&lt;/a&gt;, &lt;a href=&#34;https://render.com&#34;&gt;render.com&lt;/a&gt; that utilize or consider using HashiCorp&amp;rsquo;s products in their PaaS.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

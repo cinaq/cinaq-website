@@ -4,110 +4,86 @@
     <title>Pages on CINAQ</title>
     <link>/pages/</link>
     <description>Recent content in Pages on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Us</title>
       <link>/about-us/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/about-us/</guid>
-      <description>Company CINAQ is a registered software consultant company in the Netherlands. We specialize in Internet Technologies.
-In particular the following fields:
- Software development with Python, Java, Javascript and more DevOps and SRE culture Kubernetes Azure and AWS clouds Security, Micro-services and Cloud Native engineering practices Agile Product development Mendix security and deployments  Our core belief is:
- A product is never done. We strive to make a difference today while looking forward to the future.</description>
+      <description>&lt;h2 id=&#34;company&#34;&gt;Company&lt;/h2&gt;&#xA;&lt;p&gt;CINAQ is a &lt;a href=&#34;https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=668736060000&#34;&gt;registered software consultant company in the Netherlands&lt;/a&gt;. We specialize in Internet Technologies.&lt;/p&gt;&#xA;&lt;p&gt;In particular the following fields:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Software development with Python, Java, Javascript and more&lt;/li&gt;&#xA;&lt;li&gt;DevOps and SRE culture&lt;/li&gt;&#xA;&lt;li&gt;Kubernetes&lt;/li&gt;&#xA;&lt;li&gt;Azure and AWS clouds&lt;/li&gt;&#xA;&lt;li&gt;Security, Micro-services and Cloud Native engineering practices&lt;/li&gt;&#xA;&lt;li&gt;Agile Product development&lt;/li&gt;&#xA;&lt;li&gt;Mendix security and deployments&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Our core belief is:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;A product is never done. We strive to make a difference today while looking forward to the future.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Cloud Consultancy</title>
       <link>/services/cloud-consultancy/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/services/cloud-consultancy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Contact Us</title>
       <link>/contact-us/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/contact-us/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Services</title>
       <link>/services/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/services/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Custom Page Example 1</title>
       <link>/custom-page-1/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>/custom-page-1/</guid>
-      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+      <description>&lt;h2 id=&#34;markdown-content&#34;&gt;Markdown Content&lt;/h2&gt;&#xA;&lt;p&gt;The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mendix deployment</title>
       <link>/services/mendix-deployment/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>/services/mendix-deployment/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Photography</title>
       <link>/photography/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>/photography/</guid>
-      <description>2017 italy ravenna beach
-     2018 spain madrid royal palace
-     2018 usa new york world trade center
-     2019 england london hyde park
-     2019 france provence flower
-     2019 france provence lavender fields
-     2019 france provence sunflower
-     2019 netherlands giethoorn ducks</description>
+      <description>&lt;p&gt;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&#xA;&lt;div class=&#34;gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34; style=&#34;min-width: 100%;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;div class=&#34;box&#34; style=&#34;max-width: 150px; height: 150px; padding-bottom: 0px;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/photographs/2017-italy-ravenna-beach-thumb.jpeg&#39;);&#34; &gt;&#xA;&#x9;&#x9;&#x9;&#x9;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/photographs/2017-italy-ravenna-beach-thumb.jpeg&#34; alt=&#34;2017 italy ravenna beach&#34; /&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;/div&gt;&#xA;&#x9;&#x9;&#x9;      &lt;figcaption style=&#34;background-color: white;&#34;&gt;&#xA;&#x9;&#x9;          &lt;p&gt;2017 italy ravenna beach&lt;/p&gt;&#xA;&#x9;&#x9;&#x9;      &lt;/figcaption&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;a href=&#34;/photographs/2017-italy-ravenna-beach.jpeg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;/figure&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/div&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;div class=&#34;box&#34; style=&#34;max-width: 150px; height: 150px; padding-bottom: 0px;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/photographs/2018-spain-madrid-royal-palace-thumb.jpeg&#39;);&#34; &gt;&#xA;&#x9;&#x9;&#x9;&#x9;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/photographs/2018-spain-madrid-royal-palace-thumb.jpeg&#34; alt=&#34;2018 spain madrid royal palace&#34; /&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;/div&gt;&#xA;&#x9;&#x9;&#x9;      &lt;figcaption style=&#34;background-color: white;&#34;&gt;&#xA;&#x9;&#x9;          &lt;p&gt;2018 spain madrid royal palace&lt;/p&gt;&#xA;&#x9;&#x9;&#x9;      &lt;/figcaption&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;a href=&#34;/photographs/2018-spain-madrid-royal-palace.jpeg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;/figure&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/div&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;div class=&#34;box&#34; style=&#34;max-width: 150px; height: 150px; padding-bottom: 0px;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/photographs/2018-usa-new-york-world-trade-center-thumb.jpeg&#39;);&#34; &gt;&#xA;&#x9;&#x9;&#x9;&#x9;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/photographs/2018-usa-new-york-world-trade-center-thumb.jpeg&#34; alt=&#34;2018 usa new york world trade center&#34; /&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;/div&gt;&#xA;&#x9;&#x9;&#x9;      &lt;figcaption style=&#34;background-color: white;&#34;&gt;&#xA;&#x9;&#x9;          &lt;p&gt;2018 usa new york world trade center&lt;/p&gt;&#xA;&#x9;&#x9;&#x9;      &lt;/figcaption&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;a href=&#34;/photographs/2018-usa-new-york-world-trade-center.jpeg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;/figure&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/div&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;div class=&#34;box&#34; style=&#34;max-width: 150px; height: 150px; padding-bottom: 0px;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;/photographs/2019-england-london-hyde-park-thumb.jpeg&#39;);&#34; &gt;&#xA;&#x9;&#x9;&#x9;&#x9;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;/photographs/2019-england-london-hyde-park-thumb.jpeg&#34; alt=&#34;2019 england london hyde park&#34; /&gt;&#xA;&#x9;&#x9;&#x9;&#x9;    &lt;/div&gt;&#xA;&#x9;&#x9;&#x9;      &lt;figcaption style=&#34;background-color: white;&#34;&gt;&#xA;&#x9;&#x9;          &lt;p&gt;2019 england london hyde park&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Products</title>
       <link>/products/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>/products/</guid>
-      <description>Markdown Content The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)</description>
+      <description>&lt;h2 id=&#34;markdown-content&#34;&gt;Markdown Content&lt;/h2&gt;&#xA;&lt;p&gt;The markdown content can be placed between sections, not just at the end of the page. The markdown is still written like normal, it&amp;rsquo;s not inside a front-matter field (which would be overly restrictive)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Custom Page 2</title>
       <link>/custom-page-2/</link>
       <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
-      
       <guid>/custom-page-2/</guid>
-      <description>Content Section Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?
- Cum det dixit Parcarum qui spemque est Quod consiste agitataque claustraque vicina videt lacertis Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
+      <description>&lt;h1 id=&#34;content-section&#34;&gt;Content Section&lt;/h1&gt;&#xA;&lt;p&gt;Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis.&#xA;Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cum det dixit Parcarum qui spemque est&lt;/li&gt;&#xA;&lt;li&gt;Quod consiste agitataque claustraque vicina videt lacertis&lt;/li&gt;&#xA;&lt;li&gt;Per nunc pariterque saeva vindicet&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco &lt;em&gt;vati&lt;/em&gt;&#xA;dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa!&#xA;Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus&#xA;esse iam feres mortis Plurima.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Custom Page 3</title>
       <link>/custom-page-3/</link>
       <pubDate>Sat, 10 Feb 2018 04:52:18 +0000</pubDate>
-      
       <guid>/custom-page-3/</guid>
-      <description>Content Section Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis. Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?
- Cum det dixit Parcarum qui spemque est Quod consiste agitataque claustraque vicina videt lacertis Per nunc pariterque saeva vindicet  Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco vati dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa! Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus esse iam feres mortis Plurima.</description>
+      <description>&lt;h1 id=&#34;content-section&#34;&gt;Content Section&lt;/h1&gt;&#xA;&lt;p&gt;Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis.&#xA;Ignibus inpatiens explorat, male! Quo sed hic die solido, gloria?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cum det dixit Parcarum qui spemque est&lt;/li&gt;&#xA;&lt;li&gt;Quod consiste agitataque claustraque vicina videt lacertis&lt;/li&gt;&#xA;&lt;li&gt;Per nunc pariterque saeva vindicet&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Locus evicit loquuntur Tyrrhena omnes, obstipui pugnabant temptavit Phoco &lt;em&gt;vati&lt;/em&gt;&#xA;dabant deus. Memorata haberet sepulcrales gentisque dum sic, in flumina templa!&#xA;Se domus passa verum tenebrisque auras nil vix quae quidem, certe videri somnus&#xA;esse iam feres mortis Plurima.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Newsletter</title>
+      <link>/newsletter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/newsletter/</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xA;&lt;head&gt;&#xA;    &lt;meta charset=&#34;UTF-8&#34;&gt;&#xA;    &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; url=https://4iuz8.share.hsforms.com/2-4U3pPJ-S2OTD6hsBl4rjA&#34;&gt;&#xA;    &lt;meta name=&#34;robots&#34; content=&#34;noindex&#34;&gt;&#xA;    &lt;title&gt;Redirecting to Newsletter&lt;/title&gt;&#xA;    &lt;script&gt;&#xA;        window.location.href = &#34;https://4iuz8.share.hsforms.com/2-4U3pPJ-S2OTD6hsBl4rjA&#34;;&#xA;    &lt;/script&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;    &lt;p&gt;Redirecting to newsletter subscription...&lt;/p&gt;&#xA;    &lt;p&gt;If you are not redirected automatically, &lt;a href=&#34;https://4iuz8.share.hsforms.com/2-4U3pPJ-S2OTD6hsBl4rjA&#34;&gt;click here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;</description>
+    </item>
   </channel>
 </rss>

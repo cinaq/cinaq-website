@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Low-Ops Platform AI Strategy - Blog - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+  <meta name="description" content="Low-Ops introduces its AI strategy with two main use cases - architectural definitions that guide coding agents to build Low-Ops compatible code, and intelligent assistance to lower operational efforts. AI-aware app templates coming Q4 2025, with Low-Ops AI launching in private beta Q1 2026." />
+  <meta property="og:title" content="Low-Ops Platform AI Strategy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2025/11/22/low-ops-platform-ai-strategy/" />
+  <meta property="og:image" content="/media/genai_assisting_devops_and_app_deployments-thumb.png" />
+  <meta property="og:description" content="Low-Ops introduces its AI strategy with two main use cases - architectural definitions that guide coding agents to build Low-Ops compatible code, and intelligent assistance to lower operational efforts. AI-aware app templates coming Q4 2025, with Low-Ops AI launching in private beta Q1 2026."  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cinaq_com" />
+  <meta name="twitter:creator" content="@xiwenc" />
+
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+
+
+    
+
+
+<body class='page page-posts-single '>
+
+<div id="header" class='header '>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-low-ops">
+            <a href="https://low-ops.com">
+                
+                <span>Low-Ops</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-newsletter">
+            <a href="/newsletter">
+                
+                <span>Newsletter</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        
+        <span>Low-Ops</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        
+        <span>Newsletter</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+<div class="strip strip-base">
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-12 mb-3">
+        <div class="title-image">
+          <img src="/media/genai_assisting_devops_and_app_deployments.png" />
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 mb-4">
+        <div class="title">
+          <h1>Low-Ops Platform AI Strategy</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="post post-single">
+          
+          
+          
+            <div class="post-author">
+              <div class="post-author-avatar">
+                <img src="/images/xiwen.png" alt=""/>
+              </div>
+              <div class="post-author-info">
+                <a class="post-author-name" href="/authors/xiwen-cheng/">Xiwen Cheng</a>
+                <span class="post-author-date">
+                
+                Published on Nov 22, 2025
+                
+                
+                <i>(Modified on Nov 22, 2025)</i>
+                
+                </span>
+              </div>
+            </div>
+            
+          
+          <div class="content"><p>Generative AI has taken the world by storm since the introduction of <a href="https://openai.com/blog/chatgpt">ChatGPT in November 2022</a>. Many organizations are already using GenAI or are considering adopting it. Low-Ops has not stood still either. We introduced a <a href="https://www.linkedin.com/posts/cinaq_openai-mendix-assistant-ugcPost-7151530707637452801-kYiI/">PoC assistant in 2024</a> that enables you to analyze app logs effectively. Today, we&rsquo;re sharing our vision for integrating GenAI with Low-Ops.</p>
+<h2 id="use-cases">Use Cases</h2>
+<p>We see tremendous opportunities in applying GenAI to Low-Ops. Our strategy focuses on two main use cases:</p>
+<ol>
+<li><strong>Architectural definitions</strong> that guide coding agents to build Low-Ops compatible code</li>
+<li><strong>Intelligent assistance</strong> to lower operational efforts and streamline workflows</li>
+</ol>
+<h2 id="architectural-definitions-for-ai-agents">Architectural Definitions for AI Agents</h2>
+<p><img src="/media/genai-vibe-coding.jpg" alt="Vibe coding"></p>
+<p>You can deploy any web app in Low-Ops, but your codebase must adhere to certain preconditions. With AI coding agents like <a href="https://cursor.com">Cursor</a>, <a href="https://github.com/features/copilot">GitHub Copilot</a>, or <a href="https://codeium.com/windsurf">Windsurf</a>, it&rsquo;s possible to instruct the agent to ensure specific requirements are always met.</p>
+<p>Examples of architectural constraints include:</p>
+<ul>
+<li><strong>Dockerfile standards</strong> - Proper multi-stage builds and base image requirements</li>
+<li><strong>Health checks</strong> - The app root must always return a 2xx status for health monitoring</li>
+<li><strong>Environment variables</strong> - Respect configuration like port binding, timeouts, and feature flags</li>
+<li><strong>Service consumption</strong> - How to connect to databases, object storage, and message queues</li>
+<li><strong>Observability</strong> - How to expose metrics in <a href="https://prometheus.io/">Prometheus</a> format and structured logging</li>
+</ul>
+<p>These &ldquo;agreements&rdquo; ensure that apps can seamlessly consume services provided by Low-Ops while maintaining operational best practices.</p>
+<p>With these definitions in place, a developer can simply prompt their coding agent with requests like:</p>
+<blockquote>
+<p>Implement a file uploading form and persist files to object storage</p>
+</blockquote>
+<p>The agent would automatically know that an S3-compatible object storage service is present and how to consume the credentials at runtime using the Low-Ops conventions.</p>
+<h2 id="intelligent-assistance">Intelligent Assistance</h2>
+<p><img src="/media/genai-assistance.jpg" alt="AI Assistance"></p>
+<p>Many organizations start their AI journey with a chat model. Our PoC proved that chat interfaces are not optimal in this context. The spirit of Low-Ops is to <strong>reduce operations</strong>, not add more steps. Requiring users to input text as the primary interface feels awkward and counterproductive.</p>
+<p>Instead, we believe the platform itself must be inherently intelligent. We&rsquo;re achieving this by embedding GenAI capabilities directly into strategic workflows. Examples include:</p>
+<ul>
+<li>
+<p><strong>Smart alerts</strong> - When you receive an alert about your app, you get access to root cause analysis with clear remediation actions. For instance, if your app crashed, the system would analyze the logs and suggest increasing memory limits if the app ran out of memory, or identify specific code paths causing the issue.</p>
+</li>
+<li>
+<p><strong>Performance optimization</strong> - Experiencing slow performance? The system combines <a href="https://opentelemetry.io/docs/concepts/observability-primer/#distributed-tracing">distributed tracing</a> data with your codebase analysis to pinpoint exactly where performance bottlenecks are occurring, complete with optimization recommendations.</p>
+</li>
+</ul>
+<p>All of this is possible with Low-Ops because it&rsquo;s a <strong>fully integrated platform</strong>. Unlike cobbled-together tool chains, Low-Ops interconnects services to provide the richest possible context for GenAI to analyze and advise—with you firmly in control.</p>
+<h2 id="roadmap">Roadmap</h2>
+<p><strong>Q4 2025</strong>: Low-Ops app templates will be updated to be AI-aware, implementing architectural definitions to assist with &ldquo;vibe coding&rdquo;—where you describe what you want and AI agents handle the implementation details while following Low-Ops best practices.</p>
+<p><strong>Q1 2026</strong>: We&rsquo;re launching <strong>Low-Ops AI</strong> in private beta with smart alerts and intelligent root cause analysis. Deeper integrations will be added gradually based on user feedback and real-world usage patterns.</p>
+<p>Want early access? <a href="https://cinaq.com/newsletter">Subscribe to our newsletter</a> to stay informed and get access to the private beta.</p>
+</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        Newsletter
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        Low-Ops
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-cli">
+      <a href="https://github.com/cinaq/mendix-cli">
+        mendix-cli
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-userlib-cleaner">
+      <a href="https://github.com/cinaq/mendix-userlib-cleaner">
+        mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.2776fe9b08af66b2cf442bb773650c95d309d9a7e090a694b6fcc806594c9b20.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.e4b2c9e60af01d12b35fa8abed3343c873ef4a438fd4d4ce91ef64fefaef1cb2.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

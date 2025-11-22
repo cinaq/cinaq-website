@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>letsencrypt on CINAQ</title>
+    <title>Letsencrypt on CINAQ</title>
     <link>/tags/letsencrypt/</link>
-    <description>Recent content in letsencrypt on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Letsencrypt on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 May 2020 13:37:00 +0100</lastBuildDate><atom:link href="/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Highly available Kubernetes with batteries for small business</title>
       <link>/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</link>
       <pubDate>Mon, 25 May 2020 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2020/05/25/highly-available-kubernetes-with-batteries-for-small-business/</guid>
-      <description>Kindie (Kubernetes Individual) is an opinionated Kubernetes cluster setup for individuals or small business. Batteries included so that you can hit the ground running and add production workload in no time.
-Target audience Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes experience looking to build a Kubernetes cluster for production usage with bells and whistles focussed on web workloads. You should be able to have the cluster ready in a few hours.</description>
+      <description>&lt;p&gt;Kindie (&lt;strong&gt;K&lt;/strong&gt;ubernetes &lt;strong&gt;Indi&lt;/strong&gt;vidual) is an opinionated Kubernetes cluster setup for individuals or small business. Batteries included so that you can hit the ground running and add production workload in no time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;target-audience&#34;&gt;Target audience&lt;/h2&gt;&#xA;&lt;p&gt;Sysadmin, DevOps, Cloud engineer with Linux and Kubernetes experience looking to build a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster for production usage with bells and whistles focussed on web workloads. You should be able to have the cluster ready in a few hours. If you don&amp;rsquo;t understand some of the information here, please comment below or research it on the internet. This guide is not meant for complete beginners but we try to keep it as accessible as possible without going into too much details.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

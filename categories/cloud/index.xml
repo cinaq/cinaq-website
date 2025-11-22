@@ -4,28 +4,23 @@
     <title>Cloud on CINAQ</title>
     <link>/categories/cloud/</link>
     <description>Recent content in Cloud on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jun 2022 00:13:37 +0100</lastBuildDate><atom:link href="/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is the Mendix Basic Package for me?</title>
       <link>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</link>
       <pubDate>Sat, 04 Jun 2022 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</guid>
-      <description>Mendix introduced the Basic package back in September 2021. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.
-With the Basic Package, Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups.</description>
+      <description>&lt;p&gt;Mendix introduced the Basic package back in &lt;a href=&#34;https://www.mendix.com/blog/how-to-kickstart-your-app-with-mendix-basic/&#34;&gt;September 2021&lt;/a&gt;. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.&lt;/p&gt;&#xA;&lt;p&gt;With the Basic Package, Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups. In practice, this classification turns out to be non-trivial as asked &lt;a href=&#34;https://forum.mendix.com/link/questions/110291&#34;&gt;on Mendix Forum&lt;/a&gt;. Or quoting a recent conversation on Mendix Community slack:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>You have built a Mendix app, now what?</title>
       <link>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</link>
       <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</guid>
-      <description>Recently the first Mendix book was published. It was titled Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.
-What drives me? I joined the Mendix company in 2012, fresh out of university.</description>
+      <description>&lt;p&gt;Recently the first Mendix book was published. It was titled &lt;a href=&#34;https://www.amazon.com/gp/product/1800201427/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1800201427&amp;amp;linkCode=as2&amp;amp;tag=cinaq-20&amp;amp;linkId=fc31ca857a88c4c7d04ece24f15daf16&#34;&gt;Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development&lt;/a&gt; by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-drives-me&#34;&gt;What drives me?&lt;/h2&gt;&#xA;&lt;p&gt;I joined the &lt;a href=&#34;https://www.mendix.com&#34;&gt;Mendix company&lt;/a&gt; in 2012, fresh out of university. Since then, I was convinced Mendix was onto something. A strong player that could change the way the business perceives IT: slow and costly. With almost ten years of Mendix experience, I firmly believe I&amp;rsquo;m the perfect person to take you and your freshly built application through an unforgettable journey. From proof of concept to modern enterprise landscape. The sole goal is for me to share my experience, which hopefully propels you to success. Not just building and delivering apps at record speed, but also reliably so that you can sleep at night like a lamb.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

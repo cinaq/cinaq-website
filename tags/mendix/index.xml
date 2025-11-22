@@ -1,68 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mendix on CINAQ</title>
+    <title>Mendix on CINAQ</title>
     <link>/tags/mendix/</link>
-    <description>Recent content in mendix on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Mendix on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 13:37:00 +0100</lastBuildDate><atom:link href="/tags/mendix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/mendix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Mendix app to Kubernetes without corrupting your data</title>
       <link>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</link>
       <pubDate>Mon, 05 Jun 2023 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2023/06/05/deploy-mendix-app-to-kubernetes-without-corrupting-your-data/</guid>
-      <description>Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process.</description>
+      <description>&lt;p&gt;Deploying Mendix apps in Kubernetes can be more complex than anticipated, often leading to potential issues like data corruption. This article delves into the specific challenges of running Mendix apps in a cloud-native environment. It examines the risks posed by concurrent versions, the importance of the leader-workers model, and the impact of deployment strategies. Furthermore, it explores the introduction of Mendix for private cloud and the mitigation techniques that can be employed to ensure a smooth and secure deployment process. By implementing the suggested strategies, developers can minimize the risk of data corruption and streamline the operation of Mendix apps in Kubernetes environments.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Low-Ops Platform: The 7-Star Hotel for Apps</title>
       <link>/blog/2023/05/18/low-ops-platform-the-7-star-hotel-for-apps/</link>
       <pubDate>Thu, 18 May 2023 13:37:00 +0000</pubDate>
-      
       <guid>/blog/2023/05/18/low-ops-platform-the-7-star-hotel-for-apps/</guid>
-      <description>In the world of technology, efficiency and convenience are paramount. Just like how you would prefer to stay in a luxurious 7-star hotel during your holidays, IT professionals and app developers also seek an environment where everything is taken care of seamlessly. This desire for a hassle-free experience is what makes a low-ops platform akin to a 7-star hotel for apps. While traditional app delivery may resemble renting a low-budget apartment, where you have more freedom but a lot on your plate, a low-ops platform offers a superior alternative.</description>
+      <description>&lt;p&gt;In the world of technology, efficiency and convenience are paramount. Just like how you would prefer to stay in a luxurious 7-star hotel during your holidays, IT professionals and app developers also seek an environment where everything is taken care of seamlessly. This desire for a hassle-free experience is what makes a low-ops platform akin to a 7-star hotel for apps. While traditional app delivery may resemble renting a low-budget apartment, where you have more freedom but a lot on your plate, a low-ops platform offers a superior alternative.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Mendix SVG Hunt</title>
       <link>/blog/2022/10/20/mendix-svg-hunt/</link>
       <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2022/10/20/mendix-svg-hunt/</guid>
-      <description>Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&amp;rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.
-The error As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A.</description>
+      <description>&lt;p&gt;Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&amp;rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-error&#34;&gt;The error&lt;/h2&gt;&#xA;&lt;p&gt;As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A. Reading stacktraces is almost like an art-form. Specially when we do not have the accompanying source code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Is the Mendix Basic Package for me?</title>
       <link>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</link>
       <pubDate>Sat, 04 Jun 2022 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2022/06/04/is-the-mendix-basic-package-for-me/</guid>
-      <description>Mendix introduced the Basic package back in September 2021. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.
-With the Basic Package, Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups.</description>
+      <description>&lt;p&gt;Mendix introduced the Basic package back in &lt;a href=&#34;https://www.mendix.com/blog/how-to-kickstart-your-app-with-mendix-basic/&#34;&gt;September 2021&lt;/a&gt;. It has been one of the most anticipated moves around licensing because there were Free apps, the free tier which mostly enabled hobby projects or newcomers to try out Mendix. The second option was simply: enterprise sales.&lt;/p&gt;&#xA;&lt;p&gt;With the Basic Package, Mendix tries to close the gap between free and enterprise. Which as you might have guessed would be small businesses, more demanding hobby projects, or startups. In practice, this classification turns out to be non-trivial as asked &lt;a href=&#34;https://forum.mendix.com/link/questions/110291&#34;&gt;on Mendix Forum&lt;/a&gt;. Or quoting a recent conversation on Mendix Community slack:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>You have built a Mendix app, now what?</title>
       <link>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</link>
       <pubDate>Tue, 13 Apr 2021 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2021/04/13/you-have-built-a-mendix-app-now-what/</guid>
-      <description>Recently the first Mendix book was published. It was titled Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.
-What drives me? I joined the Mendix company in 2012, fresh out of university.</description>
+      <description>&lt;p&gt;Recently the first Mendix book was published. It was titled &lt;a href=&#34;https://www.amazon.com/gp/product/1800201427/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1800201427&amp;amp;linkCode=as2&amp;amp;tag=cinaq-20&amp;amp;linkId=fc31ca857a88c4c7d04ece24f15daf16&#34;&gt;Building Low-Code Applications with Mendix: Discover best practices and expert techniques to simplify enterprise web development&lt;/a&gt; by Bryan Kenneweg, Imran Kasam, and Micah McCullen. It guides the reader to become an application developer on the Mendix platform. This book inspired me also to contribute to growing and educating this unique low-code community.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-drives-me&#34;&gt;What drives me?&lt;/h2&gt;&#xA;&lt;p&gt;I joined the &lt;a href=&#34;https://www.mendix.com&#34;&gt;Mendix company&lt;/a&gt; in 2012, fresh out of university. Since then, I was convinced Mendix was onto something. A strong player that could change the way the business perceives IT: slow and costly. With almost ten years of Mendix experience, I firmly believe I&amp;rsquo;m the perfect person to take you and your freshly built application through an unforgettable journey. From proof of concept to modern enterprise landscape. The sole goal is for me to share my experience, which hopefully propels you to success. Not just building and delivering apps at record speed, but also reliably so that you can sleep at night like a lamb.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Your business logic is the weakest link in Low-Code security</title>
       <link>/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</link>
       <pubDate>Sun, 09 Aug 2020 13:37:00 +0000</pubDate>
-      
       <guid>/blog/2020/08/09/your-business-logic-is-the-weakest-link-in-low-code-security/</guid>
-      <description>Over the past 5 years interest in low-code increased 100 folds according to Google Trends: This correlates with human psychology eager to optimise for efficiency in everything and building software solutions is no exception. As programming is becoming easier and more accessible, in the future, anyone should be able solve their own information automation challenges. Low-code is a relatively new movement that tries to enable those citizen developers with the right tooling lowering the barrier to build applications without writing traditional code.</description>
+      <description>&lt;p&gt;Over the past 5 years &lt;a href=&#34;https://trends.google.com/trends/explore?date=2015-01-01%202020-08-02&amp;amp;q=%2Fg%2F11c6cx4nrr&#34;&gt;interest in low-code increased 100 folds&lt;/a&gt; according to Google Trends:&#xA;&lt;img src=&#34;/media/low-code-trends.png&#34; alt=&#34;Low-code development trends&#34;&gt;&#xA;This correlates with human psychology eager to optimise for efficiency in everything and building software solutions is no exception. As programming is becoming easier and more accessible, in the future, anyone should be able solve their own information automation challenges. Low-code is a relatively new movement that tries to enable those citizen developers with the right tooling lowering the barrier to build applications without writing traditional code. Because most of my professional experience with low-code is around &lt;a href=&#34;https://www.mendix.com&#34;&gt;Mendix&lt;/a&gt;, I will use it as reference through out this article.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

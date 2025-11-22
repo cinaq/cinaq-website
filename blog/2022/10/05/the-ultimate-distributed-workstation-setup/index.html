@@ -20,7 +20,7 @@
         
         
         <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
-        <link rel="stylesheet" href="/style.min.1c52a8d29f39c8256be81491d1cd50ab0e4584ec609c1f944c1df8cd5a1cc906.css">
+        <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
     
@@ -175,6 +175,15 @@
             </a>
         
         
+    
+        
+            <li class="menu-item-newsletter">
+            <a href="/newsletter">
+                
+                <span>Newsletter</span>
+            </a>
+        
+        
     </ul>
 </div>
 
@@ -228,6 +237,15 @@
       <a href="/blog/">
         
         <span>Blog</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        
+        <span>Newsletter</span>
       </a>
       
       
@@ -300,7 +318,7 @@
                 Published on Oct 5, 2022
                 
                 
-                <i>(Modified on Aug 13, 2024)</i>
+                <i>(Modified on Nov 22, 2025)</i>
                 
                 </span>
               </div>
@@ -338,10 +356,10 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 </ul>
 <p>and many more (See appendix for full list)</p>
 <p>This <code>.stglobalignore</code> file is also synchronized across to all devices. To really use this file, a <code>.stigore</code> file must be created by hand (if i recall correctly; haven&rsquo;t set up new device in a long time) with the following content:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// .stignore
-</span><span class="c1">// 2
-</span><span class="c1"></span><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
-</code></pre></div><p>This trick was taken from <a href="https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905">syncthing forum</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// .stignore
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
+</span></span></code></pre></div><p>This trick was taken from <a href="https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905">syncthing forum</a>.</p>
 <h2 id="issues-with-dsm-cloud-sync">Issues with DSM Cloud Sync</h2>
 <p>Last year I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that were supposed to be ignored from synchronization were uploaded to Google drive.</p>
 <h2 id="dsm-cloud-sync-is-back-in-business">DSM Cloud Sync is back in business</h2>
@@ -349,120 +367,120 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 <h2 id="git-clean-for-syncthing">git clean for Syncthing</h2>
 <p>To clean up files from my Synology and Google drive, I created <code>clean.py</code> which reads in <code>.stglobalignore</code> file and finds all paths that match the patterns listed there. That list of files and directories is then presented to the user as confirmation before they are deleted.</p>
 <p>An example run looks like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ python ~/tools/clean.py
-To be removed:
-<span class="o">====</span>
-git/appsec/appsec/api/models/__pycache__/scan.cpython-39.pyc
-git/appsec/appsec/api/models/__pycache__/audit.cpython-39.pyc
-resources/.DS_Store
-git/appsec/data
-git/kubernetes/data
-git/mx-foundation/live/foundation/vpc/.terragrunt-cache
-Continue removal? YES/NO
-</code></pre></div><p>this was run on the synology which propagates the removal to Google drive via Cloud Sync.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ python ~/tools/clean.py
+</span></span><span class="line"><span class="cl">To be removed:
+</span></span><span class="line"><span class="cl"><span class="o">====</span>
+</span></span><span class="line"><span class="cl">git/appsec/appsec/api/models/__pycache__/scan.cpython-39.pyc
+</span></span><span class="line"><span class="cl">git/appsec/appsec/api/models/__pycache__/audit.cpython-39.pyc
+</span></span><span class="line"><span class="cl">resources/.DS_Store
+</span></span><span class="line"><span class="cl">git/appsec/data
+</span></span><span class="line"><span class="cl">git/kubernetes/data
+</span></span><span class="line"><span class="cl">git/mx-foundation/live/foundation/vpc/.terragrunt-cache
+</span></span><span class="line"><span class="cl">Continue removal? YES/NO
+</span></span></code></pre></div><p>this was run on the synology which propagates the removal to Google drive via Cloud Sync.</p>
 <h2 id="summary">Summary</h2>
 <p>It is possible to have two-way file synchronization across multiple devices allowing one to work with the files on the best-suited system or context with zero compromise.</p>
 <p>Even-though computers are fast nowadays it&rsquo;s still crucial to do housekeeping on what files should be excluded from synchronization because this can have a significant impact on the synchronization performance. Before the cleanup of ignored files, my working copy was 14GB compared to 8GB after running <code>clean.py</code>.</p>
 <h2 id="appendix">Appendix</h2>
 <h3 id="stglobalignore">.stglobalignore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// .stglobalignore
-</span><span class="c1"></span>
-<span class="c1">// Incomplete Downloads
-</span><span class="c1">// At least for now, these prevent Syncthing from transferring data that&#39;s
-</span><span class="c1">// going to be thrown out anyway once the download is finished and the
-</span><span class="c1">// file is renamed. Things may change when Syncthing gets smarter.
-</span><span class="c1">//
-</span><span class="c1">// Firefox downloads and other things
-</span><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">part</span>
-<span class="c1">// Chrom(ium|e) downloads
-</span><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">crdownload</span>
-
-<span class="c1">// Temporary / Backup Files
-</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*~</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="o">*</span><span class="p">.</span><span class="nx">swp</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">tmp</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">pyc</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">temp</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">sync</span><span class="o">-</span><span class="nx">conflict</span><span class="o">-*</span>
-
-<span class="c1">// OS-generated files (OS X)
-</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">DS_Store</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Spotlight</span><span class="o">-</span><span class="nx">V100</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Trashes</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">_</span><span class="o">*</span>
-
-<span class="c1">// OS-generated files (Windows)
-</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">desktop</span><span class="p">.</span><span class="nx">ini</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">ehthumbs</span><span class="p">.</span><span class="nx">db</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">Thumbs</span><span class="p">.</span><span class="nx">db</span>
-
-<span class="c1">// BTSync files
-</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">sync</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">bts</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="o">!</span><span class="nx">Sync</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncID</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncIgnore</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncArchive</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncPart</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncTemp</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncOld</span>
-
-<span class="c1">// Synology files
-</span><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="err">@</span><span class="nx">eaDir</span>
-
-
-<span class="c1">// Blacklisted dirs
-</span><span class="c1"></span><span class="err">/Moments</span>
-<span class="err">/Backup</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">tox</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">cache</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">mypy_cache</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">node_modules</span>
-<span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">/</span><span class="nx">git</span><span class="cm">/*/data
-</span><span class="cm">(?d).terragrunt-cache
-</span><span class="cm">(?d).tmp.drivedownload
-</span><span class="cm">(?d).tmp.driveupload
-</span><span class="cm">(?d)/git/*/</span><span class="nx">dist</span>
-</code></pre></div><h3 id="cleanpy">clean.py</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;IGNORE_FILE&#34;</span><span class="p">,</span> <span class="s2">&#34;.stglobalignore&#34;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
-
-<span class="n">to_be_removed</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;//&#34;</span><span class="p">):</span>
-        <span class="k">continue</span>
-    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">):</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">,</span> <span class="s2">&#34;**/&#34;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;*&#34;</span><span class="p">):</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="s2">&#34;**/&#34;</span> <span class="o">+</span> <span class="n">line</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">to_be_removed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;To be removed:&#34;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;====&#34;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Continue removal? YES/NO</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&#34;YES&#34;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Failed to remove </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// .stglobalignore
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Incomplete Downloads
+</span></span></span><span class="line"><span class="cl"><span class="c1">// At least for now, these prevent Syncthing from transferring data that&#39;s
+</span></span></span><span class="line"><span class="cl"><span class="c1">// going to be thrown out anyway once the download is finished and the
+</span></span></span><span class="line"><span class="cl"><span class="c1">// file is renamed. Things may change when Syncthing gets smarter.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Firefox downloads and other things
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">part</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Chrom(ium|e) downloads
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">crdownload</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Temporary / Backup Files
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*~</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="o">*</span><span class="p">.</span><span class="nx">swp</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">tmp</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">pyc</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">temp</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">sync</span><span class="o">-</span><span class="nx">conflict</span><span class="o">-*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// OS-generated files (OS X)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">DS_Store</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Spotlight</span><span class="o">-</span><span class="nx">V100</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Trashes</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">_</span><span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// OS-generated files (Windows)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">desktop</span><span class="p">.</span><span class="nx">ini</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">ehthumbs</span><span class="p">.</span><span class="nx">db</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">Thumbs</span><span class="p">.</span><span class="nx">db</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// BTSync files
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">sync</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">bts</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="o">!</span><span class="nx">Sync</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncID</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncIgnore</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncArchive</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncPart</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncTemp</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncOld</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Synology files
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="err">@</span><span class="nx">eaDir</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Blacklisted dirs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">/Moments</span>
+</span></span><span class="line"><span class="cl"><span class="err">/Backup</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">tox</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">cache</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">mypy_cache</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">node_modules</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">/</span><span class="nx">git</span><span class="cm">/*/data
+</span></span></span><span class="line"><span class="cl"><span class="cm">(?d).terragrunt-cache
+</span></span></span><span class="line"><span class="cl"><span class="cm">(?d).tmp.drivedownload
+</span></span></span><span class="line"><span class="cl"><span class="cm">(?d).tmp.driveupload
+</span></span></span><span class="line"><span class="cl"><span class="cm">(?d)/git/*/</span><span class="nx">dist</span>
+</span></span></code></pre></div><h3 id="cleanpy">clean.py</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">glob</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">shutil</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;IGNORE_FILE&#34;</span><span class="p">,</span> <span class="s2">&#34;.stglobalignore&#34;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">to_be_removed</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;//&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;(?d)&#34;</span><span class="p">,</span> <span class="s2">&#34;**/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;*&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pattern</span> <span class="o">=</span> <span class="s2">&#34;**/&#34;</span> <span class="o">+</span> <span class="n">line</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pattern</span> <span class="o">=</span> <span class="n">line</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">to_be_removed</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;To be removed:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;====&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Continue removal? YES/NO</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">&#34;YES&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">to_be_removed</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Failed to remove </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
+</span></span></code></pre></div></div>
         </div>
       </div>
     </div>
@@ -551,6 +569,12 @@ Continue removal? YES/NO
       </a>
     </li>
     
+    <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        Newsletter
+      </a>
+    </li>
+    
   </ul>
 </div>
         </div>
@@ -608,12 +632,12 @@ Continue removal? YES/NO
     
     
     
-        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+        <script type="text/javascript" src="/js/darkModeBundle.min.2776fe9b08af66b2cf442bb773650c95d309d9a7e090a694b6fcc806594c9b20.js"></script>
     
 
 
 
-    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+    <script type="text/javascript" src="/js/bundle.min.e4b2c9e60af01d12b35fa8abed3343c873ef4a438fd4d4ce91ef64fefaef1cb2.js"></script>
 
 
 

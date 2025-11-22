@@ -20,7 +20,7 @@
         
         
         <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
-        <link rel="stylesheet" href="/style.min.1c52a8d29f39c8256be81491d1cd50ab0e4584ec609c1f944c1df8cd5a1cc906.css">
+        <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
     
@@ -175,6 +175,15 @@
             </a>
         
         
+    
+        
+            <li class="menu-item-newsletter">
+            <a href="/newsletter">
+                
+                <span>Newsletter</span>
+            </a>
+        
+        
     </ul>
 </div>
 
@@ -228,6 +237,15 @@
       <a href="/blog/">
         
         <span>Blog</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        
+        <span>Newsletter</span>
       </a>
       
       
@@ -300,7 +318,7 @@
                 Published on May 10, 2020
                 
                 
-                <i>(Modified on Aug 13, 2024)</i>
+                <i>(Modified on Nov 22, 2025)</i>
                 
                 </span>
               </div>
@@ -310,70 +328,70 @@
           <div class="content"><p>For a recent project I had to write my own Orthanc plugin. To build this plugin I needed to build <a href="https://wwww.orthanc-server.com">Orthanc</a> from source. The <a href="https://github.com/jodogne/OrthancDocker">official docker-images</a> are assembled based on pre-built binaries. So I could not use them.</p>
 <h2 id="orthanc-dockerfile">Orthanc Dockerfile</h2>
 <p>The first step is create a Dockerfile that compiles Orthanc from source. Looking through the <a href="https://bitbucket.org/sjodogne/orthanc/src/Orthanc-1.6.0/LinuxCompilation.txt">compilation instructions</a> and inspired by the official docker images I have assembled the following Dockerfile:</p>
-<div class="highlight"><pre class="chroma"><code class="language-docker" data-lang="docker"><span class="k">FROM</span><span class="s"> debian:stable AS builder</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /root</span><span class="err">
-</span><span class="err"></span><span class="k">ENV</span> ORTHANC_VERSION 1.6.0<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y build-essential unzip cmake mercurial <span class="se">\
-</span><span class="se"></span>    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span class="se">\
-</span><span class="se"></span>    libgtest-dev libpng-dev libjpeg-dev <span class="se">\
-</span><span class="se"></span>    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span class="se">\
-</span><span class="se"></span>    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># pull source from upstream</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> hg clone -b Orthanc-<span class="si">${</span><span class="nv">ORTHANC_VERSION</span><span class="si">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># distcc</span><span class="err">
-</span><span class="err"></span><span class="k">ARG</span> <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span>
-<span class="k">ARG</span> <span class="nv">DISTCC_HOSTS</span><span class="o">=</span>localhost/4<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">DISTCC_HOSTS</span><span class="si">}</span><span class="s2">&#34;</span> &gt; /etc/distcc/hosts<span class="err">
-</span><span class="err"></span><span class="k">ARG</span> <span class="nv">XXX</span><span class="o">=</span><span class="m">1</span>
-
-
-<span class="k">RUN</span> mkdir OrthancBuild<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> cmake -DALLOW_DOWNLOADS<span class="o">=</span>ON <span class="se">\
-</span><span class="se"></span><span class="c1">#    -DSTATIC_BUILD=ON \</span>
-    -DCMAKE_CXX_COMPILER_LAUNCHER<span class="o">=</span>distcc <span class="se">\
-</span><span class="se"></span>    -DUSE_SYSTEM_CIVETWEB<span class="o">=</span>OFF <span class="se">\
-</span><span class="se"></span>    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE<span class="o">=</span>OFF <span class="se">\
-</span><span class="se"></span>    -DDCMTK_LIBRARIES<span class="o">=</span>dcmjpls <span class="se">\
-</span><span class="se"></span>    -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\
-</span><span class="se"></span>    ~/Orthanc<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> make -j <span class="si">${</span><span class="nv">JOBS</span><span class="si">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">FROM</span><span class="s"> debian:stable-slim</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># locales</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt install -y locales wget<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> locale-gen<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> mkdir -p <span class="se">\
-</span><span class="se"></span>    /etc/orthanc <span class="se">\
-</span><span class="se"></span>    /var/lib/orthanc/db <span class="se">\
-</span><span class="se"></span>    /usr/local/sbin/ <span class="se">\
-</span><span class="se"></span>    /usr/local/bin/ <span class="se">\
-</span><span class="se"></span>    /usr/local/share/orthanc/plugins/<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/Orthanc /usr/local/sbin/<span class="err">
-</span><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/<span class="err">
-</span><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">VOLUME</span> <span class="p">[</span> <span class="s2">&#34;/var/lib/orthanc/db&#34;</span> <span class="p">]</span><span class="err">
-</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 4242</span><span class="err">
-</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8042</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span> <span class="s2">&#34;Orthanc&#34;</span> <span class="p">]</span><span class="err">
-</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span> <span class="s2">&#34;/etc/orthanc/&#34;</span> <span class="p">]</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span><span class="err">
-</span><span class="err"></span><span class="k">ENV</span> MALLOC_ARENA_MAX <span class="m">5</span><span class="err">
-</span></code></pre></div><h2 id="docker-build">Docker build</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">debian:stable</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> ORTHANC_VERSION 1.6.0<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y build-essential unzip cmake mercurial <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libgtest-dev libpng-dev libjpeg-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># pull source from upstream</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> hg clone -b Orthanc-<span class="si">${</span><span class="nv">ORTHANC_VERSION</span><span class="si">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># distcc</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="k">ARG</span> <span class="nv">DISTCC_HOSTS</span><span class="o">=</span>localhost/4<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">DISTCC_HOSTS</span><span class="si">}</span><span class="s2">&#34;</span> &gt; /etc/distcc/hosts<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">XXX</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">RUN</span> mkdir OrthancBuild<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> cmake -DALLOW_DOWNLOADS<span class="o">=</span>ON <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1">#    -DSTATIC_BUILD=ON \</span>
+</span></span><span class="line"><span class="cl">    -DCMAKE_CXX_COMPILER_LAUNCHER<span class="o">=</span>distcc <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DUSE_SYSTEM_CIVETWEB<span class="o">=</span>OFF <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE<span class="o">=</span>OFF <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DDCMTK_LIBRARIES<span class="o">=</span>dcmjpls <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    ~/Orthanc<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> make -j <span class="si">${</span><span class="nv">JOBS</span><span class="si">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="w"> </span><span class="s">debian:stable-slim</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># locales</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt install -y locales wget<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> locale-gen<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mkdir -p <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /etc/orthanc <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /var/lib/orthanc/db <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/sbin/ <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/bin/ <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/share/orthanc/plugins/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/Orthanc /usr/local/sbin/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">VOLUME</span> <span class="p">[</span> <span class="s2">&#34;/var/lib/orthanc/db&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">4242</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8042</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span> <span class="s2">&#34;Orthanc&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span> <span class="s2">&#34;/etc/orthanc/&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> MALLOC_ARENA_MAX <span class="m">5</span><span class="err">
+</span></span></span></code></pre></div><h2 id="docker-build">Docker build</h2>
 <p>Build the image with</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build . -t orthanc:latest
-</code></pre></div><p>Above command takes around 6min (excluding the remote dependencies) to complete on my Macbook pro. Since I&rsquo;m expecting to build more regularly, I started to look around to speed up the process. I found the following options:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build . -t orthanc:latest
+</span></span></code></pre></div><p>Above command takes around 6min (excluding the remote dependencies) to complete on my Macbook pro. Since I&rsquo;m expecting to build more regularly, I started to look around to speed up the process. I found the following options:</p>
 <ul>
 <li>Use a <a href="https://vsupalov.com/cache-docker-build-dependencies-without-volume-mounting/">different docker image as cache</a></li>
 <li>Use experimental <a href="https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md">RUN &ndash;mount</a></li>
@@ -385,39 +403,39 @@
 <h2 id="cinaqdistcc">cinaq/distcc</h2>
 <p>As a result I have combined both articles into a simple to use distcc-ccache-kubernetes setup. It&rsquo;s documented at <a href="https://github.com/cinaq/distcc-docker">cinaq/distcc-docker</a>.</p>
 <p>With <a href="https://hub.docker.com/r/cinaq/distcc">cinaq/distcc</a> running in Kubernetes, we can now compile Orthanc 2 times as fast with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build . --build-arg <span class="nv">DISTCC_HOSTS</span><span class="o">=</span>distcc.dev/4 --build-arg <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span> -t orthanc:latest
-</code></pre></div><p>Here we pass 2 build arguments:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build . --build-arg <span class="nv">DISTCC_HOSTS</span><span class="o">=</span>distcc.dev/4 --build-arg <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span> -t orthanc:latest
+</span></span></code></pre></div><p>Here we pass 2 build arguments:</p>
 <ul>
 <li>DISTCC_HOSTS: distcc.dev/4 where <code>distcc.dev</code> is the hostname of our distcc (cluster)  and 4 is number of jobs to send</li>
 <li>JOBS: 4, denotes the total number of jobs <code>make</code> will run in parallel. We should be able to increase this more. We left this value the same for both test cases to confirm distcc and ccache do speed up the overal build process.</li>
 </ul>
 <p>We can observe the logs of <code>distcc</code> service:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kubectl logs distcc-deployment-5d6fb547d7-z2rlv
-distccd<span class="o">[</span>11<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59075 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4342ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryCache.cpp
-distccd<span class="o">[</span>10<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59074 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:7109ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryObjectCache.cpp
-distccd<span class="o">[</span>12<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59090 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4178ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryStringCache.cpp
-...
-</code></pre></div><p>And the cache being populated:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> kubectl <span class="nb">exec</span> -it distcc-deployment-5d6fb547d7-z2rlv -- /bin/ls -l /cache
-total <span class="m">68</span>
-drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">0</span>
-drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 <span class="m">1</span>
-drwxr-xr-x  <span class="m">6</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 <span class="m">2</span>
-drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">3</span>
-drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">4</span>
-drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:35 <span class="m">5</span>
-drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:35 <span class="m">6</span>
-drwxr-xr-x  <span class="m">6</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">7</span>
-drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">8</span>
-drwxr-xr-x <span class="m">14</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">9</span>
-drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 a
-drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 b
-drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 c
--rw-r--r--  <span class="m">1</span> distcc distcc   <span class="m">16</span> May <span class="m">10</span> 19:32 ccache.conf
-drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 d
-drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 e
-drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 f
-</code></pre></div><p>The new build takes 3min to complete to build Orthanc from source.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl logs distcc-deployment-5d6fb547d7-z2rlv
+</span></span><span class="line"><span class="cl">distccd<span class="o">[</span>11<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59075 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4342ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryCache.cpp
+</span></span><span class="line"><span class="cl">distccd<span class="o">[</span>10<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59074 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:7109ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryObjectCache.cpp
+</span></span><span class="line"><span class="cl">distccd<span class="o">[</span>12<span class="o">]</span> <span class="o">(</span>dcc_job_summary<span class="o">)</span> client: 10.1.28.1:59090 COMPILE_OK exit:0 sig:0 core:0 ret:0 time:4178ms /usr/lib/ccache/c++ /root/Orthanc/Core/Cache/MemoryStringCache.cpp
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></div><p>And the cache being populated:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> kubectl <span class="nb">exec</span> -it distcc-deployment-5d6fb547d7-z2rlv -- /bin/ls -l /cache
+</span></span><span class="line"><span class="cl">total <span class="m">68</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">0</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 <span class="m">1</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">6</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 <span class="m">2</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">3</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">4</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:35 <span class="m">5</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:35 <span class="m">6</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">6</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">7</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">8</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">14</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 <span class="m">9</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 a
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 b
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">13</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 c
+</span></span><span class="line"><span class="cl">-rw-r--r--  <span class="m">1</span> distcc distcc   <span class="m">16</span> May <span class="m">10</span> 19:32 ccache.conf
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">10</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 d
+</span></span><span class="line"><span class="cl">drwxr-xr-x  <span class="m">9</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:36 e
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> May <span class="m">10</span> 19:37 f
+</span></span></code></pre></div><p>The new build takes 3min to complete to build Orthanc from source.</p>
 <h2 id="conclusions">Conclusions</h2>
 <p>Honestly I was expecting much higher speed up. But 50% time reduction is very nice nonetheless. I really liked breathing new fresh life into mature tools like <code>distcc</code> and <code>ccache</code> in a modern stack.</p>
 <h2 id="future-work">Future work</h2>
@@ -516,6 +534,12 @@ drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> M
       </a>
     </li>
     
+    <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        Newsletter
+      </a>
+    </li>
+    
   </ul>
 </div>
         </div>
@@ -573,12 +597,12 @@ drwxr-xr-x <span class="m">11</span> distcc distcc <span class="m">4096</span> M
     
     
     
-        <script type="text/javascript" src="/js/darkModeBundle.min.66e9cf16bf22cc437e1dd000c03b528cfaa64415e9234c81cd6870889cc670f7.js"></script>
+        <script type="text/javascript" src="/js/darkModeBundle.min.2776fe9b08af66b2cf442bb773650c95d309d9a7e090a694b6fcc806594c9b20.js"></script>
     
 
 
 
-    <script type="text/javascript" src="/js/bundle.min.6dbf9c93f70f56e3ec86d775dad3b677286f26faec69e10a3d7a810b32aff69b.js"></script>
+    <script type="text/javascript" src="/js/bundle.min.e4b2c9e60af01d12b35fa8abed3343c873ef4a438fd4d4ce91ef64fefaef1cb2.js"></script>
 
 
 

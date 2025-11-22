@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ai on CINAQ</title>
+    <title>Ai on CINAQ</title>
     <link>/tags/ai/</link>
-    <description>Recent content in ai on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ai on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Low-Ops Platform AI Strategy</title>
+      <link>/blog/2025/11/22/low-ops-platform-ai-strategy/</link>
+      <pubDate>Sat, 22 Nov 2025 00:13:37 +0100</pubDate>
+      <guid>/blog/2025/11/22/low-ops-platform-ai-strategy/</guid>
+      <description>&lt;p&gt;Generative AI has taken the world by storm since the introduction of &lt;a href=&#34;https://openai.com/blog/chatgpt&#34;&gt;ChatGPT in November 2022&lt;/a&gt;. Many organizations are already using GenAI or are considering adopting it. Low-Ops has not stood still either. We introduced a &lt;a href=&#34;https://www.linkedin.com/posts/cinaq_openai-mendix-assistant-ugcPost-7151530707637452801-kYiI/&#34;&gt;PoC assistant in 2024&lt;/a&gt; that enables you to analyze app logs effectively. Today, we&amp;rsquo;re sharing our vision for integrating GenAI with Low-Ops.&lt;/p&gt;&#xA;&lt;h2 id=&#34;use-cases&#34;&gt;Use Cases&lt;/h2&gt;&#xA;&lt;p&gt;We see tremendous opportunities in applying GenAI to Low-Ops. Our strategy focuses on two main use cases:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Side effects of traveling frequently</title>
       <link>/blog/2022/10/10/side-effects-of-traveling-frequently/</link>
       <pubDate>Mon, 10 Oct 2022 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2022/10/10/side-effects-of-traveling-frequently/</guid>
-      <description>If you&amp;rsquo;re someone who travels frequently, or even if you&amp;rsquo;re the type of person who just likes to travel, it&amp;rsquo;s very likely that you&amp;rsquo;ve experienced some side effects from your trips. But don&amp;rsquo;t worry! Most of these side effects are positive in nature. Some are even downright amazing! Here are some of the most common side effects of traveling frequently:
-The social effects Traveling is one of the best things you can do for your mental and physical health.</description>
+      <description>&lt;p&gt;If you&amp;rsquo;re someone who travels frequently, or even if you&amp;rsquo;re the type of person who just likes to travel, it&amp;rsquo;s very likely that you&amp;rsquo;ve experienced some side effects from your trips. But don&amp;rsquo;t worry! Most of these side effects are positive in nature. Some are even downright amazing! Here are some of the most common side effects of traveling frequently:&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-social-effects&#34;&gt;The social effects&lt;/h2&gt;&#xA;&lt;p&gt;Traveling is one of the best things you can do for your mental and physical health. You get to see new places, meet new people, and learn about other cultures all while being exposed to new experiences. But there are some side effects that come with traveling frequently that you should be aware of – especially if you’re planning on living out of a suitcase in the near future. Let’s take a closer look at the social effects of traveling on your mental health:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

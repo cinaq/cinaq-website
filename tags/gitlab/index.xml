@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gitlab on CINAQ</title>
+    <title>Gitlab on CINAQ</title>
     <link>/tags/gitlab/</link>
-    <description>Recent content in gitlab on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Gitlab on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mendix SVG Hunt</title>
       <link>/blog/2022/10/20/mendix-svg-hunt/</link>
       <pubDate>Thu, 20 Oct 2022 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2022/10/20/mendix-svg-hunt/</guid>
-      <description>Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&amp;rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.
-The error As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A.</description>
+      <description>&lt;p&gt;Today a client reached out to me with a mysterious case where the build pipeline of his Mendix app started to fail. He has just upgraded his app to Mendix 7.23.33 but was surprised it was not very smooth. As always I&amp;rsquo;m intrigued by out-of-ordinary problems. And this one turned out quite interesting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-error&#34;&gt;The error&lt;/h2&gt;&#xA;&lt;p&gt;As with most issues, it starts with a huge stacktrace. You can find this stacktrace in the appendix A. Reading stacktraces is almost like an art-form. Specially when we do not have the accompanying source code.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

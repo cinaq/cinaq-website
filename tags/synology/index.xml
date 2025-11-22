@@ -4,18 +4,16 @@
     <title>Synology on CINAQ</title>
     <link>/tags/synology/</link>
     <description>Recent content in Synology on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Oct 2022 13:37:00 +0100</lastBuildDate><atom:link href="/tags/synology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/synology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The ultimate distributed workstation setup</title>
       <link>/blog/2022/10/05/the-ultimate-distributed-workstation-setup/</link>
       <pubDate>Wed, 05 Oct 2022 13:37:00 +0100</pubDate>
-      
       <guid>/blog/2022/10/05/the-ultimate-distributed-workstation-setup/</guid>
-      <description>For my multi-workstation setup, I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the .gitignore concept in git and there is a git clean command that removes untracked files. I needed that but for Syncthing.
-Requirements To explain my problem I will start with the context. My primary use case is that I want access to all my files at all times on different devices.</description>
+      <description>&lt;p&gt;For my multi-workstation setup, I often need my files synchronized across multiple devices. As you can imagine not all files must be synchronized across. To control that I use an ignore list similar to the &lt;code&gt;.gitignore&lt;/code&gt; concept in git and there is a &lt;code&gt;git clean&lt;/code&gt; command that removes untracked files. I needed that but for &lt;a href=&#34;https://syncthing.net/&#34;&gt;Syncthing&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;&#xA;&lt;p&gt;To explain my problem I will start with the context. My primary use case is that I want access to all my files at all times on different devices. The type of files are:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

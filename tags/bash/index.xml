@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on CINAQ</title>
+    <title>Bash on CINAQ</title>
     <link>/tags/bash/</link>
-    <description>Recent content in bash on CINAQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Bash on CINAQ</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 00:13:37 +0100</lastBuildDate><atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Nov 2025 13:13:10 +0100</lastBuildDate>
+    <atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debug shell script error: not found</title>
       <link>/blog/2019/05/29/debug-shell-script-error-not-found/</link>
       <pubDate>Wed, 29 May 2019 00:13:37 +0100</pubDate>
-      
       <guid>/blog/2019/05/29/debug-shell-script-error-not-found/</guid>
-      <description>Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like Ansible, Puppet, Salt, etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.
-$ ./main.sh ./main.sh: 3: exec: ./external.sh: not found $ ls -l -rwxr-xr-x 1 xiwen xiwen 33 May 29 01:25 external.</description>
+      <description>&lt;p&gt;Automation engineers often have boring tasks. Their job is to automate repetitive tasks. In the early days of Unix and Linux most automation is done with shell scripts. Nowadays we use higher level configuration management systems like &lt;a href=&#34;https://www.ansible.com/&#34;&gt;Ansible&lt;/a&gt;, &lt;a href=&#34;https://puppet.com/&#34;&gt;Puppet&lt;/a&gt;, &lt;a href=&#34;https://www.saltstack.com/&#34;&gt;Salt&lt;/a&gt;, etc replacing most of the erroneous scripts with poor error handling, lots of boiler code and more importantly high maintenance cost.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./main.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./main.sh: 3: exec: ./external.sh: not found&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ls -l&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-rwxr-xr-x &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; xiwen xiwen &lt;span class=&#34;m&#34;&gt;33&lt;/span&gt; May &lt;span class=&#34;m&#34;&gt;29&lt;/span&gt; 01:25 external.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-rwxr-xr-x &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; xiwen xiwen &lt;span class=&#34;m&#34;&gt;38&lt;/span&gt; May &lt;span class=&#34;m&#34;&gt;29&lt;/span&gt; 02:01 main.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34; &gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif&#34; alt=&#34;What is this?&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;      &lt;figcaption&gt;&#xA;          &lt;p&gt;What is this?&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
