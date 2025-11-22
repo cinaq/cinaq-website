@@ -6,7 +6,7 @@ tags: ["low-ops", "ai", "genAI", "platform", "coding agents", "intelligent assis
 categories: ['Platform', 'AI', 'Low-Ops']
 authors: ['Xiwen Cheng']
 description: Low-Ops introduces its AI strategy with two main use cases - architectural definitions that guide coding agents to build Low-Ops compatible code, and intelligent assistance to lower operational efforts. AI-aware app templates coming Q4 2025, with Low-Ops AI launching in private beta Q1 2026.
-thumbnail: '/media/genai_assisting_devops_and_app_deployments-thumb.png'
+thumbnail: '/media/genai_assisting_devops_and_app_deployments-thumb.jpeg'
 image: '/media/genai_assisting_devops_and_app_deployments.png'
 ---
 
