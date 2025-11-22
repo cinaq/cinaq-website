@@ -7,3 +7,4 @@ LICENSE
 themes/hugo-paradigm
 .DS_Store
 .idea/
+.hugo_build.lock
