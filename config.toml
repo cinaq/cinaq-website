@@ -103,8 +103,8 @@ pagerSize = 6
     url = "https://low-ops.com"
     weight = 1
 [[menu.footer_secondary]]
-    name = "mendix-cli"
-    url = "https://github.com/cinaq/mendix-cli"
+    name = "mxlint"
+    url = "https://github.com/mxlint/mxlint-cli"
     weight = 3
 [[menu.footer_secondary]]
     name = "mendix-userlib-cleaner"
