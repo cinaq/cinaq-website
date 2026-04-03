@@ -1,8 +1,8 @@
 ---
-title: Mendix deployment
-url: "/services/mendix-deployment"
+title: Platform Engineering
+url: "/services/platform-engineering"
 date: 2020-03-22
-description: Building a Mendix app is easy. Operating it is hard.
+description: Building software is easy. Operating it reliably at scale is hard.
 headerTransparent: true
 sections:
 - template: hero
@@ -17,8 +17,8 @@ sections:
   alignVertical: middle
   height: 700px
   headings:
-    heading: Mendix Deployment
-    subHeading: It's easy to build an App with Mendix. We make it equally easy to operate it at scale.
+    heading: Platform Engineering
+    subHeading: It is easy to build an app with gen-AI. We make it equally easy to run it securely and reliably at scale.
     text: ''
   background:
     backgroundImage: "/media/nasa-dCgbRAQmTQA-unsplash.jpg"
@@ -43,6 +43,6 @@ sections:
     classes: ""
   align: left
   heading: Mission Critical
-  description: With over 10 years of experience operating thousands of Mendix applications, we know our way around Mendix like the back of our hand. We can solve all issues related to running your Mendix app in private cloud and on-prem. We specialize in topics like performance, security, disaster recovery, backups, pipelines, devops, CICD, Architecture design.
-  image: /media/mendix.png
+  description: With over 10 years of experience operating production platforms, we help teams run applications in private cloud and on-prem with confidence. We specialize in platform reliability, security, disaster recovery, backups, delivery pipelines, DevOps practices, CI/CD, and architecture design.
+  image: /media/platform-engineering.svg
 ---

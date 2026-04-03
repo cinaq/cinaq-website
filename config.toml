@@ -44,14 +44,20 @@ pagerSize = 6
         parent = "dropdown_services"
         weight = 1
     [[menu.main]]
-        name = "Mendix Deployment"
-        url = "/services/mendix-deployment"
+        name = "Platform Engineering"
+        url = "/services/platform-engineering"
         parent = "dropdown_services"
         weight = 3
 
 [[menu.main]]
 	name = "Low-Ops"
 	url = "https://low-ops.com"
+    weight = 1
+#    identifier = 'dropdown_products'
+
+[[menu.main]]
+	name = "MxLint"
+	url = "https://mxlint.com"
     weight = 1
 #    identifier = 'dropdown_products'
 

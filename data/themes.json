@@ -9,8 +9,8 @@
                 "base_offset": "#f2f2f2",
                 "base_text": "#202020",
                 "base_text_offset": "#413f3f",
-                "primary": "#4990e2",
-                "primary_offset": "#236dc2",
+                "primary": "#007bff",
+                "primary_offset": "#005fd1",
                 "primary_text": "#ffffff",
                 "primary_text_offset": "#e8ffff"
             },
@@ -46,8 +46,8 @@
             "base_offset": "#1e1e1e",
             "base_text": "#ffffff",
             "base_text_offset": "#bfbfbf",
-            "primary": "#4990e2",
-            "primary_offset": "#236dc2",
+            "primary": "#66b3ff",
+            "primary_offset": "#2d90ff",
             "primary_text": "#ffffff",
             "primary_text_offset": "#e8ffff"
         }
