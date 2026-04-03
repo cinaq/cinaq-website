@@ -13,7 +13,7 @@ sections:
     theme: base
   headings:
     heading: "Deploy apps to Private Cloud in minutes"
-    text: "Low-Ops platform helps organizations accelerate innovative solutions built with AI without compromising security, compliance, user-friendliness and speed. If you love low-code, you will love low-ops."
+    text: "Low-Ops platform helps organizations accelerate innovative solutions built with AI without compromising security, compliance, user-friendliness and speed. If you love building apps, you will love low-ops."
   height: auto
   alignHorizontal: left
   alignVertical: middle
@@ -22,7 +22,7 @@ sections:
     monotone: false
     opacity: ''
   image:
-    image: "/media/low-ops.png"
+    image: "/media/low-ops-platform-engineering.svg"
     overlap: false
     border: false
     borderRadius: true
