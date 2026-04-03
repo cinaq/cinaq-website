@@ -19,7 +19,7 @@
     
         
         
-        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
         <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
@@ -146,6 +146,15 @@
         
     
         
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
             <li class="menu-item-services">
             <a href="/services">
                 
@@ -160,7 +169,7 @@
                         <a href="/services/cloud-consultancy">Cloud Consultancy</a>
                     
                     <li class="">
-                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                        <a href="/services/platform-engineering">Platform Engineering</a>
                     
                 </ul>
             </div>
@@ -217,6 +226,15 @@
       
 
       
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
       <li class="menu-item menu-item-services">
       <a href="/services">
         
@@ -227,7 +245,7 @@
       <a href="/services/cloud-consultancy">Cloud Consultancy</a>
       
       <li class="menu-sub-item ">
-      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      <a href="/services/platform-engineering">Platform Engineering</a>
       
       
       
@@ -318,7 +336,7 @@
                 Published on Oct 20, 2022
                 
                 
-                <i>(Modified on Nov 22, 2025)</i>
+                <i>(Modified on Apr 3, 2026)</i>
                 
                 </span>
               </div>
@@ -360,9 +378,9 @@
 <h2 id="we-got-this-far-why-stop-here">We got this far, why stop here?</h2>
 <p>Remember we analyzed the MPR file? If we can read it, why not modify it? Great idea! The MPR file is <code>sqlite3</code> file. So we fire up sqlite3:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite3</span><span class="w"> </span><span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Mendix</span><span class="o">/</span><span class="n">myapp</span><span class="o">/</span><span class="n">myapp</span><span class="p">.</span><span class="n">mpr</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">schema</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">_MetaData</span><span class="p">(</span><span class="n">_ProductVersion</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">_BuildVersion</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">_SchemaHash</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Unit</span><span class="p">(</span><span class="n">UnitID</span><span class="w"> </span><span class="nb">BLOB</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="n">ContainerID</span><span class="w"> </span><span class="nb">BLOB</span><span class="p">,</span><span class="n">ContainmentName</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">TreeConflict</span><span class="w"> </span><span class="n">LONG</span><span class="p">,</span><span class="n">ContentsHash</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">ContentsConflicts</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">Contents</span><span class="w"> </span><span class="nb">BLOB</span><span class="p">,</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">UnitID</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">schema</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">_MetaData</span><span class="p">(</span><span class="n">_ProductVersion</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">_BuildVersion</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">_SchemaHash</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Unit</span><span class="p">(</span><span class="n">UnitID</span><span class="w"> </span><span class="nb">BLOB</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="n">ContainerID</span><span class="w"> </span><span class="nb">BLOB</span><span class="p">,</span><span class="n">ContainmentName</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">TreeConflict</span><span class="w"> </span><span class="n">LONG</span><span class="p">,</span><span class="n">ContentsHash</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">ContentsConflicts</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="n">Contents</span><span class="w"> </span><span class="nb">BLOB</span><span class="p">,</span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">UnitID</span><span class="p">));</span><span class="w">
 </span></span></span></code></pre></div><p><code>ContentsHash</code> looks interesting. We proceed to modify my tool to return the <code>ContentsHash</code> value when it fails to parse an image.</p>
 <p>With this <code>ContentsHash</code> we can remove it from our MPR:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Unit</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">ContentsHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ubMSXQlsAv0hXeSMoMxKRhO0p1EaiflpQyg3ynKAQ/U=&#39;</span><span class="p">;</span><span class="w">
@@ -497,9 +515,9 @@
 </span></span><span class="line"><span class="cl"><span class="n">error</span> <span class="n">building</span> <span class="n">image</span><span class="p">:</span> <span class="n">error</span> <span class="n">building</span> <span class="n">stage</span><span class="p">:</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">command</span><span class="p">:</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">process</span> <span class="n">to</span> <span class="n">exit</span><span class="p">:</span> <span class="n">exit</span> <span class="n">status</span> <span class="mi">1</span>
 </span></span></code></pre></div><h3 id="b-mxbuild-succeeds">B: mxbuild succeeds</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Preflight</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">Mendix</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="p">[</span><span class="mf">7.23.33.54646</span><span class="p">]</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">stack</span><span class="w"> </span><span class="p">[</span><span class="nx">None</span><span class="p">]</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Preflight</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">completed</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Building</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">source</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Selecting</span><span class="w"> </span><span class="nx">Mono</span><span class="w"> </span><span class="nx">Runtime</span><span class="p">:</span><span class="w"> </span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Preflight</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="nx">completed</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Building</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">source</span><span class="o">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">INFO</span><span class="p">:</span><span class="w"> </span><span class="nx">Selecting</span><span class="w"> </span><span class="nx">Mono</span><span class="w"> </span><span class="nx">Runtime</span><span class="p">:</span><span class="w"> </span><span class="nx">mono</span><span class="o">-</span><span class="mf">4.6.2.16</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nx">__</span><span class="w">  </span><span class="nx">__</span><span class="w">      </span><span class="nx">____</span><span class="w">        </span><span class="nx">_</span><span class="w"> </span><span class="nx">_</span><span class="w">     </span><span class="nx">_</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">|</span><span class="w">  </span><span class="err">\</span><span class="o">/</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="p">|</span><span class="w">  </span><span class="nx">_</span><span class="w"> </span><span class="err">\</span><span class="w">      </span><span class="p">(</span><span class="nx">_</span><span class="p">)</span><span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="err">\</span><span class="w">  </span><span class="o">/</span><span class="w"> </span><span class="p">|</span><span class="nx">_</span><span class="w">  </span><span class="nx">_</span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="nx">_</span><span class="p">)</span><span class="w"> </span><span class="p">|</span><span class="nx">_</span><span class="w">   </span><span class="nx">_</span><span class="w"> </span><span class="nx">_</span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nx">__</span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">
@@ -507,29 +525,29 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|&gt;</span><span class="w">  </span><span class="p">&lt;|</span><span class="w"> </span><span class="p">|</span><span class="nx">_</span><span class="p">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">(</span><span class="nx">_</span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="nx">_</span><span class="o">/</span><span class="nx">_</span><span class="o">/</span><span class="err">\</span><span class="nx">_</span><span class="err">\</span><span class="nx">____</span><span class="o">/</span><span class="w"> </span><span class="err">\</span><span class="nx">__</span><span class="p">,</span><span class="nx">_</span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="nx">_</span><span class="p">|</span><span class="err">\</span><span class="nx">__</span><span class="p">,</span><span class="nx">_</span><span class="p">|</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nx">v7</span><span class="mf">.23.33.54646</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Starting</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">Mendix</span><span class="w"> </span><span class="nx">Project</span><span class="w"> </span><span class="nx">file</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">myapp</span><span class="p">.</span><span class="nx">mpr</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Using</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">options</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Starting</span><span class="w"> </span><span class="nx">build</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">Mendix</span><span class="w"> </span><span class="nx">Project</span><span class="w"> </span><span class="nx">file</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">mendix</span><span class="o">/</span><span class="nx">build</span><span class="o">/</span><span class="nx">myapp</span><span class="p">.</span><span class="nx">mpr</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Using</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">options</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Build</span><span class="w"> </span><span class="nx">target</span><span class="p">:</span><span class="w"> </span><span class="nx">Package</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Deployment</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">file</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">model</span><span class="p">.</span><span class="nx">mda</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Reading</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">file</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Building</span><span class="w"> </span><span class="nx">project</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Synchronize</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">system</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Reading</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">file</span><span class="o">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Building</span><span class="w"> </span><span class="nx">project</span><span class="o">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Synchronize</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">system</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Synchronizing</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">system</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Initialize</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">libpng</span><span class="w"> </span><span class="nx">warning</span><span class="p">:</span><span class="w"> </span><span class="nx">iCCP</span><span class="p">:</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">incorrect</span><span class="w"> </span><span class="nx">sRGB</span><span class="w"> </span><span class="nx">profile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Initialize</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Preparing</span><span class="w"> </span><span class="nx">deployment</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Check</span><span class="w"> </span><span class="nx">prerequisites</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Check</span><span class="w"> </span><span class="nx">prerequisites</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Checking</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">errors</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Clean</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Clean</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Cleaning</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="o">...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Cleaning</span><span class="w"> </span><span class="nx">web</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Prepare</span><span class="w"> </span><span class="nx">deployment</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Prepare</span><span class="w"> </span><span class="nx">deployment</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Writing</span><span class="w"> </span><span class="nx">files</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Build</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">structure</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Build</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">structure</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Compiling</span><span class="w"> </span><span class="nx">Java</span><span class="o">...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Generating</span><span class="w"> </span><span class="nx">integration</span><span class="w"> </span><span class="nx">files</span><span class="o">...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Exporting</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">theme</span><span class="o">...</span><span class="w">
@@ -538,12 +556,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Exporting</span><span class="w"> </span><span class="nx">custom</span><span class="w"> </span><span class="nx">widgets</span><span class="o">...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Bundling</span><span class="w"> </span><span class="nx">custom</span><span class="w"> </span><span class="nx">widgets</span><span class="o">...</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Compressing</span><span class="w"> </span><span class="nx">web</span><span class="w"> </span><span class="nx">resources</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Save</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Save</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Saving</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="nx">directory</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Create</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="kn">package</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Create</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="kn">package</span><span class="err">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">Creating</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="kn">package</span><span class="o">...</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Finalize</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="kn">package</span><span class="err">&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nx">BUILD</span><span class="w"> </span><span class="nx">SUCCEEDED</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">Executing</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Finalize</span><span class="w"> </span><span class="nx">deployment</span><span class="w"> </span><span class="kn">package</span><span class="err">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">BUILD</span><span class="w"> </span><span class="nx">SUCCEEDED</span><span class="w">
 </span></span></span></code></pre></div></div>
         </div>
       </div>
@@ -590,7 +608,7 @@
             <p>Engineered in Rotterdam, The Netherlands.</p>
           
           
-            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
           
         </div>
 
@@ -657,15 +675,15 @@
       </a>
     </li>
     
-    <li class="menu-item menu-item-mendix-cli">
-      <a href="https://github.com/cinaq/mendix-cli">
-        mendix-cli
-      </a>
-    </li>
-    
     <li class="menu-item menu-item-mendix-userlib-cleaner">
       <a href="https://github.com/cinaq/mendix-userlib-cleaner">
         mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
       </a>
     </li>
     

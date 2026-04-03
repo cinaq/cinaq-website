@@ -19,7 +19,7 @@
     
         
         
-        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
         <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
@@ -146,6 +146,15 @@
         
     
         
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
             <li class="menu-item-services">
             <a href="/services">
                 
@@ -160,7 +169,7 @@
                         <a href="/services/cloud-consultancy">Cloud Consultancy</a>
                     
                     <li class="">
-                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                        <a href="/services/platform-engineering">Platform Engineering</a>
                     
                 </ul>
             </div>
@@ -217,6 +226,15 @@
       
 
       
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
       <li class="menu-item menu-item-services">
       <a href="/services">
         
@@ -227,7 +245,7 @@
       <a href="/services/cloud-consultancy">Cloud Consultancy</a>
       
       <li class="menu-sub-item ">
-      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      <a href="/services/platform-engineering">Platform Engineering</a>
       
       
       
@@ -318,7 +336,7 @@
                 Published on Oct 5, 2022
                 
                 
-                <i>(Modified on Nov 22, 2025)</i>
+                <i>(Modified on Apr 3, 2026)</i>
                 
                 </span>
               </div>
@@ -358,7 +376,7 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 <p>This <code>.stglobalignore</code> file is also synchronized across to all devices. To really use this file, a <code>.stigore</code> file must be created by hand (if i recall correctly; haven&rsquo;t set up new device in a long time) with the following content:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// .stignore
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
+</span></span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nx">include</span> <span class="p">.</span><span class="nx">stglobalignore</span>
 </span></span></code></pre></div><p>This trick was taken from <a href="https://forum.syncthing.net/t/is-there-a-stignore-file-that-will-be-synced-across-device/14905">syncthing forum</a>.</p>
 <h2 id="issues-with-dsm-cloud-sync">Issues with DSM Cloud Sync</h2>
 <p>Last year I had issues with DSM Cloud Sync. This caused out-of-sync issues between my workstations and google drive. As I could not figure out what was wrong, I decided stop the Cloud sync job and synchronize from macbook to google drive using the Google Drive app on the Mac. To my surprise Google drive app does not have ignore list capability. It used to have it from what I read online. As such all my files that were supposed to be ignored from synchronization were uploaded to Google drive.</p>
@@ -384,19 +402,19 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 <h2 id="appendix">Appendix</h2>
 <h3 id="stglobalignore">.stglobalignore</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// .stglobalignore
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Incomplete Downloads
 </span></span></span><span class="line"><span class="cl"><span class="c1">// At least for now, these prevent Syncthing from transferring data that&#39;s
 </span></span></span><span class="line"><span class="cl"><span class="c1">// going to be thrown out anyway once the download is finished and the
 </span></span></span><span class="line"><span class="cl"><span class="c1">// file is renamed. Things may change when Syncthing gets smarter.
 </span></span></span><span class="line"><span class="cl"><span class="c1">//
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Firefox downloads and other things
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">part</span>
+</span></span></span><span class="line"><span class="cl"><span class="o">*</span><span class="p">.</span><span class="nx">part</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// Chrom(ium|e) downloads
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">*</span><span class="p">.</span><span class="nx">crdownload</span>
+</span></span></span><span class="line"><span class="cl"><span class="o">*</span><span class="p">.</span><span class="nx">crdownload</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Temporary / Backup Files
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*~</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*~</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="o">*</span><span class="p">.</span><span class="nx">swp</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">tmp</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">pyc</span>
@@ -404,18 +422,18 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">sync</span><span class="o">-</span><span class="nx">conflict</span><span class="o">-*</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// OS-generated files (OS X)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">DS_Store</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">DS_Store</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Spotlight</span><span class="o">-</span><span class="nx">V100</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">Trashes</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">_</span><span class="o">*</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// OS-generated files (Windows)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">desktop</span><span class="p">.</span><span class="nx">ini</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">desktop</span><span class="p">.</span><span class="nx">ini</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">ehthumbs</span><span class="p">.</span><span class="nx">db</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="nx">Thumbs</span><span class="p">.</span><span class="nx">db</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// BTSync files
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">sync</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">sync</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">bts</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="o">!</span><span class="nx">Sync</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">SyncID</span>
@@ -426,11 +444,11 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="o">*</span><span class="p">.</span><span class="nx">SyncOld</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Synology files
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="err">@</span><span class="nx">eaDir</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">)</span><span class="err">@</span><span class="nx">eaDir</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Blacklisted dirs
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">/Moments</span>
+</span></span></span><span class="line"><span class="cl"><span class="err">/Moments</span>
 </span></span><span class="line"><span class="cl"><span class="err">/Backup</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">tox</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">?</span><span class="nx">d</span><span class="p">).</span><span class="nx">cache</span>
@@ -526,7 +544,7 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
             <p>Engineered in Rotterdam, The Netherlands.</p>
           
           
-            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
           
         </div>
 
@@ -593,15 +611,15 @@ Since Synology is online 24/7, it catches up in no time with google drive. This 
       </a>
     </li>
     
-    <li class="menu-item menu-item-mendix-cli">
-      <a href="https://github.com/cinaq/mendix-cli">
-        mendix-cli
-      </a>
-    </li>
-    
     <li class="menu-item menu-item-mendix-userlib-cleaner">
       <a href="https://github.com/cinaq/mendix-userlib-cleaner">
         mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
       </a>
     </li>
     

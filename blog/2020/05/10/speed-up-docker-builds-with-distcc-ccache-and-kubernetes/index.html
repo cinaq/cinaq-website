@@ -19,7 +19,7 @@
     
         
         
-        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
         <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
@@ -146,6 +146,15 @@
         
     
         
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
             <li class="menu-item-services">
             <a href="/services">
                 
@@ -160,7 +169,7 @@
                         <a href="/services/cloud-consultancy">Cloud Consultancy</a>
                     
                     <li class="">
-                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                        <a href="/services/platform-engineering">Platform Engineering</a>
                     
                 </ul>
             </div>
@@ -217,6 +226,15 @@
       
 
       
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
       <li class="menu-item menu-item-services">
       <a href="/services">
         
@@ -227,7 +245,7 @@
       <a href="/services/cloud-consultancy">Cloud Consultancy</a>
       
       <li class="menu-sub-item ">
-      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      <a href="/services/platform-engineering">Platform Engineering</a>
       
       
       
@@ -318,7 +336,7 @@
                 Published on May 10, 2020
                 
                 
-                <i>(Modified on Nov 22, 2025)</i>
+                <i>(Modified on Apr 3, 2026)</i>
                 
                 </span>
               </div>
@@ -330,64 +348,64 @@
 <p>The first step is create a Dockerfile that compiles Orthanc from source. Looking through the <a href="https://bitbucket.org/sjodogne/orthanc/src/Orthanc-1.6.0/LinuxCompilation.txt">compilation instructions</a> and inspired by the official docker images I have assembled the following Dockerfile:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">debian:stable</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> ORTHANC_VERSION 1.6.0<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> ORTHANC_VERSION 1.6.0<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y build-essential unzip cmake mercurial <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libgtest-dev libpng-dev libjpeg-dev <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y build-essential unzip cmake mercurial <span class="se">\
+</span></span></span><span class="line"><span class="cl">    uuid-dev libcurl4-openssl-dev liblua5.1-0-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl">    libgtest-dev libpng-dev libjpeg-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl">    libsqlite3-dev libssl-dev zlib1g-dev libdcmtk2-dev <span class="se">\
+</span></span></span><span class="line"><span class="cl">    libboost-all-dev libwrap0-dev libjsoncpp-dev libpugixml-dev distcc<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># pull source from upstream</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> hg clone -b Orthanc-<span class="si">${</span><span class="nv">ORTHANC_VERSION</span><span class="si">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># pull source from upstream</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> hg clone -b Orthanc-<span class="si">${</span><span class="nv">ORTHANC_VERSION</span><span class="si">}</span> --stream https://bitbucket.org/sjodogne/orthanc Orthanc<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># distcc</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span>
+</span></span></span><span class="line"><span class="cl"><span class="c"># distcc</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ARG</span> <span class="nv">JOBS</span><span class="o">=</span><span class="m">4</span>
 </span></span><span class="line"><span class="cl"><span class="k">ARG</span> <span class="nv">DISTCC_HOSTS</span><span class="o">=</span>localhost/4<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">DISTCC_HOSTS</span><span class="si">}</span><span class="s2">&#34;</span> &gt; /etc/distcc/hosts<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">XXX</span><span class="o">=</span><span class="m">1</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">DISTCC_HOSTS</span><span class="si">}</span><span class="s2">&#34;</span> &gt; /etc/distcc/hosts<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ARG</span> <span class="nv">XXX</span><span class="o">=</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">RUN</span> mkdir OrthancBuild<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> cmake -DALLOW_DOWNLOADS<span class="o">=</span>ON <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="c1">#    -DSTATIC_BUILD=ON \</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> cmake -DALLOW_DOWNLOADS<span class="o">=</span>ON <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="c1">#    -DSTATIC_BUILD=ON \</span>
 </span></span><span class="line"><span class="cl">    -DCMAKE_CXX_COMPILER_LAUNCHER<span class="o">=</span>distcc <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DUSE_SYSTEM_CIVETWEB<span class="o">=</span>OFF <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE<span class="o">=</span>OFF <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DDCMTK_LIBRARIES<span class="o">=</span>dcmjpls <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    ~/Orthanc<span class="err">
+</span></span></span><span class="line"><span class="cl">    -DUSE_SYSTEM_CIVETWEB<span class="o">=</span>OFF <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -DUSE_GOOGLE_TEST_DEBIAN_PACKAGE<span class="o">=</span>OFF <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -DDCMTK_LIBRARIES<span class="o">=</span>dcmjpls <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\
+</span></span></span><span class="line"><span class="cl">    ~/Orthanc<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> make -j <span class="si">${</span><span class="nv">JOBS</span><span class="si">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">cd</span> OrthancBuild <span class="o">&amp;&amp;</span> make -j <span class="si">${</span><span class="nv">JOBS</span><span class="si">}</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="w"> </span><span class="s">debian:stable-slim</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">debian:stable-slim</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># locales</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt install -y locales wget<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> locale-gen<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># locales</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt install -y locales wget<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;en_US.UTF-8 UTF-8&#34;</span> &gt; /etc/locale.gen<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> locale-gen<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mkdir -p <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /etc/orthanc <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /var/lib/orthanc/db <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/sbin/ <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/bin/ <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /usr/local/share/orthanc/plugins/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> mkdir -p <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /etc/orthanc <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /var/lib/orthanc/db <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /usr/local/sbin/ <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /usr/local/bin/ <span class="se">\
+</span></span></span><span class="line"><span class="cl">    /usr/local/share/orthanc/plugins/<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/Orthanc /usr/local/sbin/<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/Orthanc /usr/local/sbin/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/OrthancRecoverCompressedFile /usr/local/sbin/<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> --from<span class="o">=</span>builder /root/OrthancBuild/lib* /usr/local/share/orthanc/plugins/<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">VOLUME</span> <span class="p">[</span> <span class="s2">&#34;/var/lib/orthanc/db&#34;</span> <span class="p">]</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">4242</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8042</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">VOLUME</span> <span class="p">[</span> <span class="s2">&#34;/var/lib/orthanc/db&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">4242</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8042</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENTRYPOINT</span> <span class="p">[</span> <span class="s2">&#34;Orthanc&#34;</span> <span class="p">]</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span> <span class="s2">&#34;/etc/orthanc/&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span> <span class="s2">&#34;Orthanc&#34;</span> <span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span> <span class="s2">&#34;/etc/orthanc/&#34;</span> <span class="p">]</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> MALLOC_ARENA_MAX <span class="m">5</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> MALLOC_ARENA_MAX <span class="m">5</span><span class="err">
 </span></span></span></code></pre></div><h2 id="docker-build">Docker build</h2>
 <p>Build the image with</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build . -t orthanc:latest
@@ -491,7 +509,7 @@
             <p>Engineered in Rotterdam, The Netherlands.</p>
           
           
-            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
           
         </div>
 
@@ -558,15 +576,15 @@
       </a>
     </li>
     
-    <li class="menu-item menu-item-mendix-cli">
-      <a href="https://github.com/cinaq/mendix-cli">
-        mendix-cli
-      </a>
-    </li>
-    
     <li class="menu-item menu-item-mendix-userlib-cleaner">
       <a href="https://github.com/cinaq/mendix-userlib-cleaner">
         mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
       </a>
     </li>
     

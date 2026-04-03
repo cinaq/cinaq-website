@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="zero">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Platform Engineering - CINAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png">
+
+    
+        
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Source&#43;Sans&#43;Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+        
+    
+
+    
+        
+        
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
+        <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
+    
+
+    
+        <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+        </script>
+    
+
+    <link rel="preload" href="/fonts/fontawesome5/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+    
+    
+        <meta name="description" content="Building software is easy. Operating it reliably at scale is hard."/>
+        <meta property="og:title" content="Platform Engineering"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="/services/platform-engineering/"/>
+        
+        <meta property="og:description" content="Building software is easy. Operating it reliably at scale is hard."/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="@cinaq_com"/>
+        <meta name="twitter:creator" content="@xiwenc"/>
+    
+    <script>
+        window.Papercups = {
+          config: {
+            accountId: "67b88fb6-49cd-4a83-8f9d-4defa35cb940",
+            title: "Live Support",
+            subtitle: "Ask us anything in the chat window below 😊",
+            primaryColor: "#00d084",
+            greeting: "Hello! How can I help you?",
+            awayMessage: "Sorry, we are currently not available. Please leave a message with your contact details and we will get back to you.",
+            newMessagePlaceholder: "Start typing...",
+            showAgentAvailability: false,
+            agentAvailableText: "We're online right now!",
+            agentUnavailableText: "We're away at the moment.",
+            requireEmailUpfront: false,
+            iconVariant: "outlined",
+            baseUrl: "https://app.papercups.io",
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          },
+        };
+        </script>
+        <script
+        type="text/javascript"
+        async
+        defer
+        src="https://app.papercups.io/widget.js"
+        ></script>
+</head>
+
+
+
+
+
+    
+        
+        
+    
+
+
+    
+
+
+<body class='page page-default-custom  has-transparent-header'>
+
+<div id="header" class='header  header-transparent'>
+    <div class="container">
+  
+
+<div class="logos">
+  <div class="logo">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo.svg" />
+        
+      </a>
+    
+  </div>
+  <div class="logo-invert-mobile">
+    
+      <a href="/">
+        <img class="logo-image" height="32" alt=" Logo" src="/images/logo-inverted.svg" />
+        
+      </a>
+    
+  </div>
+</div>
+
+  <div class="menus">
+    <div class="main-menu">
+    <ul>
+        
+        
+    
+        
+            <li class="menu-item-low-ops">
+            <a href="https://low-ops.com">
+                
+                <span>Low-Ops</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-services">
+            <a href="/services">
+                
+                <span>Services</span>
+            </a>
+
+            <div class="dropdown">
+                <span class="triangle"></span>
+                <ul class="sub-menu">
+                    
+                    <li class="">
+                        <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+                    
+                    <li class="">
+                        <a href="/services/platform-engineering">Platform Engineering</a>
+                    
+                </ul>
+            </div>
+        
+        
+    
+        
+            <li class="menu-item-blog">
+            <a href="/blog/">
+                
+                <span>Blog</span>
+            </a>
+        
+        
+    
+        
+            <li class="menu-item-newsletter">
+            <a href="/newsletter">
+                
+                <span>Newsletter</span>
+            </a>
+        
+        
+    </ul>
+</div>
+
+    
+      <div class="d-none d-md-block">
+        <div id="dark-mode-container" class="dark-mode ">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div>
+      </div>
+    
+    
+      <div id="main-menu-mobile" class="main-menu-mobile">
+  <div class="main-menu-mobile-inner">
+
+    <h2>Menu</h2>
+    <ul>
+      
+      
+
+      
+      <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        
+        <span>Low-Ops</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-services">
+      <a href="/services">
+        
+        <span>Services</span>
+      </a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/cloud-consultancy">Cloud Consultancy</a>
+      
+      <li class="menu-sub-item ">
+      <a href="/services/platform-engineering">Platform Engineering</a>
+      
+      
+      
+
+      
+      <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        
+        <span>Blog</span>
+      </a>
+      
+      
+
+      
+      <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        
+        <span>Newsletter</span>
+      </a>
+      
+      
+    </ul>
+
+    <h2>Options</h2>
+    <div class="menu-extra">
+      
+      <ul>
+        <li>Darkmode <div id="dark-mode-container" class="dark-mode dark-mode-invert">
+    <div class="dark-mode-switch">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="ball"></div>
+    </div>
+</div></li>
+      </ul>
+      
+    </div>
+
+  </div>
+</div>
+
+      <div id="toggle-main-menu-mobile" class="menu-trigger js-nav-toggle">
+<button class="hamburger">Menu</button>
+</div>
+    
+  </div>
+</div>
+
+</div>
+
+<div id="wrapper" class="wrapper">
+    
+
+    
+    
+        
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+<div class="strip strip-primary my-custom-class another-custom-class pt-0 pb-0" style="">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+
+
+<div class="hero" style=" height: 700px;">
+	<div class="hero-background-image" style="background-image: url('/media/nasa-dCgbRAQmTQA-unsplash.jpg'); opacity: 1;"></div>
+	<div class="hero-content container">
+		<div class="row align-items-center justify-content-start" style="">
+
+			
+			<div class="col-12 col-md-6 hero-text">
+				
+	<h1>Platform Engineering</h1>
+
+
+	<h2>It is easy to build an app with gen-AI. We make it equally easy to run it securely and reliably at scale.</h2>
+
+
+
+
+				
+					<div class="hero-buttons">
+					
+						<a href="/contact-us"  class="button ">
+    Reach out
+</a>
+
+					
+					</div>
+				
+			</div>
+			
+
+			<div class="col-12 col-md-6 hero-image">
+				
+					
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+<div class="strip strip-base" style="">
+<div class="container">
+    
+
+
+
+    
+    
+    
+
+
+<div class="info">
+    <div class="info-columns info-left" style="">
+        <div class="info-content">
+            
+                <h2>Mission Critical</h2>
+            
+            
+                <p>With over 10 years of experience operating production platforms, we help teams run applications in private cloud and on-prem with confidence. We specialize in platform reliability, security, disaster recovery, backups, delivery pipelines, DevOps practices, CI/CD, and architecture design.</p>
+            
+
+            
+            
+            
+        </div>
+        <div class="info-media">
+            
+            <img width="600" height="400" alt="Mission Critical" class="img-fluid" src="/media/platform-engineering.svg" />
+            
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+    
+
+
+</div>
+
+<div class="footer">
+  <div class="strip strip-base strip-border-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+          
+            <h3>Social Media</h3>
+          
+          
+            
+<div id="social" class="social">
+  
+    <a href="https://github.com/cinaq" target="blank" title="Github">
+      <i class="fab fa-github" ></i>
+    </a>
+  
+    <a href="https://cinaq.slack.com" target="blank" title="Slack">
+      <i class="fab fa-slack" ></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/company/cinaq" target="blank" title="Linkedin">
+      <i class="fab fa-linkedin" ></i>
+    </a>
+  
+    <a href="https://cinaq.com/index.xml" target="blank" title="RSS">
+      <i class="fab fa-readme" ></i>
+    </a>
+  
+  </div>
+
+          
+          
+            <p>Engineered in Rotterdam, The Netherlands.</p>
+          
+          
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
+          
+        </div>
+
+        
+        <div class="col-12 col-md-3">
+          
+            <h3>Company</h3>
+          
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-home">
+      <a href="/">
+        Home
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-blog">
+      <a href="/blog/">
+        Blog
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-about-us">
+      <a href="/about-us">
+        About Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-contact-us">
+      <a href="/contact-us">
+        Contact Us
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-privacy-policy">
+      <a href="/privacy/">
+        Privacy Policy
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-newsletter">
+      <a href="/newsletter">
+        Newsletter
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+        <div class="col-12 col-md-3">
+          <h3>Projects/Products</h3>
+          <div class="footer-menu">
+  <ul>
+    
+    
+    <li class="menu-item menu-item-low-ops">
+      <a href="https://low-ops.com">
+        Low-Ops
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mendix-userlib-cleaner">
+      <a href="https://github.com/cinaq/mendix-userlib-cleaner">
+        mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-photography">
+      <a href="/photography">
+        Photography
+      </a>
+    </li>
+    
+  </ul>
+</div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+    
+    
+        <script type="text/javascript" src="/js/darkModeBundle.min.2776fe9b08af66b2cf442bb773650c95d309d9a7e090a694b6fcc806594c9b20.js"></script>
+    
+
+
+
+    <script type="text/javascript" src="/js/bundle.min.e4b2c9e60af01d12b35fa8abed3343c873ef4a438fd4d4ce91ef64fefaef1cb2.js"></script>
+
+
+
+
+
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKKRZ98CBL"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DKKRZ98CBL');
+      </script>
+    
+  
+
+
+
+</body>
+</html>

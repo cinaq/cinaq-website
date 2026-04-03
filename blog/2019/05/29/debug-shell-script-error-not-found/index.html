@@ -19,7 +19,7 @@
     
         
         
-        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
         <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
@@ -146,6 +146,15 @@
         
     
         
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
             <li class="menu-item-services">
             <a href="/services">
                 
@@ -160,7 +169,7 @@
                         <a href="/services/cloud-consultancy">Cloud Consultancy</a>
                     
                     <li class="">
-                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                        <a href="/services/platform-engineering">Platform Engineering</a>
                     
                 </ul>
             </div>
@@ -217,6 +226,15 @@
       
 
       
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
       <li class="menu-item menu-item-services">
       <a href="/services">
         
@@ -227,7 +245,7 @@
       <a href="/services/cloud-consultancy">Cloud Consultancy</a>
       
       <li class="menu-sub-item ">
-      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      <a href="/services/platform-engineering">Platform Engineering</a>
       
       
       
@@ -318,7 +336,7 @@
                 Published on May 29, 2019
                 
                 
-                <i>(Modified on Nov 22, 2025)</i>
+                <i>(Modified on Apr 3, 2026)</i>
                 
                 </span>
               </div>
@@ -351,11 +369,11 @@
 <p>A simplified case is as follow.</p>
 <p>We have our entry-point script called <code>main.sh</code> containing:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">exec</span> ./external.sh
 </span></span></code></pre></div><p>And our <code>external.sh</code> contains:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> Hello <span class="nv">$0</span>
 </span></span></code></pre></div><p>Create these files on your system and make them executable so that you can run them:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x main.sh
@@ -386,7 +404,7 @@
 </span></span></code></pre></div><h2 id="use-bash-as-alternative">Use <code>bash</code> as alternative</h2>
 <p>Let&rsquo;s change our shell interpreter from <a href="https://en.wikipedia.org/wiki/Bourne_shell">Bourne Shell</a> to <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> in <code>main.sh</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">exec</span> ./external.sh
 </span></span></code></pre></div><p>Now the error message is:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./main.sh: /tmp/external.sh: /usr/bin/envsh: bad interpreter:
@@ -442,7 +460,7 @@
             <p>Engineered in Rotterdam, The Netherlands.</p>
           
           
-            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
           
         </div>
 
@@ -509,15 +527,15 @@
       </a>
     </li>
     
-    <li class="menu-item menu-item-mendix-cli">
-      <a href="https://github.com/cinaq/mendix-cli">
-        mendix-cli
-      </a>
-    </li>
-    
     <li class="menu-item menu-item-mendix-userlib-cleaner">
       <a href="https://github.com/cinaq/mendix-userlib-cleaner">
         mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
       </a>
     </li>
     

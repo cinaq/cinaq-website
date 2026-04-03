@@ -19,7 +19,7 @@
     
         
         
-        <link rel="stylesheet" href="/theme.min.161506ed32926fa7ca1189b9a950311c0ab6251d75ce73ced64633d325529597.css">
+        <link rel="stylesheet" href="/theme.min.ec6b1e9c07f9d6aeeebc2dd3b515c81fdd5b18bf4be4d36961d07955bfe7eba2.css">
         <link rel="stylesheet" href="/style.min.2a2f881851bf5237caf8804735b93de441af4b122873ebdd328b5738ae3c40c7.css">
     
 
@@ -146,6 +146,15 @@
         
     
         
+            <li class="menu-item-mxlint">
+            <a href="https://mxlint.com">
+                
+                <span>MxLint</span>
+            </a>
+        
+        
+    
+        
             <li class="menu-item-services">
             <a href="/services">
                 
@@ -160,7 +169,7 @@
                         <a href="/services/cloud-consultancy">Cloud Consultancy</a>
                     
                     <li class="">
-                        <a href="/services/mendix-deployment">Mendix Deployment</a>
+                        <a href="/services/platform-engineering">Platform Engineering</a>
                     
                 </ul>
             </div>
@@ -217,6 +226,15 @@
       
 
       
+      <li class="menu-item menu-item-mxlint">
+      <a href="https://mxlint.com">
+        
+        <span>MxLint</span>
+      </a>
+      
+      
+
+      
       <li class="menu-item menu-item-services">
       <a href="/services">
         
@@ -227,7 +245,7 @@
       <a href="/services/cloud-consultancy">Cloud Consultancy</a>
       
       <li class="menu-sub-item ">
-      <a href="/services/mendix-deployment">Mendix Deployment</a>
+      <a href="/services/platform-engineering">Platform Engineering</a>
       
       
       
@@ -318,7 +336,7 @@
                 Published on May 25, 2020
                 
                 
-                <i>(Modified on Nov 22, 2025)</i>
+                <i>(Modified on Apr 3, 2026)</i>
                 
                 </span>
               </div>
@@ -441,7 +459,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> apt-key add -
 </span></span><span class="line"><span class="cl">add-apt-repository <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span></span></span><span class="line"><span class="cl">    <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 </span></span></span><span class="line"><span class="cl"><span class="s2">    </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \
 </span></span></span><span class="line"><span class="cl"><span class="s2">    stable&#34;</span>
 </span></span><span class="line"><span class="cl">apt-get update <span class="o">&amp;&amp;</span> apt-get install -y containerd.io
@@ -488,8 +506,8 @@
 </span></span><span class="line"><span class="cl">You can now join any number of the control-plane node running the following <span class="nb">command</span> on each as root:
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --control-plane --certificate-key XXXX
+</span></span></span><span class="line"><span class="cl">    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --control-plane --certificate-key XXXX
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Please note that the certificate-key gives access to cluster sensitive data, keep it secret!
 </span></span><span class="line"><span class="cl">As a safeguard, uploaded-certs will be deleted in two hours<span class="p">;</span> If necessary, you can use
@@ -498,12 +516,12 @@
 </span></span><span class="line"><span class="cl">Then you can join any number of worker nodes by running the following on each as root:
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX
+</span></span></span><span class="line"><span class="cl">    --discovery-token-ca-cert-hash sha256:XXXX
 </span></span></code></pre></div><h3 id="node2-and-node3">node2 and node3</h3>
 <p>To install node2 and node3, login to the node as <code>ops</code> and switch to <code>root</code> then execute:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  kubeadm join cluster-endpoint.sys.example.dev:6443 --token XXXX.XXXX <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --control-plane --certificate-key XXXX
+</span></span></span><span class="line"><span class="cl">    --discovery-token-ca-cert-hash sha256:XXXX <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --control-plane --certificate-key XXXX
 </span></span></code></pre></div><p>(Obviously, replace the values)</p>
 <h3 id="join-workers-later">Join workers later</h3>
 <p>On a master node:</p>
@@ -830,7 +848,7 @@
             <p>Engineered in Rotterdam, The Netherlands.</p>
           
           
-            <a class="copyright" href="https://cinaq.com">2022 - cinaq.com</a>
+            <a class="copyright" href="https://cinaq.com">2026 - cinaq.com</a>
           
         </div>
 
@@ -897,15 +915,15 @@
       </a>
     </li>
     
-    <li class="menu-item menu-item-mendix-cli">
-      <a href="https://github.com/cinaq/mendix-cli">
-        mendix-cli
-      </a>
-    </li>
-    
     <li class="menu-item menu-item-mendix-userlib-cleaner">
       <a href="https://github.com/cinaq/mendix-userlib-cleaner">
         mendix-userlib-cleaner
+      </a>
+    </li>
+    
+    <li class="menu-item menu-item-mxlint">
+      <a href="https://github.com/mxlint/mxlint-cli">
+        mxlint
       </a>
     </li>
     
