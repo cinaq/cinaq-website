@@ -1,3 +1,8 @@
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -9,18 +14,20 @@ a {
 p {
   font-family: var(--font-base);
   color: var(--color-base-text-offset);
-  line-height: 1.5;
-  @include media-breakpoint-up(md) {
-    line-height: 1.4;
-  }
+  line-height: 1.7;
 }
 
 h1 {
-  font-size: 46px;
-  font-weight: 300;
+  font-size: 38px;
+  font-weight: 700;
   font-family: var(--font-heading);
   color: var(--color-base-text);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   margin: 0;
+  @include media-breakpoint-up(md) {
+    font-size: 48px;
+  }
 }
 
 h2 {
@@ -30,25 +37,46 @@ h2 {
   font-family: var(--font-heading);
   color: var(--color-base-text);
   line-height: 1.2;
-  font-weight: normal;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   @include media-breakpoint-up(md) {
     font-size: 32px;
-    line-height: 1.4;
+    line-height: 1.25;
   }
 }
 
 h3 {
   margin-top: 0;
   margin-bottom: 16px;
-  font-size: 26px;
-  line-height: 1.4;
+  font-family: var(--font-heading);
+  color: var(--color-base-text);
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 h4 {
   margin-top: 0;
   margin-bottom: 16px;
+  font-family: var(--font-heading);
   font-size: 18px;
   line-height: 1.4;
+  font-weight: 600;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 18px;
 }
 
 img {
@@ -71,50 +99,10 @@ ul, ol {
   }
 }
 
-// .title {
-//   h1 {
-//       font-size: 44px;
-//       line-height: 1.1;
-//       font-weight: normal;
-//       margin-bottom: 0px;
-//       @include media-breakpoint-up(md) {
-//           font-size: 66px;
-//           font-weight: lighter;
-//       }
-//   }
-//   h2 {
-//       font-size: 30px;
-//       line-height: 1.2;
-//       font-weight: normal;
-//       margin-bottom: 30px;
-//       @include media-breakpoint-up(md) {
-//           font-size: 34px;
-//       }
-//   }
-//   h1 ~ h2 {
-//       margin-top: 20px;
-//       margin-bottom: 20px;
-//   }
-//   p {
-//       opacity: 0.8;
-//       font-size: 18px;
-//       line-height: 1.4;
-//       margin-top: 20px;
-//       margin-bottom: 20px;
-//       @include media-breakpoint-up(md) {
-//           font-size: 20px;
-//           line-height: 1.5;
-//       }
-//   }
-//   .button {
-//       margin-right: 5px;
-//   }
-// }
-
 .title-image {
   max-height: 460px;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 12px;
   img {
       width: 100%;
       height: auto;

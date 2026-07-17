@@ -23,12 +23,14 @@ $strip-padding: $grid-gutter-width * 3;
 }
 
 .strip-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-deep);
+  background-image: linear-gradient(135deg, var(--color-primary-deep) 0%, var(--color-primary) 100%);
   color: var(--color-primary-text);
   .button {
-    background-color: var(--color-primary-offset);
-    border-color: var(--color-primary-offset);
-    color: var(--color-primary-text);
+    background: var(--color-base);
+    color: var(--color-primary-offset);
+    border-color: var(--color-base);
+    box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.35);
   }
   p {
     color: var(--color-primary-text-offset);
@@ -43,4 +45,29 @@ $strip-padding: $grid-gutter-width * 3;
 .strip-base-offset {
   background-color: var(--color-base-offset);
   color: var(--color-base-text);
+}
+
+.strip-base-soft {
+  background-color: var(--color-base-soft);
+  color: var(--color-base-text);
+}
+
+.strip-navy {
+  background-color: var(--color-navy);
+  background-image: radial-gradient(900px 420px at 85% -10%, rgba(0, 123, 255, 0.25), transparent 60%);
+  color: #ffffff;
+  h1, h2, h3 {
+    color: #ffffff;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+// Soft radial glow background for the homepage hero
+.hero-home {
+  background-color: var(--color-base);
+  background-image:
+    radial-gradient(1100px 560px at 85% -10%, rgba(0, 123, 255, 0.14), transparent 60%),
+    radial-gradient(900px 480px at -10% 110%, rgba(25, 80, 143, 0.10), transparent 60%);
 }

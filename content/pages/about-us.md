@@ -40,13 +40,13 @@ CINAQ is a [registered software consultant company in the Netherlands](https://w
 
 In particular the following fields:
 
+* Platform engineering and internal developer platforms
 * Software development with Python, Java, Javascript and more
 * DevOps and SRE culture
 * Kubernetes
 * Azure and AWS clouds
 * Security, Micro-services and Cloud Native engineering practices
 * Agile Product development
-* Mendix security and deployments
 
 Our core belief is:
 

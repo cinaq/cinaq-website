@@ -2,7 +2,7 @@
 title: Contact Us
 url: "/contact-us"
 date: 2021-04-05
-description: Design Websites In Minutes. Fast, secure and easy to maintain
+description: Get in touch with CINAQ. We respond within 24 hours.
 headerTransparent: false
 sections:
 - template: hero
