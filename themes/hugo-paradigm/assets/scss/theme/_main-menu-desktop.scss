@@ -24,15 +24,17 @@
       a {
         height: inherit;
         padding: 0;
-        font-size: 0.9rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: var(--color-primary);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: var(--color-base-text);
         display: block;
         padding: 10px 14px 10px 14px;
         text-decoration: none;
+        transition: color 0.15s ease;
         &:hover {
-          opacity: 0.7;
+          color: var(--color-primary);
+          opacity: 1;
         }
       }
       .dropdown {
@@ -54,8 +56,9 @@
           margin-left: -100px; /* half of width */
           position: absolute;
           transition: opacity 0.2s ease-in;
-          box-shadow: 1px 3px 6px 0 rgba(0,0,0,0.1);
+          box-shadow: 0 12px 32px -8px rgba(11, 28, 51, 0.18);
           border: 1px solid var(--color-base-offset);
+          border-radius: 12px;
           &:after,
           &:before {
               border-left: 8px solid transparent;
@@ -77,19 +80,19 @@
           }
           ul {
             margin: 0;
-            padding: 12px;
+            padding: 10px;
             display: block;
             background: var(--color-base);
-            border-radius: 3px;
+            border-radius: 12px;
             li {
               display: block;
 
               a {
-                padding: 5px 15px;
+                padding: 8px 14px;
                 transition: background 0.1s linear;
                 &:hover {
-                  background: var(--color-base-offset);
-                  border-radius: 3px;
+                  background: var(--color-base-soft);
+                  border-radius: 8px;
                   transition: background 0.2s linear;
                 }
               }
@@ -100,7 +103,8 @@
     }
     li.active {
       a {
-        font-weight: 700;
+        font-weight: 600;
+        color: var(--color-primary);
       }
     }
   }

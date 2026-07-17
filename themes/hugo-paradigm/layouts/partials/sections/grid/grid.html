@@ -20,6 +20,7 @@
 {{ end }}
 {{ $pages := where .context.Site.RegularPages "Type" $type }}
 {{ $pages = $pages.ByParam $sortBy }}
+{{ if eq .grid.sortOrder "desc" }}{{ $pages = $pages.Reverse }}{{ end }}
 
 <!-- Row Alignment -->
 {{ $gridClasses := slice "" }}
@@ -62,6 +63,8 @@
         {{ end }}
     </div>
     {{ if .grid.button }}
-        {{ partial "components/button.html" .grid.button }}
+        <div class="grid-footer-button">
+            {{ partial "components/button.html" .grid.button }}
+        </div>
     {{ end }}
 </div>

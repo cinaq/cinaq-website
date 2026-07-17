@@ -41,7 +41,8 @@
   }
   .info-media {
     img {
-      border-radius: $border-radius;
+      border-radius: 16px;
+      box-shadow: 0 24px 48px -20px rgba(11, 28, 51, 0.2);
     }
   }
   .info-content + .info-media {

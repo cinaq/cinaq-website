@@ -7,6 +7,14 @@
   padding: 0;
   z-index: 100;
   height: $header-height;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--color-base-offset);
+  @supports ((backdrop-filter: blur(12px)) and (background-color: color-mix(in srgb, red 50%, transparent))) {
+    background-color: color-mix(in srgb, var(--color-base) 80%, transparent);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+  }
   @include media-breakpoint-up(md) {
     padding: 10px 0;
   }
@@ -141,6 +149,11 @@
   background-color: transparent;
   box-shadow: none;
   border-bottom: none;
+  @supports ((backdrop-filter: blur(12px)) and (background-color: color-mix(in srgb, red 50%, transparent))) {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .hamburger {
     color: white;
   }

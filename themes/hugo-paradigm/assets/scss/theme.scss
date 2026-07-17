@@ -7,7 +7,7 @@
       --color-{{ replace $key "_" "-" }}: {{ $value }};
     {{ end }}
     {{ range $key, $value := .fonts }}
-      --font-{{ replace $key "_" "-" }}: {{ $value }};
+      --font-{{ replace $key "_" "-" }}: '{{ $value }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     {{ end }}
   }
 {{ end }}

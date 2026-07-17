@@ -26,6 +26,14 @@
 </div>
 {{ end }}
 
+{{ if eq .section.template "features" }}
+<div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
+<div class="container{{ delimit $container " " }}">
+    {{ partial "sections/features/features.html" (dict "context" .context "features" .section) }}
+</div>
+</div>
+{{ end }}
+
 {{ if eq .section.template "info" }}
 <div class="strip{{ delimit $stripClasses " " }}" style="{{ delimit $stripStyle " "  | safeCSS}}">
 <div class="container{{ delimit $container " " }}">
