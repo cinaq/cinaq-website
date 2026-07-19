@@ -1,0 +1,125 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFF"/>
+      <stop offset="1" stop-color="#E8F2FF"/>
+    </linearGradient>
+    <linearGradient id="platform" x1="180" y1="0" x2="1020" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#007BFF"/>
+      <stop offset="1" stop-color="#005FD1"/>
+    </linearGradient>
+    <linearGradient id="appHdr" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#66B3FF"/>
+      <stop offset="1" stop-color="#3D9BFF"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#005FD1" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- canvas -->
+  <rect x="40" y="40" width="1120" height="820" rx="48" fill="url(#bg)"/>
+
+  <!-- sparkle dots -->
+  <g fill="#66B3FF" opacity="0.55">
+    <circle cx="150" cy="150" r="7"/><circle cx="1050" cy="170" r="6"/><circle cx="120" cy="700" r="6"/>
+    <circle cx="1080" cy="640" r="7"/><circle cx="600" cy="105" r="5"/>
+  </g>
+
+  <!-- three apps -->
+  <g filter="url(#soft)">
+    <g>
+      <rect x="170" y="150" width="240" height="150" rx="20" fill="#FFFFFF"/>
+      <rect x="170" y="150" width="240" height="42" rx="20" fill="url(#appHdr)"/>
+      <rect x="170" y="172" width="240" height="20" fill="url(#appHdr)"/>
+      <circle cx="196" cy="171" r="7" fill="#FFFFFF" opacity="0.85"/>
+      <circle cx="220" cy="171" r="7" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="196" y="216" width="150" height="14" rx="7" fill="#C9DFF7"/>
+      <rect x="196" y="244" width="110" height="14" rx="7" fill="#DCEBFB"/>
+      <text x="290" y="285" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="21" font-weight="600" fill="#4A78B0">web app</text>
+    </g>
+    <g>
+      <rect x="480" y="150" width="240" height="150" rx="20" fill="#FFFFFF"/>
+      <rect x="480" y="150" width="240" height="42" rx="20" fill="url(#appHdr)"/>
+      <rect x="480" y="172" width="240" height="20" fill="url(#appHdr)"/>
+      <circle cx="506" cy="171" r="7" fill="#FFFFFF" opacity="0.85"/>
+      <circle cx="530" cy="171" r="7" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="506" y="216" width="150" height="14" rx="7" fill="#C9DFF7"/>
+      <rect x="506" y="244" width="110" height="14" rx="7" fill="#DCEBFB"/>
+      <text x="600" y="285" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="21" font-weight="600" fill="#4A78B0">API</text>
+    </g>
+    <g>
+      <rect x="790" y="150" width="240" height="150" rx="20" fill="#FFFFFF"/>
+      <rect x="790" y="150" width="240" height="42" rx="20" fill="url(#appHdr)"/>
+      <rect x="790" y="172" width="240" height="20" fill="url(#appHdr)"/>
+      <circle cx="816" cy="171" r="7" fill="#FFFFFF" opacity="0.85"/>
+      <circle cx="840" cy="171" r="7" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="816" y="216" width="150" height="14" rx="7" fill="#C9DFF7"/>
+      <rect x="816" y="244" width="110" height="14" rx="7" fill="#DCEBFB"/>
+      <text x="910" y="285" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="21" font-weight="600" fill="#4A78B0">AI agent</text>
+    </g>
+  </g>
+
+  <!-- arrows apps -> platform -->
+  <g stroke="#3D9BFF" stroke-width="4" stroke-linecap="round">
+    <path d="M290 315 v54"/><path d="M600 315 v54"/><path d="M910 315 v54"/>
+  </g>
+  <g fill="#3D9BFF">
+    <path d="M290 383 l-9 -14 h18 z"/><path d="M600 383 l-9 -14 h18 z"/><path d="M910 383 l-9 -14 h18 z"/>
+  </g>
+
+  <!-- platform bar -->
+  <g filter="url(#soft)">
+    <rect x="150" y="395" width="900" height="180" rx="28" fill="url(#platform)"/>
+  </g>
+  <text x="600" y="450" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">LOW-OPS PLATFORM</text>
+
+  <!-- capability chips -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="18" font-weight="600">
+    <g>
+      <rect x="190" y="478" width="190" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+      <circle cx="224" cy="510" r="15" stroke="#BFE0FF" stroke-width="3.5" fill="none"/>
+      <circle cx="224" cy="510" r="5.5" fill="#BFE0FF"/>
+      <path d="M224 489 v6 M224 525 v6 M203 510 h6 M239 510 h6 M209 495 l4.5 4.5 M234.5 520.5 l4.5 4.5 M239 495 l-4.5 4.5 M213.5 520.5 l-4.5 4.5" stroke="#BFE0FF" stroke-width="3.5" stroke-linecap="round"/>
+      <text x="252" y="518" fill="#F0F7FF">CI/CD</text>
+    </g>
+    <g>
+      <rect x="400" y="478" width="190" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+      <rect x="420" y="514" width="9" height="14" rx="3" fill="#BFE0FF"/>
+      <rect x="434" y="502" width="9" height="26" rx="3" fill="#BFE0FF"/>
+      <rect x="448" y="492" width="9" height="36" rx="3" fill="#BFE0FF"/>
+      <text x="470" y="518" fill="#F0F7FF">Monitoring</text>
+    </g>
+    <g>
+      <rect x="610" y="478" width="190" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+      <path d="M645 494 l17 6 v13 c0 11 -7 18 -17 22 c-10 -4 -17 -11 -17 -22 v-13 z" stroke="#BFE0FF" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+      <path d="M638 512 l5 5 l10 -11" stroke="#BFE0FF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="672" y="518" fill="#F0F7FF">Security</text>
+    </g>
+    <g>
+      <rect x="820" y="478" width="190" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.16"/>
+      <ellipse cx="854" cy="498" rx="16" ry="7" stroke="#BFE0FF" stroke-width="3.5" fill="none"/>
+      <path d="M838 498 v20 c0 4 7 7 16 7 s16 -3 16 -7 v-20" stroke="#BFE0FF" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M838 508 c0 4 7 7 16 7 s16 -3 16 -7" stroke="#BFE0FF" stroke-width="3.5" fill="none"/>
+      <text x="882" y="518" fill="#F0F7FF">Backups</text>
+    </g>
+  </g>
+
+  <!-- arrow platform -> infra -->
+  <path d="M600 590 v54" stroke="#3D9BFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M600 658 l-9 -14 h18 z" fill="#3D9BFF"/>
+
+  <!-- infrastructure -->
+  <g filter="url(#soft)">
+    <rect x="330" y="668" width="540" height="130" rx="24" fill="#FFFFFF"/>
+  </g>
+  <g>
+    <rect x="362" y="694" width="120" height="78" rx="14" fill="#EAF3FF" stroke="#66B3FF" stroke-width="2"/>
+    <rect x="376" y="708" width="92" height="14" rx="7" fill="#B5D6F8"/>
+    <rect x="376" y="730" width="92" height="14" rx="7" fill="#B5D6F8"/>
+    <circle cx="384" cy="758" r="5" fill="#00C776"/>
+    <circle cx="400" cy="758" r="5" fill="#00C776"/>
+  </g>
+  <text x="520" y="726" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="#0B1C33">Your infrastructure</text>
+  <text x="520" y="758" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" fill="#4A78B0">Private cloud · On-premises · Edge</text>
+</svg>
