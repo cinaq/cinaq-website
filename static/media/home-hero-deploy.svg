@@ -1,0 +1,117 @@
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="1400" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10254A"/>
+      <stop offset="1" stop-color="#0A1830"/>
+    </linearGradient>
+    <linearGradient id="termBg" x1="120" y1="330" x2="820" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1B33"/>
+      <stop offset="1" stop-color="#091326"/>
+    </linearGradient>
+    <linearGradient id="cloudFill" x1="850" y1="120" x2="1280" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E4E9C"/>
+      <stop offset="1" stop-color="#123262"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#66B3FF"/>
+      <stop offset="1" stop-color="#00D4FF"/>
+    </linearGradient>
+    <linearGradient id="rackFill" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#0F2C58"/>
+      <stop offset="1" stop-color="#0A1E3E"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#007BFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#007BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#00D4FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- card -->
+  <rect x="30" y="30" width="1340" height="940" rx="56" fill="url(#cardBg)"/>
+  <rect x="30.75" y="30.75" width="1338.5" height="938.5" rx="55.25" stroke="#3D9BFF" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- ambient glows -->
+  <ellipse cx="1080" cy="260" rx="420" ry="300" fill="url(#glow1)"/>
+  <ellipse cx="380" cy="820" rx="380" ry="240" fill="url(#glow2)" opacity="0.5"/>
+
+  <!-- faint dot grid -->
+  <g fill="#7EB8FF" opacity="0.18">
+    <circle cx="180" cy="140" r="4"/><circle cx="300" cy="110" r="3"/><circle cx="520" cy="160" r="3.5"/>
+    <circle cx="680" cy="110" r="3"/><circle cx="1240" cy="620" r="4"/><circle cx="1180" cy="740" r="3"/>
+    <circle cx="1290" cy="840" r="3.5"/><circle cx="150" cy="620" r="3"/><circle cx="100" cy="420" r="3.5"/>
+  </g>
+
+  <!-- private cloud: cloud shape with server rack -->
+  <g>
+    <path d="M905 400 a95 95 0 0 1 12 -189 a125 125 0 0 1 238 -29 a105 105 0 0 1 119 104 a88 88 0 0 1 -30 114 z" fill="url(#cloudFill)"/>
+    <path d="M905 400 a95 95 0 0 1 12 -189 a125 125 0 0 1 238 -29 a105 105 0 0 1 119 104 a88 88 0 0 1 -30 114 z" stroke="#66B3FF" stroke-opacity="0.45" stroke-width="2.5"/>
+    <!-- rack inside cloud -->
+    <rect x="990" y="240" width="200" height="150" rx="18" fill="url(#rackFill)" stroke="#66B3FF" stroke-opacity="0.5" stroke-width="2"/>
+    <g>
+      <rect x="1012" y="262" width="156" height="30" rx="9" fill="#12335F"/>
+      <circle cx="1030" cy="277" r="6" fill="#00E08A"/>
+      <rect x="1050" y="272" width="80" height="10" rx="5" fill="#3D6FA8"/>
+      <rect x="1012" y="304" width="156" height="30" rx="9" fill="#12335F"/>
+      <circle cx="1030" cy="319" r="6" fill="#00E08A"/>
+      <rect x="1050" y="314" width="62" height="10" rx="5" fill="#3D6FA8"/>
+      <rect x="1012" y="346" width="156" height="30" rx="9" fill="#12335F"/>
+      <circle cx="1030" cy="361" r="6" fill="#00D4FF"/>
+      <rect x="1050" y="356" width="94" height="10" rx="5" fill="#3D6FA8"/>
+    </g>
+    <text x="1090" y="440" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="26" font-weight="600" fill="#9CC8FF">Private cloud</text>
+  </g>
+
+  <!-- connection: terminal -> cloud -->
+  <path d="M700 560 C 800 560 830 470 900 440" stroke="url(#accent)" stroke-width="3.5" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="700" cy="560" r="8" fill="#00D4FF"/>
+  <circle cx="900" cy="440" r="8" fill="#66B3FF"/>
+
+  <!-- terminal window -->
+  <g>
+    <rect x="120" y="330" width="580" height="470" rx="28" fill="url(#termBg)"/>
+    <rect x="121" y="331" width="578" height="468" rx="27" stroke="#3D9BFF" stroke-opacity="0.35" stroke-width="2"/>
+    <!-- title bar -->
+    <circle cx="166" cy="374" r="10" fill="#FF5F57"/>
+    <circle cx="200" cy="374" r="10" fill="#FEBC2E"/>
+    <circle cx="234" cy="374" r="10" fill="#28C840"/>
+    <text x="410" y="382" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="22" fill="#5E85B8">deploy — lowops</text>
+    <!-- terminal text -->
+    <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="26">
+      <text x="160" y="470" fill="#8FB8E8"><tspan fill="#00D4FF">$</tspan> lowops deploy shop-api</text>
+      <text x="160" y="530" fill="#B9D6F5"><tspan fill="#00E08A">✓</tspan> build image <tspan fill="#5E85B8">· 12s</tspan></text>
+      <text x="160" y="590" fill="#B9D6F5"><tspan fill="#00E08A">✓</tspan> security scan <tspan fill="#5E85B8">· passed</tspan></text>
+      <text x="160" y="650" fill="#B9D6F5"><tspan fill="#00E08A">✓</tspan> rollout 3/3 healthy</text>
+      <text x="160" y="710" fill="#7EE7C4">live at shop.internal <tspan fill="#5E85B8">· 1m 48s</tspan></text>
+      <rect x="160" y="738" width="16" height="30" rx="3" fill="#00D4FF"/>
+    </g>
+  </g>
+
+  <!-- floating chip: uptime -->
+  <g>
+    <rect x="760" y="640" width="250" height="84" rx="22" fill="#0D2246" stroke="#3D9BFF" stroke-opacity="0.45" stroke-width="2"/>
+    <circle cx="806" cy="682" r="22" fill="#0F3B2E"/>
+    <path d="M796 682 l8 8 l14 -16" stroke="#00E08A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="844" y="674" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="700" fill="#EAF4FF">99.99%</text>
+    <text x="844" y="704" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="19" fill="#7FA9D9">uptime</text>
+  </g>
+
+  <!-- floating chip: minutes -->
+  <g>
+    <rect x="1040" y="520" width="250" height="84" rx="22" fill="#0D2246" stroke="#3D9BFF" stroke-opacity="0.45" stroke-width="2"/>
+    <circle cx="1086" cy="562" r="22" fill="#10305E"/>
+    <circle cx="1086" cy="562" r="14" stroke="#00D4FF" stroke-width="3.5" fill="none"/>
+    <path d="M1086 554 v8 l6 5" stroke="#00D4FF" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <text x="1124" y="554" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="700" fill="#EAF4FF">Minutes</text>
+    <text x="1124" y="584" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="19" fill="#7FA9D9">to production</text>
+  </g>
+
+  <!-- shield badge -->
+  <g>
+    <path d="M262 172 l54 20 v40 c0 34 -22 58 -54 70 c-32 -12 -54 -36 -54 -70 v-40 z" fill="#0D2246" stroke="#3D9BFF" stroke-opacity="0.55" stroke-width="2.5"/>
+    <path d="M240 234 l16 16 l30 -34" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

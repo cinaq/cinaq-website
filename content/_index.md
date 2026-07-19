@@ -22,12 +22,12 @@ sections:
     monotone: false
     opacity: ''
   image:
-    image: "/media/low-ops-platform-engineering.svg"
+    image: "/media/home-hero-deploy.svg"
     overlap: false
     border: false
     borderRadius: true
     shadow: false
-    altText: "Low-Ops Platform"
+    altText: "Deploying an app to private cloud in minutes with Low-Ops"
   buttons:
     - button:
       url: "https://low-ops.com"
@@ -74,7 +74,7 @@ sections:
   align: left
   heading: "Low-Ops: your private cloud, batteries included"
   description: "Low-Ops is our platform product that helps organizations accelerate innovative solutions built with AI. Deploy any web app to private cloud or on-prem in minutes — with CI/CD, monitoring, backups and security built in from day one."
-  image: /media/platform-engineering.svg
+  image: /media/home-low-ops-platform.svg
   buttons:
   - button:
     url: "https://low-ops.com"
@@ -90,7 +90,7 @@ sections:
   align: right
   heading: "MxLint: quality gates for low-code"
   description: "Our open-source linter brings automated code review, security checks and CI quality gates to low-code development teams. Catch issues before they reach production."
-  image: /media/appsec-report.png
+  image: /media/home-mxlint-report.svg
   buttons:
   - button:
     url: "https://mxlint.com"
