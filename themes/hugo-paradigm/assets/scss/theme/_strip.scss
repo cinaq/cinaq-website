@@ -64,10 +64,33 @@ $strip-padding: $grid-gutter-width * 3;
   }
 }
 
-// Soft radial glow background for the homepage hero
+// "Deep Space" homepage hero: dark navy with glowing blue radials and a
+// faint dot matrix. Works in both light and dark mode via --color-navy.
 .hero-home {
-  background-color: var(--color-base);
+  background-color: var(--color-navy);
   background-image:
-    radial-gradient(1100px 560px at 85% -10%, rgba(0, 123, 255, 0.14), transparent 60%),
-    radial-gradient(900px 480px at -10% 110%, rgba(25, 80, 143, 0.10), transparent 60%);
+    radial-gradient(rgba(120, 180, 255, 0.10) 1px, transparent 1px),
+    radial-gradient(900px 520px at 82% -15%, rgba(0, 123, 255, 0.4), transparent 62%),
+    radial-gradient(760px 460px at 8% 115%, rgba(61, 155, 255, 0.22), transparent 60%);
+  background-size: 26px 26px, auto, auto;
+  color: #ffffff;
+  .hero-text {
+    color: #ffffff;
+    h1 strong {
+      background-image: linear-gradient(105deg, #66b3ff 0%, #00d4ff 100%);
+    }
+    p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+  }
+  .hero-image img {
+    box-shadow: 0 0 80px rgba(0, 123, 255, 0.35), 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+  }
+  .button-base-text {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    &:hover {
+      border-color: #ffffff !important;
+    }
+  }
 }
